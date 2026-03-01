@@ -1,0 +1,332 @@
+<!DOCTYPE html><!--mGRRbc9mQkxUGXHACoBp3--><html lang="zh-Hant"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/HappyLearnCodesys/_next/static/chunks/74f28e1af7ed7ed3.js"/><script src="/HappyLearnCodesys/_next/static/chunks/a354d338f7d272f4.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/7de9141b1af425c3.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/d1d24926e41b63c4.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/turbopack-d027db068e712cbc.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js" async=""></script><title>CODESYS 教學網站</title><meta name="description" content="針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"/><script src="/HappyLearnCodesys/_next/static/chunks/a6dad97d9634a72d.js" noModule=""></script></head><body class="min-h-screen"><div hidden=""><!--$--><!--/$--></div><div class="mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6"><header class="mb-6 border-b pb-4" style="border-color:var(--t-border)"><div class="flex items-start justify-between gap-4"><div><h1 class="text-xl font-semibold tracking-tight"><a style="color:var(--t-accent)" class="hover:underline" href="/HappyLearnCodesys">CODESYS 教學網站</a></h1><p class="mt-1 text-sm" style="color:var(--t-text-muted)">用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。</p></div><nav class="flex shrink-0 items-center gap-2"><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys">回首頁</a><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys/offline-help">Offline Help</a><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys/search">搜尋</a></nav></div></header><main class="flex-1 pb-8"><div class="min-w-0"><div class="space-y-5"><nav class="text-xs" style="color:var(--t-text-muted)"><a style="color:var(--t-accent)" href="/HappyLearnCodesys/offline-help">Offline Help 首頁</a><span class="mx-1">/</span><span>CODESYS 概觀與入門</span></nav><header class="space-y-2"><h1 class="text-xl font-semibold" style="color:var(--t-text)">CODESYS Development System 概觀 Overview 教學整理</h1><p class="text-sm" style="color:var(--t-text-muted)">說明 CODESYS Development System 在整體平台中的角色、模組化架構、相容性觀念與 Offline/Online Help 使用方式。</p></header><section class="rounded-lg border p-4" style="border-color:var(--t-border);background-color:var(--t-bg-card)"><div class="flex gap-6"><aside class="shrink-0 w-56 self-start sticky top-6 hidden lg:block" aria-label="本頁標題目錄"><nav class="rounded-lg border py-3 px-3 text-sm max-h-[calc(100vh-4rem)] overflow-y-auto" style="border-color:var(--t-border);background-color:var(--t-bg-card)"><div class="mb-2 flex items-center justify-between"><button type="button" class="text-[11px] hover:underline" style="color:var(--t-text-muted)">回上一層</button><div class="text-xs font-semibold uppercase tracking-wide" style="color:var(--t-text-muted)">目錄</div></div><ul class="space-y-1.5"><li><a href="#CODESYS-Development-System-概觀-Overview-教學整理" class="block truncate py-0.5 hover:underline" style="padding-left:0;color:var(--t-text-muted);font-size:0.8125rem">CODESYS Development System 概觀 Overview 教學整理</a></li><li><a href="#1.-CODESYS-Development-System-是什麼？" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">1. CODESYS Development System 是什麼？</a></li><li><a href="#2.-CODESYS-Help-使用方式-Using-the-CODESYS-Help" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">2. CODESYS Help 使用方式 Using the CODESYS Help</a></li><li><a href="#2.1-如何開啟說明" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">2.1 如何開啟說明</a></li><li><a href="#2.2-選擇線上或離線說明" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">2.2 選擇線上或離線說明</a></li><li><a href="#3.-CODESYS-系統架構總覽-System-Overview" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">3. CODESYS 系統架構總覽 System Overview</a></li><li><a href="#4.-主要功能-Features（精簡版）" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">4. 主要功能 Features（精簡版）</a></li><li><a href="#5.-模組化架構-Whitepaper：Modularization-from-the-User-Perspective" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">5. 模組化架構 Whitepaper：Modularization from the User Perspective</a></li><li><a href="#5.1-對使用者的好處" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">5.1 對使用者的好處</a></li><li><a href="#5.2-使用-CODESYS-Installer-管理安裝" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">5.2 使用 CODESYS Installer 管理安裝</a></li><li><a href="#6.-相容性-Compatibility（概念整理）" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">6. 相容性 Compatibility（概念整理）</a></li><li><a href="#6.1-專案相容性（Projects）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">6.1 專案相容性（Projects）</a></li><li><a href="#6.2-程式碼相容性（Code）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">6.2 程式碼相容性（Code）</a></li><li><a href="#6.3-Runtime-與函式庫相容性" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">6.3 Runtime 與函式庫相容性</a></li><li><a href="#6.4-專案與-Boot-Project-/-Retain-的相容性" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">6.4 專案與 Boot Project / Retain 的相容性</a></li><li><a href="#7.-設定介面與說明語言-Language-Settings" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">7. 設定介面與說明語言 Language Settings</a></li><li><a href="#8.-小結：從-Overview-檔案學到的幾件事" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">8. 小結：從 Overview 檔案學到的幾件事</a></li></ul><button type="button" class="mt-3 w-full text-left hover:underline" style="font-size:0.75rem;color:var(--t-text-muted)">回到最上層</button></nav></aside><div class="min-w-0 flex-1 space-y-2"><div class="flex items-center gap-2 rounded-md border py-1.5 px-2 text-xs" style="border-color:var(--t-border);background-color:var(--t-bg);color:var(--t-text-muted)" role="group" aria-label="文字大小"><span class="shrink-0">文字大小：</span><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:transparent;color:var(--t-text-muted)" aria-pressed="false">小</button><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:var(--t-border);color:var(--t-text)" aria-pressed="true">中</button><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:transparent;color:var(--t-text-muted)" aria-pressed="false">大</button></div><article class="prose max-w-none md-content" style="color:var(--t-text)">
+<p class="my-2 leading-relaxed"><strong>顏色對應</strong>：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span></p>
+<h1 id="CODESYS-Development-System-概觀-Overview-教學整理" class="text-2xl font-semibold scroll-mt-6" style="color:var(--t-text)">CODESYS Development System 概觀 Overview 教學整理</h1>
+<blockquote>
+<p class="my-2 leading-relaxed">本文件基於 CODESYS Offline Help 中 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">CODESYS Development System</code>、<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Overview</code>、<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Whitepaper: Modularization from the User Perspective</code> 與 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Compatibility</code> 相關章節，整理成易讀、實務導向的繁體中文說明。</p>
+</blockquote>
+<hr/>
+<h2 id="1.-CODESYS-Development-System-是什麼？" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">1. CODESYS Development System 是什麼？</h2>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>CODESYS Development System</strong> 是一套符合 IEC 61131‑3 標準的 PLC / 控制器程式設計工具，提供 32‑bit 與 64‑bit 版本。</li>
+<li class="leading-relaxed">下載位置：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>CODESYS Store International</strong>：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">https://store.codesys.com</code></li>
+<li class="leading-relaxed"><strong>CODESYS Store North America</strong>：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">https://us.store.codesys.com</code></li>
+</ul>
+</li>
+<li class="leading-relaxed">在整個 CODESYS 平台中，它扮演「核心工程工具」的角色：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">撰寫 IEC 61131‑3 程式（ST / FBD / LD / SFC / CFC…）。</li>
+<li class="leading-relaxed">組態裝置、I/O 與通訊。</li>
+<li class="leading-relaxed">整合可視化（Visualization）、Motion、Fieldbus、Script 等功能。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="2.-CODESYS-Help-使用方式-Using-the-CODESYS-Help" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">2. CODESYS Help 使用方式 Using the CODESYS Help</h2>
+<p class="my-2 leading-relaxed">在 Offline Help 中，CODESYS 的說明通常分成兩大部分：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>Concepts 概念篇</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">解釋某個主題背後的設計觀念與工作流程。</li>
+<li class="leading-relaxed">會搭配 step‑by‑step 的操作說明。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>Reference 參考篇</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">完整列出選單、視窗、參數與程式語言元素的細節。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2.1-如何開啟說明" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">2.1 如何開啟說明</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在開發系統中，將滑鼠游標停在某個 <strong>物件 / 功能鍵 / 編輯器內元素</strong> 上，按下 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">F1</code>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">會開啟對應主題的說明頁。</li>
+</ul>
+</li>
+<li class="leading-relaxed">也可以透過選單 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Help</code> 中的項目開啟說明與搜尋。</li>
+<li class="leading-relaxed">在 <strong>Offline Help</strong> 模式下：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">支援 <strong>全文搜尋</strong>，並提供索引（Index）搜尋。</li>
+<li class="leading-relaxed">Offline Help 搜尋會自動使用 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">AND</code> 與萬用字元規則：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">例如搜尋 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Device Diagnosis</code> 等同於 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Device AND Diagnosis</code>。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*</code> 字元本身會被視為字元，不建議當萬用字元輸入。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2.2-選擇線上或離線說明" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">2.2 選擇線上或離線說明</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Options → CODESYS → Help</code>（實際路徑依版本略有不同）中，可以選擇：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">使用 <strong>Offline Help</strong>（本機 HTML）。</li>
+<li class="leading-relaxed">或使用 <strong>Online Help</strong>（瀏覽器連到官方網站）。</li>
+</ul>
+</li>
+<li class="leading-relaxed">通常建議：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>開發環境固定版本＋內部網路限制</strong>：優先安裝 Offline Help，速度快且不受網路影響。</li>
+<li class="leading-relaxed"><strong>需要查最新功能</strong>：搭配 Online Help，可以直接取得較新版本的說明。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="3.-CODESYS-系統架構總覽-System-Overview" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">3. CODESYS 系統架構總覽 System Overview</h2>
+<p class="my-2 leading-relaxed">根據 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Overview</code> 章節，CODESYS 整體可想成以下幾個層面：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed"><strong>Development System（你現在使用的 IDE）</strong></li>
+</ol>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">IEC 61131‑3 編輯與專案管理。</li>
+<li class="leading-relaxed">內含編譯器、除錯工具、HMI/Visualization 編輯器等。</li>
+</ul>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed"><strong>Runtime System（安裝在 PLC / IPC 上的執行環境）</strong></li>
+</ol>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">執行從 Development System 下載過去的應用程式。</li>
+<li class="leading-relaxed">由各設備或平台廠商整合提供（例如 CODESYS Control for Raspberry Pi）。</li>
+</ul>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed"><strong>附加功能與 Add‑ons</strong></li>
+</ol>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">例如：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">CODESYS SoftMotion</code>（軸控制 / CNC / Robotics）。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">CODESYS Visualization</code>（畫面視覺化）。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">CODESYS Application Composer</code>（模組化應用組態）。</li>
+</ul>
+</li>
+<li class="leading-relaxed">透過 <strong>Add‑on Packages</strong> 安裝、授權與更新。</li>
+</ul>
+<p class="my-2 leading-relaxed">對使用者而言，可以把它理解為：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>核心 IDE</strong> 負責寫程式與組態。</li>
+<li class="leading-relaxed"><strong>Runtime + Device Descriptions</strong> 決定程式實際跑在哪裡、支援哪些功能。</li>
+<li class="leading-relaxed"><strong>Add‑ons / Packages</strong> 則是把特定領域（Motion、Safety、Robotics…）的工具加進 IDE 裡。</li>
+</ul>
+<hr/>
+<h2 id="4.-主要功能-Features（精簡版）" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">4. 主要功能 Features（精簡版）</h2>
+<p class="my-2 leading-relaxed">根據 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Overview</code> 內的 Features 表格，CODESYS Development System 提供的工程功能大致可整理為：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>專案建置與精靈</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">以精靈建立標準專案與裝置樹。</li>
+<li class="leading-relaxed">對應說明：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Creating and Configuring a Project</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>介面自訂 Customizing UI</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">自訂選單、工具列、快捷鍵、視窗配置。</li>
+<li class="leading-relaxed">對應說明：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Customizing the User Interface</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>多種 IEC 語言與編輯器</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">ST、FBD、LD、IL、SFC，以及 CFC / Extended CFC。</li>
+<li class="leading-relaxed">對應說明：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Programming Languages and Editors</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>輸入輔助 Input Assistance</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">型別提示、自動補齊、宣告輔助等。</li>
+<li class="leading-relaxed">對應說明：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Using Input Assistance</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>物件導向程式設計 OOP</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">支援 IEC 61131‑3 3rd Edition 的物件導向設計：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">繼承、介面、方法、屬性、抽象類別等。</li>
+</ul>
+</li>
+<li class="leading-relaxed">對應說明：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Object-Oriented Programming</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>專案比較 Project Comparison</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">包含圖形編輯器差異比較。</li>
+<li class="leading-relaxed">對應說明：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Comparing Projects</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>函式庫 Library 機制</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">協助重用程式碼與跨專案分享。</li>
+<li class="leading-relaxed">對應說明：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Using Libraries</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>除錯與上線 Debug &amp; Online</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">中斷點、單步執行、線上監看、Trace 等。</li>
+<li class="leading-relaxed">對應說明：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Testing and Debugging</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>多 CPU 平台編譯</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">針對多種 CPU 平台最佳化編譯器與編譯選項。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>安全性與保護</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">專案保護、應用程式加密、裝置使用者管理等。</li>
+<li class="leading-relaxed">對應說明：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Protecting and Saving Projects</code>、<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Protecting an Application</code>、<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Handling of Device User Management</code>、<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Managing Packages and Licenses</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>Fieldbus / I/O 支援</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">以 Device Tree / I/O Mapping 方式組態各種現場匯流排。</li>
+<li class="leading-relaxed">對應說明：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Configuring I/O Links</code>。</li>
+</ul>
+</li>
+</ul>
+<p class="my-2 leading-relaxed">實務上，你可以把這些功能看成「IDE 內建的子系統」，往後的教學文件會各自展開說明。</p>
+<hr/>
+<h2 id="5.-模組化架構-Whitepaper：Modularization-from-the-User-Perspective" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">5. 模組化架構 Whitepaper：Modularization from the User Perspective</h2>
+<p class="my-2 leading-relaxed">自 CODESYS 3.5 SP17 起，官方對整個開發系統做了大幅的 <strong>模組化重構</strong>：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">過去：大部分功能都被打包在單一安裝檔與單一版本。</li>
+<li class="leading-relaxed">現在：許多功能拆成獨立的 <strong>Add‑on</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">程式語言編輯器、Fieldbus 組態工具、可視化、符號設定、SoftMotion 等，都能各自版本化與更新。</li>
+<li class="leading-relaxed">核心僅保留：UI 框架、編譯器前端、專案處理與通訊等基礎元件。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5.1-對使用者的好處" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">5.1 對使用者的好處</h3>
+<p class="my-2 leading-relaxed">依白皮書摘要，主要好處有：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>功能完成即可發佈</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">不再受限於一年一次的 Service Pack 發佈節奏。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>可以在穩定環境中試用 Beta Add‑on</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">生產用安裝保持穩定，平行建立一套「試用安裝」。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>只安裝需要的元件</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">減少磁碟空間占用與啟動負擔，提昇效能。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5.2-使用-CODESYS-Installer-管理安裝" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">5.2 使用 CODESYS Installer 管理安裝</h3>
+<p class="my-2 leading-relaxed">模組化之後，<strong>CODESYS Installer</strong> 成為核心工具：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">可以在同一台 PC 上管理多個 <strong>獨立安裝</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">例如：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">3.5.19_Production</code>、<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">3.5.19_Testing</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed">對每個安裝決定：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">要裝哪些 Add‑ons。</li>
+<li class="leading-relaxed">要不要接收 Beta 更新。</li>
+<li class="leading-relaxed">要不要鎖定不更新（維持維護用環境）。</li>
+</ul>
+</li>
+<li class="leading-relaxed">在開發系統中，<strong>Notification Center</strong> 也會提示有無對應安裝的更新。</li>
+</ul>
+<p class="my-2 leading-relaxed">實務建議：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">團隊可以約定一個「標準安裝」，由一人測試新版本後，透過 Installer 匯出描述檔，再讓其他成員匯入，確保每個人環境一致。</li>
+</ul>
+<hr/>
+<h2 id="6.-相容性-Compatibility（概念整理）" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">6. 相容性 Compatibility（概念整理）</h2>
+<p class="my-2 leading-relaxed">關於相容性，官方文件區分幾個層面：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed"><strong>專案相容性（Project Compatibility）</strong></li>
+<li class="leading-relaxed"><strong>程式碼相容性（Code Compatibility）</strong></li>
+<li class="leading-relaxed"><strong>Runtime 相容性（Runtime System Compatibility）</strong></li>
+<li class="leading-relaxed"><strong>函式庫相容性（Library Compatibility）</strong></li>
+<li class="leading-relaxed"><strong>裝置描述與 Runtime 相容性（Device Description vs. Runtime）</strong></li>
+</ol>
+<h3 id="6.1-專案相容性（Projects）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">6.1 專案相容性（Projects）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">新版 CODESYS 開啟舊專案時，會盡量保持在「相容模式」：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">如果修改內容不需要新功能，專案儲存格式會盡量維持舊版。</li>
+<li class="leading-relaxed">一旦變更會導致需要新資料格式，IDE 會跳出提示，讓你有機會「回復變更」。</li>
+</ul>
+</li>
+<li class="leading-relaxed">舊版 CODESYS 開啟新版專案：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">技術上有時「可以開」，但官方 <strong>強烈不建議</strong>。</li>
+<li class="leading-relaxed">若缺少必要的 plug‑in 類型，載入時會看到警告或紅叉標示。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6.2-程式碼相容性（Code）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">6.2 程式碼相容性（Code）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">新版 CODESYS 無法保證產出的程式碼與舊版 <strong>二進位完全一致</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">編譯器、語言編輯器與 Fieldbus 組態工具都可能影響結果。</li>
+</ul>
+</li>
+<li class="leading-relaxed">若要「在不做 Online Change 或 Download 的情況下登入現場控制器」：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">必須使用與當初下載程式時 <strong>完全相同版本</strong> 的 CODESYS 安裝。</li>
+<li class="leading-relaxed">這部分可透過 CODESYS Installer 協助還原對應安裝版本。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6.3-Runtime-與函式庫相容性" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">6.3 Runtime 與函式庫相容性</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">一般情況下：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>新 IDE + 舊 Runtime</strong>：通常可行，但新功能可能因 Runtime 不支援而無法使用。</li>
+<li class="leading-relaxed"><strong>舊 IDE + 新 Runtime</strong>：可能因安全性更新而不相容，不建議。</li>
+</ul>
+</li>
+<li class="leading-relaxed">Compiled Library 的建議：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">應該用「需要支援的最舊 CODESYS 版本」來建置，確保能在較新 IDE 中使用。</li>
+<li class="leading-relaxed">舊 IDE 通常無法使用由較新版本建立的 compiled library。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6.4-專案與-Boot-Project-/-Retain-的相容性" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">6.4 專案與 Boot Project / Retain 的相容性</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">針對 Boot Project 與 Retain 檔案，CODESYS 利用 <strong>checksum 檢查變數配置</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">若 Retain 與程式不相容，可以透過設定選擇：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">直接初始化 Retain。</li>
+<li class="leading-relaxed">保留在 stop + exception 狀態，等待手動處理。</li>
+<li class="leading-relaxed">或拒絕載入 boot project。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="my-2 leading-relaxed">實務建議：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">對於需要長期維護的專案，應記錄：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">當初下載時的 CODESYS 版本、Runtime 版本與 Device Description 版本。</li>
+<li class="leading-relaxed">若必須升級，務必安排完整回歸測試。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="7.-設定介面與說明語言-Language-Settings" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">7. 設定介面與說明語言 Language Settings</h2>
+<p class="my-2 leading-relaxed">在 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Options → International Settings</code> 中可以：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">設定 <strong>開發系統介面語言</strong>（IDE UI）。</li>
+<li class="leading-relaxed">分開設定 <strong>說明文件語言</strong>（Help Language）。</li>
+</ul>
+<p class="my-2 leading-relaxed">此外，也可以在命令列啟動 CODESYS 時加入參數，指定啟動時使用的語言；這對於多語系團隊或教學環境很有幫助。</p>
+<hr/>
+<h2 id="8.-小結：從-Overview-檔案學到的幾件事" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">8. 小結：從 Overview 檔案學到的幾件事</h2>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed"><strong>CODESYS Development System</strong> 是整個平台的工程核心，負責專案建立、程式設計與除錯。</li>
+<li class="leading-relaxed"><strong>Offline / Online Help</strong> 是學習與查詢的重要工具，善用 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">F1</code> 可以快速找到對應說明。</li>
+<li class="leading-relaxed"><strong>模組化與 Installer</strong> 讓 Add‑on 可以獨立更新，方便實務上維護多套安裝。</li>
+<li class="leading-relaxed"><strong>相容性觀念</strong> 很重要：專案／程式碼／Runtime／函式庫都有各自的相容性規則。</li>
+<li class="leading-relaxed">透過這些概念，後續看到 SoftMotion、CNC、Robotics 等教學文件時，可以更清楚它們如何嵌在整體 CODESYS 架構之中。</li>
+</ol></article></div></div></section><section class="space-y-2"><h2 class="text-sm font-semibold" style="color:var(--t-text)">相關批次學習路線</h2><ul class="space-y-1.5 text-xs"><li><a class="hover:underline" style="color:var(--t-accent)" href="/HappyLearnCodesys/offline-help/batch/batch-01-codesys-overview">Batch 01：CODESYS 概觀與入門教學</a></li></ul></section></div><!--$--><!--/$--></div></main><footer class="border-t pt-4 text-xs" style="border-color:var(--t-border);color:var(--t-text-muted)"><p>內容來源整理自 CODESYS 官方文件與教學筆記，僅供學習使用。</p><p class="mt-1">© <!-- -->2026<!-- --> jolinjo</p></footer></div><script src="/HappyLearnCodesys/_next/static/chunks/74f28e1af7ed7ed3.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[22016,[\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\"],\"\"]\n3:I[39756,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n4:I[37457,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n6:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"OutletBoundary\"]\n7:\"$Sreact.suspense\"\n9:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"ViewportBoundary\"]\nc:I[68027,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n:HL[\"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"mGRRbc9mQkxUGXHACoBp3\",\"c\":[\"\",\"offline-help\",\"overview\",\"codesys-overview\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"offline-help\",{\"children\":[[\"slug\",\"overview/codesys-overview\",\"c\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-Hant\",\"children\":[\"$\",\"body\",null,{\"className\":\"min-h-screen\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6\",\"children\":[[\"$\",\"header\",null,{\"className\":\"mb-6 border-b pb-4\",\"style\":{\"borderColor\":\"var(--t-border)\"},\"children\":[\"$\",\"div\",null,{\"className\":\"flex items-start justify-between gap-4\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-xl font-semibold tracking-tight\",\"children\":[\"$\",\"$L2\",null,{\"href\":\"/\",\"style\":{\"color\":\"var(--t-accent)\"},\"className\":\"hover:underline\",\"children\":\"CODESYS 教學網站\"}]}],[\"$\",\"p\",null,{\"className\":\"mt-1 text-sm\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。\"}]]}],[\"$\",\"nav\",null,{\"className\":\"flex shrink-0 items-center gap-2\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"回首頁\"}],[\"$\",\"$L2\",null,{\"href\":\"/offline-help\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"Offline Help\"}],[\"$\",\"$L2\",null,{\"href\":\"/search\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"搜尋\"}]]}]]}]}],[\"$\",\"main\",null,{\"className\":\"flex-1 pb-8\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"div\",null,{\"className\":\"flex flex-col items-center justify-center gap-4 py-12 text-center\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-4xl font-semibold\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"404\"}],[\"$\",\"p\",null,{\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"找不到這個頁面。\"}],[\"$\",\"nav\",null,{\"className\":\"mt-4 flex flex-wrap justify-center gap-3\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\",\"color\":\"var(--t-accent)\"},\"children\":\"回首頁\"}],[\"$\",\"$L2\",null,{\"href\":\"/softmotion\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"SoftMotion 學習地圖\"}],[\"$\",\"$L2\",null,{\"href\":\"/licensing\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"授權說明\"}],[\"$\",\"$L2\",null,{\"href\":\"/guidelines\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"開發規範\"}]]}]]}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"border-t pt-4 text-xs\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":[[\"$\",\"p\",null,{\"children\":\"內容來源整理自 CODESYS 官方文件與教學筆記，僅供學習使用。\"}],[\"$\",\"p\",null,{\"className\":\"mt-1\",\"children\":[\"© \",2026,\" jolinjo\"]}]]}]]}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"div\",null,{\"className\":\"min-w-0\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L6\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@8\"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":\"$Lb\"}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$c\",[]],\"S\":true}\n"])</script><script>self.__next_f.push([1,"d:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"MetadataBoundary\"]\nb:[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Le\"}]}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"8:null\ne:[[\"$\",\"title\",\"0\",{\"children\":\"CODESYS 教學網站\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。\"}]]\n"])</script><script>self.__next_f.push([1,"f:I[35977,[\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\"],\"MarkdownWithToc\"]\n10:T2fe1,"])</script><script>self.__next_f.push([1,"\u003cstyle\u003e\nhtml, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,\n[id^=\"preview\"], [class*=\"markdown-preview\"] {\n  background-color: #FDF5E6 !important;\n  font-size: 14px;\n}\n\n/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */\n.cfg-func,\n.cfg-global,\n.cfg-local,\n.cfg-custom,\n.cfg-const,\n.cfg-keyword,\n.cfg-type,\n.cfg-arg,\n.cfg-name,\ncode {\n  font-family: ui-monospace, \"Cascadia Code\", \"Source Code Pro\", Consolas, Monaco, \"Courier New\", monospace;\n}\n\n/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */\n.markdown-preview-section :not(pre) \u003e code,\n.markdown-preview :not(pre) \u003e code,\n.markdown-body :not(pre) \u003e code {\n  background: transparent !important;\n  padding: 0 !important;\n  border: none !important;\n  border-radius: 0 !important;\n  box-shadow: none !important;\n}\n\n.cfg-func   { color: #6f42c1 !important; background: none !important; }\n.cfg-global { color: #953800 !important; background: none !important; }\n.cfg-local  { color: #0a6c0a !important; background: none !important; }\n.cfg-custom { color: #8250df !important; background: none !important; }\n.cfg-const  { color: #0d9488 !important; background: none !important; }\n.cfg-keyword{ color: #0550ae !important; background: none !important; }\n.cfg-type   { color: #cf222e !important; background: none !important; }\n.cfg-arg    { color: #c2410c !important; background: none !important; }\n.cfg-name   { color: #b45309 !important; background: none !important; }\n\u003c/style\u003e\n\n**顏色對應**：\u003cspan class=\"cfg-func\"\u003e內建函數\u003c/span\u003e \u003cspan class=\"cfg-global\"\u003e全域變數\u003c/span\u003e \u003cspan class=\"cfg-local\"\u003e區域變數\u003c/span\u003e \u003cspan class=\"cfg-custom\"\u003e自訂函數\u003c/span\u003e \u003cspan class=\"cfg-const\"\u003e常數\u003c/span\u003e \u003cspan class=\"cfg-keyword\"\u003e保留字\u003c/span\u003e \u003cspan class=\"cfg-type\"\u003e型態\u003c/span\u003e \u003cspan class=\"cfg-arg\"\u003e引數\u003c/span\u003e \u003cspan class=\"cfg-name\"\u003e專有名詞\u003c/span\u003e\n\n# CODESYS Development System 概觀 Overview 教學整理\n\n\u003e 本文件基於 CODESYS Offline Help 中 `CODESYS Development System`、`Overview`、`Whitepaper: Modularization from the User Perspective` 與 `Compatibility` 相關章節，整理成易讀、實務導向的繁體中文說明。\n\n---\n\n## 1. CODESYS Development System 是什麼？\n\n- **CODESYS Development System** 是一套符合 IEC 61131‑3 標準的 PLC / 控制器程式設計工具，提供 32‑bit 與 64‑bit 版本。\n- 下載位置：\n  - **CODESYS Store International**：`https://store.codesys.com`\n  - **CODESYS Store North America**：`https://us.store.codesys.com`\n- 在整個 CODESYS 平台中，它扮演「核心工程工具」的角色：\n  - 撰寫 IEC 61131‑3 程式（ST / FBD / LD / SFC / CFC…）。\n  - 組態裝置、I/O 與通訊。\n  - 整合可視化（Visualization）、Motion、Fieldbus、Script 等功能。\n\n---\n\n## 2. CODESYS Help 使用方式 Using the CODESYS Help\n\n在 Offline Help 中，CODESYS 的說明通常分成兩大部分：\n\n- **Concepts 概念篇**：\n  - 解釋某個主題背後的設計觀念與工作流程。\n  - 會搭配 step‑by‑step 的操作說明。\n- **Reference 參考篇**：\n  - 完整列出選單、視窗、參數與程式語言元素的細節。\n\n### 2.1 如何開啟說明\n\n- 在開發系統中，將滑鼠游標停在某個 **物件 / 功能鍵 / 編輯器內元素** 上，按下 `F1`：\n  - 會開啟對應主題的說明頁。\n- 也可以透過選單 `Help` 中的項目開啟說明與搜尋。\n- 在 **Offline Help** 模式下：\n  - 支援 **全文搜尋**，並提供索引（Index）搜尋。\n  - Offline Help 搜尋會自動使用 `AND` 與萬用字元規則：\n    - 例如搜尋 `Device Diagnosis` 等同於 `Device AND Diagnosis`。\n    - `*` 字元本身會被視為字元，不建議當萬用字元輸入。\n\n### 2.2 選擇線上或離線說明\n\n- 在 `Options → CODESYS → Help`（實際路徑依版本略有不同）中，可以選擇：\n  - 使用 **Offline Help**（本機 HTML）。\n  - 或使用 **Online Help**（瀏覽器連到官方網站）。\n- 通常建議：\n  - **開發環境固定版本＋內部網路限制**：優先安裝 Offline Help，速度快且不受網路影響。\n  - **需要查最新功能**：搭配 Online Help，可以直接取得較新版本的說明。\n\n---\n\n## 3. CODESYS 系統架構總覽 System Overview\n\n根據 `Overview` 章節，CODESYS 整體可想成以下幾個層面：\n\n1. **Development System（你現在使用的 IDE）**\n  - IEC 61131‑3 編輯與專案管理。\n  - 內含編譯器、除錯工具、HMI/Visualization 編輯器等。\n2. **Runtime System（安裝在 PLC / IPC 上的執行環境）**\n  - 執行從 Development System 下載過去的應用程式。\n  - 由各設備或平台廠商整合提供（例如 CODESYS Control for Raspberry Pi）。\n3. **附加功能與 Add‑ons**\n  - 例如：\n    - `CODESYS SoftMotion`（軸控制 / CNC / Robotics）。\n    - `CODESYS Visualization`（畫面視覺化）。\n    - `CODESYS Application Composer`（模組化應用組態）。\n  - 透過 **Add‑on Packages** 安裝、授權與更新。\n\n對使用者而言，可以把它理解為：\n\n- **核心 IDE** 負責寫程式與組態。\n- **Runtime + Device Descriptions** 決定程式實際跑在哪裡、支援哪些功能。\n- **Add‑ons / Packages** 則是把特定領域（Motion、Safety、Robotics…）的工具加進 IDE 裡。\n\n---\n\n## 4. 主要功能 Features（精簡版）\n\n根據 `Overview` 內的 Features 表格，CODESYS Development System 提供的工程功能大致可整理為：\n\n- **專案建置與精靈**\n  - 以精靈建立標準專案與裝置樹。\n  - 對應說明：`Creating and Configuring a Project`。\n- **介面自訂 Customizing UI**\n  - 自訂選單、工具列、快捷鍵、視窗配置。\n  - 對應說明：`Customizing the User Interface`。\n- **多種 IEC 語言與編輯器**\n  - ST、FBD、LD、IL、SFC，以及 CFC / Extended CFC。\n  - 對應說明：`Programming Languages and Editors`。\n- **輸入輔助 Input Assistance**\n  - 型別提示、自動補齊、宣告輔助等。\n  - 對應說明：`Using Input Assistance`。\n- **物件導向程式設計 OOP**\n  - 支援 IEC 61131‑3 3rd Edition 的物件導向設計：\n    - 繼承、介面、方法、屬性、抽象類別等。\n  - 對應說明：`Object-Oriented Programming`。\n- **專案比較 Project Comparison**\n  - 包含圖形編輯器差異比較。\n  - 對應說明：`Comparing Projects`。\n- **函式庫 Library 機制**\n  - 協助重用程式碼與跨專案分享。\n  - 對應說明：`Using Libraries`。\n- **除錯與上線 Debug \u0026 Online**\n  - 中斷點、單步執行、線上監看、Trace 等。\n  - 對應說明：`Testing and Debugging`。\n- **多 CPU 平台編譯**\n  - 針對多種 CPU 平台最佳化編譯器與編譯選項。\n- **安全性與保護**\n  - 專案保護、應用程式加密、裝置使用者管理等。\n  - 對應說明：`Protecting and Saving Projects`、`Protecting an Application`、`Handling of Device User Management`、`Managing Packages and Licenses`。\n- **Fieldbus / I/O 支援**\n  - 以 Device Tree / I/O Mapping 方式組態各種現場匯流排。\n  - 對應說明：`Configuring I/O Links`。\n\n實務上，你可以把這些功能看成「IDE 內建的子系統」，往後的教學文件會各自展開說明。\n\n---\n\n## 5. 模組化架構 Whitepaper：Modularization from the User Perspective\n\n自 CODESYS 3.5 SP17 起，官方對整個開發系統做了大幅的 **模組化重構**：\n\n- 過去：大部分功能都被打包在單一安裝檔與單一版本。\n- 現在：許多功能拆成獨立的 **Add‑on**：\n  - 程式語言編輯器、Fieldbus 組態工具、可視化、符號設定、SoftMotion 等，都能各自版本化與更新。\n  - 核心僅保留：UI 框架、編譯器前端、專案處理與通訊等基礎元件。\n\n### 5.1 對使用者的好處\n\n依白皮書摘要，主要好處有：\n\n- **功能完成即可發佈**：\n  - 不再受限於一年一次的 Service Pack 發佈節奏。\n- **可以在穩定環境中試用 Beta Add‑on**：\n  - 生產用安裝保持穩定，平行建立一套「試用安裝」。\n- **只安裝需要的元件**：\n  - 減少磁碟空間占用與啟動負擔，提昇效能。\n\n### 5.2 使用 CODESYS Installer 管理安裝\n\n模組化之後，**CODESYS Installer** 成為核心工具：\n\n- 可以在同一台 PC 上管理多個 **獨立安裝**：\n  - 例如：`3.5.19_Production`、`3.5.19_Testing`。\n- 對每個安裝決定：\n  - 要裝哪些 Add‑ons。\n  - 要不要接收 Beta 更新。\n  - 要不要鎖定不更新（維持維護用環境）。\n- 在開發系統中，**Notification Center** 也會提示有無對應安裝的更新。\n\n實務建議：\n\n- 團隊可以約定一個「標準安裝」，由一人測試新版本後，透過 Installer 匯出描述檔，再讓其他成員匯入，確保每個人環境一致。\n\n---\n\n## 6. 相容性 Compatibility（概念整理）\n\n關於相容性，官方文件區分幾個層面：\n\n1. **專案相容性（Project Compatibility）**\n2. **程式碼相容性（Code Compatibility）**\n3. **Runtime 相容性（Runtime System Compatibility）**\n4. **函式庫相容性（Library Compatibility）**\n5. **裝置描述與 Runtime 相容性（Device Description vs. Runtime）**\n\n### 6.1 專案相容性（Projects）\n\n- 新版 CODESYS 開啟舊專案時，會盡量保持在「相容模式」：\n  - 如果修改內容不需要新功能，專案儲存格式會盡量維持舊版。\n  - 一旦變更會導致需要新資料格式，IDE 會跳出提示，讓你有機會「回復變更」。\n- 舊版 CODESYS 開啟新版專案：\n  - 技術上有時「可以開」，但官方 **強烈不建議**。\n  - 若缺少必要的 plug‑in 類型，載入時會看到警告或紅叉標示。\n\n### 6.2 程式碼相容性（Code）\n\n- 新版 CODESYS 無法保證產出的程式碼與舊版 **二進位完全一致**：\n  - 編譯器、語言編輯器與 Fieldbus 組態工具都可能影響結果。\n- 若要「在不做 Online Change 或 Download 的情況下登入現場控制器」：\n  - 必須使用與當初下載程式時 **完全相同版本** 的 CODESYS 安裝。\n  - 這部分可透過 CODESYS Installer 協助還原對應安裝版本。\n\n### 6.3 Runtime 與函式庫相容性\n\n- 一般情況下：\n  - **新 IDE + 舊 Runtime**：通常可行，但新功能可能因 Runtime 不支援而無法使用。\n  - **舊 IDE + 新 Runtime**：可能因安全性更新而不相容，不建議。\n- Compiled Library 的建議：\n  - 應該用「需要支援的最舊 CODESYS 版本」來建置，確保能在較新 IDE 中使用。\n  - 舊 IDE 通常無法使用由較新版本建立的 compiled library。\n\n### 6.4 專案與 Boot Project / Retain 的相容性\n\n- 針對 Boot Project 與 Retain 檔案，CODESYS 利用 **checksum 檢查變數配置**：\n  - 若 Retain 與程式不相容，可以透過設定選擇：\n    - 直接初始化 Retain。\n    - 保留在 stop + exception 狀態，等待手動處理。\n    - 或拒絕載入 boot project。\n\n實務建議：\n\n- 對於需要長期維護的專案，應記錄：\n  - 當初下載時的 CODESYS 版本、Runtime 版本與 Device Description 版本。\n  - 若必須升級，務必安排完整回歸測試。\n\n---\n\n## 7. 設定介面與說明語言 Language Settings\n\n在 `Options → International Settings` 中可以：\n\n- 設定 **開發系統介面語言**（IDE UI）。\n- 分開設定 **說明文件語言**（Help Language）。\n\n此外，也可以在命令列啟動 CODESYS 時加入參數，指定啟動時使用的語言；這對於多語系團隊或教學環境很有幫助。\n\n---\n\n## 8. 小結：從 Overview 檔案學到的幾件事\n\n1. **CODESYS Development System** 是整個平台的工程核心，負責專案建立、程式設計與除錯。\n2. **Offline / Online Help** 是學習與查詢的重要工具，善用 `F1` 可以快速找到對應說明。\n3. **模組化與 Installer** 讓 Add‑on 可以獨立更新，方便實務上維護多套安裝。\n4. **相容性觀念** 很重要：專案／程式碼／Runtime／函式庫都有各自的相容性規則。\n5. 透過這些概念，後續看到 SoftMotion、CNC、Robotics 等教學文件時，可以更清楚它們如何嵌在整體 CODESYS 架構之中。\n\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"div\",null,{\"className\":\"space-y-5\",\"children\":[[\"$\",\"nav\",null,{\"className\":\"text-xs\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/offline-help\",\"style\":{\"color\":\"var(--t-accent)\"},\"children\":\"Offline Help 首頁\"}],[\"$\",\"span\",null,{\"className\":\"mx-1\",\"children\":\"/\"}],[\"$\",\"span\",null,{\"children\":\"CODESYS 概觀與入門\"}]]}],[\"$\",\"header\",null,{\"className\":\"space-y-2\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-xl font-semibold\",\"style\":{\"color\":\"var(--t-text)\"},\"children\":\"CODESYS Development System 概觀 Overview 教學整理\"}],[\"$\",\"p\",null,{\"className\":\"text-sm\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"說明 CODESYS Development System 在整體平台中的角色、模組化架構、相容性觀念與 Offline/Online Help 使用方式。\"}]]}],[\"$\",\"section\",null,{\"className\":\"rounded-lg border p-4\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\"},\"children\":[\"$\",\"$Lf\",null,{\"content\":\"$10\"}]}],\"$L11\"]}]\n"])</script><script>self.__next_f.push([1,"11:[\"$\",\"section\",null,{\"className\":\"space-y-2\",\"children\":[[\"$\",\"h2\",null,{\"className\":\"text-sm font-semibold\",\"style\":{\"color\":\"var(--t-text)\"},\"children\":\"相關批次學習路線\"}],[\"$\",\"ul\",null,{\"className\":\"space-y-1.5 text-xs\",\"children\":[[\"$\",\"li\",\"batch-01-codesys-overview\",{\"children\":[\"$\",\"$L2\",null,{\"href\":\"/offline-help/batch/batch-01-codesys-overview\",\"className\":\"hover:underline\",\"style\":{\"color\":\"var(--t-accent)\"},\"children\":\"Batch 01：CODESYS 概觀與入門教學\"}]}]]}]]}]\n"])</script></body></html>

@@ -1,0 +1,371 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+7:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+4:T31ed,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# Application Programming 應用程式程式設計總覽 教學整理
+
+> 本文件基於 CODESYS Offline Help 中 `Programming of Applications`（`_cds_struct_application_programming.html`）、`Designating Identifiers`（`_cds_naming_identifiers.html`）、`UTF-8 Encoding`（`_cds_utf8_encoding.html`）等主題整理而成。  
+> 目標是從「專案架構與流程」角度，說明如何在 CODESYS 裡規劃應用程式，而不是逐條說明語法細節。
+
+---
+
+## 1. 應用程式在 CODESYS 中長什麼樣子？
+
+在 CODESYS 中，一個可以在控制器上執行的 **Application 應用程式**，大致包含：
+
+- 一組或多組 **POUs（Program Organization Units）**：
+  - `PROGRAM`
+  - `FUNCTION_BLOCK`
+  - `FUNCTION`
+- 對應的 **變數宣告與型別（Declarations & Data Types）**。
+- 與實體 I/O 的 **I/O Mapping**：
+  - 把實體輸入 / 輸出通道對應到專案變數。
+- **Task Configuration 任務設定**：
+  - 決定哪些程式以什麼週期、優先權在 PLC 上執行。
+
+簡化來說，一個 Application 就是：
+
+> 「在 PLC 上，以固定節奏被 Task 呼叫的一組 POU + I/O 變數 + 設定」。
+
+---
+
+## 2. POU 類型與角色：PROGRAM / FUNCTION_BLOCK / FUNCTION
+
+### 2.1 PROGRAM 程式
+
+- **`PROGRAM`** 是應用程式邏輯的「主要執行單位」：
+  - 會直接被 Task 呼叫。
+  - 通常包含流程控制、狀態機與主要製程邏輯。
+- 一個 Application 中可以有多個 PROGRAM：
+  - 例如：`PRG_Main`, `PRG_Safety`, `PRG_Logging` 等。
+  - 每個 PROGRAM 可以由不同 Task 呼叫。
+
+典型 ST 結構：
+
+```iecst
+PROGRAM PRG_Main
+VAR
+    xStart     : BOOL;
+    xStop      : BOOL;
+    xRunning   : BOOL;
+END_VAR
+
+IF xStart AND NOT xStop THEN
+    xRunning := TRUE;
+ELSIF xStop THEN
+    xRunning := FALSE;
+END_IF;
+```
+
+### 2.2 FUNCTION_BLOCK 功能區塊
+
+- **`FUNCTION_BLOCK`（FB）** 是「帶有內部狀態的可重複使用模組」：
+  - 透過 **實例化** 使用（例如 `fbMotor : FB_MotorControl;`）。
+  - 適合描述「會隨時間改變狀態」的物件：
+    - 馬達控制、軸控制、計時器、計數器、站別機台流程…。
+- 每個實例都有獨立的內部變數與狀態：
+
+```iecst
+FUNCTION_BLOCK FB_MotorControl
+VAR_INPUT
+    xStartCmd   : BOOL;
+    xStopCmd    : BOOL;
+END_VAR
+VAR_OUTPUT
+    xMotorOn    : BOOL;
+END_VAR
+VAR
+    xLatched    : BOOL;
+END_VAR
+
+IF xStartCmd THEN
+    xLatched := TRUE;
+ELSIF xStopCmd THEN
+    xLatched := FALSE;
+END_IF;
+
+xMotorOn := xLatched;
+```
+
+在 PROGRAM 中使用：
+
+```iecst
+PROGRAM PRG_Main
+VAR
+    fbMotor : FB_MotorControl;
+END_VAR
+
+fbMotor(
+    xStartCmd := xStartButton,
+    xStopCmd  := xStopButton
+);
+```
+
+### 2.3 FUNCTION 函式
+
+- **`FUNCTION`** 是無內部狀態的純計算：
+  - 對輸入做計算，回傳結果，不保留歷史狀態。
+  - 適合用於數學公式、單次邏輯判斷、轉換等。
+
+```iecst
+FUNCTION GetSafeSpeed : INT
+VAR_INPUT
+    iSetpoint : INT;
+END_VAR
+
+IF iSetpoint > 1000 THEN
+    GetSafeSpeed := 1000;
+ELSE
+    GetSafeSpeed := iSetpoint;
+END_IF;
+```
+
+### 2.4 架構建議：如何拆分 Application
+
+實務上，可以用以下方式拆分：
+
+- **PROGRAM**：一個或數個「高層流程」：
+  - 例如 `PRG_Main` 處理整線流程。
+- **FUNCTION_BLOCK**：
+  - 每種重複使用的機台單元或控制功能，各自一個 FB。
+- **FUNCTION**：
+  - 輔助計算（時間換算、速度限制、轉換字串等）。
+
+這樣能讓：
+
+- 單一檔案不會過大。
+- 變更影響範圍清楚，方便重複利用與單元測試。
+
+---
+
+## 3. 命名規則 Identifiers：讓專案變得可維護
+
+根據 `Designating Identifiers`，**Identifiers** 是：
+
+- 變數名稱。
+- POU 名稱（PROGRAM / FUNCTION_BLOCK / FUNCTION）。
+- 應用程式與其他物件（GVL, Device, Task, Visualization 等）的名稱。
+
+### 3.1 基本規則
+
+重要規則與前一份 I/O 教學中的建議一致：
+
+- 允許字元：
+  - 英數字與底線 `_`。
+  - 第一個字元須為字母或底線。
+- 建議長度不要超過 80 字元：
+  - 超出會觸發編譯器警告。
+- 對於專案中的物件（Application、POU、GVL 等），多數可以在 **屬性視窗** 中重新命名：
+  - 少部分系統物件名稱是固定的（例如 `Library Manager`、`ImagePool`）。
+
+### 3.2 實務命名建議
+
+在教學與實務中，建議的命名風格：
+
+- **PROGRAM 與 Application**：
+  - 使用有意義的流程名稱，例如：
+    - `PLC_PRG`（預設主程式，不建議塞太多邏輯）。
+    - `PRG_MainLine`, `PRG_Safety`, `PRG_Recipe`.
+- **FUNCTION_BLOCK**：
+  - 使用前綴 `FB_` 或領域名稱：
+    - `FB_MotorControl`, `FB_AxisHome`, `FB_AlarmHandler`。
+- **變數**：
+  - 布林：`x` 前綴（`xStart`, `xError`, `xMotorOn`）。
+  - 整數：`i` 或 `n` 前綴（`iSpeed`, `nCount`）。
+  - 浮點：`r` 或 `f` 前綴（`rSetpoint`, `fRatio`）。
+  - 結構 / User-defined type：使用 PascalCase，如 `stAxisStatus` 或 `AxisStatus`.
+- **跨 Task / 應用程式共用變數**：
+  - 放到 `GVL`（Global Variable List）中，並以清楚前綴區分用途：
+    - `g_` 代表 Global，例如 `g_xEmergencyStop`.
+
+良好的命名可以：
+
+- 讓新成員更快理解專案。
+- 降低 I/O Mapping、Trace、Debug 時的混亂。
+
+---
+
+## 4. 變數層級與生命週期（高層概念）
+
+關於變數型別與關鍵字（`VAR_INPUT`, `VAR_OUTPUT`, `VAR_GLOBAL`…），Batch 04 會有專門文件 **`Variables_and_Types_教學文件.md`** 詳細整理。  
+在這裡，只做高層級的架構說明，幫助你理解 Application 結構：
+
+- **區域變數（Local Variables）**
+  - 宣告在某個 POU 裡，只在該 POU 的執行範圍內有效。
+- **輸入 / 輸出參數（Input / Output Parameters）**
+  - 用在 FUNCTION / FUNCTION_BLOCK / PROGRAM 的接口：
+    - `VAR_INPUT`、`VAR_OUTPUT`、`VAR_IN_OUT`。
+- **全域變數（Global Variables, GVL）**
+  - 宣告在 `GVL` 物件中，可被整個 Application 甚至多個 Application 使用。
+- **持久變數（Persistent / Retain）**
+  - 用於 **斷電後仍需保留** 或 **PLC 重啟後仍需記住** 的數值。
+  - 在後續 `Variables_and_Types` 教學會詳細解釋 `PERSISTENT` 與 `RETAIN` 的差異。
+
+設計 Application 時，建議先想清楚：
+
+- 哪些資料只在單一邏輯裡使用 → Local。
+- 哪些需要跨 POU / Task 共用 → Global（GVL）。
+- 哪些需要在斷電後保留 → Persistent / Retain。
+
+---
+
+## 5. Task Configuration 任務與應用程式週期
+
+**Task** 是 CODESYS 中負責「呼叫 POU」的執行單位：
+
+- 每個 Task 可以掛一個或多個 POU 呼叫（通常是 PROGRAM）。
+- 每個 Task 有自己的：
+  - 週期時間（Cycle time，例如 1 ms, 10 ms, 100 ms…）。
+  - 優先權（Priority）。
+  - 觸發方式（周期性、事件觸發、中斷觸發等）。
+
+典型做法：
+
+- 建立至少一個 **主迴圈 Task**：
+  - 例如 `MainTask`，10 ms 週期，呼叫 `PRG_Main`。
+- 對於時間敏感邏輯，可能會建立：
+  - 高優先權、較短週期的 Task（例如 1 ms）呼叫特定 PROGRAM 或 FB。
+
+這些設定通常在：
+
+- Device Tree → `PLC Logic` → `Application` → `Task Configuration` 物件中完成。
+
+在 Application 設計時，應該先回答：
+
+1. 哪些邏輯需要高即時性？  
+2. 哪些邏輯可以慢一點、放在背景 Task？  
+3. 是否有多個 Application 需要對同一裝置做 I/O 存取？（會牽涉到 `PLC Settings` 裡的 I/O 處理設定）
+
+---
+
+## 6. UTF-8 Encoding 與多語系應用程式
+
+`UTF-8 Encoding` 章節說明了字元集與編碼的選擇，對 Application 設計的重點在於：
+
+- 現代專案通常應該：
+  - 將 `STRING` 設定為 **UTF-8 編碼**。
+  - 使用 `WSTRING` 做更廣泛的 Unicode 支援時，則為 UTF-16。
+- 典型用途：
+  - 顯示多語系錯誤訊息。
+  - 視覺化畫面上的中文、日文、韓文或含特殊符號的文字。
+
+### 6.1 專案層級的 UTF-8 設定
+
+在專案編譯選項中（Compile Options）可設定：
+
+- `UTF8 encoding for STRING`：
+  - 啟用：專案中 `STRING` 採用 UTF‑8。
+  - 關閉：使用 Windows 1252 / Latin‑1 等傳統編碼。
+- `WSTRING` 一律使用 UTF‑16，但是否採用 Unicode 功能，仍取決於整體專案設計。
+
+實務建議：
+
+- **新專案** 優先啟用 UTF‑8，以方便後續多國語言支援。
+- 若是 **既有專案**，改為 UTF‑8 前必須充分測試：
+  - OPC / 通訊介面。
+  - SCADA / HMI 端的字串解碼。
+
+### 6.2 單一字串使用 UTF8# 前綴
+
+即使專案未啟用 UTF‑8，也可以對單一常數字串使用 `UTF8#` 前綴：
+
+```iecst
+{attribute 'monitoring_encoding' := 'UTF-8'}
+strMsg : STRING := UTF8#'你好,世界!ÜüÄäÖö';
+```
+
+適合用在：
+
+- 某些特定訊息需要顯示非 Latin‑1 字元，但又不想全面改動專案設定的情境。
+
+---
+
+## 7. 從零開始設計一個 Application：實務流程範例
+
+綜合前述內容，一個典型的應用程式設計流程可以是：
+
+1. **定義控制目標與 I/O 需求**
+   - 例如：輸送帶控制、馬達啟停、安全互鎖、異常記錄等。
+2. **在 Device Tree 建立硬體結構與 I/O Mapping**
+   - 參考 `IO_Configuration_教學文件.md`。
+3. **規劃 Task 結構**
+   - 至少一個 `MainTask`。
+   - 選擇適當週期與優先權。
+4. **設計 POU 架構**
+   - 決定要幾個 PROGRAM、哪些功能變成 FUNCTION_BLOCK、哪些邏輯用 FUNCTION 實作。
+5. **定義命名規則與變數層級**
+   - 在團隊內約定變數前綴與 GVL 使用方式。
+   - 對跨 Task / 跨 POU 的重要訊號規劃好 Global / Persistent。
+6. **撰寫程式與測試**
+   - 配合後續 `Debug_and_Monitoring_教學文件.md` 所述工具：
+     - Breakpoints、Watch List、Trace、Simulation 等。
+7. **下載與 Online Change**
+   - 參考 `Download_and_Online_Change_教學文件.md`，建立標準上線流程。
+
+---
+
+## 8. 與其他教學文件的關聯
+
+本文件僅從高層角度說明 Application Programming 的架構與關鍵概念，詳細內容可搭配以下教學閱讀：
+
+- **`IO_Configuration_教學文件.md`**  
+  - 補充 Device Tree、I/O Mapping、Online Config Mode 與 Force 變數的詳細說明。
+- **`Languages_and_Editors_教學文件.md`**  
+  - 介紹各種程式語言（ST / FBD / LD / SFC…）與對應編輯器的使用方式與適用場景。
+- **`Variables_and_Types_教學文件.md`**  
+  - 系統整理變數方向（`VAR_INPUT`, `VAR_OUTPUT`, …）、生命週期、`PERSISTENT` / `RETAIN` 等。
+- **`Operators_教學文件.md`**  
+  - 詳細說明各類運算子與實務範例，幫助撰寫 ST 程式時正確運用比較、位元、型別轉換等操作。
+
+建議你先大致理解本文件內容，形成「應用程式長相與架構」的整體圖像，再依需求逐步深入其他專題教學。 
+
+0:{"buildId":"mGRRbc9mQkxUGXHACoBp3","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/offline-help","style":{"color":"var(--t-accent)"},"children":"Offline Help 首頁"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"children":"程式設計基礎與語言核心"}]]}],["$","header",null,{"className":"space-y-2","children":[["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"Application Programming 應用程式程式設計總覽 教學整理"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"站在應用程式架構角度，說明 PROGRAM / FUNCTION_BLOCK / FUNCTION、Task 與變數層級如何搭配。"}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],false]}],["$L5"],"$L6"]}],"loading":null,"isPartial":false}
+5:["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true}]
+6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
+9:null

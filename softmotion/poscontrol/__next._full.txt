@@ -1,0 +1,329 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[39756,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+4:I[37457,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+6:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"ViewportBoundary"]
+b:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"MetadataBoundary"]
+d:I[68027,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+:HL["/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","style"]
+0:{"P":null,"b":"hE9wNZamtqMjFK5Z04D0M","c":["","softmotion","poscontrol"],"q":"","i":false,"f":[[["",{"children":["softmotion",{"children":[["slug","poscontrol","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-Hant","children":["$","body",null,{"className":"min-h-screen","children":["$","div",null,{"className":"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6","children":[["$","header",null,{"className":"mb-6 border-b pb-4","style":{"borderColor":"var(--t-border)"},"children":["$","div",null,{"className":"flex items-start justify-between gap-4","children":[["$","div",null,{"children":[["$","h1",null,{"className":"text-xl font-semibold tracking-tight","children":["$","$L2",null,{"href":"/","style":{"color":"var(--t-accent)"},"className":"hover:underline","children":"CODESYS 教學網站"}]}],["$","p",null,{"className":"mt-1 text-sm","style":{"color":"var(--t-text-muted)"},"children":"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。"}]]}],["$","nav",null,{"className":"flex shrink-0 items-center gap-2","children":[["$","$L2",null,{"href":"/","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"回首頁"}],["$","$L2",null,{"href":"/offline-help","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"Offline Help"}],["$","$L2",null,{"href":"/search","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"搜尋"}]]}]]}]}],["$","main",null,{"className":"flex-1 pb-8","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex flex-col items-center justify-center gap-4 py-12 text-center","children":[["$","p",null,{"className":"text-4xl font-semibold","style":{"color":"var(--t-text-muted)"},"children":"404"}],["$","p",null,{"style":{"color":"var(--t-text-muted)"},"children":"找不到這個頁面。"}],["$","nav",null,{"className":"mt-4 flex flex-wrap justify-center gap-3","children":[["$","$L2",null,{"href":"/","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-accent)"},"children":"回首頁"}],["$","$L2",null,{"href":"/softmotion","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"SoftMotion 學習地圖"}],["$","$L2",null,{"href":"/licensing","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"授權說明"}],["$","$L2",null,{"href":"/guidelines","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"開發規範"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t pt-4 text-xs","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":"$Lc"}]}],null]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+c:["$","$7",null,{"name":"Next.Metadata","children":"$Le"}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+e:[["$","title","0",{"children":"CODESYS 教學網站"}],["$","meta","1",{"name":"description","content":"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"}]]
+f:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+10:T3573,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數 / 功能塊</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數 / 方法</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# PosControl — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？（一句話＋情境）
+
+這個範例示範如何使用 SoftMotion 的位置控制軸型態 <span class="cfg-name">SM_Drive_PosControl</span>，搭配多個 PLCopen 運動控制功能塊（上電、速度模式、相對移動、位置重設等），實作一個簡單的「可連續旋轉、可相對位移」的位置控制案例。
+
+可以把它想像成一個持續旋轉的軸（例如轉盤），在需要的時候可以重設位置或做固定角度的相對移動，並透過 Trace 觀察實際位置與控制器狀態。
+
+---
+
+## 二、使用情境與硬體／通訊架構
+
+### 2.1 硬體與軸配置
+
+`DeviceTree_Axes.md` 顯示本範例只有一根軸：
+
+| 軸名稱 | 類型 | 綁定任務 |
+|--------|------|----------|
+| <span class="cfg-name">SM_Drive_PosControl</span> | <span class="cfg-name">SM_Drive_PosControl</span> | - |
+
+- 這個軸型態已內建位置控制器，可直接用於位置控制訓練與測試。  
+- 在實體應用中，可以綁定到支援 SoftMotion 的 EtherCAT 驅動器。
+
+### 2.2 任務與週期
+
+`TaskConfiguration.md` 中的任務結構如下：
+
+| 任務名稱 | 類型 | 週期 | 優先權 | POU 清單 |
+|----------|------|------|--------|----------|
+| EtherCAT_Task | Cyclic | t#4ms | 0 | EtherCAT_Master.EtherCAT_Task, PLC_PRG |
+| VISU_TASK | Cyclic | t#100ms | 30 | VisuElems.Visu_Prg |
+
+- `EtherCAT_Task` 以 4ms 週期運行，是本範例的主控制任務，會同時執行 EtherCAT 主站程式與 `PLC_PRG`。  
+- `VISU_TASK` 以 100ms 週期執行可視化 POU，用於顯示軸狀態與提供操作介面。
+
+### 2.3 資料流與角色分工
+
+- `EtherCAT_Task`：  
+  - `EtherCAT_Master.EtherCAT_Task` 負責與從站／驅動器通訊。  
+  - `PLC_PRG` 負責產生對軸 <span class="cfg-name">SM_Drive_PosControl</span> 的運動命令。  
+- `VISU_TASK`：  
+  - `VisuElems.Visu_Prg` 透過畫面按鈕、顯示器與 `PLC_PRG` 的變數互動。
+
+---
+
+## 三、控制流程：由淺入深
+
+### 3.1 `PLC_PRG` 的運作概念
+
+開啟 `PLC_PRG.st` 可以看到，程式主要做三件事：
+
+1. 宣告並初始化多個運動控制功能塊：<span class="cfg-func">MC_Power</span>、<span class="cfg-func">MC_MoveVelocity</span>、<span class="cfg-func">MC_Reset</span>、<span class="cfg-func">MC_SetPosition</span>、<span class="cfg-func">MC_MoveRelative</span>。  
+2. 對 <span class="cfg-name">SM_Drive_PosControl</span> 的實際啟動與調節器狀態進行「軟體置位」（等同模擬硬體已就緒）。  
+3. 在每個週期呼叫所有功能塊，讓它們根據外部條件（通常由 VISU 控制）產生對軸的對應命令。
+
+### 3.2 程式主要區塊說明
+
+1. **軸狀態旗標設定**  
+   - `SM_Drive_PosControl.in.bDriveStartRealState := TRUE;`  
+   - `SM_Drive_PosControl.in.bRegulatorRealState := TRUE;`  
+   這兩行將驅動器啟動與調節器啟用的實際狀態旗標強制為 TRUE，模擬「驅動器已經開啟」。  
+
+2. **運動控制功能塊呼叫**  
+   - `mcp(Axis := SM_Drive_PosControl);`  
+   - `mcmv(Axis := SM_Drive_PosControl);`  
+   - `mcr(Axis := SM_Drive_PosControl);`  
+   - `mcsp(Axis := SM_Drive_PosControl);`  
+   - `mcmr(Axis := SM_Drive_PosControl);`  
+
+   每個功能塊都以相同的軸參照 <span class="cfg-name">SM_Drive_PosControl</span> 為目標。實際上哪些功能塊會「動作」，則取決於它們各自的 `Enable`、`Execute` 或其他條件（通常由 VISU 或其他程式設定）。
+
+### 3.3 初學者可以這樣理解
+
+你可以把 `PLC_PRG` 想成「軸的控制面板後端」：
+
+- 功能塊就是「各種按鈕背後的邏輯」，例如「上電」、「開始旋轉」、「移動 360 度」、「重設位置」等。  
+- 畫面上的按鈕或輸入欄位，會去修改這些功能塊的輸入腳位。  
+- `PLC_PRG` 每個週期都呼叫這些功能塊，檢查是否有新的命令要執行。
+
+---
+
+## 四、各支程式負責哪些功能？（由淺入深）
+
+本範例在此目錄內只有 `PLC_PRG.st` 一支程式。
+
+### 4.1 `PLC_PRG.st`
+
+- **類型**：<span class="cfg-keyword">PROGRAM</span>  
+- **職責**：  
+  - 以 <span class="cfg-name">SM_Drive_PosControl</span> 為控制目標，集中管理多個運動控制功能塊。  
+  - 對驅動器啟動與調節器狀態做軟體處理，讓範例在模擬環境下也能順利運作。  
+  - 搭配 VISU 程式，提供上電、速度控制、相對移動與位置重設等基本操作。
+
+---
+
+## 五、函式庫與函式／功能塊一覽（用途、引數、回傳）
+
+### 5.1 函式庫清單（對照 `Libraries.md`）
+
+`Libraries.md` 顯示「本專案未解析到 Library Manager 或結構不同」，代表在 XML 解析時沒有抓到函式庫清單。不過依功能塊名稱可推測主要來自 <span class="cfg-name">SM3_Basic</span> 或相關運動控制庫。
+
+### 5.2 主要功能塊整理
+
+#### 5.2.1 <span class="cfg-func">MC_Power()</span> — <span class="cfg-local">mcp</span>
+
+- **用途**：對 <span class="cfg-name">SM_Drive_PosControl</span> 軸上電與啟動。  
+- 在程式中初始化為 `Enable := TRUE`，表示一啟動程式就請求軸上電。
+
+#### 5.2.2 <span class="cfg-func">MC_MoveVelocity()</span> — <span class="cfg-local">mcmv</span>
+
+- **用途**：以速度模式讓軸持續旋轉。  
+- 主要初始化參數：  
+  - `Velocity := 360` — 每秒 360 單位（可理解為 360 度 / 秒）。  
+  - `Acceleration := 1000`、`Deceleration := 1000` — 加減速度。
+
+#### 5.2.3 <span class="cfg-func">MC_Reset()</span> — <span class="cfg-local">mcr</span>
+
+- **用途**：重置軸錯誤狀態，當驅動器或功能塊進入 Error 狀態時，用來清除錯誤並回到可控制狀態。
+
+#### 5.2.4 <span class="cfg-func">MC_SetPosition()</span> — <span class="cfg-local">mcsp</span>
+
+- **用途**：將目前實際位置寫入為新的邏輯位置，常用於「重新歸零」或「切換座標系」。
+
+#### 5.2.5 <span class="cfg-func">MC_MoveRelative()</span> — <span class="cfg-local">mcmr</span>
+
+- **用途**：以相對距離方式移動軸，例如再轉動 360 度。  
+- 初始化參數：  
+  - `Distance := 360`  
+  - `Velocity := 360`  
+  - `Acceleration := 1000`、`Deceleration := 1000`
+
+---
+
+## 六、變數與常數一覽
+
+本範例未使用獨立 GVL，所有變數都在 `PLC_PRG.st` 中宣告。
+
+### 6.1 `PLC_PRG.st` 內的變數
+
+| 名稱 | 類別 | 型態 | 預設值 | 說明 |
+|------|------|------|--------|------|
+| <span class="cfg-local">mcp</span> | 區域變數 | <span class="cfg-type">MC_Power</span> | `Enable := TRUE` | 軸上電與啟動用的功能塊。 |
+| <span class="cfg-local">mcmv</span> | 區域變數 | <span class="cfg-type">MC_MoveVelocity</span> | `Velocity := 360`、`Acceleration/Deceleration := 1000` | 以速度模式讓軸持續旋轉。 |
+| <span class="cfg-local">mcr</span> | 區域變數 | <span class="cfg-type">MC_Reset</span> | 功能塊預設 | 重置軸錯誤與狀態。 |
+| <span class="cfg-local">mcsp</span> | 區域變數 | <span class="cfg-type">MC_SetPosition</span> | 功能塊預設 | 重設軸邏輯位置（歸零或重新對齊）。 |
+| <span class="cfg-local">mcmr</span> | 區域變數 | <span class="cfg-type">MC_MoveRelative</span> | `Distance := 360`、`Velocity := 360`、`Acceleration/Deceleration := 1000` | 進行相對位移，例如再轉 360 度。 |
+
+### 6.2 Trace 變數（來自 `TraceConfig.md`）
+
+| 變數名 | 任務 | 緩衝筆數 | 說明（概念） |
+|--------|------|----------|--------------|
+| <span class="cfg-name">SM_Drive_PosControl.fActPosition</span> | EtherCAT_Master | 250 | 實際位置，用來觀察軸運動軌跡。 |
+| <span class="cfg-name">SM_Drive_PosControl.fSetPosition</span> | EtherCAT_Master | 250 | 目標位置，用來比較控制器給的命令。 |
+| <span class="cfg-name">SM_Drive_PosControl.controller.fOut</span> | EtherCAT_Master | 250 | 控制器輸出，用來分析控制器行為。 |
+| <span class="cfg-name">SM_Drive_PosControl.fSetVelocity</span> | EtherCAT_Master | 250 | 目標速度。 |
+| <span class="cfg-name">SM_Drive_PosControl.fActVelocity</span> | EtherCAT_Master | 250 | 實際速度。 |
+| <span class="cfg-name">SM_Drive_PosControl.controller.diPositionLag</span> | EtherCAT_Master | 250 | 位置誤差（Lag），用於調試控制器。 |
+| <span class="cfg-name">SM_Drive_PosControl.controller.diCorrectedPosLag</span> | EtherCAT_Master | 250 | 修正後的位置誤差。 |
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 位置控制 vs. 速度控制
+
+<span class="cfg-name">SM_Drive_PosControl</span> 本身就是一個「位置控制型」的軸型態，代表：
+
+- 它內部已經包含位置控制迴路（<span class="cfg-name">controller</span> 結構）。  
+- PLC 端只需透過 PLCopen 功能塊給出速度或位置命令，控制器會負責讓實際位置跟上目標。
+
+這也是為什麼 Trace 中會追蹤 `fActPosition`、`fSetPosition` 與 `diPositionLag` 等欄位，方便分析控制器表現。
+
+### 7.2 用 Trace 觀察控制效果
+
+如果你在 CODESYS 中啟用 Trace，並同時觀察：
+
+- `fSetPosition` 與 `fActPosition`：應該會看到兩條曲線非常接近，只有在加速或負載變化時會有小幅 lag。  
+- `diPositionLag`：對應到兩者的差值，幫助你評估控制器參數是否合適。  
+- `fSetVelocity` 與 `fActVelocity`：可以看出系統在速度階躍時的反應速度與過衝情形。
+
+這些都是學習位置控制時非常實用的觀察指標。
+
+---
+
+## 八、重要參數與設定位置（實作時對照）
+
+### 8.1 軸與任務
+
+| 項目 | 名稱 | 說明 |
+|------|------|------|
+| 軸 | <span class="cfg-name">SM_Drive_PosControl</span> | 在 Device 樹中設定為位置控制型軸，並綁定到實際驅動器或模擬軸。 |
+| 任務 | <span class="cfg-name">EtherCAT_Task</span> | 週期 4ms，執行 EtherCAT 交換與 `PLC_PRG`。 |
+| 任務 | <span class="cfg-name">VISU_TASK</span> | 週期 100ms，執行 `VisuElems.Visu_Prg`。 |
+
+### 8.2 功能塊參數
+
+- 在 `PLC_PRG.st` 中即可調整以下關鍵參數：  
+  - 速度模式：`mcmv.Velocity`、`mcmv.Acceleration`、`mcmv.Deceleration`。  
+  - 相對移動：`mcmr.Distance`、`mcmr.Velocity`、`mcmr.Acceleration`、`mcmr.Deceleration`。  
+- 若要改變「一圈的角度」或座標系定義，可透過 <span class="cfg-func">MC_SetPosition</span> 重新設定參考位置。
+
+---
+
+## 九、建議閱讀與修改順序（給初學者）
+
+1. **先看 `DeviceTree_Axes.md` 與 `TaskConfiguration.md`**  
+   - 確認軸型態與任務結構，理解 <span class="cfg-name">SM_Drive_PosControl</span> 在 EtherCAT_Task 中被控制。  
+2. **閱讀 `PLC_PRG.st` 的變數宣告與最後的功能塊呼叫區塊**  
+   - 把每個功能塊的用途與初始化參數對起來。  
+3. **打開 `TraceConfig.md` 並在 CODESYS 中畫 Trace**  
+   - 觀察位置與速度曲線，體會位置控制器的行為。  
+4. **最後實驗修改 `mcmv` 與 `mcmr` 的參數**  
+   - 例如改變 `Distance` 或 `Velocity`，再透過 Trace 覺察對應變化。
+
+---
+
+## 十、名詞對照
+
+| 英文 / 符號 | 說明 |
+|-------------|------|
+| <span class="cfg-name">SM_Drive_PosControl</span> | 內建位置控制器的 SoftMotion 軸型態。 |
+| <span class="cfg-func">MC_SetPosition</span> | 將目前位置寫為新的座標原點或基準位置的功能塊。 |
+| <span class="cfg-func">MC_MoveRelative</span> | 以相對距離進行移動的功能塊。 |
+| <span class="cfg-name">EtherCAT_Task</span> | 負責 EtherCAT 通訊與運動控制邏輯的主任務。 |
+| <span class="cfg-name">Position Lag</span> | 目標位置與實際位置之間的差值。 |
+
+5:["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/softmotion","style":{"color":"var(--t-accent)"},"children":"SoftMotion 學習地圖"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"style":{"color":"var(--t-text)"},"children":"控制器位置環（SM_Drive_PosControl）"}]]}],["$","header",null,{"className":"space-y-1","children":[["$","div",null,{"className":"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-text-muted)"},"children":[["$","span",null,{"className":"uppercase tracking-wide","children":"PLCopen"}],["$","span",null,{"className":"h-1 w-1 rounded-full","style":{"backgroundColor":"var(--t-accent)"}}],["$","span",null,{"style":{"color":"var(--t-accent)"},"children":["步驟 ",12]}]]}],["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"控制器位置環（SM_Drive_PosControl）"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"由控制器實作位置迴路，速度給定 + 編碼器回授，Scaling/Mapping 與 Trace 調機。"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":["官方專案："," ",["$","code",null,{"className":"rounded px-1 py-0.5","style":{"backgroundColor":"var(--t-border)","color":"var(--t-text)"},"children":"PosControl.project"}]]}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$Lf",null,{"content":"$10"}]}],false,"$L11"]}]
+12:I[85649,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"StCodeBlock"]
+13:T11d7,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">// PLC_PRG：位置控制（PosControl）範例主程式</span></span>
+<span class="line"><span style="color:#6A737D">// 透過 MC_Power、MC_MoveVelocity、MC_MoveRelative 等功能塊，示範對 SM_Drive_PosControl 軸進行速度與位置控制</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> PLC_PRG</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#6A737D">	// mcp：基本上電與啟用用的 MC_Power 功能塊，預設 Enable=TRUE</span></span>
+<span class="line"><span style="color:#24292E">	mcp: MC_Power := (Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#6A737D">	// mcmv：速度模式運動用的 MC_MoveVelocity，預設以 360 單位/秒 的速度運轉</span></span>
+<span class="line"><span style="color:#24292E">	mcmv: MC_MoveVelocity := (</span></span>
+<span class="line"><span style="color:#24292E">		Velocity := </span><span style="color:#005CC5">360</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Acceleration := </span><span style="color:#005CC5">1000</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Deceleration := </span><span style="color:#005CC5">1000</span></span>
+<span class="line"><span style="color:#24292E">	);</span></span>
+<span class="line"><span style="color:#6A737D">	// mcr：重置軸錯誤與狀態的 MC_Reset 功能塊</span></span>
+<span class="line"><span style="color:#24292E">	mcr: MC_Reset;</span></span>
+<span class="line"><span style="color:#6A737D">	// mcsp：設定當前實際位置為指定位置的 MC_SetPosition 功能塊</span></span>
+<span class="line"><span style="color:#24292E">	mcsp: MC_SetPosition;</span></span>
+<span class="line"><span style="color:#6A737D">	// mcmr：相對移動用的 MC_MoveRelative，預設距離 360、速度 360、加減速度 1000</span></span>
+<span class="line"><span style="color:#24292E">	mcmr: MC_MoveRelative := (</span></span>
+<span class="line"><span style="color:#24292E">		Distance := </span><span style="color:#005CC5">360</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Velocity := </span><span style="color:#005CC5">360</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Acceleration := </span><span style="color:#005CC5">1000</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Deceleration := </span><span style="color:#005CC5">1000</span></span>
+<span class="line"><span style="color:#24292E">	);</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 將軸 SM_Drive_PosControl 的實際啟動/調節器狀態旗標強制為 TRUE，</span></span>
+<span class="line"><span style="color:#6A737D">// 模擬實際硬體已經準備就緒，方便在模擬環境下進行測試</span></span>
+<span class="line"><span style="color:#24292E">SM_Drive_PosControl.</span><span style="color:#D73A49">in</span><span style="color:#24292E">.bDriveStartRealState := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">SM_Drive_PosControl.</span><span style="color:#D73A49">in</span><span style="color:#24292E">.bRegulatorRealState := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 週期性呼叫各個運動控制功能塊，讓它們持續對 SM_Drive_PosControl 軸產生對應的控制效果</span></span>
+<span class="line"><span style="color:#24292E">mcp(Axis := SM_Drive_PosControl);</span></span>
+<span class="line"><span style="color:#24292E">mcmv(Axis := SM_Drive_PosControl);</span></span>
+<span class="line"><span style="color:#24292E">mcr(Axis := SM_Drive_PosControl);</span></span>
+<span class="line"><span style="color:#24292E">mcsp(Axis := SM_Drive_PosControl);</span></span>
+<span class="line"><span style="color:#24292E">mcmr(Axis := SM_Drive_PosControl);</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>11:["$","section",null,{"className":"space-y-3","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"ST 程式碼"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。"}],["$","div",null,{"className":"space-y-2","children":[["$","$L12","PLC_PRG.st",{"title":"PLC_PRG.st","html":"$13"}]]}]]}]

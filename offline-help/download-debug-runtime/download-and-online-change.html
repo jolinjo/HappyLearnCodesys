@@ -1,0 +1,308 @@
+<!DOCTYPE html><!--hE9wNZamtqMjFK5Z04D0M--><html lang="zh-Hant"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/HappyLearnCodesys/_next/static/chunks/74f28e1af7ed7ed3.js"/><script src="/HappyLearnCodesys/_next/static/chunks/a354d338f7d272f4.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/7de9141b1af425c3.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/d1d24926e41b63c4.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/turbopack-d027db068e712cbc.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js" async=""></script><title>CODESYS 教學網站</title><meta name="description" content="針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"/><script src="/HappyLearnCodesys/_next/static/chunks/a6dad97d9634a72d.js" noModule=""></script></head><body class="min-h-screen"><div hidden=""><!--$--><!--/$--></div><div class="mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6"><header class="mb-6 border-b pb-4" style="border-color:var(--t-border)"><div class="flex items-start justify-between gap-4"><div><h1 class="text-xl font-semibold tracking-tight"><a style="color:var(--t-accent)" class="hover:underline" href="/HappyLearnCodesys">CODESYS 教學網站</a></h1><p class="mt-1 text-sm" style="color:var(--t-text-muted)">用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。</p></div><nav class="flex shrink-0 items-center gap-2"><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys">回首頁</a><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys/offline-help">Offline Help</a><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys/search">搜尋</a></nav></div></header><main class="flex-1 pb-8"><div class="min-w-0"><div class="space-y-5"><nav class="text-xs" style="color:var(--t-text-muted)"><a style="color:var(--t-accent)" href="/HappyLearnCodesys/offline-help">Offline Help 首頁</a><span class="mx-1">/</span><span>下載、測試、除錯與執行階段</span></nav><header class="space-y-2"><h1 class="text-xl font-semibold" style="color:var(--t-text)">Download and Online Change 程式下載與線上修改 教學整理</h1><p class="text-sm" style="color:var(--t-text-muted)">說明建立通訊、編譯與下載、Boot application 與 Online Change 的差異與實務流程。</p></header><section class="rounded-lg border p-4" style="border-color:var(--t-border);background-color:var(--t-bg-card)"><div class="flex gap-6"><aside class="shrink-0 w-56 self-start sticky top-6 hidden lg:block" aria-label="本頁標題目錄"><nav class="rounded-lg border py-3 px-3 text-sm max-h-[calc(100vh-4rem)] overflow-y-auto" style="border-color:var(--t-border);background-color:var(--t-bg-card)"><div class="mb-2 flex items-center justify-between"><button type="button" class="text-[11px] hover:underline" style="color:var(--t-text-muted)">回上一層</button><div class="text-xs font-semibold uppercase tracking-wide" style="color:var(--t-text-muted)">目錄</div></div><ul class="space-y-1.5"><li><a href="#Download-and-Online-Change-程式下載與線上修改-教學整理" class="block truncate py-0.5 hover:underline" style="padding-left:0;color:var(--t-text-muted);font-size:0.8125rem">Download and Online Change 程式下載與線上修改 教學整理</a></li><li><a href="#1.-情境說明：第一次把專案下載到-PLC" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">1. 情境說明：第一次把專案下載到 PLC</a></li><li><a href="#2.-建立與-PLC-的通訊與安全設定" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">2. 建立與 PLC 的通訊與安全設定</a></li><li><a href="#3.-編譯與登入：從專案到-PLC-的第一步" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">3. 編譯與登入：從專案到 PLC 的第一步</a></li><li><a href="#3.1-編譯專案（Build-/-Compile）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">3.1 編譯專案（Build / Compile）</a></li><li><a href="#3.2-Login-到-PLC" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">3.2 Login 到 PLC</a></li><li><a href="#4.-完整-Download：完整更新與啟動流程" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">4. 完整 Download：完整更新與啟動流程</a></li><li><a href="#4.1-Download-的概念" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">4.1 Download 的概念</a></li><li><a href="#4.2-Download-的實務步驟" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">4.2 Download 的實務步驟</a></li><li><a href="#5.-Boot-Application：讓-PLC-上電自動啟動" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">5. Boot Application：讓 PLC 上電自動啟動</a></li><li><a href="#6.-Updating-an-Application：Download-vs-Online-Change" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">6. Updating an Application：Download vs Online Change</a></li><li><a href="#6.1-Download（再次完整下載）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">6.1 Download（再次完整下載）</a></li><li><a href="#6.2-Online-Change（線上變更）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">6.2 Online Change（線上變更）</a></li><li><a href="#6.3-狀態列提示：可以-Online-Change-嗎？" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">6.3 狀態列提示：可以 Online Change 嗎？</a></li><li><a href="#7.-簡化流程：從第一次下載到後續維護" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">7. 簡化流程：從第一次下載到後續維護</a></li><li><a href="#8.-檔案複製與備份的關聯（與後續文件銜接）" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">8. 檔案複製與備份的關聯（與後續文件銜接）</a></li><li><a href="#9.-小結：怎麼選擇-Download-還是-Online-Change？" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">9. 小結：怎麼選擇 Download 還是 Online Change？</a></li></ul><button type="button" class="mt-3 w-full text-left hover:underline" style="font-size:0.75rem;color:var(--t-text-muted)">回到最上層</button></nav></aside><div class="min-w-0 flex-1 space-y-2"><div class="flex items-center gap-2 rounded-md border py-1.5 px-2 text-xs" style="border-color:var(--t-border);background-color:var(--t-bg);color:var(--t-text-muted)" role="group" aria-label="文字大小"><span class="shrink-0">文字大小：</span><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:transparent;color:var(--t-text-muted)" aria-pressed="false">小</button><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:var(--t-border);color:var(--t-text)" aria-pressed="true">中</button><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:transparent;color:var(--t-text-muted)" aria-pressed="false">大</button></div><article class="prose max-w-none md-content" style="color:var(--t-text)">
+<p class="my-2 leading-relaxed"><strong>顏色對應</strong>：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span></p>
+<h1 id="Download-and-Online-Change-程式下載與線上修改-教學整理" class="text-2xl font-semibold scroll-mt-6" style="color:var(--t-text)">Download and Online Change 程式下載與線上修改 教學整理</h1>
+<blockquote>
+<p class="my-2 leading-relaxed">本文件基於 CODESYS Offline Help 中下列主題整理而成：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Working with Controller Networks</code>（<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">_cds_struct_dataexchange.html</code>）</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Downloading an Application to the PLC</code>（<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">_cds_struct_application_transfer_to_plc.html</code>）</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Application at Runtime</code>（<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">_cds_struct_application_in_operation.html</code>）</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Updating an Application on the PLC</code>（<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">_cds_struct_update_application_on_plc.html</code>）</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Copying Files to/from the PLC</code>（<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">_cds_copy_files_from_to_plc.html</code>）<br/>
+目標是用「第一次把專案下載到實機」的故事線，說明 Download 與 Online Change 的完整流程與差異。</li>
+</ul>
+</blockquote>
+<hr/>
+<h2 id="1.-情境說明：第一次把專案下載到-PLC" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">1. 情境說明：第一次把專案下載到 PLC</h2>
+<p class="my-2 leading-relaxed">典型的實務情境是這樣的：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed">你已經在 CODESYS 中建立好一個 Application，完成基本 I/O 組態與程式撰寫。</li>
+<li class="leading-relaxed">需要把程式下載到實際 PLC（或軟體 PLC，例如 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">CODESYS Control Win</code>），讓機台真正動起來。</li>
+<li class="leading-relaxed">後續在調機與修正階段，會反覆針對小變更使用 <strong>Online Change</strong>，減少停機時間。</li>
+</ol>
+<p class="my-2 leading-relaxed">這份文件將依以下流程說明：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed">建立與 PLC 的通訊與安全設定。</li>
+<li class="leading-relaxed">編譯專案與登入 Login。</li>
+<li class="leading-relaxed">Download（完整下載）與啟動 Application。</li>
+<li class="leading-relaxed">建立 Boot application 讓 PLC 上電自動啟動。</li>
+<li class="leading-relaxed">使用 Online Change 進行小幅修改。</li>
+<li class="leading-relaxed">利用檔案複製與備份確保現場可回復。</li>
+</ol>
+<hr/>
+<h2 id="2.-建立與-PLC-的通訊與安全設定" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">2. 建立與 PLC 的通訊與安全設定</h2>
+<p class="my-2 leading-relaxed">在可以下載程式之前，需要先：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>設定通訊路徑</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在工具列或 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Online → Communication Settings</code> 中，選擇對應的 Gateway 與目標裝置。</li>
+<li class="leading-relaxed">例如透過 Ethernet、Serial、或本機 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">CODESYS Control Win</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>確認使用者與加密設定</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">若裝置啟用 <strong>Device User Management</strong> 或加密通訊：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">需要在 CODESYS 開發系統中準備好相對應的憑證與帳號。</li>
+<li class="leading-relaxed">相關設定位於 Device Editor 的 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Communication Settings</code> 與安全性標籤頁。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="my-2 leading-relaxed">當這些條件滿足後，才能安全地進行 Login 與 Download。</p>
+<hr/>
+<h2 id="3.-編譯與登入：從專案到-PLC-的第一步" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">3. 編譯與登入：從專案到 PLC 的第一步</h2>
+<h3 id="3.1-編譯專案（Build-/-Compile）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">3.1 編譯專案（Build / Compile）</h3>
+<p class="my-2 leading-relaxed">在 Download 前，必須確保專案可以 <strong>無錯誤編譯</strong>：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">使用 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project → Build</code> 或快捷鍵（通常是 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">F11</code>）。</li>
+<li class="leading-relaxed">若有錯誤（Errors），需先在編譯訊息中逐項修正。</li>
+<li class="leading-relaxed">警告（Warnings）則視情況處理：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">例如未使用變數、名稱過長等，雖不會阻擋下載，但會影響品質。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3.2-Login-到-PLC" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">3.2 Login 到 PLC</h3>
+<p class="my-2 leading-relaxed">當編譯通過後：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">使用 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Online → Login</code>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">CODESYS 會與選定的 PLC 建立連線。</li>
+<li class="leading-relaxed">若第一次登入，且 PLC 上沒有對應專案，系統會提示是否要下載。</li>
+</ul>
+</li>
+<li class="leading-relaxed">視安全設定不同，可能會：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">要求輸入使用者帳號 / 密碼。</li>
+<li class="leading-relaxed">顯示憑證與信任關係提示。</li>
+</ul>
+</li>
+</ul>
+<p class="my-2 leading-relaxed">一旦 Login 成功，就可以進行 Download。</p>
+<hr/>
+<h2 id="4.-完整-Download：完整更新與啟動流程" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">4. 完整 Download：完整更新與啟動流程</h2>
+<h3 id="4.1-Download-的概念" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">4.1 Download 的概念</h3>
+<p class="my-2 leading-relaxed">根據 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Downloading an Application to the PLC</code>：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>Download</strong> 會對 Application 重新進行：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">語法檢查（Syntax check）。</li>
+<li class="leading-relaxed">編譯（Compiler 產生二進位碼）。</li>
+<li class="leading-relaxed">將新的程式碼下載到 PLC。</li>
+</ul>
+</li>
+<li class="leading-relaxed">在 Download 過程中：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">既有程式會被 <strong>停止</strong>。</li>
+<li class="leading-relaxed">初始化邏輯與變數會依設定重新執行。</li>
+</ul>
+</li>
+</ul>
+<p class="my-2 leading-relaxed">這種方式的優點是：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">會建立一個 <strong>明確、乾淨的啟動狀態</strong>。</li>
+<li class="leading-relaxed">適合：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">結構性變更（新增 Task、改變資料結構、大幅重構）。</li>
+<li class="leading-relaxed">版本切換或現場導入前的正式發布。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4.2-Download-的實務步驟" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">4.2 Download 的實務步驟</h3>
+<p class="my-2 leading-relaxed">典型步驟如下：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed">確認通訊設定與編譯無誤。</li>
+<li class="leading-relaxed">執行 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Online → Login</code>。</li>
+<li class="leading-relaxed">在提示視窗中選擇 <strong>Download</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">若專案變更需要完整下載，狀態列會顯示：<br/>
+<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Program modified (Full download)</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed">等待 Download 完成後，使用 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Online → Run</code> 或工具列按鈕啟動 Application。</li>
+</ol>
+<p class="my-2 leading-relaxed">在這個階段，Application 已在 PLC 上執行，並開始與現場 I/O 互動。</p>
+<hr/>
+<h2 id="5.-Boot-Application：讓-PLC-上電自動啟動" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">5. Boot Application：讓 PLC 上電自動啟動</h2>
+<p class="my-2 leading-relaxed">實務上，大多數 PLC 需要 <strong>上電自動啟動應用程式</strong>。</p>
+<p class="my-2 leading-relaxed">在 CODESYS 中，通常會：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在 Login 並成功 Download 與 Run 之後：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">使用 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Online → Create boot project</code>（不同版本文字可能略有差異）。</li>
+</ul>
+</li>
+<li class="leading-relaxed">這會在 PLC 的檔案系統中建立一份：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>Boot application</strong>（開機啟動程式）。</li>
+</ul>
+</li>
+<li class="leading-relaxed">之後每次 PLC 上電或重新啟動時：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">Runtime 會自動載入這份 boot project，依保留變數與設定啟動。</li>
+</ul>
+</li>
+</ul>
+<p class="my-2 leading-relaxed">建議流程：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed">在實機完成基本測試、確認行為正確後再建立 Boot application。</li>
+<li class="leading-relaxed">若日後有大幅更新，需要重新產生新的 Boot project 覆蓋舊版本。</li>
+</ol>
+<hr/>
+<h2 id="6.-Updating-an-Application：Download-vs-Online-Change" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">6. Updating an Application：Download vs Online Change</h2>
+<p class="my-2 leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Updating an Application on the PLC</code> 說明了兩種更新方式：</p>
+<h3 id="6.1-Download（再次完整下載）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">6.1 Download（再次完整下載）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">行為：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">重新編譯並停止目前程式。</li>
+<li class="leading-relaxed">重新初始化 Application。</li>
+</ul>
+</li>
+<li class="leading-relaxed">優點：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">狀態乾淨、可預期。</li>
+<li class="leading-relaxed">適合大幅變更（資料結構、任務架構、I/O 組態等）。</li>
+</ul>
+</li>
+<li class="leading-relaxed">缺點：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">會中斷機台運轉，需要排程停機時間。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6.2-Online-Change（線上變更）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">6.2 Online Change（線上變更）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">行為：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">僅下載 <strong>修改過的部分</strong> 程式碼到 PLC。</li>
+<li class="leading-relaxed">程式持續執行，不會強制 Stop。</li>
+</ul>
+</li>
+<li class="leading-relaxed">適用情境：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">小範圍修正（例如條件判斷、參數常數、某個邏輯分支）。</li>
+<li class="leading-relaxed">測試期間快速微調控制邏輯。</li>
+</ul>
+</li>
+<li class="leading-relaxed">風險：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">若變更範圍過大，<strong>程式實際狀態可能難以推估</strong>。</li>
+<li class="leading-relaxed">某些變更（例如資料型別、I/O 組態）可能無法透過 Online Change 安全套用。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6.3-狀態列提示：可以-Online-Change-嗎？" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">6.3 狀態列提示：可以 Online Change 嗎？</h3>
+<p class="my-2 leading-relaxed">在 Login 或編輯過程中，CODESYS 會檢查當前專案與 PLC 上專案的差異，並顯示：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Program modified (Full download)</code>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">只能透過完整 Download 更新。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Program modified (Online change)</code>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">可以選擇 Online Change。</li>
+</ul>
+</li>
+</ul>
+<p class="my-2 leading-relaxed">實務上，建議策略：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">只要有 <strong>結構性變更或安全疑慮</strong>，一律使用 Download。</li>
+<li class="leading-relaxed">Online Change 僅用於：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">單純修正邏輯條件或小範圍調整。</li>
+<li class="leading-relaxed">確定不會改變資料佈局與 I/O 映射。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="7.-簡化流程：從第一次下載到後續維護" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">7. 簡化流程：從第一次下載到後續維護</h2>
+<p class="my-2 leading-relaxed">以下是一個簡化的「實務流程腳本」：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed"><strong>專案完成初版</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">建立 Device Tree 與 I/O Mapping（參考 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">IO_Configuration_教學文件.md</code>）。</li>
+<li class="leading-relaxed">設定 Task 與 Application 結構（參考 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Application_Programming_Overview_教學文件.md</code>）。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>設定通訊與安全</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">配置 Gateway、PLC 位址、使用者管理與加密選項。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>編譯與登入</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">Build 專案 → 修正所有 Errors。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Online → Login</code> 連線至目標 PLC。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>第一次 Download 與啟動</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">選擇 Download，等待程式下載完成。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Online → Run</code> 啟動 Application。</li>
+<li class="leading-relaxed">進行基本功能測試與安全確認。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>建立 Boot application</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">確認一切正常後，建立 boot project 讓 PLC 上電自行啟動。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>後續小變更</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">若狀態列顯示 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Program modified (Online change)</code> 且變更範圍小：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">使用 Online Change 減少停機時間。</li>
+</ul>
+</li>
+<li class="leading-relaxed">若需要調整資料結構 / I/O / 任務配置：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">排程停機並執行完整 Download。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h2 id="8.-檔案複製與備份的關聯（與後續文件銜接）" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">8. 檔案複製與備份的關聯（與後續文件銜接）</h2>
+<p class="my-2 leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Copying Files to/from the PLC</code> 說明如何在 Device Editor 的 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Files</code> 標籤頁：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在 PC 與 PLC 之間複製檔案：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">設定 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Host</code> 端目錄（例如 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">D:\FileTransferWithPLC</code>）。</li>
+<li class="leading-relaxed">設定 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Runtime</code> 端目錄（PLC 內部檔案系統路徑）。</li>
+<li class="leading-relaxed">選取檔案與方向按鈕，雙向複製。</li>
+</ul>
+</li>
+</ul>
+<p class="my-2 leading-relaxed">這功能通常搭配：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">備份 boot project、設定檔（例如配方、日志配置）。</li>
+<li class="leading-relaxed">從 PLC 抓取診斷資料或 log 檔供分析。</li>
+</ul>
+<p class="my-2 leading-relaxed">更完整的備份與長期運轉策略，會在 <strong><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Runtime_Operation_and_Backup_教學文件.md</code></strong> 中詳細說明。</p>
+<hr/>
+<h2 id="9.-小結：怎麼選擇-Download-還是-Online-Change？" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">9. 小結：怎麼選擇 Download 還是 Online Change？</h2>
+<p class="my-2 leading-relaxed">可以用下列幾個問題來快速判斷：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed"><strong>這次變更會不會動到資料結構 / I/O / 任務架構？</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">會 → 建議完整 Download。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>機台允許短暫停機嗎？</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">可以停機 → 優先選擇 Download，狀態單純且可預期。</li>
+<li class="leading-relaxed">不方便停機 → 僅在變更極小且風險可控時使用 Online Change。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>是否已建立對應版本的 Boot application 與備份？</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">若沒有，應該在 Download 穩定後儘快建立，搭配備份流程。</li>
+</ul>
+</li>
+</ol>
+<p class="my-2 leading-relaxed">掌握上述原則，就能在實務專案中，以安全且高效率的方式管理 CODESYS 應用程式的下載與更新流程。</p></article></div></div></section></div><!--$--><!--/$--></div></main><footer class="border-t pt-4 text-xs" style="border-color:var(--t-border);color:var(--t-text-muted)">內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。</footer></div><script src="/HappyLearnCodesys/_next/static/chunks/74f28e1af7ed7ed3.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[22016,[\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\"],\"\"]\n3:I[39756,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n4:I[37457,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n6:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"OutletBoundary\"]\n7:\"$Sreact.suspense\"\n9:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"ViewportBoundary\"]\nc:I[68027,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n:HL[\"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"hE9wNZamtqMjFK5Z04D0M\",\"c\":[\"\",\"offline-help\",\"download-debug-runtime\",\"download-and-online-change\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"offline-help\",{\"children\":[[\"slug\",\"download-debug-runtime/download-and-online-change\",\"c\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-Hant\",\"children\":[\"$\",\"body\",null,{\"className\":\"min-h-screen\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6\",\"children\":[[\"$\",\"header\",null,{\"className\":\"mb-6 border-b pb-4\",\"style\":{\"borderColor\":\"var(--t-border)\"},\"children\":[\"$\",\"div\",null,{\"className\":\"flex items-start justify-between gap-4\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-xl font-semibold tracking-tight\",\"children\":[\"$\",\"$L2\",null,{\"href\":\"/\",\"style\":{\"color\":\"var(--t-accent)\"},\"className\":\"hover:underline\",\"children\":\"CODESYS 教學網站\"}]}],[\"$\",\"p\",null,{\"className\":\"mt-1 text-sm\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。\"}]]}],[\"$\",\"nav\",null,{\"className\":\"flex shrink-0 items-center gap-2\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"回首頁\"}],[\"$\",\"$L2\",null,{\"href\":\"/offline-help\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"Offline Help\"}],[\"$\",\"$L2\",null,{\"href\":\"/search\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"搜尋\"}]]}]]}]}],[\"$\",\"main\",null,{\"className\":\"flex-1 pb-8\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"div\",null,{\"className\":\"flex flex-col items-center justify-center gap-4 py-12 text-center\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-4xl font-semibold\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"404\"}],[\"$\",\"p\",null,{\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"找不到這個頁面。\"}],[\"$\",\"nav\",null,{\"className\":\"mt-4 flex flex-wrap justify-center gap-3\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\",\"color\":\"var(--t-accent)\"},\"children\":\"回首頁\"}],[\"$\",\"$L2\",null,{\"href\":\"/softmotion\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"SoftMotion 學習地圖\"}],[\"$\",\"$L2\",null,{\"href\":\"/licensing\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"授權說明\"}],[\"$\",\"$L2\",null,{\"href\":\"/guidelines\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"開發規範\"}]]}]]}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"border-t pt-4 text-xs\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。\"}]]}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"div\",null,{\"className\":\"min-w-0\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L6\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@8\"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":\"$Lb\"}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$c\",[]],\"S\":true}\n"])</script><script>self.__next_f.push([1,"d:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"MetadataBoundary\"]\nb:[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Le\"}]}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"8:null\ne:[[\"$\",\"title\",\"0\",{\"children\":\"CODESYS 教學網站\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。\"}]]\n"])</script><script>self.__next_f.push([1,"f:I[35977,[\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\"],\"MarkdownWithToc\"]\n10:T298b,"])</script><script>self.__next_f.push([1,"\u003cstyle\u003e\nhtml, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,\n[id^=\"preview\"], [class*=\"markdown-preview\"] {\n  background-color: #FDF5E6 !important;\n  font-size: 14px;\n}\n\n/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */\n.cfg-func,\n.cfg-global,\n.cfg-local,\n.cfg-custom,\n.cfg-const,\n.cfg-keyword,\n.cfg-type,\n.cfg-arg,\n.cfg-name,\ncode {\n  font-family: ui-monospace, \"Cascadia Code\", \"Source Code Pro\", Consolas, Monaco, \"Courier New\", monospace;\n}\n\n/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */\n.markdown-preview-section :not(pre) \u003e code,\n.markdown-preview :not(pre) \u003e code,\n.markdown-body :not(pre) \u003e code {\n  background: transparent !important;\n  padding: 0 !important;\n  border: none !important;\n  border-radius: 0 !important;\n  box-shadow: none !important;\n}\n\n.cfg-func   { color: #6f42c1 !important; background: none !important; }\n.cfg-global { color: #953800 !important; background: none !important; }\n.cfg-local  { color: #0a6c0a !important; background: none !important; }\n.cfg-custom { color: #8250df !important; background: none !important; }\n.cfg-const  { color: #0d9488 !important; background: none !important; }\n.cfg-keyword{ color: #0550ae !important; background: none !important; }\n.cfg-type   { color: #cf222e !important; background: none !important; }\n.cfg-arg    { color: #c2410c !important; background: none !important; }\n.cfg-name   { color: #b45309 !important; background: none !important; }\n\u003c/style\u003e\n\n**顏色對應**：\u003cspan class=\"cfg-func\"\u003e內建函數\u003c/span\u003e \u003cspan class=\"cfg-global\"\u003e全域變數\u003c/span\u003e \u003cspan class=\"cfg-local\"\u003e區域變數\u003c/span\u003e \u003cspan class=\"cfg-custom\"\u003e自訂函數\u003c/span\u003e \u003cspan class=\"cfg-const\"\u003e常數\u003c/span\u003e \u003cspan class=\"cfg-keyword\"\u003e保留字\u003c/span\u003e \u003cspan class=\"cfg-type\"\u003e型態\u003c/span\u003e \u003cspan class=\"cfg-arg\"\u003e引數\u003c/span\u003e \u003cspan class=\"cfg-name\"\u003e專有名詞\u003c/span\u003e\n\n# Download and Online Change 程式下載與線上修改 教學整理\n\n\u003e 本文件基於 CODESYS Offline Help 中下列主題整理而成：  \n\u003e - `Working with Controller Networks`（`_cds_struct_dataexchange.html`）  \n\u003e - `Downloading an Application to the PLC`（`_cds_struct_application_transfer_to_plc.html`）  \n\u003e - `Application at Runtime`（`_cds_struct_application_in_operation.html`）  \n\u003e - `Updating an Application on the PLC`（`_cds_struct_update_application_on_plc.html`）  \n\u003e - `Copying Files to/from the PLC`（`_cds_copy_files_from_to_plc.html`）  \n\u003e 目標是用「第一次把專案下載到實機」的故事線，說明 Download 與 Online Change 的完整流程與差異。\n\n---\n\n## 1. 情境說明：第一次把專案下載到 PLC\n\n典型的實務情境是這樣的：\n\n1. 你已經在 CODESYS 中建立好一個 Application，完成基本 I/O 組態與程式撰寫。\n2. 需要把程式下載到實際 PLC（或軟體 PLC，例如 `CODESYS Control Win`），讓機台真正動起來。\n3. 後續在調機與修正階段，會反覆針對小變更使用 **Online Change**，減少停機時間。\n\n這份文件將依以下流程說明：\n\n1. 建立與 PLC 的通訊與安全設定。\n2. 編譯專案與登入 Login。\n3. Download（完整下載）與啟動 Application。\n4. 建立 Boot application 讓 PLC 上電自動啟動。\n5. 使用 Online Change 進行小幅修改。\n6. 利用檔案複製與備份確保現場可回復。\n\n---\n\n## 2. 建立與 PLC 的通訊與安全設定\n\n在可以下載程式之前，需要先：\n\n- **設定通訊路徑**：\n  - 在工具列或 `Online → Communication Settings` 中，選擇對應的 Gateway 與目標裝置。\n  - 例如透過 Ethernet、Serial、或本機 `CODESYS Control Win`。\n- **確認使用者與加密設定**：\n  - 若裝置啟用 **Device User Management** 或加密通訊：\n    - 需要在 CODESYS 開發系統中準備好相對應的憑證與帳號。\n    - 相關設定位於 Device Editor 的 `Communication Settings` 與安全性標籤頁。\n\n當這些條件滿足後，才能安全地進行 Login 與 Download。\n\n---\n\n## 3. 編譯與登入：從專案到 PLC 的第一步\n\n### 3.1 編譯專案（Build / Compile）\n\n在 Download 前，必須確保專案可以 **無錯誤編譯**：\n\n- 使用 `Project → Build` 或快捷鍵（通常是 `F11`）。\n- 若有錯誤（Errors），需先在編譯訊息中逐項修正。\n- 警告（Warnings）則視情況處理：\n  - 例如未使用變數、名稱過長等，雖不會阻擋下載，但會影響品質。\n\n### 3.2 Login 到 PLC\n\n當編譯通過後：\n\n- 使用 `Online → Login`：\n  - CODESYS 會與選定的 PLC 建立連線。\n  - 若第一次登入，且 PLC 上沒有對應專案，系統會提示是否要下載。\n- 視安全設定不同，可能會：\n  - 要求輸入使用者帳號 / 密碼。\n  - 顯示憑證與信任關係提示。\n\n一旦 Login 成功，就可以進行 Download。\n\n---\n\n## 4. 完整 Download：完整更新與啟動流程\n\n### 4.1 Download 的概念\n\n根據 `Downloading an Application to the PLC`：\n\n- **Download** 會對 Application 重新進行：\n  - 語法檢查（Syntax check）。\n  - 編譯（Compiler 產生二進位碼）。\n  - 將新的程式碼下載到 PLC。\n- 在 Download 過程中：\n  - 既有程式會被 **停止**。\n  - 初始化邏輯與變數會依設定重新執行。\n\n這種方式的優點是：\n\n- 會建立一個 **明確、乾淨的啟動狀態**。\n- 適合：\n  - 結構性變更（新增 Task、改變資料結構、大幅重構）。\n  - 版本切換或現場導入前的正式發布。\n\n### 4.2 Download 的實務步驟\n\n典型步驟如下：\n\n1. 確認通訊設定與編譯無誤。\n2. 執行 `Online → Login`。\n3. 在提示視窗中選擇 **Download**：\n   - 若專案變更需要完整下載，狀態列會顯示：  \n     `Program modified (Full download)`。\n4. 等待 Download 完成後，使用 `Online → Run` 或工具列按鈕啟動 Application。\n\n在這個階段，Application 已在 PLC 上執行，並開始與現場 I/O 互動。\n\n---\n\n## 5. Boot Application：讓 PLC 上電自動啟動\n\n實務上，大多數 PLC 需要 **上電自動啟動應用程式**。\n\n在 CODESYS 中，通常會：\n\n- 在 Login 並成功 Download 與 Run 之後：\n  - 使用 `Online → Create boot project`（不同版本文字可能略有差異）。\n- 這會在 PLC 的檔案系統中建立一份：\n  - **Boot application**（開機啟動程式）。\n- 之後每次 PLC 上電或重新啟動時：\n  - Runtime 會自動載入這份 boot project，依保留變數與設定啟動。\n\n建議流程：\n\n1. 在實機完成基本測試、確認行為正確後再建立 Boot application。\n2. 若日後有大幅更新，需要重新產生新的 Boot project 覆蓋舊版本。\n\n---\n\n## 6. Updating an Application：Download vs Online Change\n\n`Updating an Application on the PLC` 說明了兩種更新方式：\n\n### 6.1 Download（再次完整下載）\n\n- 行為：\n  - 重新編譯並停止目前程式。\n  - 重新初始化 Application。\n- 優點：\n  - 狀態乾淨、可預期。\n  - 適合大幅變更（資料結構、任務架構、I/O 組態等）。\n- 缺點：\n  - 會中斷機台運轉，需要排程停機時間。\n\n### 6.2 Online Change（線上變更）\n\n- 行為：\n  - 僅下載 **修改過的部分** 程式碼到 PLC。\n  - 程式持續執行，不會強制 Stop。\n- 適用情境：\n  - 小範圍修正（例如條件判斷、參數常數、某個邏輯分支）。\n  - 測試期間快速微調控制邏輯。\n- 風險：\n  - 若變更範圍過大，**程式實際狀態可能難以推估**。\n  - 某些變更（例如資料型別、I/O 組態）可能無法透過 Online Change 安全套用。\n\n### 6.3 狀態列提示：可以 Online Change 嗎？\n\n在 Login 或編輯過程中，CODESYS 會檢查當前專案與 PLC 上專案的差異，並顯示：\n\n- `Program modified (Full download)`：\n  - 只能透過完整 Download 更新。\n- `Program modified (Online change)`：\n  - 可以選擇 Online Change。\n\n實務上，建議策略：\n\n- 只要有 **結構性變更或安全疑慮**，一律使用 Download。\n- Online Change 僅用於：\n  - 單純修正邏輯條件或小範圍調整。\n  - 確定不會改變資料佈局與 I/O 映射。\n\n---\n\n## 7. 簡化流程：從第一次下載到後續維護\n\n以下是一個簡化的「實務流程腳本」：\n\n1. **專案完成初版**\n   - 建立 Device Tree 與 I/O Mapping（參考 `IO_Configuration_教學文件.md`）。\n   - 設定 Task 與 Application 結構（參考 `Application_Programming_Overview_教學文件.md`）。\n2. **設定通訊與安全**\n   - 配置 Gateway、PLC 位址、使用者管理與加密選項。\n3. **編譯與登入**\n   - Build 專案 → 修正所有 Errors。  \n   - `Online → Login` 連線至目標 PLC。\n4. **第一次 Download 與啟動**\n   - 選擇 Download，等待程式下載完成。\n   - `Online → Run` 啟動 Application。\n   - 進行基本功能測試與安全確認。\n5. **建立 Boot application**\n   - 確認一切正常後，建立 boot project 讓 PLC 上電自行啟動。\n6. **後續小變更**\n   - 若狀態列顯示 `Program modified (Online change)` 且變更範圍小：\n     - 使用 Online Change 減少停機時間。\n   - 若需要調整資料結構 / I/O / 任務配置：\n     - 排程停機並執行完整 Download。\n\n---\n\n## 8. 檔案複製與備份的關聯（與後續文件銜接）\n\n`Copying Files to/from the PLC` 說明如何在 Device Editor 的 `Files` 標籤頁：\n\n- 在 PC 與 PLC 之間複製檔案：\n  - 設定 `Host` 端目錄（例如 `D:\\FileTransferWithPLC`）。\n  - 設定 `Runtime` 端目錄（PLC 內部檔案系統路徑）。\n  - 選取檔案與方向按鈕，雙向複製。\n\n這功能通常搭配：\n\n- 備份 boot project、設定檔（例如配方、日志配置）。\n- 從 PLC 抓取診斷資料或 log 檔供分析。\n\n更完整的備份與長期運轉策略，會在 **`Runtime_Operation_and_Backup_教學文件.md`** 中詳細說明。\n\n---\n\n## 9. 小結：怎麼選擇 Download 還是 Online Change？\n\n可以用下列幾個問題來快速判斷：\n\n1. **這次變更會不會動到資料結構 / I/O / 任務架構？**\n   - 會 → 建議完整 Download。\n2. **機台允許短暫停機嗎？**\n   - 可以停機 → 優先選擇 Download，狀態單純且可預期。\n   - 不方便停機 → 僅在變更極小且風險可控時使用 Online Change。\n3. **是否已建立對應版本的 Boot application 與備份？**\n   - 若沒有，應該在 Download 穩定後儘快建立，搭配備份流程。\n\n掌握上述原則，就能在實務專案中，以安全且高效率的方式管理 CODESYS 應用程式的下載與更新流程。 \n\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"div\",null,{\"className\":\"space-y-5\",\"children\":[[\"$\",\"nav\",null,{\"className\":\"text-xs\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/offline-help\",\"style\":{\"color\":\"var(--t-accent)\"},\"children\":\"Offline Help 首頁\"}],[\"$\",\"span\",null,{\"className\":\"mx-1\",\"children\":\"/\"}],[\"$\",\"span\",null,{\"children\":\"下載、測試、除錯與執行階段\"}]]}],[\"$\",\"header\",null,{\"className\":\"space-y-2\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-xl font-semibold\",\"style\":{\"color\":\"var(--t-text)\"},\"children\":\"Download and Online Change 程式下載與線上修改 教學整理\"}],[\"$\",\"p\",null,{\"className\":\"text-sm\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"說明建立通訊、編譯與下載、Boot application 與 Online Change 的差異與實務流程。\"}]]}],[\"$\",\"section\",null,{\"className\":\"rounded-lg border p-4\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\"},\"children\":[\"$\",\"$Lf\",null,{\"content\":\"$10\"}]}],false]}]\n"])</script></body></html>

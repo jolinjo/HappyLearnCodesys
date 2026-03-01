@@ -1,0 +1,324 @@
+<!DOCTYPE html><!--hE9wNZamtqMjFK5Z04D0M--><html lang="zh-Hant"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/HappyLearnCodesys/_next/static/chunks/74f28e1af7ed7ed3.js"/><script src="/HappyLearnCodesys/_next/static/chunks/a354d338f7d272f4.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/7de9141b1af425c3.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/d1d24926e41b63c4.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/turbopack-d027db068e712cbc.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js" async=""></script><title>CODESYS 教學網站</title><meta name="description" content="針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"/><script src="/HappyLearnCodesys/_next/static/chunks/a6dad97d9634a72d.js" noModule=""></script></head><body class="min-h-screen"><div hidden=""><!--$--><!--/$--></div><div class="mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6"><header class="mb-6 border-b pb-4" style="border-color:var(--t-border)"><div class="flex items-start justify-between gap-4"><div><h1 class="text-xl font-semibold tracking-tight"><a style="color:var(--t-accent)" class="hover:underline" href="/HappyLearnCodesys">CODESYS 教學網站</a></h1><p class="mt-1 text-sm" style="color:var(--t-text-muted)">用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。</p></div><nav class="flex shrink-0 items-center gap-2"><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys">回首頁</a><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys/offline-help">Offline Help</a><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys/search">搜尋</a></nav></div></header><main class="flex-1 pb-8"><div class="min-w-0"><div class="space-y-5"><nav class="text-xs" style="color:var(--t-text-muted)"><a style="color:var(--t-accent)" href="/HappyLearnCodesys/offline-help">Offline Help 首頁</a><span class="mx-1">/</span><span>專案生命週期與結構</span></nav><header class="space-y-2"><h1 class="text-xl font-semibold" style="color:var(--t-text)">Project Export, Transfer, Compare and Protection 專案匯出、移轉、比較與保護 教學整理</h1><p class="text-sm" style="color:var(--t-text-muted)">整理專案匯出／匯入、封存、移轉、比較與保護的實務流程，適合專案交接與版本管理情境。</p></header><section class="rounded-lg border p-4" style="border-color:var(--t-border);background-color:var(--t-bg-card)"><div class="flex gap-6"><aside class="shrink-0 w-56 self-start sticky top-6 hidden lg:block" aria-label="本頁標題目錄"><nav class="rounded-lg border py-3 px-3 text-sm max-h-[calc(100vh-4rem)] overflow-y-auto" style="border-color:var(--t-border);background-color:var(--t-bg-card)"><div class="mb-2 flex items-center justify-between"><button type="button" class="text-[11px] hover:underline" style="color:var(--t-text-muted)">回上一層</button><div class="text-xs font-semibold uppercase tracking-wide" style="color:var(--t-text-muted)">目錄</div></div><ul class="space-y-1.5"><li><a href="#Project-Export,-Transfer,-Compare-and-Protection-專案匯出-移轉-比較與保護-教學整理" class="block truncate py-0.5 hover:underline" style="padding-left:0;color:var(--t-text-muted);font-size:0.8125rem">Project Export, Transfer, Compare and Protection 專案匯出、移轉、比較與保護 教學整理</a></li><li><a href="#1.-專案分享與移轉概觀-Overview" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">1. 專案分享與移轉概觀 Overview</a></li><li><a href="#2.-專案匯出與匯入-Exporting-and-Importing-Projects" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">2. 專案匯出與匯入 Exporting and Importing Projects</a></li><li><a href="#2.1-使用-Project-檔案與-Archive-檔案" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">2.1 使用 Project 檔案與 Archive 檔案</a></li><li><a href="#2.2-物件級匯出：CODESYS-XML-與-PLCopenXML" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">2.2 物件級匯出：CODESYS XML 與 PLCopenXML</a></li><li><a href="#3.-專案移轉與維護情境-Transferring-Projects" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">3. 專案移轉與維護情境 Transferring Projects</a></li><li><a href="#3.1-準備條件（在-PC1-上）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">3.1 準備條件（在 PC1 上）</a></li><li><a href="#3.2-建立-Project-Archive" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">3.2 建立 Project Archive</a></li><li><a href="#3.3-在-PC2-上還原與登入" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">3.3 在 PC2 上還原與登入</a></li><li><a href="#4.-專案比較-Comparing-Projects" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">4. 專案比較 Comparing Projects</a></li><li><a href="#4.1-功能概觀" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">4.1 功能概觀</a></li><li><a href="#4.2-啟動比較" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">4.2 啟動比較</a></li><li><a href="#4.3-詳細差異檢視與接受變更" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">4.3 詳細差異檢視與接受變更</a></li><li><a href="#5.-專案保護與國際化的連結（概念預告）" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">5. 專案保護與國際化的連結（概念預告）</a></li><li><a href="#6.-實務流程建議：專案交接-Checklist" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">6. 實務流程建議：專案交接 Checklist</a></li></ul><button type="button" class="mt-3 w-full text-left hover:underline" style="font-size:0.75rem;color:var(--t-text-muted)">回到最上層</button></nav></aside><div class="min-w-0 flex-1 space-y-2"><div class="flex items-center gap-2 rounded-md border py-1.5 px-2 text-xs" style="border-color:var(--t-border);background-color:var(--t-bg);color:var(--t-text-muted)" role="group" aria-label="文字大小"><span class="shrink-0">文字大小：</span><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:transparent;color:var(--t-text-muted)" aria-pressed="false">小</button><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:var(--t-border);color:var(--t-text)" aria-pressed="true">中</button><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:transparent;color:var(--t-text-muted)" aria-pressed="false">大</button></div><article class="prose max-w-none md-content" style="color:var(--t-text)">
+<p class="my-2 leading-relaxed"><strong>顏色對應</strong>：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span></p>
+<h1 id="Project-Export,-Transfer,-Compare-and-Protection-專案匯出-移轉-比較與保護-教學整理" class="text-2xl font-semibold scroll-mt-6" style="color:var(--t-text)">Project Export, Transfer, Compare and Protection 專案匯出、移轉、比較與保護 教學整理</h1>
+<blockquote>
+<p class="my-2 leading-relaxed">本文件依據 Offline Help 中 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Exporting and Transferring Projects</code>、<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Exporting and Importing Projects</code>、<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Transferring Projects</code>、<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Comparing Projects</code> 以及部份專案保護相關章節整理而成，說明專案在團隊合作與維護情境下的實務流程。</p>
+</blockquote>
+<hr/>
+<h2 id="1.-專案分享與移轉概觀-Overview" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">1. 專案分享與移轉概觀 Overview</h2>
+<p class="my-2 leading-relaxed">在實務開發中，常見的情境包括：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">將專案交給 <strong>另一位工程師或團隊</strong> 接手維護。</li>
+<li class="leading-relaxed">在 <strong>新電腦</strong> 上繼續對相同 PLC 做維護，盡量避免 Online Change / 重新下載。</li>
+<li class="leading-relaxed">將部分程式或 POU 以 <strong>XML 形式</strong> 匯出，與其他工具或專案共享。</li>
+<li class="leading-relaxed">比較兩個版本的專案差異，作為程式碼審查或版本回溯依據。</li>
+</ul>
+<p class="my-2 leading-relaxed">對應到 CODESYS 的功能：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">專案檔案與封存：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*.project</code>、<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*.projectarchive</code></li>
+</ul>
+</li>
+<li class="leading-relaxed">物件層級匯出 / 匯入：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*.export</code>（CODESYS XML）</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*.xml</code>（PLCopenXML）</li>
+</ul>
+</li>
+<li class="leading-relaxed">Project Archive（專案封存）：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">包含裝置描述、Library profile、下載資訊、Visualization Profile 等。</li>
+</ul>
+</li>
+<li class="leading-relaxed">Project Comparison（專案比較）：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">比較兩個專案或專案版本的差異。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="2.-專案匯出與匯入-Exporting-and-Importing-Projects" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">2. 專案匯出與匯入 Exporting and Importing Projects</h2>
+<h3 id="2.1-使用-Project-檔案與-Archive-檔案" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">2.1 使用 Project 檔案與 Archive 檔案</h3>
+<p class="my-2 leading-relaxed">根據 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Exporting and Transferring Projects</code>：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在兩套 CODESYS 開發系統之間交換專案時，最常見方式是複製：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">專案檔：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*.project</code></li>
+<li class="leading-relaxed">專案封存：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*.projectarchive</code></li>
+</ul>
+</li>
+<li class="leading-relaxed">一般建議：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">若只在同一環境內備份，可使用 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*.project</code>。</li>
+<li class="leading-relaxed">若需跨電腦／跨團隊交接，建議使用 <strong>Project Archive</strong>，因為可額外打包：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">下載資訊（download information files）。</li>
+<li class="leading-relaxed">參考的裝置（Referenced devices）。</li>
+<li class="leading-relaxed">參考的函式庫（Referenced libraries）。</li>
+<li class="leading-relaxed">Visualization Profile 等。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2.2-物件級匯出：CODESYS-XML-與-PLCopenXML" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">2.2 物件級匯出：CODESYS XML 與 PLCopenXML</h3>
+<p class="my-2 leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Exporting and Importing Projects</code> 章節指出：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>CODESYS XML (*.export)</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">完全相容於 CODESYS 專案格式。</li>
+<li class="leading-relaxed">物件以機器可解析的 XML 型式儲存。</li>
+<li class="leading-relaxed">適合在 <strong>CODESYS 專案之間</strong> 交換程式碼或物件。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>PLCopenXML (*.xml)</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">方便與其他程式編輯器或文件工具交換資訊。</li>
+<li class="leading-relaxed">但只支援 PLCopen 定義的一部分元素，與 CODESYS 完整功能不一定百分之百相容。</li>
+</ul>
+</li>
+</ul>
+<h4>匯出物件步驟（Export）</h4>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed">開啟專案。</li>
+<li class="leading-relaxed">在主選單選擇：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project → Export</code>（CODESYS XML），或</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project → Export PLCopenXML</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed">在 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Export</code> / <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Export PLCopenXML</code> 對話框中選擇要匯出的物件。</li>
+<li class="leading-relaxed">按 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">OK</code>，並在檔案對話框選擇檔名與儲存位置。</li>
+</ol>
+<h4>匯入物件步驟（Import）</h4>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed">開啟欲匯入目標的專案。</li>
+<li class="leading-relaxed">在主選單選擇：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project → Import</code>，或</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project → Import PLCopenXML</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed">在匯入對話框中：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">選擇來源檔案與欲匯入之物件。</li>
+<li class="leading-relaxed">指定匯入目標位置（在物件樹中的節點）。</li>
+</ul>
+</li>
+<li class="leading-relaxed">按 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">OK</code>，匯入的物件會新增到現有物件樹內。</li>
+</ol>
+<p class="my-2 leading-relaxed">實務建議：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在團隊共用 Library / 範本程式時：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">優先使用 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*.export</code>（CODESYS XML），保留最多資訊。</li>
+<li class="leading-relaxed">只有在與第三方工具整合時，才採用 PLCopenXML。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="3.-專案移轉與維護情境-Transferring-Projects" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">3. 專案移轉與維護情境 Transferring Projects</h2>
+<p class="my-2 leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Transferring Projects</code> 章節特別針對以下需求設計：</p>
+<blockquote>
+<p class="my-2 leading-relaxed">將專案從 PC1 轉移到 PC2，並在 PC2 上連到 <strong>同一台 PLC</strong>，而且希望「不需要 Online Change 或重新 Download」。</p>
+</blockquote>
+<h3 id="3.1-準備條件（在-PC1-上）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">3.1 準備條件（在 PC1 上）</h3>
+<p class="my-2 leading-relaxed">在 PC1 開啟專案並連到目標 PLC，依序確認：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed"><strong>函式庫版本固定（Fix Version Libraries）</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Library Manager</code> 中確認所有 Library 項目都不是 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*</code>（代表自由 placeholder），而是固定版號。</li>
+<li class="leading-relaxed">例外：純介面 Library 可以維持為彈性版本。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>Compiler Version 固定</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project → Project Settings → Compiler Options</code> 中設定為特定版本。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>Visualization Profile 固定（若有使用 Visualization）</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project Settings → Visualization Profile</code> 中選擇明確的 Profile。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>Boot Application 與專案內容一致</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">檢查視窗標題列中的專案名稱後是否有 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*</code>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">有 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">*</code> 代表尚未儲存，可能與已下載的 Boot Application 不一致。</li>
+</ul>
+</li>
+<li class="leading-relaxed">必要時：
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed">先儲存專案。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Online → Create Boot Application</code> 建立新的 Boot Project。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Online → Login</code> 後執行 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Online → Download</code> 重新下載到 PLC。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Debug → Start</code> 讓 PLC 上執行的應用程式與專案完全一致。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="3.2-建立-Project-Archive" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">3.2 建立 Project Archive</h3>
+<p class="my-2 leading-relaxed">在上述條件都滿足後：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed">執行 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">File → Project Archive → Save/Send Archive</code>。</li>
+<li class="leading-relaxed">在 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project Archive</code> 對話框中勾選：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Download information files</code></li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Referenced devices</code></li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Referenced libraries</code></li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Visualization Profile</code></li>
+<li class="leading-relaxed">若使用較舊 Compiler，可能仍看到 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Library profile</code> 選項（在 3.5.18.0 之後已不再適用）。</li>
+</ul>
+</li>
+<li class="leading-relaxed">將 Archive 檔案儲存到 PC2 可存取的位置（例如網路路徑或版本控制系統）。</li>
+</ol>
+<h3 id="3.3-在-PC2-上還原與登入" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">3.3 在 PC2 上還原與登入</h3>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed">在 PC2 開啟 CODESYS。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">File → Project Archive → Extract Archive</code>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">選擇 PC1 儲存的 Archive 檔。</li>
+<li class="leading-relaxed">在 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Extract Project Archive</code> 對話框中，勾選與建立封存時相同的項目。</li>
+</ul>
+</li>
+<li class="leading-relaxed">開啟還原後的專案。</li>
+<li class="leading-relaxed">設定與原先相同的通信設定（IP / Device），登入同一台 PLC。</li>
+</ol>
+<p class="my-2 leading-relaxed">若環境（Library / Compiler / Visualization Profile 等）完全相容：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">CODESYS 應該可以在 PC2 上直接登入，而 <strong>不需要 Online Change 或 Download</strong>。</li>
+</ul>
+<hr/>
+<h2 id="4.-專案比較-Comparing-Projects" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">4. 專案比較 Comparing Projects</h2>
+<p class="my-2 leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Comparing Projects</code> 章節提供一個非常實用的工具：<strong>Project Comparison</strong>。</p>
+<h3 id="4.1-功能概觀" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">4.1 功能概觀</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">可以將目前開啟的專案與另一個「參考專案（Reference Project）」比對。</li>
+<li class="leading-relaxed">會偵測並顯示：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">內容差異（程式碼、設定）。</li>
+<li class="leading-relaxed">物件屬性差異。</li>
+<li class="leading-relaxed">存取權限差異。</li>
+</ul>
+</li>
+<li class="leading-relaxed">比對結果會顯示在：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project Comparison – Differences</code> 主視圖（樹狀結構）。</li>
+<li class="leading-relaxed">針對單一物件的 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project Comparison – &lt;object name&gt; Differences</code> 詳細視圖（程式碼逐行比較）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4.2-啟動比較" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">4.2 啟動比較</h3>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed">開啟當前專案（作為「目前專案」）。</li>
+<li class="leading-relaxed">選擇 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project → Compare</code>。</li>
+<li class="leading-relaxed">在 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Project Comparison</code> 對話框中：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">指定要比較的「參考專案」（另一個 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">.project</code> 或 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">.projectarchive</code> 解開的專案）。</li>
+<li class="leading-relaxed">設定欲比對的範圍與選項（例如是否包含圖形編輯器、權限設定等）。</li>
+</ul>
+</li>
+<li class="leading-relaxed">執行比對後，<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Differences</code> 視圖會以樹狀結構標示：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">新增的物件。</li>
+<li class="leading-relaxed">刪除的物件。</li>
+<li class="leading-relaxed">內容不同的物件（以顏色與圖示區分）。</li>
+</ul>
+</li>
+</ol>
+<h3 id="4.3-詳細差異檢視與接受變更" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">4.3 詳細差異檢視與接受變更</h3>
+<p class="my-2 leading-relaxed">對於內容不同的物件，可以開啟詳細視圖：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">顯示「目前專案」與「參考專案」的程式碼差異。</li>
+<li class="leading-relaxed">可以使用工具列上的圖示（例如「接受此區塊」、「接受單行」、「接受屬性差異」）將參考專案的內容帶入目前專案：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">被標記為接受的差異會以黃色顯示。</li>
+</ul>
+</li>
+<li class="leading-relaxed">一次只能在 <strong>一個比較視圖</strong> 中編輯與接受差異，其餘比較視圖會是唯讀狀態。</li>
+</ul>
+<p class="my-2 leading-relaxed">當你關閉（或離開）該比較視圖並確認要接受所選差異時：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">CODESYS 會將那些變更 <strong>實際套用到目前專案</strong>。</li>
+</ul>
+<p class="my-2 leading-relaxed">實務用法範例：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>Code Review / Merge</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">把同事修改後的專案當作「參考專案」，用 Project Comparison 比對差異，逐項接受或拒絕。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>版本回溯檢查</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">將新舊版本專案比較，確認哪些邏輯或設定被改動。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="5.-專案保護與國際化的連結（概念預告）" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">5. 專案保護與國際化的連結（概念預告）</h2>
+<p class="my-2 leading-relaxed">雖然完整的專案保護、在地化與範本（Template）會在其他教學文件中詳述，這裡先點出與「匯出／比較／移轉」的關聯：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>保護與儲存 Protecting and Saving Projects</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">當你建立 Project Archive 或分享專案時，應檢查：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">專案是否設有唯讀保護或密碼。</li>
+<li class="leading-relaxed">是否啟用 User Management 限制部分物件的存取。</li>
+</ul>
+</li>
+<li class="leading-relaxed">在交接前可以適度放寬或重新規劃權限，以便接手者有效維護。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>在地化 Localizing Projects</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">多語系專案常常需要在不同地區團隊間傳遞。</li>
+<li class="leading-relaxed">建議在 Archive 中一併納入 Text List / String Table 等資源，並於教學文件中清楚說明翻譯流程。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>專案範本 Project Templates</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">當你找到一套穩定的專案結構（含 Library、Device、User Management、檔案組織方式），可以將之固化為 Template。</li>
+<li class="leading-relaxed">未來新專案不必從零開始，也能保持團隊風格一致。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="6.-實務流程建議：專案交接-Checklist" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">6. 實務流程建議：專案交接 Checklist</h2>
+<p class="my-2 leading-relaxed">當你準備把專案交給另一個團隊或搬到新電腦時，可以參考以下流程：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed"><strong>在 PC1 檢查專案狀態</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">Library 皆為 Fix Version。</li>
+<li class="leading-relaxed">Compiler / Visualization Profile 已固定。</li>
+<li class="leading-relaxed">Boot Application 與專案內容一致並已下載到目標 PLC。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>建立 Project Archive</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">使用 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Save/Send Archive</code>，勾選 Download Info / Referenced Devices / Referenced Libraries / Visualization Profile 等選項。</li>
+<li class="leading-relaxed">將 Archive 上傳至版本控制系統或安全儲存位置。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>記錄環境資訊</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">CODESYS 安裝版本與 Add‑ons 版本（可由 CODESYS Installer 匯出描述檔）。</li>
+<li class="leading-relaxed">目標 PLC 的 Runtime 版本與 Device Description 版本。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>在 PC2 還原並驗證</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">Extract Archive。</li>
+<li class="leading-relaxed">依既有記錄建立或選擇相容的 CODESYS 安裝（可透過 Installer 協助）。</li>
+<li class="leading-relaxed">連線同一台 PLC，確認可以登入且不需要 Online Change / Download。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>使用 Project Comparison（可選）</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">若在 PC2 進行修改，可在交回給原團隊前，以 Project Comparison 比對差異並整理變更紀錄。</li>
+</ul>
+</li>
+</ol>
+<p class="my-2 leading-relaxed">透過這樣的流程，可以在 CODESYS 環境中穩定地分享、移轉與比較專案，並與後續的專案保護與國際化策略銜接，形成一套完整的專案生命週期管理方式。</p></article></div></div></section></div><!--$--><!--/$--></div></main><footer class="border-t pt-4 text-xs" style="border-color:var(--t-border);color:var(--t-text-muted)">內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。</footer></div><script src="/HappyLearnCodesys/_next/static/chunks/74f28e1af7ed7ed3.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[22016,[\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\"],\"\"]\n3:I[39756,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n4:I[37457,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n6:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"OutletBoundary\"]\n7:\"$Sreact.suspense\"\n9:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"ViewportBoundary\"]\nc:I[68027,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n:HL[\"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"hE9wNZamtqMjFK5Z04D0M\",\"c\":[\"\",\"offline-help\",\"project-lifecycle\",\"project-export-compare-protect\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"offline-help\",{\"children\":[[\"slug\",\"project-lifecycle/project-export-compare-protect\",\"c\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-Hant\",\"children\":[\"$\",\"body\",null,{\"className\":\"min-h-screen\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6\",\"children\":[[\"$\",\"header\",null,{\"className\":\"mb-6 border-b pb-4\",\"style\":{\"borderColor\":\"var(--t-border)\"},\"children\":[\"$\",\"div\",null,{\"className\":\"flex items-start justify-between gap-4\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-xl font-semibold tracking-tight\",\"children\":[\"$\",\"$L2\",null,{\"href\":\"/\",\"style\":{\"color\":\"var(--t-accent)\"},\"className\":\"hover:underline\",\"children\":\"CODESYS 教學網站\"}]}],[\"$\",\"p\",null,{\"className\":\"mt-1 text-sm\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。\"}]]}],[\"$\",\"nav\",null,{\"className\":\"flex shrink-0 items-center gap-2\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"回首頁\"}],[\"$\",\"$L2\",null,{\"href\":\"/offline-help\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"Offline Help\"}],[\"$\",\"$L2\",null,{\"href\":\"/search\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"搜尋\"}]]}]]}]}],[\"$\",\"main\",null,{\"className\":\"flex-1 pb-8\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"div\",null,{\"className\":\"flex flex-col items-center justify-center gap-4 py-12 text-center\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-4xl font-semibold\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"404\"}],[\"$\",\"p\",null,{\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"找不到這個頁面。\"}],[\"$\",\"nav\",null,{\"className\":\"mt-4 flex flex-wrap justify-center gap-3\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\",\"color\":\"var(--t-accent)\"},\"children\":\"回首頁\"}],[\"$\",\"$L2\",null,{\"href\":\"/softmotion\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"SoftMotion 學習地圖\"}],[\"$\",\"$L2\",null,{\"href\":\"/licensing\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"授權說明\"}],[\"$\",\"$L2\",null,{\"href\":\"/guidelines\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"開發規範\"}]]}]]}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"border-t pt-4 text-xs\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。\"}]]}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"div\",null,{\"className\":\"min-w-0\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L6\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@8\"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":\"$Lb\"}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$c\",[]],\"S\":true}\n"])</script><script>self.__next_f.push([1,"d:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"MetadataBoundary\"]\nb:[\"$\",\"$Ld\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Le\"}]}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"8:null\ne:[[\"$\",\"title\",\"0\",{\"children\":\"CODESYS 教學網站\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。\"}]]\n"])</script><script>self.__next_f.push([1,"f:I[35977,[\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\"],\"MarkdownWithToc\"]\n10:T2f26,"])</script><script>self.__next_f.push([1,"\u003cstyle\u003e\nhtml, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,\n[id^=\"preview\"], [class*=\"markdown-preview\"] {\n  background-color: #FDF5E6 !important;\n  font-size: 14px;\n}\n\n/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */\n.cfg-func,\n.cfg-global,\n.cfg-local,\n.cfg-custom,\n.cfg-const,\n.cfg-keyword,\n.cfg-type,\n.cfg-arg,\n.cfg-name,\ncode {\n  font-family: ui-monospace, \"Cascadia Code\", \"Source Code Pro\", Consolas, Monaco, \"Courier New\", monospace;\n}\n\n/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */\n.markdown-preview-section :not(pre) \u003e code,\n.markdown-preview :not(pre) \u003e code,\n.markdown-body :not(pre) \u003e code {\n  background: transparent !important;\n  padding: 0 !important;\n  border: none !important;\n  border-radius: 0 !important;\n  box-shadow: none !important;\n}\n\n.cfg-func   { color: #6f42c1 !important; background: none !important; }\n.cfg-global { color: #953800 !important; background: none !important; }\n.cfg-local  { color: #0a6c0a !important; background: none !important; }\n.cfg-custom { color: #8250df !important; background: none !important; }\n.cfg-const  { color: #0d9488 !important; background: none !important; }\n.cfg-keyword{ color: #0550ae !important; background: none !important; }\n.cfg-type   { color: #cf222e !important; background: none !important; }\n.cfg-arg    { color: #c2410c !important; background: none !important; }\n.cfg-name   { color: #b45309 !important; background: none !important; }\n\u003c/style\u003e\n\n**顏色對應**：\u003cspan class=\"cfg-func\"\u003e內建函數\u003c/span\u003e \u003cspan class=\"cfg-global\"\u003e全域變數\u003c/span\u003e \u003cspan class=\"cfg-local\"\u003e區域變數\u003c/span\u003e \u003cspan class=\"cfg-custom\"\u003e自訂函數\u003c/span\u003e \u003cspan class=\"cfg-const\"\u003e常數\u003c/span\u003e \u003cspan class=\"cfg-keyword\"\u003e保留字\u003c/span\u003e \u003cspan class=\"cfg-type\"\u003e型態\u003c/span\u003e \u003cspan class=\"cfg-arg\"\u003e引數\u003c/span\u003e \u003cspan class=\"cfg-name\"\u003e專有名詞\u003c/span\u003e\n\n# Project Export, Transfer, Compare and Protection 專案匯出、移轉、比較與保護 教學整理\n\n\u003e 本文件依據 Offline Help 中 `Exporting and Transferring Projects`、`Exporting and Importing Projects`、`Transferring Projects`、`Comparing Projects` 以及部份專案保護相關章節整理而成，說明專案在團隊合作與維護情境下的實務流程。\n\n---\n\n## 1. 專案分享與移轉概觀 Overview\n\n在實務開發中，常見的情境包括：\n\n- 將專案交給 **另一位工程師或團隊** 接手維護。\n- 在 **新電腦** 上繼續對相同 PLC 做維護，盡量避免 Online Change / 重新下載。\n- 將部分程式或 POU 以 **XML 形式** 匯出，與其他工具或專案共享。\n- 比較兩個版本的專案差異，作為程式碼審查或版本回溯依據。\n\n對應到 CODESYS 的功能：\n\n- 專案檔案與封存：\n  - `*.project`、`*.projectarchive`\n- 物件層級匯出 / 匯入：\n  - `*.export`（CODESYS XML）\n  - `*.xml`（PLCopenXML）\n- Project Archive（專案封存）：\n  - 包含裝置描述、Library profile、下載資訊、Visualization Profile 等。\n- Project Comparison（專案比較）：\n  - 比較兩個專案或專案版本的差異。\n\n---\n\n## 2. 專案匯出與匯入 Exporting and Importing Projects\n\n### 2.1 使用 Project 檔案與 Archive 檔案\n\n根據 `Exporting and Transferring Projects`：\n\n- 在兩套 CODESYS 開發系統之間交換專案時，最常見方式是複製：\n  - 專案檔：`*.project`\n  - 專案封存：`*.projectarchive`\n- 一般建議：\n  - 若只在同一環境內備份，可使用 `*.project`。\n  - 若需跨電腦／跨團隊交接，建議使用 **Project Archive**，因為可額外打包：\n    - 下載資訊（download information files）。\n    - 參考的裝置（Referenced devices）。\n    - 參考的函式庫（Referenced libraries）。\n    - Visualization Profile 等。\n\n### 2.2 物件級匯出：CODESYS XML 與 PLCopenXML\n\n`Exporting and Importing Projects` 章節指出：\n\n- **CODESYS XML (*.export)**：\n  - 完全相容於 CODESYS 專案格式。\n  - 物件以機器可解析的 XML 型式儲存。\n  - 適合在 **CODESYS 專案之間** 交換程式碼或物件。\n- **PLCopenXML (*.xml)**：\n  - 方便與其他程式編輯器或文件工具交換資訊。\n  - 但只支援 PLCopen 定義的一部分元素，與 CODESYS 完整功能不一定百分之百相容。\n\n#### 匯出物件步驟（Export）\n\n1. 開啟專案。\n2. 在主選單選擇：\n   - `Project → Export`（CODESYS XML），或\n   - `Project → Export PLCopenXML`。\n3. 在 `Export` / `Export PLCopenXML` 對話框中選擇要匯出的物件。\n4. 按 `OK`，並在檔案對話框選擇檔名與儲存位置。\n\n#### 匯入物件步驟（Import）\n\n1. 開啟欲匯入目標的專案。\n2. 在主選單選擇：\n   - `Project → Import`，或\n   - `Project → Import PLCopenXML`。\n3. 在匯入對話框中：\n   - 選擇來源檔案與欲匯入之物件。\n   - 指定匯入目標位置（在物件樹中的節點）。\n4. 按 `OK`，匯入的物件會新增到現有物件樹內。\n\n實務建議：\n\n- 在團隊共用 Library / 範本程式時：\n  - 優先使用 `*.export`（CODESYS XML），保留最多資訊。\n  - 只有在與第三方工具整合時，才採用 PLCopenXML。\n\n---\n\n## 3. 專案移轉與維護情境 Transferring Projects\n\n`Transferring Projects` 章節特別針對以下需求設計：\n\n\u003e 將專案從 PC1 轉移到 PC2，並在 PC2 上連到 **同一台 PLC**，而且希望「不需要 Online Change 或重新 Download」。\n\n### 3.1 準備條件（在 PC1 上）\n\n在 PC1 開啟專案並連到目標 PLC，依序確認：\n\n1. **函式庫版本固定（Fix Version Libraries）**\n   - 在 `Library Manager` 中確認所有 Library 項目都不是 `*`（代表自由 placeholder），而是固定版號。\n   - 例外：純介面 Library 可以維持為彈性版本。\n2. **Compiler Version 固定**\n   - 在 `Project → Project Settings → Compiler Options` 中設定為特定版本。\n3. **Visualization Profile 固定（若有使用 Visualization）**\n   - 在 `Project Settings → Visualization Profile` 中選擇明確的 Profile。\n4. **Boot Application 與專案內容一致**\n   - 檢查視窗標題列中的專案名稱後是否有 `*`：\n     - 有 `*` 代表尚未儲存，可能與已下載的 Boot Application 不一致。\n   - 必要時：\n     1. 先儲存專案。\n     2. `Online → Create Boot Application` 建立新的 Boot Project。\n     3. `Online → Login` 後執行 `Online → Download` 重新下載到 PLC。\n     4. `Debug → Start` 讓 PLC 上執行的應用程式與專案完全一致。\n\n### 3.2 建立 Project Archive\n\n在上述條件都滿足後：\n\n1. 執行 `File → Project Archive → Save/Send Archive`。\n2. 在 `Project Archive` 對話框中勾選：\n   - `Download information files`\n   - `Referenced devices`\n   - `Referenced libraries`\n   - `Visualization Profile`\n   - 若使用較舊 Compiler，可能仍看到 `Library profile` 選項（在 3.5.18.0 之後已不再適用）。\n3. 將 Archive 檔案儲存到 PC2 可存取的位置（例如網路路徑或版本控制系統）。\n\n### 3.3 在 PC2 上還原與登入\n\n1. 在 PC2 開啟 CODESYS。\n2. `File → Project Archive → Extract Archive`：\n   - 選擇 PC1 儲存的 Archive 檔。\n   - 在 `Extract Project Archive` 對話框中，勾選與建立封存時相同的項目。\n3. 開啟還原後的專案。\n4. 設定與原先相同的通信設定（IP / Device），登入同一台 PLC。\n\n若環境（Library / Compiler / Visualization Profile 等）完全相容：\n\n- CODESYS 應該可以在 PC2 上直接登入，而 **不需要 Online Change 或 Download**。\n\n---\n\n## 4. 專案比較 Comparing Projects\n\n`Comparing Projects` 章節提供一個非常實用的工具：**Project Comparison**。\n\n### 4.1 功能概觀\n\n- 可以將目前開啟的專案與另一個「參考專案（Reference Project）」比對。\n- 會偵測並顯示：\n  - 內容差異（程式碼、設定）。\n  - 物件屬性差異。\n  - 存取權限差異。\n- 比對結果會顯示在：\n  - `Project Comparison – Differences` 主視圖（樹狀結構）。\n  - 針對單一物件的 `Project Comparison – \u003cobject name\u003e Differences` 詳細視圖（程式碼逐行比較）。\n\n### 4.2 啟動比較\n\n1. 開啟當前專案（作為「目前專案」）。\n2. 選擇 `Project → Compare`。\n3. 在 `Project Comparison` 對話框中：\n   - 指定要比較的「參考專案」（另一個 `.project` 或 `.projectarchive` 解開的專案）。\n   - 設定欲比對的範圍與選項（例如是否包含圖形編輯器、權限設定等）。\n4. 執行比對後，`Differences` 視圖會以樹狀結構標示：\n   - 新增的物件。\n   - 刪除的物件。\n   - 內容不同的物件（以顏色與圖示區分）。\n\n### 4.3 詳細差異檢視與接受變更\n\n對於內容不同的物件，可以開啟詳細視圖：\n\n- 顯示「目前專案」與「參考專案」的程式碼差異。\n- 可以使用工具列上的圖示（例如「接受此區塊」、「接受單行」、「接受屬性差異」）將參考專案的內容帶入目前專案：\n  - 被標記為接受的差異會以黃色顯示。\n- 一次只能在 **一個比較視圖** 中編輯與接受差異，其餘比較視圖會是唯讀狀態。\n\n當你關閉（或離開）該比較視圖並確認要接受所選差異時：\n\n- CODESYS 會將那些變更 **實際套用到目前專案**。\n\n實務用法範例：\n\n- **Code Review / Merge**：\n  - 把同事修改後的專案當作「參考專案」，用 Project Comparison 比對差異，逐項接受或拒絕。\n- **版本回溯檢查**：\n  - 將新舊版本專案比較，確認哪些邏輯或設定被改動。\n\n---\n\n## 5. 專案保護與國際化的連結（概念預告）\n\n雖然完整的專案保護、在地化與範本（Template）會在其他教學文件中詳述，這裡先點出與「匯出／比較／移轉」的關聯：\n\n- **保護與儲存 Protecting and Saving Projects**\n  - 當你建立 Project Archive 或分享專案時，應檢查：\n    - 專案是否設有唯讀保護或密碼。\n    - 是否啟用 User Management 限制部分物件的存取。\n  - 在交接前可以適度放寬或重新規劃權限，以便接手者有效維護。\n- **在地化 Localizing Projects**\n  - 多語系專案常常需要在不同地區團隊間傳遞。\n  - 建議在 Archive 中一併納入 Text List / String Table 等資源，並於教學文件中清楚說明翻譯流程。\n- **專案範本 Project Templates**\n  - 當你找到一套穩定的專案結構（含 Library、Device、User Management、檔案組織方式），可以將之固化為 Template。\n  - 未來新專案不必從零開始，也能保持團隊風格一致。\n\n---\n\n## 6. 實務流程建議：專案交接 Checklist\n\n當你準備把專案交給另一個團隊或搬到新電腦時，可以參考以下流程：\n\n1. **在 PC1 檢查專案狀態**\n   - Library 皆為 Fix Version。\n   - Compiler / Visualization Profile 已固定。\n   - Boot Application 與專案內容一致並已下載到目標 PLC。\n2. **建立 Project Archive**\n   - 使用 `Save/Send Archive`，勾選 Download Info / Referenced Devices / Referenced Libraries / Visualization Profile 等選項。\n   - 將 Archive 上傳至版本控制系統或安全儲存位置。\n3. **記錄環境資訊**\n   - CODESYS 安裝版本與 Add‑ons 版本（可由 CODESYS Installer 匯出描述檔）。\n   - 目標 PLC 的 Runtime 版本與 Device Description 版本。\n4. **在 PC2 還原並驗證**\n   - Extract Archive。\n   - 依既有記錄建立或選擇相容的 CODESYS 安裝（可透過 Installer 協助）。\n   - 連線同一台 PLC，確認可以登入且不需要 Online Change / Download。\n5. **使用 Project Comparison（可選）**\n   - 若在 PC2 進行修改，可在交回給原團隊前，以 Project Comparison 比對差異並整理變更紀錄。\n\n透過這樣的流程，可以在 CODESYS 環境中穩定地分享、移轉與比較專案，並與後續的專案保護與國際化策略銜接，形成一套完整的專案生命週期管理方式。 \n\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"div\",null,{\"className\":\"space-y-5\",\"children\":[[\"$\",\"nav\",null,{\"className\":\"text-xs\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/offline-help\",\"style\":{\"color\":\"var(--t-accent)\"},\"children\":\"Offline Help 首頁\"}],[\"$\",\"span\",null,{\"className\":\"mx-1\",\"children\":\"/\"}],[\"$\",\"span\",null,{\"children\":\"專案生命週期與結構\"}]]}],[\"$\",\"header\",null,{\"className\":\"space-y-2\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-xl font-semibold\",\"style\":{\"color\":\"var(--t-text)\"},\"children\":\"Project Export, Transfer, Compare and Protection 專案匯出、移轉、比較與保護 教學整理\"}],[\"$\",\"p\",null,{\"className\":\"text-sm\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"整理專案匯出／匯入、封存、移轉、比較與保護的實務流程，適合專案交接與版本管理情境。\"}]]}],[\"$\",\"section\",null,{\"className\":\"rounded-lg border p-4\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\"},\"children\":[\"$\",\"$Lf\",null,{\"content\":\"$10\"}]}],false]}]\n"])</script></body></html>

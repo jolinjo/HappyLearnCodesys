@@ -1,0 +1,417 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[39756,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+4:I[37457,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+6:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"ViewportBoundary"]
+b:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"MetadataBoundary"]
+d:I[68027,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+:HL["/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","style"]
+0:{"P":null,"b":"hE9wNZamtqMjFK5Z04D0M","c":["","softmotion","cnc05-file"],"q":"","i":false,"f":[[["",{"children":["softmotion",{"children":[["slug","cnc05-file","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-Hant","children":["$","body",null,{"className":"min-h-screen","children":["$","div",null,{"className":"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6","children":[["$","header",null,{"className":"mb-6 border-b pb-4","style":{"borderColor":"var(--t-border)"},"children":["$","div",null,{"className":"flex items-start justify-between gap-4","children":[["$","div",null,{"children":[["$","h1",null,{"className":"text-xl font-semibold tracking-tight","children":["$","$L2",null,{"href":"/","style":{"color":"var(--t-accent)"},"className":"hover:underline","children":"CODESYS 教學網站"}]}],["$","p",null,{"className":"mt-1 text-sm","style":{"color":"var(--t-text-muted)"},"children":"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。"}]]}],["$","nav",null,{"className":"flex shrink-0 items-center gap-2","children":[["$","$L2",null,{"href":"/","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"回首頁"}],["$","$L2",null,{"href":"/offline-help","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"Offline Help"}],["$","$L2",null,{"href":"/search","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"搜尋"}]]}]]}]}],["$","main",null,{"className":"flex-1 pb-8","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex flex-col items-center justify-center gap-4 py-12 text-center","children":[["$","p",null,{"className":"text-4xl font-semibold","style":{"color":"var(--t-text-muted)"},"children":"404"}],["$","p",null,{"style":{"color":"var(--t-text-muted)"},"children":"找不到這個頁面。"}],["$","nav",null,{"className":"mt-4 flex flex-wrap justify-center gap-3","children":[["$","$L2",null,{"href":"/","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-accent)"},"children":"回首頁"}],["$","$L2",null,{"href":"/softmotion","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"SoftMotion 學習地圖"}],["$","$L2",null,{"href":"/licensing","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"授權說明"}],["$","$L2",null,{"href":"/guidelines","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"開發規範"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t pt-4 text-xs","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":"$Lc"}]}],null]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+c:["$","$7",null,{"name":"Next.Metadata","children":"$Le"}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+e:[["$","title","0",{"children":"CODESYS 教學網站"}],["$","meta","1",{"name":"description","content":"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"}]]
+f:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+10:T3553,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# CNC05_File — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？
+
+本範例示範如何在 CNC 系統中 **從控制器檔案系統讀取 ASCII G-code 檔案並執行**。G-code 儲存在 `_cnc/CNC1.cnc` 之類的檔案中，由 PathTask 透過 <span class="cfg-func">SMC_ReadNCFile2</span> 與 <span class="cfg-func">SMC_NCInterpreter</span> 讀檔與解譯，再經 <span class="cfg-func">SMC_CheckVelocities</span> 速度檢查後供插補器使用；MotionTask 則以插補器、三軸龍門座標轉換與三軸位置控制來實際驅動 `AxisX` / `AxisY` / `AxisZ`。
+
+---
+
+## 二、使用情境與硬體／通訊架構
+
+### 2.1 任務與程式
+
+`TaskConfiguration.md`：
+
+| 任務名稱 | 類型 | 週期 | 優先權 | POU 清單 |
+|----------|------|------|--------|----------|
+| MotionTask | Cyclic | t#gc_dwCycle | 1 | `CNC` |
+| PathTask | Cyclic | t#20ms | 5 | `CNC_PreparePath` |
+| VISU_TASK | Cyclic | t#100ms | 10 | `VisuElems.Visu_Prg` |
+
+- **MotionTask（CNC）**：以 `gc_dwCycle`（預設 4000 μs）週期執行三軸插補與軸控制。  
+- **PathTask（CNC_PreparePath）**：以 20 ms 週期從 G-code 檔案讀取、解譯並進行速度檢查。  
+- **VISU_TASK**：執行視覺化程式，與本範例說明無直接關聯。
+
+### 2.2 軸與裝置
+
+`DeviceTree_Axes.md`：
+
+| 軸名稱 | 類型 | 綁定任務 |
+|--------|------|----------|
+| AxisX | SM_Drive_Virtual | - |
+| AxisY | SM_Drive_Virtual | - |
+| AxisZ | SM_Drive_Virtual | - |
+
+三軸皆為虛擬軸，在實機專案中會改綁到實際伺服驅動器；本範例集中示範 G-code 讀檔與三軸 CNC 執行流程。
+
+### 2.3 函式庫
+
+`Libraries.md`：
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | SoftMotion 基礎運動控制。 |
+| <span class="cfg-name">#SM3_CamBuilder</span> | 凸輪相關。 |
+| <span class="cfg-name">#System_VisuElem3DPath</span> | 3D Path 視覺化。 |
+| <span class="cfg-name">#System_VisuElemCamDisplayer</span> | 凸輪視覺化。 |
+
+---
+
+## 三、控制流程：由淺入深
+
+### 3.1 PathTask：從檔案讀取 G-code 並產生路徑佇列
+
+`CNC_PreparePath.st`：
+
+```pascal
+PROGRAM CNC_PreparePath
+VAR_INPUT
+	xStart: BOOL;
+	sFileName: STRING := '_cnc/CNC1.cnc';
+END_VAR
+VAR_OUTPUT
+	xStartIpo: BOOL;
+	poqPath: Pointer to SMC_Outqueue;
+END_VAR
+VAR
+	iState: INT;
+	rncf2 : SMC_ReadNCFile2;
+	nci: SMC_NCInterpreter;
+	cv: SMC_CheckVelocities;
+	agiBufInterpreter: ARRAY[0..99] OF SMC_GeoInfo;
+END_VAR
+```
+
+1. `poqPath := cv.poqDataOut`：PathTask 的輸出即為速度檢查後的路徑佇列。  
+2. 狀態機 `iState`：  
+   - `0`（idle）：  
+     - 等待 `xStart = TRUE`，通常由 HMI 或上層程式發出。  
+     - 清除 `rncf2` / `nci` / `cv` 的 `bExecute`，重置狀態。  
+   - 進入 `10`（start reading and processing）：  
+     - `rncf2(bExecute := TRUE, sFileName := sFileName)`：以 <span class="cfg-func">SMC_ReadNCFile2</span> 讀取 `_cnc` 底下的 CNC 檔案。  
+     - `nci(bExecute := TRUE, sentences := rncf2.sentences, ...)`：以 <span class="cfg-func">SMC_NCInterpreter</span> 解譯 G-code 句子為幾何段，輸出到 `agiBufInterpreter`。  
+     - `cv(bExecute := TRUE, poqDataIn := nci.poqDataOut)`：以 <span class="cfg-func">SMC_CheckVelocities</span> 對幾何段做速度檢查。  
+     - 將 `xStartIpo := TRUE`，代表路徑已可供插補器使用。  
+     - 當 `cv.bBusy = FALSE` 時，回到 `iState := 0`，準備下一次讀檔。  
+
+這條流程可以重複用來讀取不同檔案，只要修改 `sFileName` 即可，例如 `_cnc/part1.cnc`、`_cnc/part2.cnc`。
+
+### 3.2 MotionTask：三軸插補與驅動
+
+`CNC.st`：
+
+```pascal
+PROGRAM CNC
+VAR
+	iState: INT;
+	pX, pY, pZ: MC_Power;
+
+	ipo: SMC_Interpolator;
+	trafo: SMC_TRAFO_Gantry3;
+	trafof: SMC_TRAFOF_Gantry3D;
+	cabpX, 	cabpY, 	cabpZ: SMC_ControlAxisByPos;
+END_VAR
+```
+
+核心片段：
+
+```pascal
+pX(Enable:=TRUE , bRegulatorOn:=TRUE , bDriveStart:=TRUE , Axis:=AxisX);
+pY(Enable:=TRUE , bRegulatorOn:=TRUE , bDriveStart:=TRUE , Axis:=AxisY);
+pZ(Enable:=TRUE , bRegulatorOn:=TRUE , bDriveStart:=TRUE , Axis:=AxisZ);
+
+CASE iState OF
+0:
+	IF pX.Status AND pY.Status AND pZ.Status THEN
+		iState:=100;
+	END_IF
+100:
+	Interpolation();
+END_CASE
+```
+
+1. 三軸上電：三個 <span class="cfg-func">MC_Power</span> `pX` / `pY` / `pZ` 對 `AxisX` / `AxisY` / `AxisZ` 上電並啟動驅動。  
+2. 狀態機 `iState`：  
+   - `0`：等待三軸 `Status` 都為 TRUE。  
+   - `100`：呼叫 `Interpolation()`，實際的插補與座標轉換、軸控制邏輯通常在此函式中實作（在匯出檔中未展開，但結構與其他 CNC 範例類似）。  
+3. 在 `Interpolation()` 裡，典型會做：  
+   - <span class="cfg-func">SMC_Interpolator</span> `ipo` 從 `CNC_PreparePath.poqPath` 取得路徑佇列。  
+   - <span class="cfg-func">SMC_TRAFO_Gantry3</span> / <span class="cfg-func">SMC_TRAFOF_Gantry3D</span> 將插補結果轉成三軸 SetPosition。  
+   - 三個 <span class="cfg-func">SMC_ControlAxisByPos</span> `cabpX` / `cabpY` / `cabpZ` 寫入三軸位置。
+
+---
+
+## 四、各支程式負責哪些功能？
+
+### 4.1 `CNC.st`
+
+- **類型**：PROGRAM。  
+- **職責**：  
+  - 三軸上電與就緒檢查。  
+  - 呼叫 `Interpolation()` 完成插補、座標轉換與三軸位置控制。  
+- **與硬體／通訊關係**：  
+  - 透過 <span class="cfg-func">MC_Power</span> 與 <span class="cfg-func">SMC_ControlAxisByPos</span> 直接與 `AxisX/Y/Z` 對應的驅動器互動。
+
+### 4.2 `CNC_PreparePath.st`
+
+- **類型**：PROGRAM。  
+- **職責**：  
+  - 使用 <span class="cfg-func">SMC_ReadNCFile2</span> 從 `_cnc` 目錄讀取 ASCII G-code 檔。  
+  - 使用 <span class="cfg-func">SMC_NCInterpreter</span> 解譯 G-code 為幾何段。  
+  - 使用 <span class="cfg-func">SMC_CheckVelocities</span> 做速度檢查，輸出 `poqPath`。  
+  - 透過 `xStart` / `xStartIpo` 與 MotionTask 做簡單的同步：Path 準備好路徑後再啟動插補。  
+
+### 4.3 `GVL.st`
+
+```pascal
+VAR_GLOBAL CONSTANT
+	gc_dwCycle : DWORD := 4000;
+END_VAR
+```
+
+- **類型**：全域常數表。  
+- **職責**：  
+  - `gc_dwCycle`：MotionTask 插補週期（μs 單位），PathTask 透過 `t#gc_dwCycle` 引用此值，使任務週期設定與程式一致。
+
+---
+
+## 五、函式庫與函式／功能塊一覽
+
+| 名稱 | 類別 | 用途 |
+|------|------|------|
+| <span class="cfg-func">SMC_ReadNCFile2</span> | FB | 從檔案系統讀取 ASCII G-code 程式。 |
+| <span class="cfg-func">SMC_NCInterpreter</span> | FB | 將 G-code 句子解譯為幾何段。 |
+| <span class="cfg-func">SMC_CheckVelocities</span> | FB | 檢查與限制路徑速度。 |
+| <span class="cfg-func">SMC_Interpolator</span> | FB | 插補路徑產生 SetPosition。 |
+| <span class="cfg-func">SMC_TRAFO_Gantry3</span> / <span class="cfg-func">SMC_TRAFOF_Gantry3D</span> | FB | 三軸龍門座標轉換。 |
+| <span class="cfg-func">SMC_ControlAxisByPos</span> | FB | 根據 SetPosition 控制單軸位置。 |
+| <span class="cfg-func">MC_Power</span> | FB | 軸上電與驅動啟動。 |
+
+---
+
+## 六、變數與常數一覽
+
+本範例未使用 RETAIN／PERSISTENT。
+
+### 6.1 全域常數（`GVL.st`）
+
+| 名稱 | 型態 | 預設值 | 說明 |
+|------|------|--------|------|
+| <span class="cfg-const">gc_dwCycle</span> | <span class="cfg-type">DWORD</span> | 4000 | MotionTask 插補週期（μs），對應 t#gc\_dwCycle。 |
+
+### 6.2 `CNC_PreparePath` 主要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">xStart</span> | <span class="cfg-type">BOOL</span>（VAR\_INPUT） | 啟動一次讀檔與路徑準備。 |
+| <span class="cfg-local">sFileName</span> | <span class="cfg-type">STRING</span> | G-code 檔路徑，預設 `_cnc/CNC1.cnc`。 |
+| <span class="cfg-local">xStartIpo</span> | <span class="cfg-type">BOOL</span>（VAR\_OUTPUT） | 路徑準備完成，通知插補器可啟動。 |
+| <span class="cfg-local">poqPath</span> | <span class="cfg-type">POINTER TO SMC_Outqueue</span> | 指向速度檢查後的路徑佇列。 |
+| <span class="cfg-local">rncf2</span> | <span class="cfg-type">SMC_ReadNCFile2</span> | 檔案讀取 FB。 |
+| <span class="cfg-local">nci</span> | <span class="cfg-type">SMC_NCInterpreter</span> | 解譯 G-code。 |
+| <span class="cfg-local">cv</span> | <span class="cfg-type">SMC_CheckVelocities</span> | 速度檢查。 |
+
+### 6.3 `CNC` 主要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">pX/pY/pZ</span> | <span class="cfg-type">MC_Power</span> | 三軸上電。 |
+| <span class="cfg-local">ipo</span> | <span class="cfg-type">SMC_Interpolator</span> | 插補器。 |
+| <span class="cfg-local">trafo</span> / <span class="cfg-local">trafof</span> | <span class="cfg-type">SMC_TRAFO_Gantry3</span> / <span class="cfg-type">SMC_TRAFOF_Gantry3D</span> | 座標轉換。 |
+| <span class="cfg-local">cabpX/cabpY/cabpZ</span> | <span class="cfg-type">SMC_ControlAxisByPos</span> | 三軸位置控制。 |
+| <span class="cfg-local">iState</span> | <span class="cfg-type">INT</span> | 簡單狀態機：0=等待上電完成、100=插補執行。 |
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 檔案式 G-code 與參數式 G-code
+
+相對於 CNC02（線上解碼 + 變數）、CNC03（線上解碼 + 前處理），CNC05\_File 強調的是：
+
+- G-code 來源是 **控制器檔案系統**（例如由 CAM 或外部系統匯入的檔案）。  
+- 程式可透過修改 `sFileName` 或變更 `_cnc` 目錄下的檔案內容來更換加工程式，而不必重新編譯 PLC 程式。  
+
+這對於「由外部 CAM 生成刀路」「大量不同工件各自有一個 G-code 檔案」的場景特別重要。
+
+### 7.2 PathTask 與 MotionTask 的職責分離
+
+- **PathTask**（20 ms）：  
+  - 主要負責 I/O 相對較慢的讀檔與解譯工作。  
+  - 產生路徑佇列，並在完成時將 `bEndOfList` 標記。  
+- **MotionTask**（4 ms）：  
+  - 只關注插補與三軸位置控制，確保運動平滑與即時。  
+
+這種設計可避免把檔案讀取與插補混在同一任務內，導致即時性降低。
+
+---
+
+## 八、重要參數與設定位置
+
+| 參數 | 檔案 / 位置 | 說明 |
+|------|-------------|------|
+| <span class="cfg-const">gc_dwCycle</span> | `GVL.st` | MotionTask 插補週期。 |
+| `sFileName` | `CNC_PreparePath.st`（VAR\_INPUT 預設） | 要讀取的 G-code 檔案，例如 `_cnc/CNC1.cnc`。 |
+| 軸名稱 `AxisX/Y/Z` | `DeviceTree_Axes.md` | 三軸對應之驅動軸，實機專案中需替換成實際驅動器。 |
+| 任務週期 t#gc\_dwCycle / t#20ms | `TaskConfiguration.md` | 插補與讀檔解譯的更新頻率。 |
+
+---
+
+## 九、建議閱讀與修改順序
+
+1. 先看 `GVL.st` 與 `TaskConfiguration.md`，了解 MotionTask / PathTask 的週期與關係。  
+2. 再看 `DeviceTree_Axes.md`，確認三軸結構。  
+3. 閱讀 `CNC_PreparePath.st`，理解 ReadNCFile2 + NCInterpreter + CheckVel 的檔案式讀取流程。  
+4. 閱讀 `CNC.st`，特別是狀態機與 `Interpolation()` 呼叫點，對照其他 CNC 範例推敲插補與軸控制的實作。  
+5. 實際調整 `sFileName` 或在 CODESYS 專案中更換 `_cnc` 下的 G-code 檔，觀察 CNC 執行結果。  
+
+---
+
+## 十、名詞對照
+
+| 英文 / 符號 | 說明 |
+|-------------|------|
+| <span class="cfg-name">ASCII G-code</span> | 純文字 G-code 檔案，通常由 CAM 或外部軟體產生。 |
+| <span class="cfg-func">SMC_ReadNCFile2</span> | 從檔案系統讀取 G-code 的 SoftMotion 功能塊。 |
+| <span class="cfg-name">PathTask</span> | 負責讀檔與解譯的任務。 |
+| <span class="cfg-name">MotionTask</span> | 負責插補與軸控制的任務。 |
+
+5:["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/softmotion","style":{"color":"var(--t-accent)"},"children":"SoftMotion 學習地圖"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"style":{"color":"var(--t-text)"},"children":"CNC Example 05：由檔案產生 CNC"}]]}],["$","header",null,{"className":"space-y-1","children":[["$","div",null,{"className":"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-text-muted)"},"children":[["$","span",null,{"className":"uppercase tracking-wide","children":"CNC"}],["$","span",null,{"className":"h-1 w-1 rounded-full","style":{"backgroundColor":"var(--t-accent)"}}],["$","span",null,{"style":{"color":"var(--t-accent)"},"children":["步驟 ",5]}]]}],["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"CNC Example 05：由檔案產生 CNC"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"SMC_ReadNCFile2、SMC_NCInterpreter，從檔案讀取 ASCII G-code 並執行。"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":["官方專案："," ",["$","code",null,{"className":"rounded px-1 py-0.5","style":{"backgroundColor":"var(--t-border)","color":"var(--t-text)"},"children":"CNC05_File.project"}]]}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$Lf",null,{"content":"$10"}]}],false,"$L11"]}]
+12:I[85649,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"StCodeBlock"]
+13:T1587,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> CNC_PreparePath</span></span>
+<span class="line"><span style="color:#24292E">VAR_INPUT</span></span>
+<span class="line"><span style="color:#24292E">	xStart: BOOL;</span></span>
+<span class="line"><span style="color:#24292E">	sFileName: </span><span style="color:#D73A49">STRING</span><span style="color:#24292E"> := </span><span style="color:#032F62">'_cnc/CNC1.cnc'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#24292E">	xStartIpo: BOOL;</span></span>
+<span class="line"><span style="color:#24292E">	poqPath: </span><span style="color:#D73A49">Pointer</span><span style="color:#D73A49"> to</span><span style="color:#24292E"> SMC_Outqueue;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	iState: INT;</span></span>
+<span class="line"><span style="color:#24292E">	rncf2 : SMC_ReadNCFile2;</span></span>
+<span class="line"><span style="color:#24292E">	nci: SMC_NCInterpreter;</span></span>
+<span class="line"><span style="color:#24292E">	cv: SMC_CheckVelocities;</span></span>
+<span class="line"><span style="color:#24292E">	agiBufInterpreter: </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">.</span><span style="color:#005CC5">.99</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> SMC_GeoInfo;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">poqPath := cv.poqDataOut;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> iState </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:	</span><span style="color:#6A737D">// idle</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> xStart </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		iState := </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		xStartIpo := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		rncf2(bExecute:= </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		nci(bExecute:= </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">, sentences:= rncf2.sentences);</span></span>
+<span class="line"><span style="color:#24292E">		cv(bExecute:= </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		xStart := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"><span style="color:#005CC5">10</span><span style="color:#24292E">:	</span><span style="color:#6A737D">// start reading and processing</span></span>
+<span class="line"><span style="color:#24292E">	rncf2(</span></span>
+<span class="line"><span style="color:#24292E">		bExecute:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		sFileName:= sFilename);</span></span>
+<span class="line"><span style="color:#24292E">	nci(</span></span>
+<span class="line"><span style="color:#24292E">		bExecute:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		nSizeOutQueue:= SIZEOF(agiBufInterpreter),</span></span>
+<span class="line"><span style="color:#24292E">		pbyBufferOutQueue:= ADR(agiBufInterpreter),</span></span>
+<span class="line"><span style="color:#24292E">		sentences:= rncf2.sentences);</span></span>
+<span class="line"><span style="color:#24292E">	cv(</span></span>
+<span class="line"><span style="color:#24292E">		bExecute:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		poqDataIn:= nci.poqDataOut);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	xStartIpo := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> cv.bBusy </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		iState := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span></code></pre>11:["$","section",null,{"className":"space-y-3","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"ST 程式碼"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。"}],["$","div",null,{"className":"space-y-2","children":[["$","$L12","CNC_PreparePath.st",{"title":"CNC_PreparePath.st","html":"$13"}],"$L14","$L15"]}]]}]
+16:Ted2,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> CNC</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	iState: INT;</span></span>
+<span class="line"><span style="color:#24292E">	pX, pY, pZ: MC_Power;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	ipo: SMC_Interpolator;</span></span>
+<span class="line"><span style="color:#24292E">	trafo: SMC_TRAFO_Gantry3;</span></span>
+<span class="line"><span style="color:#24292E">	trafof: SMC_TRAFOF_Gantry3D;</span></span>
+<span class="line"><span style="color:#24292E">	cabpX, 	cabpY, 	cabpZ: SMC_ControlAxisByPos;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">pX(</span></span>
+<span class="line"><span style="color:#24292E">	Enable:=</span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ,</span></span>
+<span class="line"><span style="color:#24292E">	bRegulatorOn:=</span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ,</span></span>
+<span class="line"><span style="color:#24292E">	bDriveStart:=</span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ,</span></span>
+<span class="line"><span style="color:#24292E">	Axis:=AxisX);</span></span>
+<span class="line"><span style="color:#24292E">pY(</span></span>
+<span class="line"><span style="color:#24292E">	Enable:=</span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ,</span></span>
+<span class="line"><span style="color:#24292E">	bRegulatorOn:=</span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ,</span></span>
+<span class="line"><span style="color:#24292E">	bDriveStart:=</span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ,</span></span>
+<span class="line"><span style="color:#24292E">	Axis:=AxisY);</span></span>
+<span class="line"><span style="color:#24292E">pZ(</span></span>
+<span class="line"><span style="color:#24292E">	Enable:=</span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ,</span></span>
+<span class="line"><span style="color:#24292E">	bRegulatorOn:=</span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ,</span></span>
+<span class="line"><span style="color:#24292E">	bDriveStart:=</span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ,</span></span>
+<span class="line"><span style="color:#24292E">	Axis:=AxisZ);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> iState </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> pX.Status </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> pY.Status </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> pZ.Status </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		iState:=</span><span style="color:#005CC5">100</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"><span style="color:#005CC5">100</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">	Interpolation();</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span></code></pre>14:["$","$L12","CNC.st",{"title":"CNC.st","html":"$16"}]
+15:["$","$L12","GVL.st",{"title":"GVL.st","html":"<pre class=\"shiki github-light\" style=\"background-color:#fff;color:#24292e\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#24292E\">VAR_GLOBAL CONSTANT</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">\tgc_dwCycle : </span><span style=\"color:#D73A49\">DWORD</span><span style=\"color:#24292E\"> := </span><span style=\"color:#005CC5\">4000</span><span style=\"color:#24292E\">;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">END_VAR</span></span></code></pre>"}]

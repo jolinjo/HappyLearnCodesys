@@ -1,0 +1,342 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+9:I[85649,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"StCodeBlock"]
+b:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+c:"$Sreact.suspense"
+4:T30f2,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# BasicMotion_Override — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？
+
+這個範例示範 SoftMotion 中的「速度 Override」功能：  
+先讓軸以某一個設定速度執行絕對位置運動，途中再根據條件（例如位置超過某個門檻）調整 Override 的速度因子，讓同一筆運動命令在執行中變慢，而不需要停止重發命令。  
+對初學者來說，可以把它想像成「在不改變目標位置與加速度的前提下，動態調整這條路徑的快慢」。
+
+---
+
+## 二、使用情境與硬體／軸架構
+
+### 2.1 任務與程式
+
+根據 `TaskConfiguration.md`：
+
+| 任務名稱 | 類型 | 週期 | 優先權 | POU 清單 |
+|----------|------|------|--------|----------|
+| MainTask | Cyclic | t#20ms | 1 | `PLC_PRG` |
+
+MainTask 每 20 ms 呼叫一次 `PLC_PRG`，執行軸上電、運動命令與 Override 的調整。
+
+### 2.2 軸與裝置
+
+根據 `DeviceTree_Axes.md`：
+
+| 軸名稱 | 類型 | 角色 |
+|--------|------|------|
+| <span class="cfg-name">Drive</span> | <span class="cfg-name">SM_Drive_Virtual</span> | 單一虛擬軸，用於示範 Override 功能。 |
+
+Trace 設定追蹤了：
+
+- `Drive.fSetPosition`／`Drive.fSetVelocity`／`Drive.fSetAcceleration`  
+- `PLC_PRG.getOverride.VelFactor`  
+
+有了這些訊號，你可以在 Trace 裡清楚看到「Override 從 0.5 改成 0.25 之後，速度命令是如何被縮放」。
+
+---
+
+## 三、控制流程：由淺入深
+
+### 3.1 整體流程概觀
+
+以 `PLC_PRG` 狀態機 <span class="cfg-local">state</span> 來看，流程可以分成三步：
+
+1. **STATE\_POWER**：上電並啟動 Drive 軸。  
+2. **STATE\_COMMAND\_MOVEMENT**：設定 Override 為 0.5，並發出絕對位置運動命令，讓軸朝位置 10 移動。  
+3. **STATE\_CHANGE\_OVERRIDE**：當實際位置大於 5 時，將 Override 從 0.5 調整為 0.25，並進入 Idle 狀態。  
+
+從使用者角度來看，就是「一開始跑得比較快，跑到一半自動放慢」，整個過程都由同一個 <span class="cfg-func">MC_MoveAbsolute()</span> 命令與 <span class="cfg-func">MC_SetOverride()</span> 完成。
+
+### 3.2 狀態與條件判斷
+
+- 在 **STATE\_POWER** 中，只要 `power.Status` 為 TRUE，就視為軸已就緒，轉入下一階段。  
+- 在 **STATE\_COMMAND\_MOVEMENT** 中，程式直接設定 `setOverride.VelFactor := 0.5`，並啟用 `moveAbsolute` 命令。  
+- 在 **STATE\_CHANGE\_OVERRIDE** 中，使用 `readPosition.Valid` 與 `readPosition.Position > 5` 作為條件，一旦成立就把 `VelFactor` 改成 0.25，代表之後所有運動命令的有效速度都會被縮放為 25%。  
+
+這個範例沒有特別處理 Error 狀態，而是著重在 Override 概念本身；實務上可以補上錯誤處理與更完整的狀態機。
+
+---
+
+## 四、各程式負責哪些功能？
+
+本範例同樣只有 `PLC_PRG` 一支程式。
+
+### 4.1 `PLC_PRG` — Override 示範程式
+
+- **類型**：PROGRAM。  
+- **職責**：  
+  - 上電 <span class="cfg-name">Drive</span> 軸。  
+  - 在運動開始前設定初始 Override 因子為 0.5。  
+  - 根據實際位置條件動態調降 Override 因子到 0.25。  
+- **與硬體的關係**：  
+  - 在實機應用中，可以用 Override 來做「全域速度比例」調整，例如切換生產模式（高速／低速）、或在接近終點時自動放慢整體速度。  
+
+---
+
+## 五、函式庫與函式／功能塊一覽
+
+### 5.1 函式庫
+
+由 `Libraries.md` 可知：
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | 提供 MC\_* 運動控制功能塊與軸控制。 |
+| <span class="cfg-name">#SM3_CamBuilder</span> | 雖有引用，但本範例主要使用 Override 相關功能。 |
+
+### 5.2 主要功能塊
+
+| 名稱 | 類型 | 用途 | 主要引數（IN / IN\_OUT） | 回傳／狀態 |
+|------|------|------|--------------------------|------------|
+| <span class="cfg-func">MC_Power()</span> | FUNCTION\_BLOCK | 對 Drive 軸上電與啟動驅動。 | <span class="cfg-arg">Axis</span>；<span class="cfg-arg">Enable</span>；<span class="cfg-arg">bDriveStart</span>；<span class="cfg-arg">bRegulatorOn</span>。 | `Status`、`Error`、`ErrorID`。 |
+| <span class="cfg-func">MC_MoveAbsolute()</span> | FUNCTION\_BLOCK | 對 Drive 軸發出絕對位置運動命令。 | <span class="cfg-arg">Axis</span>；<span class="cfg-arg">Execute</span>；<span class="cfg-arg">Position</span>；<span class="cfg-arg">Velocity</span> 等。 | `Done`、`Error`。 |
+| <span class="cfg-func">MC_SetOverride()</span> | FUNCTION\_BLOCK | 設定軸的速度 Override 因子。 | <span class="cfg-arg">Axis</span>；<span class="cfg-arg">Enable</span>；<span class="cfg-arg">VelFactor</span>（0.0～1.0 或更大，視系統設定）。 | `Error`、`ErrorID`。 |
+| <span class="cfg-func">SMC_GetOverride()</span> | FUNCTION\_BLOCK | 讀取目前軸的 Override 設定（例如 VelFactor）。 | <span class="cfg-arg">Axis</span>；<span class="cfg-arg">Enable</span>。 | `VelFactor` 等實際 Override 資訊。 |
+| <span class="cfg-func">MC_ReadActualPosition()</span> | FUNCTION\_BLOCK | 讀取實際位置，用來判斷何時變更 Override。 | <span class="cfg-arg">Axis</span>；<span class="cfg-arg">Enable</span>。 | `Position` 與 `Valid`。 |
+
+---
+
+## 六、變數與常數一覽
+
+本範例未使用 RETAIN／PERSISTENT 變數。
+
+### 6.1 `PLC_PRG` 中的重要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">power</span> | <span class="cfg-type">MC_Power</span> | 控制 Drive 軸上電與驅動啟動。 |
+| <span class="cfg-local">setOverride</span> | <span class="cfg-type">MC_SetOverride</span> | 設定速度 Override 因子。 |
+| <span class="cfg-local">getOverride</span> | <span class="cfg-type">SMC_GetOverride</span> | 用於監看當前 Override 設定（例如在 Trace 中觀察）。 |
+| <span class="cfg-local">moveAbsolute</span> | <span class="cfg-type">MC_MoveAbsolute</span> | Drive 軸絕對位置運動命令。 |
+| <span class="cfg-local">readPosition</span> | <span class="cfg-type">MC_ReadActualPosition</span> | 讀取實際位置，用來決定何時改變 Override。 |
+| <span class="cfg-local">state</span> | <span class="cfg-type">UDINT</span> | 狀態機目前所在的階段。 |
+
+### 6.2 狀態常數
+
+| 名稱 | 值 | 說明 |
+|------|----|------|
+| <span class="cfg-const">STATE_POWER</span> | 0 | 軸上電與伺服啟動。 |
+| <span class="cfg-const">STATE_COMMAND_MOVEMENT</span> | 10 | 設定初始 Override 並發出移動命令。 |
+| <span class="cfg-const">STATE_CHANGE_OVERRIDE</span> | 20 | 監看位置門檻並調整 Override。 |
+| <span class="cfg-const">STATE_IDLE</span> | 30 | 完成調整後進入待命狀態。 |
+
+Trace 變數 `getOverride.VelFactor` 可以幫助你確認 Override 因子是否依照預期在路徑中途發生改變。
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 Override 與絕對命令的關係
+
+在本範例中，<span class="cfg-func">MC_MoveAbsolute()</span> 的設定（位置、速度、加速度、Jerk）不會因為 Override 的改變而被改寫；  
+Override 是在控制器內部對速度命令做「縮放」，可以理解為：
+
+\[
+v_\text{實際命令} = v_\text{原本命令} \times \text{VelFactor}
+\]
+
+因此：
+
+- 當 `VelFactor = 0.5` 時，軸會以原本設定速度的一半運動。  
+- 當 `VelFactor` 改為 0.25 時，速度會再降低為原本的 25%。  
+
+這種寫法非常適合在「不想重算路徑、只想放慢／加快」的情境，例如：
+
+- 機台從「手動調機」模式切換到「自動生產」模式。  
+- 在接近工件或限位前，暫時降低速度以提高安全性。  
+
+### 7.2 觸發條件的選擇
+
+範例中條件為：
+
+```text
+IF readPosition.Valid AND readPosition.Position > 5 THEN
+    setOverride.VelFactor := 0.25;
+    state := STATE_IDLE;
+END_IF
+```
+
+也就是當實際位置大於 5 時，才調整 Override。  
+在實務上，這個條件可以替換成：
+
+- 與安全區域邊界的距離。  
+- 與其他軸或工件的相對距離。  
+- 外部 I/O 訊號（例如感測器觸發）等。  
+
+重要的是：Override 改變是「漸進地影響之後的命令」，而不是立即重寫整個路徑。
+
+---
+
+## 八、重要參數與設定位置
+
+| 參數／設定 | 所在位置 | 說明 |
+|------------|----------|------|
+| <span class="cfg-arg">VelFactor</span> 初始值 0.5 | `PLC_PRG` 中 `STATE_COMMAND_MOVEMENT` | 決定運動開始時整體速度比例。 |
+| <span class="cfg-arg">VelFactor</span> 調整值 0.25 | `PLC_PRG` 中 `STATE_CHANGE_OVERRIDE` | 決定條件達成後的速度比例。 |
+| 門檻位置 5 | `STATE_CHANGE_OVERRIDE` 條件 `Position > 5` | 何時開始放慢速度，可以依實際機構距離調整。 |
+| MoveAbsolute 目標位置／速度 | `PLC_PRG` 中 `moveAbsolute.Position/Velocity/...` | 定義原始運動命令的行程與速度上限。 |
+| MainTask 週期 t#20ms | `TaskConfiguration.md` | 影響狀態判斷與 Override 更新頻率。 |
+
+在實機調校時，通常會先確定軸本身的加速度與 Jerk 能力，再微調 Override 與門檻條件，讓放慢的行為既安全又不影響產能。
+
+---
+
+## 九、建議閱讀與修改順序
+
+1. **先看 `DeviceTree_Axes.md` 與 `TaskConfiguration.md`**  
+   - 確認只有一條 <span class="cfg-name">Drive</span> 軸與其任務設定。  
+2. **再看 `PLC_PRG` 的變數宣告**  
+   - 理解 `power`、`setOverride`、`moveAbsolute`、`readPosition` 之間的關係。  
+3. **接著看狀態機三個階段**  
+   - 特別是 STATE\_COMMAND\_MOVEMENT 與 STATE\_CHANGE\_OVERRIDE 中的寫法。  
+4. **最後用 Trace 觀察 Override 的變化**  
+   - 觀察 `getOverride.VelFactor` 與 `Drive.fSetVelocity` 的變化，試著對照理論與實際波形。  
+
+修改時，可以先只改門檻位置與 Override 的兩組值，觀察軸在不同區段的速度變化，再進一步調整 MoveAbsolute 的參數。
+
+---
+
+## 十、名詞對照
+
+| 英文 / 符號 | 說明 |
+|-------------|------|
+| <span class="cfg-name">Override</span> | 覆寫速度因子，用於整體縮放軸的速度命令。 |
+| <span class="cfg-func">MC_SetOverride()</span> | 設定軸的 Override（速度因子）的功能塊。 |
+| <span class="cfg-func">SMC_GetOverride()</span> | 讀取目前 Override 設定的功能塊。 |
+| <span class="cfg-name">VelFactor</span> | 速度比例因子，1.0 代表 100%，0.5 代表 50% 等。 |
+| <span class="cfg-func">MC_ReadActualPosition()</span> | 讀取實際位置的功能塊，用於當作觸發條件。 |
+
+0:{"buildId":"hE9wNZamtqMjFK5Z04D0M","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/softmotion","style":{"color":"var(--t-accent)"},"children":"SoftMotion 學習地圖"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"style":{"color":"var(--t-text)"},"children":"速度 Override"}]]}],["$","header",null,{"className":"space-y-1","children":[["$","div",null,{"className":"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-text-muted)"},"children":[["$","span",null,{"className":"uppercase tracking-wide","children":"BasicMotion"}],["$","span",null,{"className":"h-1 w-1 rounded-full","style":{"backgroundColor":"var(--t-accent)"}}],["$","span",null,{"style":{"color":"var(--t-accent)"},"children":["步驟 ",4]}]]}],["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"速度 Override"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"運動過程中平滑修改速度／加減速度 Override 比例，避免速度突變。"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":["官方專案："," ",["$","code",null,{"className":"rounded px-1 py-0.5","style":{"backgroundColor":"var(--t-border)","color":"var(--t-text)"},"children":"BasicMotion_Override.project"}]]}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],false,"$L5"]}],["$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+a:T221e,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">/// 此程式示範如何使用 Override（速度覆寫）功能：</span></span>
+<span class="line"><span style="color:#6A737D">/// - 先以 50% 的速度因子啟動一段絕對位置運動。</span></span>
+<span class="line"><span style="color:#6A737D">/// - 當軸位置超過一個門檻（例如 > 5）時，再將 Override 調低為 25%，</span></span>
+<span class="line"><span style="color:#6A737D">///   讓同一個運動命令在途中「變慢」，而不需要重新下達新的運動命令。</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> PLC_PRG</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#6A737D">	/// 控制 Drive 軸上電與啟動的功能塊。</span></span>
+<span class="line"><span style="color:#24292E">	power : MC_Power;</span></span>
+<span class="line"><span style="color:#6A737D">	/// 設定軸的速度 Override 因子的功能塊。</span></span>
+<span class="line"><span style="color:#24292E">	setOverride : MC_SetOverride;</span></span>
+<span class="line"><span style="color:#6A737D">	/// 讀取目前 Override 設定（例如 VelFactor）的功能塊。</span></span>
+<span class="line"><span style="color:#24292E">	getOverride : SMC_GetOverride;</span></span>
+<span class="line"><span style="color:#6A737D">	/// 對 Drive 軸發出絕對位置運動命令的功能塊。</span></span>
+<span class="line"><span style="color:#24292E">	moveAbsolute: MC_MoveAbsolute;</span></span>
+<span class="line"><span style="color:#6A737D">    /// 讀取 Drive 軸當前實際位置的功能塊。</span></span>
+<span class="line"><span style="color:#24292E">    readPosition : MC_ReadActualPosition;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/// 狀態機，負責切換「上電 → 發動運動 → 變更 Override → Idle」。</span></span>
+<span class="line"><span style="color:#24292E">	state : UDINT;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span><span style="color:#24292E"> CONSTANT</span></span>
+<span class="line"><span style="color:#6A737D">	/// 軸上電與伺服啟動階段。</span></span>
+<span class="line"><span style="color:#24292E">	STATE_POWER : UDINT := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">	/// 發出運動命令並設定初始 Override（0.5）階段。</span></span>
+<span class="line"><span style="color:#24292E">	STATE_COMMAND_MOVEMENT : UDINT := </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">    /// 監看位置並在門檻後變更 Override（降到 0.25）的階段。</span></span>
+<span class="line"><span style="color:#24292E">	STATE_CHANGE_OVERRIDE : UDINT := </span><span style="color:#005CC5">20</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">	/// 完成變更後進入 Idle（不再修改命令）的狀態。</span></span>
+<span class="line"><span style="color:#24292E">	STATE_IDLE : UDINT := </span><span style="color:#005CC5">30</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/// 依照狀態機切換上電、運動與 Override 的變更時機。</span></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> state </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#24292E">	STATE_POWER:</span></span>
+<span class="line"><span style="color:#6A737D">		/// 啟動 Drive 軸的電源與驅動。</span></span>
+<span class="line"><span style="color:#24292E">		power.Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		power.bDriveStart := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		power.bRegulatorOn := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">		/// 軸一旦準備就緒就進入下個階段。</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> power.Status </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := STATE_COMMAND_MOVEMENT;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	STATE_COMMAND_MOVEMENT:</span></span>
+<span class="line"><span style="color:#6A737D">		/// 啟用 Override 功能，先將速度因子設為 0.5（50%）。</span></span>
+<span class="line"><span style="color:#24292E">		setOverride.Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		setOverride.VelFactor := </span><span style="color:#005CC5">0.5</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">		/// 發出絕對位置運動命令，目標位置 10，速度 20，基本加減速度與 Jerk。</span></span>
+<span class="line"><span style="color:#24292E">		moveAbsolute.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		moveAbsolute.Position := </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		moveAbsolute.Velocity := </span><span style="color:#005CC5">20</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		moveAbsolute.Acceleration := </span><span style="color:#005CC5">100</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		moveAbsolute.Deceleration := </span><span style="color:#005CC5">100</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		moveAbsolute.Jerk := </span><span style="color:#005CC5">1000</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">        /// 命令送出後，進入「等待條件再調整 Override」的狀態。</span></span>
+<span class="line"><span style="color:#24292E">        state := STATE_CHANGE_OVERRIDE;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    STATE_CHANGE_OVERRIDE:</span></span>
+<span class="line"><span style="color:#6A737D">        /// 當讀到的位置有效，且實際位置已超過 5 時，把 Override 調低到 25%。</span></span>
+<span class="line"><span style="color:#D73A49">        IF</span><span style="color:#24292E"> readPosition.Valid </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> readPosition.Position > </span><span style="color:#005CC5">5</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">		    setOverride.VelFactor := </span><span style="color:#005CC5">0.25</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		    state := STATE_IDLE;</span></span>
+<span class="line"><span style="color:#24292E">        END_IF</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/// 將所有功能塊實際連接到 Drive 軸。</span></span>
+<span class="line"><span style="color:#24292E">power(Axis:= Drive);</span></span>
+<span class="line"><span style="color:#24292E">setOverride(Axis:= Drive);</span></span>
+<span class="line"><span style="color:#24292E">getOverride(Axis:= Drive, Enable:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">moveAbsolute(Axis:= Drive);</span></span>
+<span class="line"><span style="color:#24292E">readPosition(Axis:= Drive, Enable:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span></code></pre>5:["$","section",null,{"className":"space-y-3","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"ST 程式碼"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。"}],["$","div",null,{"className":"space-y-2","children":[["$","$L9","PLC_PRG.st",{"title":"PLC_PRG.st","html":"$a"}]]}]]}]
+6:["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","async":true}]
+7:["$","script","script-1",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true}]
+8:["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]
+d:null

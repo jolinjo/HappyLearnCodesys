@@ -1,0 +1,180 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[39756,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+4:I[37457,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+6:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"ViewportBoundary"]
+b:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"MetadataBoundary"]
+d:I[68027,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+:HL["/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","style"]
+0:{"P":null,"b":"hE9wNZamtqMjFK5Z04D0M","c":["","offline-help","programming-basics","variables-and-types"],"q":"","i":false,"f":[[["",{"children":["offline-help",{"children":[["slug","programming-basics/variables-and-types","c"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-Hant","children":["$","body",null,{"className":"min-h-screen","children":["$","div",null,{"className":"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6","children":[["$","header",null,{"className":"mb-6 border-b pb-4","style":{"borderColor":"var(--t-border)"},"children":["$","div",null,{"className":"flex items-start justify-between gap-4","children":[["$","div",null,{"children":[["$","h1",null,{"className":"text-xl font-semibold tracking-tight","children":["$","$L2",null,{"href":"/","style":{"color":"var(--t-accent)"},"className":"hover:underline","children":"CODESYS 教學網站"}]}],["$","p",null,{"className":"mt-1 text-sm","style":{"color":"var(--t-text-muted)"},"children":"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。"}]]}],["$","nav",null,{"className":"flex shrink-0 items-center gap-2","children":[["$","$L2",null,{"href":"/","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"回首頁"}],["$","$L2",null,{"href":"/offline-help","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"Offline Help"}],["$","$L2",null,{"href":"/search","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"搜尋"}]]}]]}]}],["$","main",null,{"className":"flex-1 pb-8","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex flex-col items-center justify-center gap-4 py-12 text-center","children":[["$","p",null,{"className":"text-4xl font-semibold","style":{"color":"var(--t-text-muted)"},"children":"404"}],["$","p",null,{"style":{"color":"var(--t-text-muted)"},"children":"找不到這個頁面。"}],["$","nav",null,{"className":"mt-4 flex flex-wrap justify-center gap-3","children":[["$","$L2",null,{"href":"/","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-accent)"},"children":"回首頁"}],["$","$L2",null,{"href":"/softmotion","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"SoftMotion 學習地圖"}],["$","$L2",null,{"href":"/licensing","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"授權說明"}],["$","$L2",null,{"href":"/guidelines","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"開發規範"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t pt-4 text-xs","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","div",null,{"className":"min-w-0","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":"$Lc"}]}],null]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+c:["$","$7",null,{"name":"Next.Metadata","children":"$Le"}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+e:[["$","title","0",{"children":"CODESYS 教學網站"}],["$","meta","1",{"name":"description","content":"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"}]]
+f:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+10:T1cc8,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# Variables and Types 變數與型別 教學整理
+
+> 本文件基於 CODESYS Offline Help 中下列主題整理而成：
+> - `Variables`（`_cds_struct_reference_variable_types.html`）
+> - 各變數類型：VAR、VAR_INPUT、VAR_OUTPUT、VAR_IN_OUT、VAR_GLOBAL、VAR_TEMP、VAR_STAT、VAR_EXTERNAL、VAR_INST、VAR_CONFIG、CONSTANT、VAR_GENERIC CONSTANT
+> - `PERSISTENT`、`RETAIN`
+> 目標是從「變數生命週期與儲存區」角度整理各關鍵字的作用與適用情境，並以表格與簡短 ST 範例說明；詳細語法請參閱 Offline Help 各變數類型頁面。
+
+---
+
+## 1. 變數範圍（Scope）與宣告
+
+變數的**範圍（scope）**決定「可在哪裡、以何種方式」使用該變數，並在**變數宣告**中定義。宣告區依關鍵字區分為多種區塊（VAR、VAR_INPUT、VAR_GLOBAL 等），每種區塊對應不同的生命週期、儲存位置與可見範圍。
+
+---
+
+## 2. 變數類型與儲存區一覽
+
+| 關鍵字 | 適用位置 | 生命週期／儲存 | 典型用途 |
+|--------|----------|----------------|----------|
+| **VAR** | POU 內 | 該 POU 每次被呼叫時存在；呼叫結束後不保證保留 | 區域變數、POU 內部暫存 |
+| **VAR_INPUT** | FB / PROGRAM 等 | 由呼叫端傳入，唯讀（除非 VAR_IN_OUT） | 輸入參數 |
+| **VAR_OUTPUT** | FB / PROGRAM 等 | 由 POU 寫入，回傳給呼叫端 | 輸出參數 |
+| **VAR_IN_OUT** | FB / PROGRAM 等 | 傳參考，讀寫皆影響呼叫端變數 | 雙向參數（in-out） |
+| **VAR_GLOBAL** | 全域變數列表（GVL） | 整個應用程式執行期間存在，所有 POU 可存取 | 跨 POU 共用資料 |
+| **VAR_TEMP** | POU 內 | 僅在單一週期／單一呼叫內有效，不保證跨週期保留 | 暫存計算結果、迴圈計數等 |
+| **VAR_STAT** | POU 內（如 FB） | 在呼叫之間保持值，同一實例內持久 | FB 的靜態區域變數（狀態保持） |
+| **VAR_EXTERNAL** | POU 內 | 引用外部（如 GVL）已宣告的全域變數 | 使用 GVL 變數而不重複宣告 |
+| **VAR_INST** | FB 內 | FB 實例的成員變數，與 VAR 類似但語意為「實例變數」 | FB 內部狀態、子實例 |
+| **VAR_CONFIG** | 專案／裝置層 | 組態時設定，Runtime 可讀 | 裝置參數、可組態常數 |
+| **CONSTANT** | POU 或 GVL | 編譯期常數，不可寫入 | 常數 |
+| **VAR_GENERIC CONSTANT** | 泛型 FB／Library | 泛型參數，編譯時決定型別或值 | 泛型程式設計 |
+
+---
+
+## 3. PERSISTENT 與 RETAIN
+
+兩者皆與「斷電或重啟後是否保留值」有關，但語意與實作不同：
+
+| 修飾詞 | 保留時機 | 典型儲存 | 使用情境 |
+|--------|----------|----------|----------|
+| **PERSISTENT** | 值寫入**非揮發性儲存**，PLC 斷電或冷啟動後仍可保留（依裝置與設定） | 非揮發性儲存區 | 需跨斷電保留的計數、設定、歷史資料 |
+| **RETAIN** | 在**暖啟動（Warm Restart）**或部分斷電情境下保留；冷啟動行為依 Runtime／裝置而定 | 保留區（retentive 區） | 重啟後需還原的狀態、不需永久寫入非揮發性儲存時 |
+
+**實務建議**：
+
+- 若裝置明確區分「retentive 記憶體」與「persistent／非揮發性儲存」，請依裝置文件與 CODESYS 專案設定確認冷／暖啟動後的行為。
+- 重要資料若需確保持久，應確認 PERSISTENT 的寫入時機與備份策略（若有）；RETAIN 通常用於「同一程式重載或暖啟動後還原」的狀態。
+
+---
+
+## 4. 生命週期概念簡述
+
+- **VAR**：POU 區域變數，每次呼叫可重新初始化（依實作）；若為 FB 實例內的 VAR，其生命週期跟隨該 FB 實例。
+- **VAR_TEMP**：僅在單一掃描週期或單次 POU 執行內有效，不跨週期保留。
+- **VAR_STAT**：在 FB 或具狀態的 POU 中，於呼叫與呼叫之間保持值，同一實例內相當於「靜態區域變數」。
+- **VAR_GLOBAL**：程式啟動時存在，直到程式結束；所有 POU 皆可存取（需注意多任務同時寫入的同步問題）。
+
+---
+
+## 5. 簡短 ST 範例
+
+**區域變數與輸入輸出（FB 內）：**
+
+```iecst
+FUNCTION_BLOCK FB_Example
+VAR_INPUT
+    inEnable : BOOL;
+    inSetpoint : INT;
+END_VAR
+VAR_OUTPUT
+    outActual : INT;
+    outDone : BOOL;
+END_VAR
+VAR
+    internalCount : INT;   (* 區域變數 *)
+END_VAR
+VAR_STAT
+    lastValue : INT;       (* 呼叫間保持 *)
+END_VAR
+```
+
+**全域變數與 RETAIN（GVL 內）：**
+
+```iecst
+VAR_GLOBAL
+    g_TotalCount : DINT;
+    RETAIN g_RetainCounter : INT;   (* 暖啟動後保留 *)
+END_VAR
+```
+
+**常數與 PERSISTENT（概念）：**
+
+```iecst
+CONSTANT
+    MAX_VALUE : INT := 1000;
+END_CONSTANT
+
+VAR PERSISTENT
+    p_RecipeId : DINT;     (* 斷電後可保留，依裝置與設定 *)
+END_VAR
+```
+
+---
+
+## 6. 快速對照
+
+| 需求 | 建議關鍵字 |
+|------|------------|
+| POU 內部暫存、不跨呼叫保留 | VAR 或 VAR_TEMP（依是否跨週期） |
+| FB 狀態在呼叫間保持 | VAR_STAT |
+| 跨 POU 共用 | VAR_GLOBAL（在 GVL 宣告）；或 VAR_EXTERNAL 引用 |
+| 暖啟動後保留 | RETAIN |
+| 斷電／冷啟動後仍保留 | PERSISTENT（需確認裝置與專案設定） |
+| 輸入／輸出／雙向參數 | VAR_INPUT / VAR_OUTPUT / VAR_IN_OUT |
+| 不可變常數 | CONSTANT |
+
+變數型別與修飾詞的完整語法與限制請參閱 CODESYS Offline Help 之 Variables 章節各子頁；本文件著重於生命週期與儲存區的整理，以便正確選用關鍵字。
+5:["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/offline-help","style":{"color":"var(--t-accent)"},"children":"Offline Help 首頁"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"children":"程式設計基礎與語言核心"}]]}],["$","header",null,{"className":"space-y-2","children":[["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"Variables and Types 變數與型別 教學整理"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"從變數生命週期與儲存區角度整理各種 VAR_*、PERSISTENT 與 RETAIN 的語意與適用情境。"}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$Lf",null,{"content":"$10"}]}],false]}]

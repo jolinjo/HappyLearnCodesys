@@ -1,0 +1,384 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[39756,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+4:I[37457,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+6:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+c:I[68027,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+:HL["/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","style"]
+0:{"P":null,"b":"hE9wNZamtqMjFK5Z04D0M","c":["","softmotion","basicmotion-synchronized-motion"],"q":"","i":false,"f":[[["",{"children":["softmotion",{"children":[["slug","basicmotion-synchronized-motion","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-Hant","children":["$","body",null,{"className":"min-h-screen","children":["$","div",null,{"className":"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6","children":[["$","header",null,{"className":"mb-6 border-b pb-4","style":{"borderColor":"var(--t-border)"},"children":["$","div",null,{"className":"flex items-start justify-between gap-4","children":[["$","div",null,{"children":[["$","h1",null,{"className":"text-xl font-semibold tracking-tight","children":["$","$L2",null,{"href":"/","style":{"color":"var(--t-accent)"},"className":"hover:underline","children":"CODESYS 教學網站"}]}],["$","p",null,{"className":"mt-1 text-sm","style":{"color":"var(--t-text-muted)"},"children":"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。"}]]}],["$","nav",null,{"className":"flex shrink-0 items-center gap-2","children":[["$","$L2",null,{"href":"/","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"回首頁"}],["$","$L2",null,{"href":"/offline-help","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"Offline Help"}],["$","$L2",null,{"href":"/search","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"搜尋"}]]}]]}]}],["$","main",null,{"className":"flex-1 pb-8","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex flex-col items-center justify-center gap-4 py-12 text-center","children":[["$","p",null,{"className":"text-4xl font-semibold","style":{"color":"var(--t-text-muted)"},"children":"404"}],["$","p",null,{"style":{"color":"var(--t-text-muted)"},"children":"找不到這個頁面。"}],["$","nav",null,{"className":"mt-4 flex flex-wrap justify-center gap-3","children":[["$","$L2",null,{"href":"/","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-accent)"},"children":"回首頁"}],["$","$L2",null,{"href":"/softmotion","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"SoftMotion 學習地圖"}],["$","$L2",null,{"href":"/licensing","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"授權說明"}],["$","$L2",null,{"href":"/guidelines","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"開發規範"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t pt-4 text-xs","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":["$L9","$La","$Lb",null]}],false]],"m":"$undefined","G":["$c",[]],"S":true}
+d:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"ViewportBoundary"]
+f:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"MetadataBoundary"]
+9:null
+a:["$","$Ld",null,{"children":"$Le"}]
+b:["$","div",null,{"hidden":true,"children":["$","$Lf",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$L10"}]}]}]
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+10:[["$","title","0",{"children":"CODESYS 教學網站"}],["$","meta","1",{"name":"description","content":"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"}]]
+11:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+12:T3371,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# BasicMotion_SynchronizedMotion — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？
+
+這個範例示範一條多軸同步鏈的組合：  
+以 <span class="cfg-name">Master</span> 軸為基準，先用 <span class="cfg-func">MC_GearIn()</span> 建立 Master 與 <span class="cfg-name">Slave0</span> 的齒輪關係，  
+再用 <span class="cfg-func">MC_Phasing()</span> 在 <span class="cfg-name">Slave0</span> 與 <span class="cfg-name">Slave1</span> 之間加入相位偏移，  
+最後透過 <span class="cfg-func">SMC_BacklashCompensation()</span> 把 <span class="cfg-name">Slave1</span> 與 <span class="cfg-name">Drive</span> 串接並補償背隙。  
+整條鏈的結果是：當 Master 軸以絕對位置指令來回移動時，其餘三軸會按照齒輪比、相位與背隙補償同步運動。
+
+---
+
+## 二、使用情境與硬體／軸架構
+
+### 2.1 任務與程式
+
+根據 `TaskConfiguration.md`：
+
+| 任務名稱 | 類型 | 週期 | 優先權 | POU 清單 |
+|----------|------|------|--------|----------|
+| MainTask | Cyclic | t#20ms | 1 | `PLC_PRG` |
+
+MainTask 每 20 ms 更新整條同步鏈的狀態。
+
+### 2.2 軸與角色
+
+`DeviceTree_Axes.md` 描述了四條虛擬軸：
+
+| 軸名稱 | 類型 | 角色 |
+|--------|------|------|
+| <span class="cfg-name">Master</span> | <span class="cfg-name">SM_Drive_Virtual</span> | 基準軸，直接接受絕對位置命令。 |
+| <span class="cfg-name">Slave0</span> | <span class="cfg-name">SM_Drive_Virtual</span> | 以齒輪比 3:2 跟隨 Master。 |
+| <span class="cfg-name">Slave1</span> | <span class="cfg-name">SM_Drive_Virtual</span> | 以相位偏移 30 度跟隨 Slave0。 |
+| <span class="cfg-name">Drive</span> | <span class="cfg-name">SM_Drive_Virtual</span> | 透過背隙補償跟隨 Slave1，可想像為實際驅動機構。 |
+
+Trace 設定追蹤了四條軸的 SetPosition／SetVelocity／SetAcceleration，可用來觀察同步鏈中每一節的效果。
+
+---
+
+## 三、控制流程：由淺入深
+
+### 3.1 整體流程概觀
+
+從 `PLC_PRG` 的狀態機 <span class="cfg-local">state</span> 來看，流程可以概括為：
+
+1. **STATE\_POWER**：啟動四條軸，並同時啟用齒輪、相位與背隙補償。  
+2. **STATE\_COMMAND\_POS0**：命令 Master 軸移動到位置 100。  
+3. **STATE\_COMMAND\_POS1**：命令 Master 軸回到位置 0。  
+4. 回到 **STATE\_COMMAND\_POS0**，形成「0 ↔ 100」來回循環。  
+
+在這個過程中，Slave0、Slave1 與 Drive 不需要額外的 Move 命令，而是透過齒輪／相位／背隙補償自動跟隨。
+
+### 3.2 由 Master 到 Drive 的同步鏈
+
+可以把整個系統想像成：
+
+```text
+Master --(GearIn)--> Slave0 --(Phasing)--> Slave1 --(BacklashCompensation)--> Drive
+```
+
+當 Master 軸往返 0 與 100 之間時：
+
+- Slave0 會依照 3:2 的齒輪比運動。  
+- Slave1 在 Slave0 的基礎上再加上 30 度的相位偏移。  
+- Drive 則在 Slave1 的基礎上加一段背隙補償動作。  
+
+搭配 Trace，可以清楚看到每一層的 SetPosition 差異。
+
+---
+
+## 四、各程式負責哪些功能？
+
+本範例只有 `PLC_PRG` 一支程式。
+
+### 4.1 `PLC_PRG` — 多軸同步鏈示範程式
+
+- **類型**：PROGRAM。  
+- **職責**：  
+  - 上電四條軸。  
+  - 啟動齒輪同步（Master → Slave0）、相位調整（Slave0 → Slave1）與背隙補償（Slave1 → Drive）。  
+  - 讓 Master 軸在兩個位置之間來回運動，作為整條同步鏈的驅動來源。  
+- **與硬體的關係**：  
+  - 在真實應用中，可以對應到主軸（Master）、中間傳動軸（Slave0／Slave1）與最終負載軸（Drive），例如：  
+    - 印刷機中的多色印筒同步。  
+    - 包裝機中多段機構的相位校正與齒輪比調整。  
+
+---
+
+## 五、函式庫與函式／功能塊一覽
+
+### 5.1 函式庫
+
+根據 `Libraries.md`：
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | 提供 MC\_* 運動控制功能塊與軸控制。 |
+| <span class="cfg-name">#SM3_CamBuilder</span> | 雖有引用，但本範例主要使用齒輪／相位／背隙補償功能。 |
+
+### 5.2 主要功能塊
+
+| 名稱 | 類型 | 用途 | 主要引數 | 回傳／狀態 |
+|------|------|------|----------|------------|
+| <span class="cfg-func">MC_Power()</span> | FUNCTION\_BLOCK | 對四條軸上電與啟動驅動。 | <span class="cfg-arg">Axis</span>；<span class="cfg-arg">Enable</span>；<span class="cfg-arg">bDriveStart</span>；<span class="cfg-arg">bRegulatorOn</span>。 | `Status`、`Error`。 |
+| <span class="cfg-func">MC_MoveAbsolute()</span> | FUNCTION\_BLOCK | 對 Master 軸發出絕對位置運動命令。 | <span class="cfg-arg">Axis</span>；<span class="cfg-arg">Execute</span>；<span class="cfg-arg">Position</span>；<span class="cfg-arg">Velocity</span> 等。 | `Done`、`Error`。 |
+| <span class="cfg-func">MC_GearIn()</span> | FUNCTION\_BLOCK | 建立主從齒輪關係（Master → Slave0）。 | <span class="cfg-arg">Master</span>；<span class="cfg-arg">Slave</span>；<span class="cfg-arg">RatioNumerator</span>；<span class="cfg-arg">RatioDenominator</span>；<span class="cfg-arg">Execute</span> 等。 | `InSync`、`Error`、`ErrorID`。 |
+| <span class="cfg-func">MC_Phasing()</span> | FUNCTION\_BLOCK | 在兩軸之間添加相位偏移（Slave0 → Slave1）。 | <span class="cfg-arg">Master</span>；<span class="cfg-arg">Slave</span>；<span class="cfg-arg">PhaseShift</span>；<span class="cfg-arg">Velocity</span> 等。 | `Done`、`Error`。 |
+| <span class="cfg-func">SMC_BacklashCompensation()</span> | FUNCTION\_BLOCK | 在 Master/Slave 之間加入背隙補償（Slave1 → Drive）。 | <span class="cfg-arg">Master</span>；<span class="cfg-arg">Slave</span>；<span class="cfg-arg">fBacklash</span>；<span class="cfg-arg">fCompensationVel</span> 等。 | `Error`、`ErrorID`。 |
+
+---
+
+## 六、變數與常數一覽
+
+本範例未使用 RETAIN／PERSISTENT 變數。
+
+### 6.1 `PLC_PRG` 中的重要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">pwDrive</span> / <span class="cfg-local">pwMaster</span> / <span class="cfg-local">pwSlave0</span> / <span class="cfg-local">pwSlave1</span> | <span class="cfg-type">MC_Power</span> | 四條軸的上電功能塊。 |
+| <span class="cfg-local">gearing</span> | <span class="cfg-type">MC_GearIn</span> | 設定 Master → Slave0 的齒輪比與動作。 |
+| <span class="cfg-local">phasing</span> | <span class="cfg-type">MC_Phasing</span> | 設定 Slave0 → Slave1 的相位偏移。 |
+| <span class="cfg-local">backlash</span> | <span class="cfg-type">SMC_BacklashCompensation</span> | 設定 Slave1 → Drive 的背隙補償行為。 |
+| <span class="cfg-local">moveAbsolute</span> | <span class="cfg-type">MC_MoveAbsolute</span> | 對 Master 軸發出 0 ↔ 100 的往返位置命令。 |
+| <span class="cfg-local">state</span> | <span class="cfg-type">UDINT</span> | 狀態機目前的狀態。 |
+
+### 6.2 狀態常數
+
+| 名稱 | 值 | 說明 |
+|------|----|------|
+| <span class="cfg-const">STATE_POWER</span> | 0 | 軸上電並啟用同步鏈。 |
+| <span class="cfg-const">STATE_COMMAND_POS0</span> | 10 | 命令 Master 軸移動到位置 100。 |
+| <span class="cfg-const">STATE_COMMAND_POS1</span> | 20 | 命令 Master 軸回到位置 0。 |
+
+Trace 設定中包含四條軸的 SetPosition／SetVelocity／SetAcceleration，能清楚看到整條同步鏈的效果。
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 齒輪、相位與背隙補償的組合觀念
+
+這個範例的核心觀念是「把多種同步機制串起來」：
+
+1. **GearIn（Master → Slave0）**  
+   - 透過齒輪比 3:2 決定 Slave0 與 Master 之間的位置與速度比例。  
+   - 動作類似「電子齒輪箱」，非常適合取代機械齒輪。  
+2. **Phasing（Slave0 → Slave1）**  
+   - 在已有齒輪關係的基礎上，增加一個固定相位偏移（例如 30 度），常見於多工位同步。  
+3. **BacklashCompensation（Slave1 → Drive）**  
+   - 用來補償最後一段傳動（例如齒輪／皮帶／轉接機構）的背隙，使 Drive 動作更接近理想運動。  
+
+在這樣的組合下，Master 實際上只需要關心自己的位置命令，其餘三軸的運動都是「被動導出」的。
+
+### 7.2 狀態機簡化與學習重點
+
+範例刻意讓狀態機保持非常簡單，只在 0 與 100 之間來回切換，讓你可以把注意力放在：
+
+- Power／GearIn／Phasing／Backlash 是否都在正確時機啟用。  
+- Trace 裡四條軸的軌跡是否符合你對「同步鏈」的直覺。  
+
+在實務專案中，你會把這個結構嵌入到更大的狀態機裡，例如搭配 Cam 運動或更多安全邏輯。
+
+---
+
+## 八、重要參數與設定位置
+
+| 參數／設定 | 所在位置 | 說明 |
+|------------|----------|------|
+| <span class="cfg-arg">RatioNumerator</span> / <span class="cfg-arg">RatioDenominator</span> | `PLC_PRG` 中 `gearing` 初始值 | 決定 Master → Slave0 的齒輪比。 |
+| <span class="cfg-arg">PhaseShift</span> | `PLC_PRG` 中 `phasing` 初始值 | 決定 Slave0 → Slave1 的相位偏移。 |
+| <span class="cfg-arg">fBacklash</span> | `PLC_PRG` 中 `backlash` 初始值 | 背隙補償量，決定 Drive 相對 Slave1 的微調行程。 |
+| <span class="cfg-arg">Velocity</span> 等 | `PLC_PRG` 中 `moveAbsolute` 初始值 | Master 軸來回運動的速度與加減速設定。 |
+| MainTask 週期 t#20ms | `TaskConfiguration.md` | 影響同步更新頻率與數值解析度。 |
+
+這些參數是調整同步行為的主要工具：齒輪比與 PhaseShift 會改變從軸的位置關係，Backlash 會影響最終負載的反應感覺。
+
+---
+
+## 九、建議閱讀與修改順序
+
+1. **先看 `DeviceTree_Axes.md` 與 `TaskConfiguration.md`**  
+   - 了解四條軸的角色與任務週期。  
+2. **再看 `PLC_PRG` 變數宣告區**  
+   - 特別注意 `gearing`、`phasing`、`backlash` 之間的關係與初始化參數。  
+3. **接著看狀態機**  
+   - 理解何時啟用同步鏈（STATE\_POWER），以及 Master 如何在兩個位置之間來回。  
+4. **最後用 Trace 觀察四條軸的 SetPosition**  
+   - 比較 Master、Slave0、Slave1 與 Drive 的軌跡，試著用齒輪比與相位偏移來解釋它們的差異。  
+
+修改時，可以先只調整齒輪比與 PhaseShift，再看看 Slave0／Slave1 的軌跡怎麼變，等熟悉後再動背隙補償的參數。
+
+---
+
+## 十、名詞對照
+
+| 英文 / 符號 | 說明 |
+|-------------|------|
+| <span class="cfg-func">MC_GearIn()</span> | 建立兩軸之間齒輪比關係的功能塊（電子齒輪）。 |
+| <span class="cfg-func">MC_Phasing()</span> | 在已有齒輪關係的基礎上新增相位偏移。 |
+| <span class="cfg-func">SMC_BacklashCompensation()</span> | 在 Master/Slave 之間補償背隙影響的功能塊。 |
+| <span class="cfg-name">Master</span> | 基準軸，直接接受絕對位置命令。 |
+| <span class="cfg-name">Slave0</span> | 以齒輪比跟隨 Master 的從軸。 |
+| <span class="cfg-name">Slave1</span> | 在 Slave0 的基礎上加上相位偏移的從軸。 |
+| <span class="cfg-name">Drive</span> | 經背隙補償後的最終負載軸。 |
+
+5:["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/softmotion","style":{"color":"var(--t-accent)"},"children":"SoftMotion 學習地圖"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"style":{"color":"var(--t-text)"},"children":"多軸同步運動"}]]}],["$","header",null,{"className":"space-y-1","children":[["$","div",null,{"className":"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-text-muted)"},"children":[["$","span",null,{"className":"uppercase tracking-wide","children":"BasicMotion"}],["$","span",null,{"className":"h-1 w-1 rounded-full","style":{"backgroundColor":"var(--t-accent)"}}],["$","span",null,{"style":{"color":"var(--t-accent)"},"children":["步驟 ",3]}]]}],["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"多軸同步運動"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"Master → Slave0（MC_GearIn）→ Slave1（MC_Phasing）→ Drive（背隙補償）多軸同步鏈。"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":["官方專案："," ",["$","code",null,{"className":"rounded px-1 py-0.5","style":{"backgroundColor":"var(--t-border)","color":"var(--t-text)"},"children":"BasicMotion_SynchronizedMotion.project"}]]}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L11",null,{"content":"$12"}]}],false,"$L13"]}]
+14:I[85649,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"StCodeBlock"]
+15:T368a,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">/// 此程式示範多軸同步運動的組合：</span></span>
+<span class="line"><span style="color:#6A737D">/// - 以 Master 軸為基準，使用 MC_GearIn 建立 Master 與 Slave0 的齒輪關係。</span></span>
+<span class="line"><span style="color:#6A737D">/// - 再用 MC_Phasing 對 Slave0 與 Slave1 之間添加相位偏移。</span></span>
+<span class="line"><span style="color:#6A737D">/// - 最後透過 SMC_BacklashCompensation 將 Slave1 與 Drive 串起來並補償背隙。</span></span>
+<span class="line"><span style="color:#6A737D">/// - 由 Master 軸執行來回絕對位置運動，其餘三軸依照齒輪／相位／背隙補償同步跟隨。</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> PLC_PRG</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#6A737D">    /// 控制四條軸（Drive / Master / Slave0 / Slave1）上電與驅動啟動的功能塊。</span></span>
+<span class="line"><span style="color:#24292E">    pwDrive  : MC_Power := (bRegulatorOn:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bDriveStart:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    pwMaster : MC_Power := (bRegulatorOn:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bDriveStart:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    pwSlave0 : MC_Power := (bRegulatorOn:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bDriveStart:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    pwSlave1 : MC_Power := (bRegulatorOn:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bDriveStart:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /// 建立 Master 與 Slave0 之間的齒輪關係（3:2），並設定加減速與 Jerk。</span></span>
+<span class="line"><span style="color:#24292E">    gearing: MC_GearIn := (</span></span>
+<span class="line"><span style="color:#24292E">         RatioNumerator:= </span><span style="color:#005CC5">3</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">         RatioDenominator:= </span><span style="color:#005CC5">2</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">         Acceleration:= </span><span style="color:#005CC5">1000</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">         Deceleration:= </span><span style="color:#005CC5">1000</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">         Jerk:= </span><span style="color:#005CC5">20000</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">         BufferMode:= MC_BUFFER_MODE.Aborting);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /// 在 Slave0 與 Slave1 之間添加 30 度相位偏移，並設定相位變換時的速度與加減速。</span></span>
+<span class="line"><span style="color:#24292E">    phasing : MC_Phasing := (</span></span>
+<span class="line"><span style="color:#24292E">        PhaseShift:= </span><span style="color:#005CC5">30</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        Velocity:= </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        Acceleration:= </span><span style="color:#005CC5">1000</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        Deceleration:= </span><span style="color:#005CC5">1000</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        Jerk:= </span><span style="color:#005CC5">20000</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /// 在 Slave1 與 Drive 之間加入背隙補償，補償量 5，並指定補償時的運動參數。</span></span>
+<span class="line"><span style="color:#24292E">    backlash : SMC_BacklashCompensation := (</span></span>
+<span class="line"><span style="color:#24292E">        fBacklash:= </span><span style="color:#005CC5">5</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        fCompensationVel:= </span><span style="color:#005CC5">10</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        fCompensationAcc:= </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        fCompensationDec:= </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        fCompensationJerk:= </span><span style="color:#005CC5">2000</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /// Master 軸用來回的絕對位置運動命令（0 ↔ 100）。</span></span>
+<span class="line"><span style="color:#24292E">	moveAbsolute : MC_MoveAbsolute := (</span></span>
+<span class="line"><span style="color:#24292E">        Velocity:= </span><span style="color:#005CC5">50</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        Acceleration:= </span><span style="color:#005CC5">500</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        Deceleration:= </span><span style="color:#005CC5">500</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        Jerk:= </span><span style="color:#005CC5">5000</span><span style="color:#24292E">) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /// 簡單的兩段狀態機：在 0 與 100 之間來回運動。</span></span>
+<span class="line"><span style="color:#24292E">	state : UDINT;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span><span style="color:#24292E"> CONSTANT</span></span>
+<span class="line"><span style="color:#6A737D">	/// 軸上電並啟用齒輪、相位與背隙補償的階段。</span></span>
+<span class="line"><span style="color:#24292E">	STATE_POWER : UDINT := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">	/// 命令 Master 軸移動到位置 100 的階段。</span></span>
+<span class="line"><span style="color:#24292E">	STATE_COMMAND_POS0 : UDINT := </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">    /// 命令 Master 軸回到位置 0 的階段。</span></span>
+<span class="line"><span style="color:#24292E">	STATE_COMMAND_POS1 : UDINT := </span><span style="color:#005CC5">20</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/// 狀態機：上電 → Master 到 100 → Master 回 0 → 重複往返。</span></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> state </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#24292E">STATE_POWER:</span></span>
+<span class="line"><span style="color:#6A737D">    /// 啟動四條軸。</span></span>
+<span class="line"><span style="color:#24292E">    pwDrive.Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    pwMaster.Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    pwSlave0.Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    pwSlave1.Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /// 當四條軸都準備就緒後，啟用齒輪、相位與背隙補償，並進入第一個運動命令。</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> pwDrive.Status </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> pwMaster.Status </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> pwSlave0.Status </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> pwSlave1.Status</span></span>
+<span class="line"><span style="color:#D73A49">    THEN</span></span>
+<span class="line"><span style="color:#24292E">        gearing.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        phasing.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        backlash.bExecute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        state := STATE_COMMAND_POS0;</span></span>
+<span class="line"><span style="color:#24292E">    END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">STATE_COMMAND_POS0:</span></span>
+<span class="line"><span style="color:#6A737D">    /// 命令 Master 軸移動到位置 100。</span></span>
+<span class="line"><span style="color:#24292E">    moveAbsolute.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    moveAbsolute.Position := </span><span style="color:#005CC5">100</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /// 到達後停止命令，轉換到回程狀態。</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> moveAbsolute.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">        moveAbsolute.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        state := STATE_COMMAND_POS1;</span></span>
+<span class="line"><span style="color:#24292E">    END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">STATE_COMMAND_POS1:</span></span>
+<span class="line"><span style="color:#6A737D">    /// 命令 Master 軸回到位置 0。</span></span>
+<span class="line"><span style="color:#24292E">    moveAbsolute.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    moveAbsolute.Position := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /// 回到 0 後再次切換到 100，形成持續往返的動作。</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> moveAbsolute.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">        moveAbsolute.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        state := STATE_COMMAND_POS0;</span></span>
+<span class="line"><span style="color:#24292E">    END_IF</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/// 將四個 Power 功能塊連接到對應軸。</span></span>
+<span class="line"><span style="color:#24292E">pwDrive(Axis:= Drive);</span></span>
+<span class="line"><span style="color:#24292E">pwMaster(Axis:= Master);</span></span>
+<span class="line"><span style="color:#24292E">pwSlave0(Axis:= Slave0);</span></span>
+<span class="line"><span style="color:#24292E">pwSlave1(Axis:= Slave1);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/// Master 軸執行來回絕對位置運動。</span></span>
+<span class="line"><span style="color:#24292E">moveAbsolute(Axis:= Master);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/// 三個從層級的同步鏈：Master → Slave0（齒輪）→ Slave1（相位）→ Drive（背隙補償）。</span></span>
+<span class="line"><span style="color:#24292E">gearing(Master:= Master, Slave:= Slave0);</span></span>
+<span class="line"><span style="color:#24292E">phasing(Master:= Slave0, Slave:= Slave1);</span></span>
+<span class="line"><span style="color:#24292E">backlash(Master:= Slave1, Slave:= Drive);</span></span></code></pre>13:["$","section",null,{"className":"space-y-3","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"ST 程式碼"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。"}],["$","div",null,{"className":"space-y-2","children":[["$","$L14","PLC_PRG.st",{"title":"PLC_PRG.st","html":"$15"}]]}]]}]

@@ -1,0 +1,218 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[39756,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+4:I[37457,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+6:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"ViewportBoundary"]
+c:I[68027,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+:HL["/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","style"]
+0:{"P":null,"b":"hE9wNZamtqMjFK5Z04D0M","c":["","offline-help","libraries-devices-security","packages-licenses-and-scripts"],"q":"","i":false,"f":[[["",{"children":["offline-help",{"children":[["slug","libraries-devices-security/packages-licenses-and-scripts","c"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-Hant","children":["$","body",null,{"className":"min-h-screen","children":["$","div",null,{"className":"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6","children":[["$","header",null,{"className":"mb-6 border-b pb-4","style":{"borderColor":"var(--t-border)"},"children":["$","div",null,{"className":"flex items-start justify-between gap-4","children":[["$","div",null,{"children":[["$","h1",null,{"className":"text-xl font-semibold tracking-tight","children":["$","$L2",null,{"href":"/","style":{"color":"var(--t-accent)"},"className":"hover:underline","children":"CODESYS 教學網站"}]}],["$","p",null,{"className":"mt-1 text-sm","style":{"color":"var(--t-text-muted)"},"children":"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。"}]]}],["$","nav",null,{"className":"flex shrink-0 items-center gap-2","children":[["$","$L2",null,{"href":"/","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"回首頁"}],["$","$L2",null,{"href":"/offline-help","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"Offline Help"}],["$","$L2",null,{"href":"/search","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"搜尋"}]]}]]}]}],["$","main",null,{"className":"flex-1 pb-8","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex flex-col items-center justify-center gap-4 py-12 text-center","children":[["$","p",null,{"className":"text-4xl font-semibold","style":{"color":"var(--t-text-muted)"},"children":"404"}],["$","p",null,{"style":{"color":"var(--t-text-muted)"},"children":"找不到這個頁面。"}],["$","nav",null,{"className":"mt-4 flex flex-wrap justify-center gap-3","children":[["$","$L2",null,{"href":"/","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-accent)"},"children":"回首頁"}],["$","$L2",null,{"href":"/softmotion","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"SoftMotion 學習地圖"}],["$","$L2",null,{"href":"/licensing","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"授權說明"}],["$","$L2",null,{"href":"/guidelines","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"開發規範"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t pt-4 text-xs","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","div",null,{"className":"min-w-0","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],"$Lb",null]}],false]],"m":"$undefined","G":["$c",[]],"S":true}
+d:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"MetadataBoundary"]
+b:["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Le"}]}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+e:[["$","title","0",{"children":"CODESYS 教學網站"}],["$","meta","1",{"name":"description","content":"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"}]]
+f:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+10:T2a0d,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# Packages, Licenses and Scripts 套件、授權與腳本 教學整理
+
+> 本文件基於 CODESYS Offline Help 中下列主題整理而成：
+> - `Managing Packages and Licenses`（`_cds_struct_managing_packages_and_licenses.html`）
+> - `Using the Command-Line Interface`（`_cds_commandline.html`）
+> - `Using Scripts`（`_cds_struct_using_scripts.html`）
+> - Package Manager、Installing Package、License Manager、License Repository
+> 目標是說明 CODESYS Package 與 License 的基本概念與操作路徑，以及 Script 與 Command-line 的典型用途（大量建置、批次部署等），不展開完整 API。
+
+---
+
+## 1. 整體概念總覽 Overview
+
+- **Package 套件**：以 `*.package`（ZIP 格式）擴充 CODESYS 標準安裝，可包含 Plug-in、函式庫、裝置描述、設定檔、說明模組等；透過 **Package Manager** 安裝／移除。
+- **License 授權**：付費加購功能（如 CODESYS Git、SVN、UML 等）需以 ticket number 透過 **License Manager** 安裝；授權可存放在 CODESYS dongle（USB）或本機 **CodeMeter** 的 soft container。
+- **Script 腳本**：以腳本自動化原本需手動執行的指令或複雜操作；可從 CODESYS 介面或 **Command-line** 啟動。
+- **Command-line 指令列**：從 Windows 指令列啟動 `CODESYS.exe` 並帶入選項（如 `--project`、`--runscript`、`--profile`），適合 CI／批次建置、無 UI 執行腳本等情境。
+
+---
+
+## 2. Package Manager 套件管理員
+
+### 2.1 概念
+
+- **Package Manager** 類似 Windows 的安裝機制：以「套件」為單位擴充開發系統功能與設定。
+- 套件為副檔名 **`.package`** 的 ZIP 檔，內容可包含：
+  - Plug-ins、Libraries、Device descriptions、Supplier descriptions
+  - Profiles、Information profiles、Profile changes
+  - 選單／工具列／快捷鍵／視圖的擴充設定
+  - Help modules、Options、Library profiles 等
+
+### 2.2 安裝／解除安裝套件
+
+- 透過 **Tools → Package Manager**（或安裝精靈）選擇 `*.package` 進行安裝。
+- 安裝時可檢視 **Checksum**，與廠商提供之 checksum 比對以確認為原始套件。
+- 解除安裝時在 Package Manager 中選擇已安裝套件並執行解除安裝即可。
+- 若從舊版 CODESYS 升級到 V3.5 SP13 以上，首次啟動時可能出現 **Import Assistant**，可匯入舊版已安裝的套件。
+
+---
+
+## 3. Licensing in CODESYS 授權機制
+
+### 3.1 授權來源與存放
+
+- 付費加購產品的授權由 CODESYS GmbH 以 **ticket number** 形式提供，需透過 **License Manager** 安裝。
+- 授權可存放在：
+  - **CODESYS dongle**（USB 硬體鎖）：需插在本機。
+  - **Soft container**：在本機 **CodeMeter Control Center** 中註冊的軟體容器，可將硬體授權綁定到單一 PC。
+- **License Repository**：可從中央授權伺服器取得各 ticket 的目前狀態（例如是否仍可啟用、是否需歸還）。
+
+### 3.2 License Manager 使用情境
+
+- **Workstation**：針對本機工作站的授權（例如開發用）。
+- **Device**：針對裝置（例如 PLC）的授權啟用。
+- 部分 Plug-in（如 CODESYS Git、SVN、UML）無授權時仍可有限度使用，會在各 Plug-in 相關位置顯示缺少授權的訊息。
+
+### 3.3 啟動時與執行中的授權檢查
+
+- **啟動時**：CODESYS 會依所選 Profile 檢查需授權的 Plug-in。
+  - 若 Profile 無需授權元件，或已有 dongle／soft container 且含所需授權，則正常啟動。
+  - 若需授權但找不到對應授權，會顯示 **License Missing** 對話框，可選擇是否在不載入該元件下啟動。
+  - 從 Command-line 啟動時可加上 **`--skipunlicensedplugins`**，略過對話框並自動不載入未授權元件。
+- **執行中**：約每 5 分鐘檢查一次授權；若授權遺失（例如拔除 dongle），會再次出現 **License Missing**。可選擇 **Retry**（插回 dongle 後重試）、**Save Current Project and Exit** 或 **Close**。
+
+### 3.4 網路授權（Network license）
+
+- 在本機 CodeMeter 註冊的授權可設為**網路授權**：本機作為網路伺服器，供授權使用者連線使用。
+- 設定方式：開啟 **CodeMeter Control Center** → **File → WebAdmin**，在 CodeMeter WebAdmin 中於 **Settings → Base** 將本機設為 base server。詳細步驟請參考 WIBU CodeMeter 文件。
+
+---
+
+## 4. Command-Line Interface 指令列介面
+
+### 4.1 基本語法
+
+```iecst
+<installation folder>CODESYS.exe --<Option>
+```
+
+- 路徑或參數若含空格、連字號或斜線，請用**直引號**包住。
+- 若以 CODESYS Installer 安裝多個 CODESYS 實例，需以 **`--additionalfolder`** 指定要啟動的實例路徑（例如 `AdditionalFolders\Service`）。
+
+### 4.2 常用選項摘要
+
+| 選項 | 說明 |
+|------|------|
+| `--profile="<profile name>"` | 指定啟動的 CODESYS 設定檔（與 Help → About 或開始功能表顯示名稱一致） |
+| `--culture=<code>` | 介面語言（如 de, en, fr, zh-CHS） |
+| `--project="<path>"` | 啟動並開啟指定專案檔 |
+| `--projectarchive="<path>"` | 解壓專案封存並開啟專案 |
+| `--compare="<path1>" "<path2>"` | 啟動後直接進行兩專案比較；可搭配 `--ignorewhitespace`、`--ignorecomments`、`--ignoreproperties` |
+| `--runscript="<path>.py"` | 啟動時執行指定 Python 腳本 |
+| `--scriptargs:'arg1 arg2 ...'` | 傳給腳本的參數（對應 Python `sys.argv`） |
+| `--noUI` | 不顯示 UI，僅輸出錯誤／警告／編譯與腳本訊息（常與 `--runscript` 搭配用於 CI） |
+| `--skipunlicensedplugins` | 略過授權詢問，不載入未授權元件 |
+| `--ForceDisconnectAfterInactivity="<秒數>"` | 本次工作階段逾時未活動自動斷開與控制器的連線；0 表示不自動斷線 |
+
+### 4.3 多實例啟動範例
+
+若已用 CODESYS Installer 安裝兩份 3.5.18.20（例如 Service 與 Developer），要從指令列用腳本啟動 **Service** 實例：
+
+```iecst
+"C:\Program Files (x86)\CODESYS3.5.18.20\CODESYS\Common\CODESYS.exe"
+  --profile="CODESYS V3.5 SP18"
+  --additionalfolder="C:\Program Files\CODESYS 3.5.18.20\CODESYS\AdditionalFolders\Service"
+  --runscript="D:\Scripts\StartServiceScript.py"
+  --scriptargs:'username password 3.14 "path=\"C:\temp\\"'
+  --noUI
+```
+
+---
+
+## 5. Using Scripts 腳本使用方式
+
+### 5.1 角色與啟動方式
+
+- **Script** 用來自動化在 CODESYS 中需手動完成的指令或流程（例如編譯、匯出、批次修改專案）。
+- 可從以下方式啟動：
+  - **CODESYS 介面**：選單指令或已設定的工具列按鈕。
+  - **Command-line**：`CODESYS.exe --runscript="<script>.py"`，可搭配 `--noUI`、`--scriptargs` 等。
+
+詳細腳本撰寫與 API 請參考 CODESYS Scripting 說明（Offline Help 中的 CODESYS scripting 章節）。
+
+### 5.2 與 Command-line 搭配的腳本選項
+
+| 選項 | 說明 |
+|------|------|
+| `--runscript="<path>.py"` | 啟動時執行之腳本完整路徑 |
+| `--scriptargs:'arg1 arg2 ...'` | 傳入腳本的參數，對應 Python `sys.argv` |
+| `--noUI` | 不顯示 UI；腳本產生的訊息與其他錯誤／警告可透過 stdout／stderr 分離（例如 `1>ScriptMessages.txt`、`2>NUL`） |
+| `--enablescripttracing` | 在輸出中顯示腳本每一道指令 |
+| `--textPrompts` | 與 `--noUI` 併用時，訊息與預設對話改由指令列輸出並接受輸入；未使用時會以預設值自動確認 |
+| `--scriptdebugger` | 啟用腳本除錯（如 .NET 除錯器、tracing、或自訂 Python 除錯腳本） |
+
+### 5.3 典型應用情境
+
+- **大量建置**：以 `--runscript` 搭配 `--noUI` 在 CI 伺服器上編譯多個專案或多組設定。
+- **批次部署**：腳本內開啟專案、編譯、登入裝置、下載，再配合 `--scriptargs` 傳入路徑或裝置參數。
+- **專案比較**：以 `--compare` 從指令列啟動並比較兩專案，產出差異報告。
+- **無 UI 授權環境**：使用 `--skipunlicensedplugins` 避免彈出授權對話框，適合自動化環境。
+
+---
+
+## 6. 快速操作對照
+
+| 目的 | 操作入口 |
+|------|----------|
+| 安裝／移除套件 | **Tools → Package Manager** |
+| 安裝／管理授權 | **License Manager**（依產品說明以 ticket 啟用）；查詢狀態可用 **License Repository** |
+| 指定介面語言啟動 | `CODESYS.exe --culture=en` |
+| 開啟專案並執行腳本（無 UI） | `CODESYS.exe --project="路徑" --runscript="腳本.py" --noUI` |
+| 僅執行腳本不選專案 | `CODESYS.exe --runscript="腳本.py" --noUI --scriptargs:'參數'` |
+| 略過授權詢問 | `CODESYS.exe --skipunlicensedplugins` |
+| 專案比較 | `CODESYS.exe --compare "專案1.project" "專案2.project"` |
+
+以上涵蓋 Package、License 與 Script／Command-line 的基本概念與操作路徑；進階腳本 API 與除錯方式請參閱 CODESYS Scripting 專屬說明。
+5:["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/offline-help","style":{"color":"var(--t-accent)"},"children":"Offline Help 首頁"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"children":"函式庫、裝置、套件與安全性"}]]}],["$","header",null,{"className":"space-y-2","children":[["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"Packages, Licenses and Scripts 套件、授權與腳本 教學整理"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"介紹 CODESYS Package / License 概念與管理方式，並簡介 Script 與 Command-line 的典型應用情境。"}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$Lf",null,{"content":"$10"}]}],false]}]

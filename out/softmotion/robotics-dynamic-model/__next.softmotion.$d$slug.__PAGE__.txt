@@ -1,0 +1,966 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+9:I[85649,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"StCodeBlock"]
+1b:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+1c:"$Sreact.suspense"
+4:T3208,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# Robotics_DynamicModel — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？（一句話＋情境）
+
+這個範例示範如何為一台 3 軸 Scara+Z 機器人建立**自訂動力學模型**，並透過三種測試情境比較「無扭矩限制」、「有限扭矩」、「加掛負載」時，軸的速度、加速度與扭矩表現有什麼差異。  
+可以把它看成「給機器人加上一個真實物理世界的大腦」，讓控制器在規劃運動時能考慮慣性與負載，而不只是幾何位置。
+
+---
+
+## 二、使用情境與硬體／軸架構
+
+### 2.1 任務與程式對應（對照 `TaskConfiguration.md`）
+
+| 任務名稱 | 類型 | 週期 | 優先權 | 執行的 POU |
+|----------|------|------|--------|------------|
+| MainTask | Cyclic | t#20ms | 1 | `PLC_PRG`, `DynModel_Tests` |
+| SoftMotion_PlanningTask | Freewheeling | t#2ms | 15 | - |
+
+- <span class="cfg-name">MainTask</span> 是核心：同時執行動力學測試狀態機 `PLC_PRG` 與單元測試程式 `DynModel_Tests`。  
+- <span class="cfg-name">SoftMotion_PlanningTask</span> 在本範例中僅作為規劃用途的基礎設定，主要邏輯都在 MainTask。
+
+### 2.2 軸與裝置結構（對照 `DeviceTree_Axes.md`）
+
+| 軸名稱 | 類型 | 綁定任務 |
+|--------|------|----------|
+| A1 | SM_Drive_Virtual | - |
+| A2 | SM_Drive_Virtual | - |
+| Z  | SM_Drive_Virtual | - |
+
+- <span class="cfg-name">A1</span>、<span class="cfg-name">A2</span>：Scara 機器人的兩個旋轉關節軸。  
+- <span class="cfg-name">Z</span>：垂直線性軸。  
+三軸組成一個簡化的 Scara+Z 結構，提供給動力學模型 `DynModel_Scara2_Z` 使用。
+
+### 2.3 Trace 與觀察點（對照 `TraceConfig.md`）
+
+Trace 主要監看三軸的速度、加速度與扭矩：
+
+- `A1.fSetVelocity`、`A2.fSetVelocity`、`Z.fSetVelocity`  
+- `A1.fSetAcceleration`、`A2.fSetAcceleration`、`Z.fSetAcceleration`  
+- `A1.fSetTorque`、`A2.fSetTorque`、`Z.fSetTorque`  
+
+建議在觀察時，先看「無扭矩限制」的運動，再比對「有限扭矩」與「加掛負載」時這些量的變化。
+
+---
+
+## 三、控制流程：由淺入深（對照 `PLC_PRG.st`）
+
+### 3.1 測試情境概觀
+
+`PLC_PRG` 透過列舉型別 <span class="cfg-type">TorqueLimitationDemoStates</span> 形成狀態機，依序執行三種測試：
+
+1. **Unlimited Torque**：  
+   - 軸的扭矩上限設為無窮大，只受速度／加速度／Jerk 限制。  
+   - 觀察在理想情況下，軸可達到的動態表現。
+2. **Limited Torque**：  
+   - 對 A2 軸設置明確的扭矩上限（例如 2 Nm）。  
+   - 觀察在相同運動目標下，速度與加速度如何被限制，扭矩曲線如何被「切頂」。
+3. **Movement With Load**：  
+   - 對 Z 軸掛上負載（質量與慣性），模擬末端工具或工件。  
+   - 觀察負載對扭矩需求與速度曲線的影響。
+
+### 3.2 `PLC_PRG` 狀態機重點
+
+- **PowerAxisGroup**：  
+  - 使用 <span class="cfg-func">SMC_GroupPower()</span> 啟動軸組，並確認 `groupPower.Status` 為 TRUE。  
+  - 之後切換到 `InitializeDynamicModel`。
+
+- **InitializeDynamicModel**：  
+  - 呼叫 `dynModel.Init()` 初始化 `DynModel_Scara2_Z`。  
+  - 將 `dynModel` 指定給 <span class="cfg-func">SMC_GroupSetDynamics()</span> 的 `Dynamics`，並設定重力加速度向量。  
+
+- **InitializeTestMovement**：  
+  - 根據 `currentTestMovement`（0 或 1）從 `TEST_MOVEMENT_*` 常數中選出起點 `start` 與目標 `destination`。  
+  - 初始時先將負載設為 `ZERO_LOAD`，並呼叫 <span class="cfg-func">SMC_GroupSetLoad()</span> 套用。  
+
+- **InitializeUnlimitedTorqueMovement → ExecuteUnlimitedTorqueMovement**：  
+  - 將三軸的軸限制設為 `DEFAULT_*_AXIS_LIMITS`（扭矩上限為正無窮大）。  
+  - 使用 `ResetRobotPosition()` 將機器人拉回起點。  
+  - 之後呼叫 `moveDirectAbs` 讓軸以 Direct 方式移動到 `destination`。  
+
+- **InitializeLimitedTorqueMovement → ExecuteLimitedTorqueMovement**：  
+  - 在原本限制基礎上，將第二軸（A2）的 `maxTorque` 設為 2 Nm。  
+  - 再次回到起點，執行相同的目標運動，觀察扭矩受限時的動態差異。
+
+- **InitializeMovementWithLoad → ExecuteMovementWithLoad**：  
+  - 以 `LOAD` 結構設定 Z 軸負載（質量與慣性矩）。  
+  - 再次從起點移動到 `destination`，觀察負載對扭矩與速度的影響。  
+
+- **FinalizeTestMovement → DemoFinished**：  
+  - 切換 `currentTestMovement`，若尚有第二組測試，重複上述流程；  
+  - 全部測試完成後進入 `DemoFinished`。
+
+---
+
+## 四、各支程式負責哪些功能？（由淺入深）
+
+### 4.1 `DynModel_Scara2_Z.st` — Scara+Z 動力學模型
+
+- **類型**：<span class="cfg-keyword">FUNCTION_BLOCK</span>，實作 <span class="cfg-type">SMDYN.ISMDynamics</span>。  
+- **職責**：
+  - 定義 Scara+Z 機器人的幾何與質量分佈（m_aM, m_aG）。  
+  - 定義關節螺旋軸（m_aS），讓動力學計算器知道每個關節的旋轉／平移方向。  
+  - 提供給 <span class="cfg-func">SMC_GroupSetDynamics()</span> 使用，作為整個軸組的動力學基礎。
+
+### 4.2 `DynModel_Tests.st` 與 `Test_DynModel_Scara2_Z.st`
+
+- **`DynModel_Tests.st`（PROGRAM）**：  
+  - 以簡單狀態機呼叫 `tester.CheckScrewAxis()` 與 `tester.CheckStandstillTorque()`。  
+  - 根據測試結果輸出 `successful` 與 `error`，方便在視覺化或監控畫面上一眼看出模型是否通過測試。
+
+- **`Test_DynModel_Scara2_Z.st`（FUNCTION_BLOCK）**：  
+  - 實際實作測試邏輯，例如：  
+    - 比對螺旋軸是否與幾何設定一致；  
+    - 檢查機器人在靜止時、給定特定姿態下的理論扭矩是否合理。
+
+### 4.3 其他數學與工具類 FUNCTION_BLOCK
+
+如 `TwistVec_Add`、`TwistVec_Scale`、`Twist_Bracket_Twist`、`Twist_Bracket_Wrench`、`WrenchVec_Add`、`WrenchVec_Sub`、`Wrench_Dot_Twist` 等，  
+主要提供「扭轉向量（Twist）」與「力矩向量（Wrench）」運算的基本積木，供動力學計算過程使用。  
+在閱讀時，可把它們當成「矩陣／向量運算函式庫」，不必一開始就深入每一行實作。
+
+---
+
+## 五、函式庫與函式／功能塊一覽（用途、引數、回傳）
+
+### 5.1 函式庫（對照 `Libraries.md`）
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | SoftMotion 基本運動控制與群組控制功能塊 |
+| <span class="cfg-name">#SM3_CamBuilder</span> | 提供軌跡／凸輪等高階路徑工具（本範例主角是動力學模型） |
+
+### 5.2 範例中常用的關鍵功能塊
+
+- <span class="cfg-func">SMC_GroupPower()</span> / <span class="cfg-func">MC_GroupEnable()</span>：啟動軸組。  
+- <span class="cfg-func">SMC_GroupSetDynamics()</span>：將 `DynModel_Scara2_Z` 套用到軸組。  
+- <span class="cfg-func">SMC_GroupSetLoad()</span>：設定末端或軸上的負載質量與慣性。  
+- <span class="cfg-func">MC_MoveDirectAbsolute()</span>：在 ACS 中執行直接移動，用於三種測試情境的主要運動。  
+- <span class="cfg-func">SetAxisLimits()</span>（自訂 FB）：集中設定各軸的速度、加速度、Jerk 與扭矩上限。
+
+---
+
+## 六、變數與常數一覽（重點節錄）
+
+### 6.1 測試相關常數（`PLC_PRG.st`）
+
+| 名稱 | 型態 | 預設值 | 說明 |
+|------|------|--------|------|
+| <span class="cfg-const">TEST_MOVEMENT_COUNT</span> | <span class="cfg-type">UINT</span> | 2 | 測試路徑組數量 |
+| <span class="cfg-const">LOAD_MASS</span> | <span class="cfg-type">LREAL</span> | 3 | 掛載在 Z 軸的負載質量（kg） |
+| <span class="cfg-const">LOAD_LENGTH</span> | <span class="cfg-type">LREAL</span> | 0.2 | 負載長度（m），用於計算慣性矩 |
+| <span class="cfg-const">LOAD</span> | <span class="cfg-type">SMC_DynLoad</span> | 見程式 | 模擬細桿負載的動力學參數 |
+| <span class="cfg-const">ZERO_LOAD</span> | <span class="cfg-type">SMC_DynLoad</span> | 全零 | 無負載情境 |
+
+### 6.2 軸限制常數
+
+| 名稱 | 型態 | 預設值 | 說明 |
+|------|------|--------|------|
+| <span class="cfg-const">DEFAULT_REVOLUTE_AXIS_LIMITS</span> | <span class="cfg-type">AxisLimits</span> | 見程式 | 旋轉軸預設速度／加速度／Jerk／扭矩上限 |
+| <span class="cfg-const">DEFAULT_PRISMATIC_AXIS_LIMITS</span> | <span class="cfg-type">AxisLimits</span> | 見程式 | 線性軸預設限制 |
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 動力學模型與控制器的分工
+
+在這個範例中，`DynModel_Scara2_Z` 負責提供「機械本體」的物理特性，控制器本身（例如 `MC_MoveDirectAbsolute`）則負責產生軌跡。  
+透過 <span class="cfg-func">SMC_GroupSetDynamics()</span> 與 <span class="cfg-func">SMC_GroupSetLoad()</span>，控制器在規劃加速度與扭矩時會考慮這些特性，  
+讓模擬結果更接近真實機台。
+
+### 7.2 扭矩限制與負載的影響
+
+比較三種情境時，可以從 Trace 中觀察：
+
+- 無扭矩限制：速度與加速度曲線較「尖銳」，扭矩可達較大峰值。  
+- 扭矩受限：為了不超過 `maxTorque`，控制器會自動降低加速度，使扭矩曲線被「壓平」。  
+- 有負載：在同樣限制下，為了帶動更重的負載，扭矩更接近上限，速度與加速度可能進一步被削弱。
+
+---
+
+## 八、重要參數與設定位置（實作時對照）
+
+- 任務週期：見 `TaskConfiguration.md`（MainTask t#20ms，會影響模擬時間解析度）。  
+- 軸限制：`SetAxisLimits.st` 與 `PLC_PRG.st` 中的 `DEFAULT_*_AXIS_LIMITS`。  
+- 負載參數：`LOAD_*` 常數與 `LOAD` 結構，可依實際機構修改質量與幾何尺寸。
+
+---
+
+## 九、建議閱讀與修改順序
+
+1. 先閱讀本說明，掌握三種測試情境與範例目的。  
+2. 打開 `TaskConfiguration.md`、`DeviceTree_Axes.md`，確認任務週期與軸名稱。  
+3. 閱讀 `DynModel_Scara2_Z.st`，理解幾何與質量定義的大致結構。  
+4. 閱讀 `DynModel_Tests.st` 與 `Test_DynModel_Scara2_Z.st`，確認模型測試內容。  
+5. 最後閱讀 `PLC_PRG.st`，專注在狀態機如何組合「無限制」、「有限扭矩」、「加掛負載」三種流程。  
+6. 使用 Trace 比較三種情境下的速度／加速度／扭矩曲線，體會動力學模型對運動的影響。
+
+---
+
+## 十、名詞對照
+
+| 英文／符號 | 說明 |
+|-----------|------|
+| <span class="cfg-name">Scara</span> | 一種兩旋轉一線性的平面關節機器人結構 |
+| <span class="cfg-name">Twist</span> | 描述剛體瞬時運動（角速度＋線速度）的 6 維向量 |
+| <span class="cfg-name">Wrench</span> | 描述力與力矩的 6 維向量 |
+| <span class="cfg-name">Dynamics</span> | 動力學，關係「力／扭矩」與「加速度」的模型 |
+
+---
+0:{"buildId":"mGRRbc9mQkxUGXHACoBp3","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/softmotion","style":{"color":"var(--t-accent)"},"children":"SoftMotion 學習地圖"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"style":{"color":"var(--t-text)"},"children":"動態模型"}]]}],["$","header",null,{"className":"space-y-1","children":[["$","div",null,{"className":"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-text-muted)"},"children":[["$","span",null,{"className":"uppercase tracking-wide","children":"Robotics"}],["$","span",null,{"className":"h-1 w-1 rounded-full","style":{"backgroundColor":"var(--t-accent)"}}],["$","span",null,{"style":{"color":"var(--t-accent)"},"children":["步驟 ",8]}]]}],["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"動態模型"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"質量、慣量、負載對軌跡的影響，速度／加速度限制與補償。"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":["官方專案："," ",["$","code",null,{"className":"rounded px-1 py-0.5","style":{"backgroundColor":"var(--t-border)","color":"var(--t-text)"},"children":"Robotics_DynamicModel.project"}]]}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],false,"$L5"]}],["$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+a:T4ecc,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">(* </span></span>
+<span class="line"><span style="color:#6A737D">    檔案用途：</span></span>
+<span class="line"><span style="color:#6A737D">      定義一具 3 自由度 Scara+Z 機構的動力學模型，包含各連桿的幾何尺寸、</span></span>
+<span class="line"><span style="color:#6A737D">      質量、慣性矩與螺旋軸（screw axes），並實作 SMDYN.ISMDynamics 介面，</span></span>
+<span class="line"><span style="color:#6A737D">      供 SoftMotion 的動力學模組計算關節扭矩與負載效應。</span></span>
+<span class="line"><span style="color:#6A737D">    教學重點：</span></span>
+<span class="line"><span style="color:#6A737D">      - 觀察 m_aM（各連桿質心座標）、m_aG（空間慣性）、m_aS（螺旋軸）三組資料的物理意義。</span></span>
+<span class="line"><span style="color:#6A737D">      - 理解 DOF 與臂長／質量等常數，如何對應到實際 Scara 幾何結構。</span></span>
+<span class="line"><span style="color:#6A737D">      - 作為自訂機構動力學定義的範例，供其他機構參考套用。</span></span>
+<span class="line"><span style="color:#6A737D">*)</span></span>
+<span class="line"><span style="color:#24292E">FUNCTION_BLOCK DynModel_Scara2_Z </span><span style="color:#D73A49">IMPLEMENTS</span><span style="color:#24292E"> SMDYN.ISMDynamics</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span><span style="color:#24292E"> CONSTANT</span></span>
+<span class="line"><span style="color:#6A737D">	/// Degrees of freedom.</span></span>
+<span class="line"><span style="color:#24292E">	DOF : DINT := </span><span style="color:#005CC5">3</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">	/// All length values in [m]</span></span>
+<span class="line"><span style="color:#24292E">	armOneLength : LREAL := </span><span style="color:#005CC5">0.4</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	armTwoLength : LREAL := </span><span style="color:#005CC5">0.3</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	baseHeight : LREAL := </span><span style="color:#005CC5">0.6</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	armOneHeight : LREAL := </span><span style="color:#005CC5">0.06</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	armTwoHeight : LREAL := </span><span style="color:#005CC5">0.06</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	zAxisLength : LREAL := </span><span style="color:#005CC5">0.3</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	zAxisOffset : LREAL := -</span><span style="color:#005CC5">0.05</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">	/// All mass values in [kg]</span></span>
+<span class="line"><span style="color:#24292E">	armOneMass : LREAL := </span><span style="color:#005CC5">3</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	armTwoMass : LREAL := </span><span style="color:#005CC5">4</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	zAxisMass : LREAL := </span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/// The home position of all link frames. |aM[i]| contains</span></span>
+<span class="line"><span style="color:#6A737D">    /// the frame of the ith link expressed in the coordinates of the</span></span>
+<span class="line"><span style="color:#6A737D">    /// (i-1)th link frame.</span></span>
+<span class="line"><span style="color:#6A737D">    /// All frames are expected to be situated at the link's center</span></span>
+<span class="line"><span style="color:#6A737D">    /// of mass.</span></span>
+<span class="line"><span style="color:#24292E">    m_aM : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">..SMRB.MAX_VEC_DIM] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> SM3M.SMC_Frame := [</span></span>
+<span class="line"><span style="color:#6A737D">        /// All values of vT in [m]</span></span>
+<span class="line"><span style="color:#6A737D">        ///</span></span>
+<span class="line"><span style="color:#6A737D">        /// The center of mass of arm 1 expressed in the base coordinate system 0:</span></span>
+<span class="line"><span style="color:#24292E">        (mR:= (</span></span>
+<span class="line"><span style="color:#24292E">            aElems:= [</span></span>
+<span class="line"><span style="color:#005CC5">                1</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, -</span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, -</span><span style="color:#005CC5">1</span><span style="color:#24292E">]),</span></span>
+<span class="line"><span style="color:#24292E">         vT:= (dX:= armOneLength / </span><span style="color:#005CC5">2.0</span><span style="color:#24292E">, dY:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dZ:= baseHeight + armOneHeight / </span><span style="color:#005CC5">2.0</span><span style="color:#24292E">)),</span></span>
+<span class="line"><span style="color:#6A737D">        /// The center of mass of arm 2 expressed in the coordinate system of arm 1:</span></span>
+<span class="line"><span style="color:#24292E">        (mR:= (</span></span>
+<span class="line"><span style="color:#24292E">            aElems:= [</span></span>
+<span class="line"><span style="color:#005CC5">                1</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">]),</span></span>
+<span class="line"><span style="color:#24292E">         vT:= (dX:= armOneLength / </span><span style="color:#005CC5">2.0</span><span style="color:#24292E"> + armTwoLength / </span><span style="color:#005CC5">2.0</span><span style="color:#24292E">, dY:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dZ:= armOneHeight / </span><span style="color:#005CC5">2.0</span><span style="color:#24292E"> + armTwoHeight / </span><span style="color:#005CC5">2.0</span><span style="color:#24292E">)),</span></span>
+<span class="line"><span style="color:#6A737D">        /// The center of mass of the z-axis expressed in the coordinate system of arm 2:</span></span>
+<span class="line"><span style="color:#24292E">        (mR:= (</span></span>
+<span class="line"><span style="color:#24292E">            aElems:= [</span></span>
+<span class="line"><span style="color:#005CC5">                1</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">]),</span></span>
+<span class="line"><span style="color:#24292E">         vT:= (dX:= armTwoLength / </span><span style="color:#005CC5">2.0</span><span style="color:#24292E">, dY:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dZ:= zAxisLength / </span><span style="color:#005CC5">2.0</span><span style="color:#24292E"> - armTwoHeight / </span><span style="color:#005CC5">2.0</span><span style="color:#24292E"> + zAxisOffset)),</span></span>
+<span class="line"><span style="color:#6A737D">        /// One additional array entry, to handle an arbitrary load at the TCP, expressed</span></span>
+<span class="line"><span style="color:#6A737D">		/// in the coordinate system of the z-axis.</span></span>
+<span class="line"><span style="color:#24292E">        (mR:= (</span></span>
+<span class="line"><span style="color:#24292E">            aElems:= [</span></span>
+<span class="line"><span style="color:#005CC5">                1</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">]),</span></span>
+<span class="line"><span style="color:#24292E">         vT:= (dX:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dY:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dZ:= - zAxisLength / </span><span style="color:#005CC5">2.0</span><span style="color:#24292E">))];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/// The spatial inertia matrices of all links, expressed in the</span></span>
+<span class="line"><span style="color:#6A737D">    /// respectives link's frame.</span></span>
+<span class="line"><span style="color:#24292E">    m_aG : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">..SMRB.MAX_VEC_DIM-</span><span style="color:#005CC5">1</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> SMDYN.DynSpatialInertia := [</span></span>
+<span class="line"><span style="color:#6A737D">        /// All inertia values in [kg m²]</span></span>
+<span class="line"><span style="color:#6A737D">        /// and all mass values in [kg]</span></span>
+<span class="line"><span style="color:#6A737D">        /// Arm 1</span></span>
+<span class="line"><span style="color:#24292E">        (I:= (</span></span>
+<span class="line"><span style="color:#24292E">            aElems:= [</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">/</span><span style="color:#005CC5">12.0</span><span style="color:#24292E"> * armOneMass * armOneLength * armOneLength, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">/</span><span style="color:#005CC5">12.0</span><span style="color:#24292E"> * armOneMass * armOneLength * armOneLength]),</span></span>
+<span class="line"><span style="color:#24292E">         m:= armOneMass),</span></span>
+<span class="line"><span style="color:#6A737D">        /// Arm 2</span></span>
+<span class="line"><span style="color:#24292E">        (I:= (</span></span>
+<span class="line"><span style="color:#24292E">            aElems:= [</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">/</span><span style="color:#005CC5">12.0</span><span style="color:#24292E"> * armTwoMass * armTwoLength * armTwoLength, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">/</span><span style="color:#005CC5">12.0</span><span style="color:#24292E"> * armTwoMass * armTwoLength * armTwoLength]),</span></span>
+<span class="line"><span style="color:#24292E">         m:= armTwoMass),</span></span>
+<span class="line"><span style="color:#6A737D">        /// z-axis</span></span>
+<span class="line"><span style="color:#24292E">        (I:= (</span></span>
+<span class="line"><span style="color:#24292E">            aElems:= [</span></span>
+<span class="line"><span style="color:#005CC5">                1</span><span style="color:#24292E">/</span><span style="color:#005CC5">12.0</span><span style="color:#24292E"> * zAxisMass * zAxisLength * zAxisLength, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">/</span><span style="color:#005CC5">12.0</span><span style="color:#24292E"> * zAxisMass * zAxisLength * zAxisLength, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">]),</span></span>
+<span class="line"><span style="color:#24292E">         m:= zAxisMass)];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/// The screw axes of all joints, expressed in the base frame.</span></span>
+<span class="line"><span style="color:#24292E">    m_aS : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">..SMRB.MAX_VEC_DIM-</span><span style="color:#005CC5">1</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> TwistVec := [</span></span>
+<span class="line"><span style="color:#6A737D">		/// Angular velocities in [rad/s] and linear velocities in [m/s].</span></span>
+<span class="line"><span style="color:#6A737D">        /// Screw axis of arm 1</span></span>
+<span class="line"><span style="color:#24292E">        (w:= (dX:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dY:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dZ:= </span><span style="color:#005CC5">1</span><span style="color:#24292E">),</span></span>
+<span class="line"><span style="color:#24292E">         v:= (dX:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dY:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dZ:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">)),</span></span>
+<span class="line"><span style="color:#6A737D">        /// Screw axis of arm 2</span></span>
+<span class="line"><span style="color:#24292E">        (w:= (dX:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dY:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dZ:= </span><span style="color:#005CC5">1</span><span style="color:#24292E">),</span></span>
+<span class="line"><span style="color:#24292E">         v:= (dX:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dY:= -armOneLength, dZ:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">)),</span></span>
+<span class="line"><span style="color:#6A737D">        /// Screw axis of the z-axis</span></span>
+<span class="line"><span style="color:#24292E">        (w:= (dX:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dY:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dZ:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">),</span></span>
+<span class="line"><span style="color:#24292E">         v:= (dX:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dY:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, dZ:= </span><span style="color:#005CC5">1</span><span style="color:#24292E">))];</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#6A737D">    /// The home position of all link frames. |m_aM_inv[i]| contains</span></span>
+<span class="line"><span style="color:#6A737D">    /// the frame of the (i-1) link expressed in the coordinates of the</span></span>
+<span class="line"><span style="color:#6A737D">    /// ith link frame.</span></span>
+<span class="line"><span style="color:#6A737D">    /// All frames are expected to be situated at the link's center</span></span>
+<span class="line"><span style="color:#6A737D">    /// of mass.</span></span>
+<span class="line"><span style="color:#24292E">    m_aM_inv : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">..SM3M.SMC_MAX_VEC_DIM] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> SM3M.SMC_Frame;</span></span>
+<span class="line"><span style="color:#6A737D">    /// The screw axes of all joints, expressed in the link's frame.</span></span>
+<span class="line"><span style="color:#24292E">    m_aA : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">..SM3M.SMC_MAX_VEC_DIM-</span><span style="color:#005CC5">1</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> TwistVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span></code></pre>5:["$","section",null,{"className":"space-y-3","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"ST 程式碼"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。"}],["$","div",null,{"className":"space-y-2","children":[["$","$L9","DynModel_Scara2_Z.st",{"title":"DynModel_Scara2_Z.st","html":"$a"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16","$L17","$L18","$L19","$L1a"]}]]}]
+6:["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","async":true}]
+7:["$","script","script-1",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true}]
+8:["$","$L1b",null,{"children":["$","$1c",null,{"name":"Next.MetadataOutlet","children":"$@1d"}]}]
+1e:Tff6,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">(* </span></span>
+<span class="line"><span style="color:#6A737D">    檔案用途：</span></span>
+<span class="line"><span style="color:#6A737D">      透過 Test_DynModel_Scara2_Z 功能塊，對 Scara 動力學模型做單元測試，</span></span>
+<span class="line"><span style="color:#6A737D">      包含檢查螺旋軸定義（CheckScrewAxis）與靜止扭矩計算（CheckStandstillTorque）。</span></span>
+<span class="line"><span style="color:#6A737D">    教學重點：</span></span>
+<span class="line"><span style="color:#6A737D">      - 示範如何以簡單狀態機包裝一組動力學測試，將結果輸出為 successful / error。</span></span>
+<span class="line"><span style="color:#6A737D">      - 幫助使用者在將模型套用到 PLC_PRG 前，先驗證模型本身是否合理。</span></span>
+<span class="line"><span style="color:#6A737D">*)</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> DynModel_Tests</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#24292E">	successful: BOOL;</span></span>
+<span class="line"><span style="color:#24292E">	error : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	state : INT;</span></span>
+<span class="line"><span style="color:#24292E">	tester : Test_DynModel_Scara2_Z;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> state </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#005CC5">	0</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> tester.CheckScrewAxis() </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">		ELSE</span></span>
+<span class="line"><span style="color:#24292E">			state := state + </span><span style="color:#005CC5">1000</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">	10</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> tester.CheckStandstillTorque() </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">		ELSE</span></span>
+<span class="line"><span style="color:#24292E">			state := state + </span><span style="color:#005CC5">1000</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">	20</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">		state := </span><span style="color:#005CC5">100</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">successful := state = </span><span style="color:#005CC5">100</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">error := state >= </span><span style="color:#005CC5">1000</span><span style="color:#24292E">;</span></span></code></pre>b:["$","$L9","DynModel_Tests.st",{"title":"DynModel_Tests.st","html":"$1e"}]
+1f:T6d8,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">/// Applies a spatial inertia matrix to a twist vector</span></span>
+<span class="line"><span style="color:#6A737D">/// resulting in a generalized momentum or force vector</span></span>
+<span class="line"><span style="color:#6A737D">/// depending on whether the twist represents a velocity</span></span>
+<span class="line"><span style="color:#6A737D">/// or an acceleration.</span></span>
+<span class="line"><span style="color:#D73A49">FUNCTION</span><span style="color:#6F42C1"> MatSI_ApplyTwist</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT</span></span>
+<span class="line"><span style="color:#6A737D">    /// The resulting generalized momentum or force.</span></span>
+<span class="line"><span style="color:#24292E">    W : WrenchVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT CONSTANT</span></span>
+<span class="line"><span style="color:#6A737D">    /// The spatial inertia matrix.</span></span>
+<span class="line"><span style="color:#24292E">    G : SMDYN.DynSpatialInertia;</span></span>
+<span class="line"><span style="color:#6A737D">    /// The generalized velocity or acceleration.</span></span>
+<span class="line"><span style="color:#24292E">    T : TwistVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_Matrix3_Apply(W.m, G.I, T.w);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Mult(W.f, T.v, G.m);</span></span></code></pre>c:["$","$L9","MatSI_ApplyTwist.st",{"title":"MatSI_ApplyTwist.st","html":"$1f"}]
+20:T57cd,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">(* </span></span>
+<span class="line"><span style="color:#6A737D">    檔案用途：</span></span>
+<span class="line"><span style="color:#6A737D">      示範如何在 SoftMotion 中使用自訂的動力學模型（DynModel_Scara2_Z），</span></span>
+<span class="line"><span style="color:#6A737D">      針對相同的關節移動，比較「無扭矩限制」、「有限扭矩」、「加掛負載」三種情境下</span></span>
+<span class="line"><span style="color:#6A737D">      軸的速度／加速度／扭矩行為差異。</span></span>
+<span class="line"><span style="color:#6A737D">    教學重點：</span></span>
+<span class="line"><span style="color:#6A737D">      - 看懂 TorqueLimitationDemoStates 狀態機如何分段執行三種測試運動。</span></span>
+<span class="line"><span style="color:#6A737D">      - 理解 SMC_GroupSetDynamics、SMC_GroupSetLoad、SetAxisLimits 搭配使用的方式。</span></span>
+<span class="line"><span style="color:#6A737D">      - 練習從 TEST_MOVEMENT_* 的設定與 Trace 變數中，觀察動力學模型對實際運動的影響。</span></span>
+<span class="line"><span style="color:#6A737D">*)</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> PLC_PRG</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	state : TorqueLimitationDemoStates;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	currentTestMovement : UINT := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	start : SMC_POS_REF;</span></span>
+<span class="line"><span style="color:#24292E">	destination : SMC_POS_REF;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	groupPower : SMC_GroupPower;</span></span>
+<span class="line"><span style="color:#24292E">	setDynamics : SMC_GroupSetDynamics;</span></span>
+<span class="line"><span style="color:#24292E">	dynModel : DynModel_Scara2_Z;</span></span>
+<span class="line"><span style="color:#24292E">	moveDirectAbs : MC_MoveDirectAbsolute := (CoordSystem:= SMC_COORD_SYSTEM.ACS);</span></span>
+<span class="line"><span style="color:#24292E">	setLoad : SMC_GroupSetLoad := (ExecutionMode:= MC_EXECUTION_MODE.Immediately);</span></span>
+<span class="line"><span style="color:#24292E">	setPosition : MC_GroupSetPosition;</span></span>
+<span class="line"><span style="color:#24292E">	setAxisLimits : SetAxisLimits;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span><span style="color:#24292E"> CONSTANT</span></span>
+<span class="line"><span style="color:#6A737D">	/// Count of different test movements.</span></span>
+<span class="line"><span style="color:#24292E">	TEST_MOVEMENT_COUNT : UINT := </span><span style="color:#005CC5">2</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/// Load mass in [kg]</span></span>
+<span class="line"><span style="color:#24292E">	LOAD_MASS : LREAL := </span><span style="color:#005CC5">3</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">	/// Load length in [m]</span></span>
+<span class="line"><span style="color:#24292E">	LOAD_LENGTH : LREAL := </span><span style="color:#005CC5">0.2</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#6A737D">	/// Load calculated for a thin rod mounted directly</span></span>
+<span class="line"><span style="color:#6A737D">	/// to the z-axis in [kg m²]</span></span>
+<span class="line"><span style="color:#24292E">	LOAD : SMC_DynLoad :=</span></span>
+<span class="line"><span style="color:#24292E">		(</span></span>
+<span class="line"><span style="color:#24292E">			Mass:= LOAD_MASS,</span></span>
+<span class="line"><span style="color:#24292E">			PrincipalMoments:=</span></span>
+<span class="line"><span style="color:#24292E">				[</span></span>
+<span class="line"><span style="color:#6A737D">					/// Ix</span></span>
+<span class="line"><span style="color:#005CC5">					0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#6A737D">					/// Iy</span></span>
+<span class="line"><span style="color:#005CC5">					1</span><span style="color:#24292E">/</span><span style="color:#005CC5">12.0</span><span style="color:#24292E"> * LOAD_MASS * LOAD_LENGTH * LOAD_LENGTH,</span></span>
+<span class="line"><span style="color:#6A737D">					/// Iz</span></span>
+<span class="line"><span style="color:#005CC5">					1</span><span style="color:#24292E">/</span><span style="color:#005CC5">12.0</span><span style="color:#24292E"> * LOAD_MASS * LOAD_LENGTH * LOAD_LENGTH</span></span>
+<span class="line"><span style="color:#24292E">				]</span></span>
+<span class="line"><span style="color:#24292E">		);</span></span>
+<span class="line"><span style="color:#24292E">	ZERO_LOAD : SMC_DynLoad :=</span></span>
+<span class="line"><span style="color:#24292E">		(</span></span>
+<span class="line"><span style="color:#24292E">			Mass:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">			PrincipalMoments:= [</span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">],</span></span>
+<span class="line"><span style="color:#24292E">			PrincipalAxes:= (X:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Y:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Z:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, A:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, B:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, C:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">		);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/// Test movement positions in ACS (a0 and a1 in [°] and a2 in [m]).</span></span>
+<span class="line"><span style="color:#24292E">	TEST_MOVEMENT_ONE_START : SMC_POS_REF := (a:= (a0:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, a1:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, a2:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">	TEST_MOVEMENT_ONE_DESTINATION : SMC_POS_REF := (a:= (a0:= </span><span style="color:#005CC5">90</span><span style="color:#24292E">, a1:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, a2:= </span><span style="color:#005CC5">0.02</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">	TEST_MOVEMENT_TWO_START : SMC_POS_REF := (a:= (a0:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, a1:= -</span><span style="color:#005CC5">120</span><span style="color:#24292E">, a2:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#24292E">	TEST_MOVEMENT_TWO_DESTINATION : SMC_POS_REF := (a:= (a0:= </span><span style="color:#005CC5">90</span><span style="color:#24292E">, a1:= -</span><span style="color:#005CC5">120</span><span style="color:#24292E">, a2:= </span><span style="color:#005CC5">0.02</span><span style="color:#24292E">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	DEFAULT_REVOLUTE_AXIS_LIMITS : AxisLimits :=</span></span>
+<span class="line"><span style="color:#24292E">		(</span></span>
+<span class="line"><span style="color:#24292E">			maxVelocity:= </span><span style="color:#005CC5">30</span><span style="color:#24292E">,	</span><span style="color:#6A737D">/// [°/s]</span></span>
+<span class="line"><span style="color:#24292E">			maxAcceleration:= </span><span style="color:#005CC5">400</span><span style="color:#24292E">,	</span><span style="color:#6A737D">/// [°/s²]</span></span>
+<span class="line"><span style="color:#24292E">			maxDeceleration:= </span><span style="color:#005CC5">400</span><span style="color:#24292E">,	</span><span style="color:#6A737D">/// [°/s²]</span></span>
+<span class="line"><span style="color:#24292E">			maxJerk:= </span><span style="color:#005CC5">1</span><span style="color:#24292E">E5,	</span><span style="color:#6A737D">/// [°/s³]</span></span>
+<span class="line"><span style="color:#24292E">			maxTorque:= FPU.GetLRealSpecialVal(FPU.ESpecial_FP_Value.PosInf)	</span><span style="color:#6A737D">/// [Nm]</span></span>
+<span class="line"><span style="color:#24292E">		);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	DEFAULT_PRISMATIC_AXIS_LIMITS : AxisLimits :=</span></span>
+<span class="line"><span style="color:#24292E">		(</span></span>
+<span class="line"><span style="color:#24292E">			maxVelocity:= </span><span style="color:#005CC5">0.03</span><span style="color:#24292E">,	</span><span style="color:#6A737D">/// [m/s]</span></span>
+<span class="line"><span style="color:#24292E">			maxAcceleration:= </span><span style="color:#005CC5">0.4</span><span style="color:#24292E">,	</span><span style="color:#6A737D">/// [m/s²]</span></span>
+<span class="line"><span style="color:#24292E">			maxDeceleration:= </span><span style="color:#005CC5">0.4</span><span style="color:#24292E">,	</span><span style="color:#6A737D">/// [m/s²]</span></span>
+<span class="line"><span style="color:#24292E">			maxJerk:= </span><span style="color:#005CC5">10</span><span style="color:#24292E">,	</span><span style="color:#6A737D">/// [m/s³]</span></span>
+<span class="line"><span style="color:#24292E">			maxTorque:= FPU.GetLRealSpecialVal(FPU.ESpecial_FP_Value.PosInf)	</span><span style="color:#6A737D">/// [N]</span></span>
+<span class="line"><span style="color:#24292E">		);</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> state </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#24292E">	PowerAxisGroup:</span></span>
+<span class="line"><span style="color:#24292E">		groupPower.bDriveStart := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		groupPower.bRegulatorOn := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		groupPower.Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> groupPower.Status </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := InitializeDynamicModel;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	InitializeDynamicModel:</span></span>
+<span class="line"><span style="color:#24292E">		dynModel.Init();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">		setDynamics.Dynamics := dynModel;</span></span>
+<span class="line"><span style="color:#6A737D">		/// Gravitational acceleration in [m/s²]</span></span>
+<span class="line"><span style="color:#24292E">		setDynamics.GravitationalAcceleration.dZ := </span><span style="color:#005CC5">9.81</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		setDynamics.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> setDynamics.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := InitializeTestMovement;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	InitializeTestMovement:</span></span>
+<span class="line"><span style="color:#D73A49">		CASE</span><span style="color:#24292E"> currentTestMovement </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#005CC5">			0</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">				start := TEST_MOVEMENT_ONE_START;</span></span>
+<span class="line"><span style="color:#24292E">				destination := TEST_MOVEMENT_ONE_DESTINATION;</span></span>
+<span class="line"><span style="color:#005CC5">			1</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">				start := TEST_MOVEMENT_TWO_START;</span></span>
+<span class="line"><span style="color:#24292E">				destination := TEST_MOVEMENT_TWO_DESTINATION;</span></span>
+<span class="line"><span style="color:#24292E">		END_CASE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">		setLoad.Load := ZERO_LOAD;</span></span>
+<span class="line"><span style="color:#24292E">		setLoad.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> setLoad.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			setLoad.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := InitializeUnlimitedTorqueMovement;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	InitializeUnlimitedTorqueMovement:</span></span>
+<span class="line"><span style="color:#24292E">		setAxisLimits.AxisLimits[</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := DEFAULT_REVOLUTE_AXIS_LIMITS;</span></span>
+<span class="line"><span style="color:#24292E">		setAxisLimits.AxisLimits[</span><span style="color:#005CC5">1</span><span style="color:#24292E">] := DEFAULT_REVOLUTE_AXIS_LIMITS;</span></span>
+<span class="line"><span style="color:#24292E">		setAxisLimits.AxisLimits[</span><span style="color:#005CC5">2</span><span style="color:#24292E">] := DEFAULT_PRISMATIC_AXIS_LIMITS;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">		setAxisLimits.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> setAxisLimits.Done </span><span style="color:#D73A49">AND_THEN</span><span style="color:#24292E"> ResetRobotPosition() </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			setAxisLimits.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := ExecuteUnlimitedTorqueMovement;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	ExecuteUnlimitedTorqueMovement:</span></span>
+<span class="line"><span style="color:#24292E">		moveDirectAbs.Position := destination;</span></span>
+<span class="line"><span style="color:#24292E">		moveDirectAbs.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> moveDirectAbs.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			moveDirectAbs.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := InitializeLimitedTorqueMovement;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	InitializeLimitedTorqueMovement:</span></span>
+<span class="line"><span style="color:#6A737D">		/// Torque limit for axis 2 in [Nm]</span></span>
+<span class="line"><span style="color:#24292E">		setAxisLimits.AxisLimits[</span><span style="color:#005CC5">1</span><span style="color:#24292E">].maxTorque := </span><span style="color:#005CC5">2</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		setAxisLimits.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> setAxisLimits.Done </span><span style="color:#D73A49">AND_THEN</span><span style="color:#24292E"> ResetRobotPosition() </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			setAxisLimits.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := ExecuteLimitedTorqueMovement;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	ExecuteLimitedTorqueMovement:</span></span>
+<span class="line"><span style="color:#24292E">		moveDirectAbs.Position := destination;</span></span>
+<span class="line"><span style="color:#24292E">		moveDirectAbs.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> moveDirectAbs.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			moveDirectAbs.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := InitializeMovementWithLoad;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	InitializeMovementWithLoad:</span></span>
+<span class="line"><span style="color:#24292E">		setLoad.Load := LOAD;</span></span>
+<span class="line"><span style="color:#24292E">		setLoad.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> setLoad.Done </span><span style="color:#D73A49">AND_THEN</span><span style="color:#24292E"> ResetRobotPosition() </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			setLoad.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := ExecuteMovementWithLoad;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	ExecuteMovementWithLoad:</span></span>
+<span class="line"><span style="color:#24292E">		moveDirectAbs.Position := destination;</span></span>
+<span class="line"><span style="color:#24292E">		moveDirectAbs.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> moveDirectAbs.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			moveDirectAbs.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := FinalizeTestMovement;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	FinalizeTestMovement:</span></span>
+<span class="line"><span style="color:#24292E">		currentTestMovement := currentTestMovement + </span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> currentTestMovement &#x3C; TEST_MOVEMENT_COUNT </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := InitializeTestMovement;</span></span>
+<span class="line"><span style="color:#D73A49">		ELSE</span></span>
+<span class="line"><span style="color:#24292E">			state := DemoFinished;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">groupPower(AxisGroup:= AxisGroup);</span></span>
+<span class="line"><span style="color:#24292E">setDynamics(AxisGroup:= AxisGroup);</span></span>
+<span class="line"><span style="color:#24292E">moveDirectAbs(AxisGroup:= AxisGroup);</span></span>
+<span class="line"><span style="color:#24292E">setLoad(AxisGroup:= AxisGroup);</span></span>
+<span class="line"><span style="color:#24292E">setPosition(AxisGroup:= AxisGroup);</span></span>
+<span class="line"><span style="color:#24292E">setAxisLimits(AxisGroup:= AxisGroup);</span></span></code></pre>d:["$","$L9","PLC_PRG.st",{"title":"PLC_PRG.st","html":"$20"}]
+21:T3532,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#24292E">FUNCTION_BLOCK SetAxisLimits</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT</span></span>
+<span class="line"><span style="color:#24292E">	AxisGroup : AXIS_GROUP_REF_SM3;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_INPUT</span></span>
+<span class="line"><span style="color:#24292E">	Execute : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">	AxisLimits : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">..SMC_RCNST.MAX_AXES-</span><span style="color:#005CC5">1</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> AxisLimits;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#24292E">	Done : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">	Error : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">	ErrorID : SMC_ERROR;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	state : INT := IDLE_STATE;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	groupDisable : MC_GroupDisable;</span></span>
+<span class="line"><span style="color:#24292E">	groupEnable : MC_GroupEnable;</span></span>
+<span class="line"><span style="color:#24292E">	groupStatus : MC_GroupReadStatus;</span></span>
+<span class="line"><span style="color:#24292E">	groupReadConfig : MC_GroupReadConfiguration;</span></span>
+<span class="line"><span style="color:#24292E">	changeDynamicLimits : SMC_ChangeDynamicLimits;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	currentAxis : IDENT_IN_GROUP_REF_SM3;</span></span>
+<span class="line"><span style="color:#24292E">	oldExecute : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span><span style="color:#24292E"> CONSTANT</span></span>
+<span class="line"><span style="color:#24292E">	IDLE_STATE : INT := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	CHECK_STATE : INT := </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	DISABLE_STATE : INT := </span><span style="color:#005CC5">20</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	READ_CONFIG_STATE : INT := </span><span style="color:#005CC5">30</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	CHANGE_DYNAMIC_LIMIT_STATE : INT := </span><span style="color:#005CC5">40</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	PREPARE_NEXT_AXIS_STATE : INT := </span><span style="color:#005CC5">50</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	ENABLE_STATE : INT := </span><span style="color:#005CC5">60</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	DONE_STATE : INT := </span><span style="color:#005CC5">100</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	ERROR_STATE : INT := </span><span style="color:#005CC5">1000</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">IF</span><span style="color:#24292E"> Execute </span><span style="color:#D73A49">AND_THEN</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> oldExecute </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">	state := CHECK_STATE;</span></span>
+<span class="line"><span style="color:#24292E">	currentAxis := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	ErrorID := SMC_NO_ERROR;</span></span>
+<span class="line"><span style="color:#24292E">ELSIF </span><span style="color:#D73A49">NOT</span><span style="color:#24292E"> Execute</span></span>
+<span class="line"><span style="color:#D73A49">	AND_THEN</span><span style="color:#24292E"> (state = DONE_STATE </span><span style="color:#D73A49">OR_ELSE</span><span style="color:#24292E"> state = ERROR_STATE)</span></span>
+<span class="line"><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">	state := IDLE_STATE;</span></span>
+<span class="line"><span style="color:#24292E">	ErrorID := SMC_NO_ERROR;</span></span>
+<span class="line"><span style="color:#24292E">END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> state </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#24292E">	CHECK_STATE:</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> groupStatus.Valid </span><span style="color:#D73A49">AND_THEN</span><span style="color:#24292E"> groupStatus.GroupStandby </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := DISABLE_STATE;</span></span>
+<span class="line"><span style="color:#24292E">		ELSIF groupStatus.Valid </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := READ_CONFIG_STATE;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	DISABLE_STATE:</span></span>
+<span class="line"><span style="color:#24292E">		groupDisable.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> groupDisable.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			groupDisable.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := READ_CONFIG_STATE;</span></span>
+<span class="line"><span style="color:#24292E">		ELSIF groupDisable.Error </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			groupDisable.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := ERROR_STATE;</span></span>
+<span class="line"><span style="color:#24292E">			ErrorID := groupDisable.ErrorID;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	READ_CONFIG_STATE:</span></span>
+<span class="line"><span style="color:#24292E">		groupReadConfig(</span></span>
+<span class="line"><span style="color:#24292E">			AxisGroup:= AxisGroup,</span></span>
+<span class="line"><span style="color:#24292E">			Enable:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">			IdentInGroup:= currentAxis);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> groupReadConfig.Valid </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := CHANGE_DYNAMIC_LIMIT_STATE;</span></span>
+<span class="line"><span style="color:#24292E">		ELSIF groupReadConfig.Error </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := ERROR_STATE;</span></span>
+<span class="line"><span style="color:#24292E">			ErrorID := groupReadConfig.ErrorID;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	CHANGE_DYNAMIC_LIMIT_STATE:</span></span>
+<span class="line"><span style="color:#24292E">		changeDynamicLimits(</span></span>
+<span class="line"><span style="color:#24292E">			Axis:= groupReadConfig.pAxis^,</span></span>
+<span class="line"><span style="color:#24292E">			bExecute:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">			fMaxVelocity:= AxisLimits[currentAxis].maxVelocity,</span></span>
+<span class="line"><span style="color:#24292E">			fMaxAcceleration:= AxisLimits[currentAxis].maxAcceleration,</span></span>
+<span class="line"><span style="color:#24292E">			fMaxDeceleration:= AxisLimits[currentAxis].maxDeceleration,</span></span>
+<span class="line"><span style="color:#24292E">			fMaxJerk:= AxisLimits[currentAxis].maxJerk,</span></span>
+<span class="line"><span style="color:#24292E">			fMaxTorque:= AxisLimits[currentAxis].maxTorque);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> changeDynamicLimits.bDone </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			changeDynamicLimits(Axis:= groupReadConfig.pAxis^, bExecute:= </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">			state := PREPARE_NEXT_AXIS_STATE;</span></span>
+<span class="line"><span style="color:#24292E">		ELSIF changeDynamicLimits.bError </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := ERROR_STATE;</span></span>
+<span class="line"><span style="color:#24292E">			ErrorID := changeDynamicLimits.ErrorID;</span></span>
+<span class="line"><span style="color:#24292E">			changeDynamicLimits(Axis:= groupReadConfig.pAxis^, bExecute:= </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	PREPARE_NEXT_AXIS_STATE:</span></span>
+<span class="line"><span style="color:#24292E">		currentAxis := currentAxis + </span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> currentAxis &#x3C; groupReadConfig.NumAxes </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := READ_CONFIG_STATE;</span></span>
+<span class="line"><span style="color:#D73A49">		ELSE</span></span>
+<span class="line"><span style="color:#24292E">			state := ENABLE_STATE;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	ENABLE_STATE:</span></span>
+<span class="line"><span style="color:#24292E">		groupEnable.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> groupEnable.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			groupEnable.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := DONE_STATE;</span></span>
+<span class="line"><span style="color:#24292E">		ELSIF groupEnable.Error </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			groupEnable.Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := ERROR_STATE;</span></span>
+<span class="line"><span style="color:#24292E">			ErrorID := groupEnable.ErrorID;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">groupDisable(AxisGroup:= AxisGroup);</span></span>
+<span class="line"><span style="color:#24292E">groupEnable(AxisGroup:= AxisGroup);</span></span>
+<span class="line"><span style="color:#24292E">groupStatus(AxisGroup:= AxisGroup, Enable:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">Done := state = DONE_STATE;</span></span>
+<span class="line"><span style="color:#24292E">Error := state = ERROR_STATE;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">oldExecute := Execute;</span></span></code></pre>e:["$","$L9","SetAxisLimits.st",{"title":"SetAxisLimits.st","html":"$21"}]
+22:T8c6,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">/// Applies a coordinate transformation T_ab to a twist vector V_b in se(3).</span></span>
+<span class="line"><span style="color:#6A737D">///       |   mR     0 |</span></span>
+<span class="line"><span style="color:#6A737D">/// V_a = |            | V_b</span></span>
+<span class="line"><span style="color:#6A737D">///       |[vT]*mR   mR|</span></span>
+<span class="line"><span style="color:#D73A49">FUNCTION</span><span style="color:#6F42C1"> SMC_Frame_ApplyTwist</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT</span></span>
+<span class="line"><span style="color:#6A737D">    /// Twist vector in a frame coordinates</span></span>
+<span class="line"><span style="color:#24292E">	V_a : TwistVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT CONSTANT</span></span>
+<span class="line"><span style="color:#6A737D">    /// Orientation and position of the b frame</span></span>
+<span class="line"><span style="color:#6A737D">    /// in a frame coordinates.</span></span>
+<span class="line"><span style="color:#24292E">	T_ab : SM3M.SMC_Frame;</span></span>
+<span class="line"><span style="color:#6A737D">    /// Twist vector in b frame coordinates.</span></span>
+<span class="line"><span style="color:#24292E">	V_b : TwistVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">    vTmp : SM3M.SMC_VECTOR3D;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_Matrix3_Apply(V_a.w, T_ab.mR, V_b.w);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_Matrix3_Apply(V_a.v, T_ab.mR, V_b.v);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Cross(vTmp, T_ab.vT, V_a.w);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Add(V_a.v, V_a.v, vTmp);</span></span></code></pre>f:["$","$L9","SMC_Frame_ApplyTwist.st",{"title":"SMC_Frame_ApplyTwist.st","html":"$22"}]
+23:Ta76,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">/// Applies a coordinate transformation T_ab to a wrench vector F_a in se(3).</span></span>
+<span class="line"><span style="color:#6A737D">///       |mR^T  mR^T*[vT]^T|</span></span>
+<span class="line"><span style="color:#6A737D">/// F_b = |                 | F_a</span></span>
+<span class="line"><span style="color:#6A737D">///       | 0         mR^T  |</span></span>
+<span class="line"><span style="color:#D73A49">FUNCTION</span><span style="color:#6F42C1"> SMC_Frame_ApplyWrench</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT</span></span>
+<span class="line"><span style="color:#6A737D">    /// Wrench vector in b frame coordinates.</span></span>
+<span class="line"><span style="color:#24292E">	F_b : WrenchVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT CONSTANT</span></span>
+<span class="line"><span style="color:#6A737D">    /// Orientation and position of the b frame</span></span>
+<span class="line"><span style="color:#6A737D">    /// in a frame coordinates.</span></span>
+<span class="line"><span style="color:#24292E">	T_ab : SM3M.SMC_Frame;</span></span>
+<span class="line"><span style="color:#6A737D">    /// Wrench vector in a frame coordinates.</span></span>
+<span class="line"><span style="color:#24292E">	F_a : WrenchVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">    mR_ : SM3M.SMC_Matrix3;</span></span>
+<span class="line"><span style="color:#24292E">    wTmp0 : SM3M.SMC_VECTOR3D;</span></span>
+<span class="line"><span style="color:#24292E">    wTmp1 : SM3M.SMC_VECTOR3D;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_Matrix3_Transpose(mR_, T_ab.mR);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_Matrix3_Apply(F_b.m, mR_, F_a.m);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Cross(wTmp0, T_ab.vT, F_a.f);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_Matrix3_Apply(wTmp1, mR_, wTmp0);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Sub(F_b.m, F_b.m, wTmp1);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_Matrix3_Apply(F_b.f, mR_, F_a.f);</span></span></code></pre>10:["$","$L9","SMC_Frame_ApplyWrench.st",{"title":"SMC_Frame_ApplyWrench.st","html":"$23"}]
+24:Ta5c,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">/// Calculates an SE(3) frame from a screw axis</span></span>
+<span class="line"><span style="color:#6A737D">/// (a normalized |TwistVec|) and an angle.</span></span>
+<span class="line"><span style="color:#D73A49">FUNCTION</span><span style="color:#6F42C1"> SMC_Frame_FromScrewAxisAngle</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT</span></span>
+<span class="line"><span style="color:#6A737D">    /// The resulting frame.</span></span>
+<span class="line"><span style="color:#24292E">    f : SM3M.SMC_Frame;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT CONSTANT</span></span>
+<span class="line"><span style="color:#6A737D">    /// The screw axis.</span></span>
+<span class="line"><span style="color:#24292E">    A : TwistVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_INPUT</span></span>
+<span class="line"><span style="color:#6A737D">    /// The angle.</span></span>
+<span class="line"><span style="color:#24292E">    theta : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">    wv : SM3M.SMC_VECTOR3D;</span></span>
+<span class="line"><span style="color:#24292E">    w2v : SM3M.SMC_VECTOR3D;</span></span>
+<span class="line"><span style="color:#24292E">    wt : SM3M.SMC_VECTOR3D;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Cross(wv, A.w, A.v);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Cross(w2v, A.w, wv);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Mult(f.vT, A.v, theta);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_MAdd(f.vT, f.vT, wv, (</span><span style="color:#005CC5">1</span><span style="color:#24292E"> - COS(theta)));</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_MAdd(f.vT, f.vT, w2v, (theta - SIN(theta)));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Mult(wt, A.w, theta);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_Matrix3_FromAxisAngle(f.mR, wt);</span></span></code></pre>11:["$","$L9","SMC_Frame_FromScrewAxisAngle.st",{"title":"SMC_Frame_FromScrewAxisAngle.st","html":"$24"}]
+25:Tdfa,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">FUNCTION</span><span style="color:#6F42C1"> SMC_OpenChainKinematics_SolveForward</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT</span></span>
+<span class="line"><span style="color:#24292E">    fTCP : SM3M.SMC_Frame;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT CONSTANT</span></span>
+<span class="line"><span style="color:#D73A49">    aS</span><span style="color:#24292E"> : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">..SM3M.SMC_MAX_VEC_DIM-</span><span style="color:#005CC5">1</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> TwistVec;</span></span>
+<span class="line"><span style="color:#24292E">    vJoints : SM3M.SMC_Vec;</span></span>
+<span class="line"><span style="color:#24292E">    fTCP_init : SM3M.SMC_Frame;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">    i : UDINT;</span></span>
+<span class="line"><span style="color:#24292E">    fTmp : SM3M.SMC_Frame;</span></span>
+<span class="line"><span style="color:#24292E">    afCur : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">.</span><span style="color:#005CC5">.1</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> SM3M.SMC_Frame;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">i := TO_UDINT(vJoints.n);</span></span>
+<span class="line"><span style="color:#24292E">afCur[i </span><span style="color:#D73A49">AND</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">] := fTCP_init;</span></span>
+<span class="line"><span style="color:#D73A49">WHILE</span><span style="color:#24292E"> i > </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> DO</span></span>
+<span class="line"><span style="color:#24292E">    SMC_Frame_FromScrewAxisAngle(fTmp, </span><span style="color:#D73A49">aS</span><span style="color:#24292E">[i-</span><span style="color:#005CC5">1</span><span style="color:#24292E">], vJoints.a[i-</span><span style="color:#005CC5">1</span><span style="color:#24292E">]);</span></span>
+<span class="line"><span style="color:#24292E">    SM3M.SMC_Frame_Mult(afCur[(i-</span><span style="color:#005CC5">1</span><span style="color:#24292E">) </span><span style="color:#D73A49">AND</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">], fTmp, afCur[i </span><span style="color:#D73A49">AND</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    i := i - </span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">END_WHILE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">fTCP := afCur[</span><span style="color:#005CC5">0</span><span style="color:#24292E">];</span></span></code></pre>12:["$","$L9","SMC_OpenChainKinematics_SolveForward.st",{"title":"SMC_OpenChainKinematics_SolveForward.st","html":"$25"}]
+26:T8c4,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#24292E">FUNCTION_BLOCK Test_DynModel_Scara2_Z</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	m_dynModel : DynModel_Scara2_Z;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span><span style="color:#24292E"> CONSTANT</span></span>
+<span class="line"><span style="color:#6A737D">	/// Frame of the initial robot position.</span></span>
+<span class="line"><span style="color:#24292E">	ZERO_TCP_FRAME : SM3M.SMC_Frame := (</span></span>
+<span class="line"><span style="color:#24292E">        mR:= (</span></span>
+<span class="line"><span style="color:#24292E">            aElems:= [</span></span>
+<span class="line"><span style="color:#005CC5">                1</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                0</span><span style="color:#24292E">, </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">1</span><span style="color:#24292E">]),</span></span>
+<span class="line"><span style="color:#24292E">        vT:= (</span></span>
+<span class="line"><span style="color:#24292E">			dX:= m_dynModel.armOneLength + m_dynModel.armTwoLength,</span></span>
+<span class="line"><span style="color:#24292E">			dY:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">			dZ:= - m_dynModel.baseHeight - m_dynModel.armOneHeight - m_dynModel.zAxisOffset));</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span></code></pre>13:["$","$L9","Test_DynModel_Scara2_Z.st",{"title":"Test_DynModel_Scara2_Z.st","html":"$26"}]
+27:T89b,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">/// Calculates the generalized cross product</span></span>
+<span class="line"><span style="color:#6A737D">/// between two |TwistVec|s, both representing</span></span>
+<span class="line"><span style="color:#6A737D">/// generalized velocities. The result is a</span></span>
+<span class="line"><span style="color:#6A737D">/// generalized acceleration.</span></span>
+<span class="line"><span style="color:#D73A49">FUNCTION</span><span style="color:#6F42C1"> Twist_Bracket_Twist</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT</span></span>
+<span class="line"><span style="color:#6A737D">    /// The resulting acceleration.</span></span>
+<span class="line"><span style="color:#24292E">    V_dst : TwistVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT CONSTANT</span></span>
+<span class="line"><span style="color:#6A737D">    /// The first velocity.</span></span>
+<span class="line"><span style="color:#24292E">    V_lhs : TwistVec;</span></span>
+<span class="line"><span style="color:#6A737D">    /// The second velocity.</span></span>
+<span class="line"><span style="color:#24292E">    V_rhs : TwistVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">    v0 : SM3M.SMC_VECTOR3D;</span></span>
+<span class="line"><span style="color:#24292E">    v1 : SM3M.SMC_VECTOR3D;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Cross(v0, V_lhs.v, V_rhs.w);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Cross(v1, V_lhs.w, V_rhs.v);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Cross(V_dst.w, V_lhs.w, V_rhs.w);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Add(V_dst.v, v0, v1);</span></span></code></pre>14:["$","$L9","Twist_Bracket_Twist.st",{"title":"Twist_Bracket_Twist.st","html":"$27"}]
+28:T8f3,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">/// Calculates the generalized cross product</span></span>
+<span class="line"><span style="color:#6A737D">/// between a |TwistVec|, representing a generalized</span></span>
+<span class="line"><span style="color:#6A737D">/// velocity, and a |WrenchVec|, representing a</span></span>
+<span class="line"><span style="color:#6A737D">/// generalized momentum, resulting in a generalized</span></span>
+<span class="line"><span style="color:#6A737D">/// force.</span></span>
+<span class="line"><span style="color:#D73A49">FUNCTION</span><span style="color:#6F42C1"> Twist_Bracket_Wrench</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT</span></span>
+<span class="line"><span style="color:#6A737D">    /// The resulting force.</span></span>
+<span class="line"><span style="color:#24292E">    F_dst : WrenchVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT CONSTANT</span></span>
+<span class="line"><span style="color:#6A737D">    /// The velocity.</span></span>
+<span class="line"><span style="color:#24292E">    V_src : TwistVec;</span></span>
+<span class="line"><span style="color:#6A737D">    /// The momentum.</span></span>
+<span class="line"><span style="color:#24292E">    F_src : WrenchVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">    m0 : SM3M.SMC_VECTOR3D;</span></span>
+<span class="line"><span style="color:#24292E">    m1 : SM3M.SMC_VECTOR3D;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Cross(m0, F_src.m, V_src.w);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Cross(m1, F_src.f, V_src.v);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Cross(F_dst.f, F_src.f, V_src.w);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Add(F_dst.m, m0, m1);</span></span></code></pre>15:["$","$L9","Twist_Bracket_Wrench.st",{"title":"Twist_Bracket_Wrench.st","html":"$28"}]
+16:["$","$L9","TwistVec_Add.st",{"title":"TwistVec_Add.st","html":"<pre class=\"shiki github-light\" style=\"background-color:#fff;color:#24292e\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#D73A49\">FUNCTION</span><span style=\"color:#6F42C1\"> TwistVec_Add</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">VAR_IN_OUT</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    V_dst : TwistVec;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">END_VAR</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">VAR_IN_OUT CONSTANT</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    V_lhs : TwistVec;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    V_rhs : TwistVec;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">END_VAR</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">SM3M.SMC_V3_Add(V_dst.w, V_lhs.w, V_rhs.w);</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">SM3M.SMC_V3_Add(V_dst.v, V_lhs.v, V_rhs.v);</span></span></code></pre>"}]
+29:T473,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">FUNCTION</span><span style="color:#6F42C1"> TwistVec_Scale</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT</span></span>
+<span class="line"><span style="color:#24292E">    V_dst : TwistVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT CONSTANT</span></span>
+<span class="line"><span style="color:#24292E">    V_src : TwistVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_INPUT</span></span>
+<span class="line"><span style="color:#24292E">    theta : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Mult(V_dst.w, V_src.w, theta);</span></span>
+<span class="line"><span style="color:#24292E">SM3M.SMC_V3_Mult(V_dst.v, V_src.v, theta);</span></span></code></pre>17:["$","$L9","TwistVec_Scale.st",{"title":"TwistVec_Scale.st","html":"$29"}]
+2a:T41f,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">/// Calculates the dot product between a wrench and a twist.</span></span>
+<span class="line"><span style="color:#D73A49">FUNCTION</span><span style="color:#6F42C1"> Wrench_Dot_Twist</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT CONSTANT</span></span>
+<span class="line"><span style="color:#24292E">    F : WrenchVec;</span></span>
+<span class="line"><span style="color:#24292E">    V : TwistVec;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#24292E">    Wrench_Dot_Twist : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">Wrench_Dot_Twist := SM3M.SMC_V3_Dot(F.m, V.w) + SM3M.SMC_V3_Dot(F.f, V.v);</span></span></code></pre>18:["$","$L9","Wrench_Dot_Twist.st",{"title":"Wrench_Dot_Twist.st","html":"$2a"}]
+19:["$","$L9","WrenchVec_Add.st",{"title":"WrenchVec_Add.st","html":"<pre class=\"shiki github-light\" style=\"background-color:#fff;color:#24292e\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#D73A49\">FUNCTION</span><span style=\"color:#6F42C1\"> WrenchVec_Add</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">VAR_IN_OUT</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    F_dst : WrenchVec;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">END_VAR</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">VAR_IN_OUT CONSTANT</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    F_lhs : WrenchVec;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    F_rhs : WrenchVec;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">END_VAR</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">SM3M.SMC_V3_Add(F_dst.m, F_lhs.m, F_rhs.m);</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">SM3M.SMC_V3_Add(F_dst.f, F_lhs.f, F_rhs.f);</span></span></code></pre>"}]
+1a:["$","$L9","WrenchVec_Sub.st",{"title":"WrenchVec_Sub.st","html":"<pre class=\"shiki github-light\" style=\"background-color:#fff;color:#24292e\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#D73A49\">FUNCTION</span><span style=\"color:#6F42C1\"> WrenchVec_Sub</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">VAR_IN_OUT</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    V_dst : WrenchVec;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">END_VAR</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">VAR_IN_OUT CONSTANT</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    V_lhs : WrenchVec;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    V_rhs : WrenchVec;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">END_VAR</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">SM3M.SMC_V3_Sub(V_dst.m, V_lhs.m, V_rhs.m);</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">SM3M.SMC_V3_Sub(V_dst.f, V_lhs.f, V_rhs.f);</span></span></code></pre>"}]
+1d:null

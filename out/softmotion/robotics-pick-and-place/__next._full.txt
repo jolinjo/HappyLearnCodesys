@@ -1,0 +1,917 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[39756,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+4:I[37457,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+6:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+a:I[68027,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+:HL["/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","style"]
+0:{"P":null,"b":"mGRRbc9mQkxUGXHACoBp3","c":["","softmotion","robotics-pick-and-place"],"q":"","i":false,"f":[[["",{"children":["softmotion",{"children":[["slug","robotics-pick-and-place","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-Hant","children":["$","body",null,{"className":"min-h-screen","children":["$","div",null,{"className":"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6","children":[["$","header",null,{"className":"mb-6 border-b pb-4","style":{"borderColor":"var(--t-border)"},"children":["$","div",null,{"className":"flex items-start justify-between gap-4","children":[["$","div",null,{"children":[["$","h1",null,{"className":"text-xl font-semibold tracking-tight","children":["$","$L2",null,{"href":"/","style":{"color":"var(--t-accent)"},"className":"hover:underline","children":"CODESYS 教學網站"}]}],["$","p",null,{"className":"mt-1 text-sm","style":{"color":"var(--t-text-muted)"},"children":"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。"}]]}],["$","nav",null,{"className":"flex shrink-0 items-center gap-2","children":[["$","$L2",null,{"href":"/","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"回首頁"}],["$","$L2",null,{"href":"/offline-help","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"Offline Help"}],["$","$L2",null,{"href":"/search","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"搜尋"}]]}]]}]}],["$","main",null,{"className":"flex-1 pb-8","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex flex-col items-center justify-center gap-4 py-12 text-center","children":[["$","p",null,{"className":"text-4xl font-semibold","style":{"color":"var(--t-text-muted)"},"children":"404"}],["$","p",null,{"style":{"color":"var(--t-text-muted)"},"children":"找不到這個頁面。"}],["$","nav",null,{"className":"mt-4 flex flex-wrap justify-center gap-3","children":[["$","$L2",null,{"href":"/","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-accent)"},"children":"回首頁"}],["$","$L2",null,{"href":"/softmotion","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"SoftMotion 學習地圖"}],["$","$L2",null,{"href":"/licensing","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"授權說明"}],["$","$L2",null,{"href":"/guidelines","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"開發規範"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t pt-4 text-xs","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":[["$","p",null,{"children":"內容來源整理自 CODESYS 官方文件與教學筆記，僅供學習使用。"}],["$","p",null,{"className":"mt-1","children":["© ",2026," jolinjo"]}]]}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L9",false]],"m":"$undefined","G":["$a",[]],"S":true}
+b:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"ViewportBoundary"]
+d:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"MetadataBoundary"]
+9:["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}]
+c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+e:[["$","title","0",{"children":"CODESYS 教學網站"}],["$","meta","1",{"name":"description","content":"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"}]]
+f:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+10:T6979,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# Robotics_PickAndPlace — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？（一句話＋情境）
+
+這個範例示範一套以 <span class="cfg-name">Tripod</span> 三角機器人為主角的 **Pick & Place 工作站**：  
+機器人從旋轉工作台上取下圓環，追蹤輸送帶上的圓錐，最後把圓環準確地套在移動中的圓錐上，並持續循環執行。
+
+從學習角度來看，這個專案同時練習：
+
+- 如何在 CODESYS <span class="cfg-name">SoftMotion Robotics</span> 中設定多軸 <span class="cfg-name">Tripod</span> 機構。
+- 如何運用 <span class="cfg-func">MC_Power()</span>、<span class="cfg-func">MC_MoveLinearAbsolute()</span> 等運動控制 FB 形成「啟動 → 取件 → 放件 → 回原位」的狀態機。
+- 如何利用 <span class="cfg-func">MC_TrackConveyorBelt()</span> 與 <span class="cfg-func">MC_TrackRotaryTable()</span> 追蹤輸送帶與轉盤上的工件位置，並透過 <span class="cfg-name">PCS_1</span>、<span class="cfg-name">PCS_2</span> 與 <span class="cfg-name">WCS</span> 等座標系來完成座標轉換。
+
+---
+
+## 二、使用情境與硬體／通訊架構
+
+### 2.1 任務與程式對應（對照 `TaskConfiguration.md`）
+
+| 任務名稱 | 類型 | 週期 | 優先權 | 執行的 POU |
+|----------|------|------|--------|------------|
+| MainTask | Cyclic | t#4ms | 1 | `Robot`, `Environment`, `DepictorCalculations` |
+| Tripod_PlanningTask | Freewheeling | t#8ms | 2 | `Tripod_PlanningPrg` |
+| VISU_TASK | Cyclic | 50 ms | 31 | `VisuElems.Visu_Prg`（視覺化程式，未列在本目錄中） |
+
+- <span class="cfg-name">MainTask</span> 是整個工作站的核心控制迴圈：啟動三個軸形成 <span class="cfg-name">Tripod</span> 機構、控制輸送帶與轉盤、並更新可視化資料。
+- <span class="cfg-name">Tripod_PlanningTask</span> 作為規劃用任務，掛載 `Tripod_PlanningPrg`，原始內容極少，示範「可將重運算分到另一個任務」的架構。
+- <span class="cfg-name">VISU_TASK</span> 只負責視覺化程式，從本目錄的資料看不到詳細程式，但可以想像會讀取 `DepictorCalculations`、`Robot` 等輸出來畫圖。
+
+### 2.2 軸與裝置結構（對照 `DeviceTree_Axes.md`）
+
+本範例使用的軸列表如下：
+
+| 軸名稱 | 類型 | 綁定任務 |
+|--------|------|----------|
+| Tripod1 | SM_Drive_Virtual | - |
+| Tripod2 | SM_Drive_Virtual | - |
+| Tripod3 | SM_Drive_Virtual | - |
+| DriveRotaryTable | SM_Drive_Virtual | - |
+| DriveConveyorBelt | SM_Drive_Virtual | - |
+
+- 三個虛擬軸 <span class="cfg-name">Tripod1</span>、<span class="cfg-name">Tripod2</span>、<span class="cfg-name">Tripod3</span> 共同組成 <span class="cfg-name">Tripod</span> 機器人軸組，供 `Robot` 程式控制。
+- <span class="cfg-name">DriveRotaryTable</span> 負責帶動放置圓環的旋轉工作台，由 `Environment` 內的 <span class="cfg-func">MC_MoveVelocity()</span> 持續驅動。
+- <span class="cfg-name">DriveConveyorBelt</span> 為輸送帶軸，同樣由 `Environment` 持續以固定速度運轉，讓圓錐在帶面上移動。
+
+雖然 `DeviceTree_Axes.md` 中沒有明確列出軸組資訊，但從程式可以看出：
+
+- `Robot` 透過 <span class="cfg-local">enable</span>（型態 <span class="cfg-type">MC_GroupEnable</span>）操作軸組 `<span class="cfg-name">Tripod</span>`。
+- `Cone` 與 `Ring` 使用 <span class="cfg-func">MC_TrackConveyorBelt()</span> 與 <span class="cfg-func">MC_TrackRotaryTable()</span>，將工件位置綁定在輸送帶與轉盤對應的座標系上。
+
+### 2.3 全域幾何與作業模式設定（對照 `GVL.st`）
+
+`GVL.st` 裡的 <span class="cfg-global">VAR_GLOBAL CONSTANT</span> 與 <span class="cfg-global">VAR_GLOBAL</span> 區段，定義了本工作站的幾何位置與作業模式：
+
+- <span class="cfg-const">gcTripodTransX</span>、<span class="cfg-const">gcTripodTransY</span>、<span class="cfg-const">gcTripodTransZ</span>：<span class="cfg-name">Tripod</span> 機構在世界座標中的三維平移量。
+- <span class="cfg-const">gcBeltTransX</span>、<span class="cfg-const">gcBeltTransY</span>、<span class="cfg-const">gcBeltTransZ</span>：輸送帶座標系（<span class="cfg-name">PCS_2</span>）的位置。
+- <span class="cfg-const">gcTableTransX</span>、<span class="cfg-const">gcTableTransY</span>、<span class="cfg-const">gcTableTransZ</span>：旋轉工作台座標系（<span class="cfg-name">PCS_1</span>）的位置。
+- <span class="cfg-const">gcTCP_Ring</span>：機器人 <span class="cfg-name">TCP</span> 到圓環下緣的距離，影響取放高度。
+- <span class="cfg-const">gcTripod1PosOrig</span> ~ <span class="cfg-const">gcTripod3PosOrig</span>：三個軸的啟動基準位置。
+- <span class="cfg-global">gbSetRing</span>：手動要求在轉盤上放一個新圓環。
+- <span class="cfg-global">gbAutomatic</span>：是否自動、連續地產生圓環。
+
+這些參數決定了實體（或虛擬）場景中各設備的相對位置，修改前要先理解 `Robot`、`Cone`、`Ring` 中如何使用它們。
+
+---
+
+## 三、控制流程：由淺入深
+
+### 3.1 整體流程概觀
+
+用白話來看，一次完整的循環大致分為：
+
+1. 啟動三個 Tripod 軸、設定座標系與軸組。
+2. 檢查轉盤上是否有可用的圓環，若有就移動到圓環上方並取下。
+3. 上升到安全高度、退回中立位置。
+4. 前往目前在輸送帶上的目標圓錐上方。
+5. 下降、將圓環放在圓錐上，再上升並退回中立位置。
+6. 回到等待狀態，準備下一個圓環與圓錐。
+
+在此過程中，`Environment` 會持續讓輸送帶與轉盤以固定速度運轉；`Cone` 與 `Ring` 的狀態機則依據 <span class="cfg-name">Tripod</span> 的週期時間與當前狀態更新各自的位置與旗標。
+
+### 3.2 `Robot` 程式的狀態機（對照 `Robot.st`）
+
+`Robot` 以整數變數 <span class="cfg-local">state</span> 建立狀態機，主要狀態如下：
+
+- **0**：等待三個軸的 <span class="cfg-func">MC_Power()</span> 全部上電完成。
+- **10**：呼叫 <span class="cfg-func">MC_SetPosition()</span>，將三個 Tripod 軸移動到預設初始位置（使用 `gcTripod1PosOrig` 等常數）。
+- **20**：透過 <span class="cfg-func">MC_SetCoordinateTransform()</span> 告訴系統 Tripod 在世界座標中的實際位置（使用 `gcTripodTransX/Y/Z`）。
+- **30**：以 <span class="cfg-func">MC_GroupEnable()</span> 啟用整個軸組 `<span class="cfg-name">Tripod</span>`。
+- **40**：判斷 `Environment.bRingOnTable`，如果轉盤上有可用圓環，就開始接近圓環上方的位置 `POS_ABOVE_RING_PCS_1`。
+- **50** ~ **70**：  
+  - 等待到位後啟動 <span class="cfg-func">TON()</span> 計時，模擬在環上方跟隨一小段時間。  
+  - 然後呼叫 <span class="cfg-func">MC_MoveLinearRelative()</span> 以 <span class="cfg-name">PCS_1</span> 座標系向上抬起。
+  - 回到世界座標 <span class="cfg-name">WCS</span> 的中立位置 `POS_REST_WCS`。
+- **80** ~ **100**：  
+  - 讀取 `Environment.pActiveCone`，決定下一個要放環的圓錐。  
+  - 切換到 <span class="cfg-name">PCS_2</span> 座標系，到達圓錐上方 `POS_ABOVE_CONE_PCS_2` 後再下降到 `POS_ON_CONE_PCS_2` 放環。
+  - 放完後再向上抬起，回到安全高度。
+- **110** ~ **120**：移動回中立位置 `POS_REST_WCS`，最後把 `state` 設回 40，進入下一輪循環。
+
+輸出腳位：
+
+- <span class="cfg-local">bReadyForMotion</span>：只要軸組沒有停用也沒有錯誤，就是 TRUE，供 `Ring` 判斷是否可以啟動。
+- <span class="cfg-local">bRingAttached</span>：當狀態在 70～100 之間時為 TRUE，代表圓環被機器人夾持。
+- <span class="cfg-local">bDontChangePCS_2</span>：當機器人正在圓錐附近操作（90～110）時為 TRUE，用來避免 `Cone` 在這段期間更換 <span class="cfg-name">PCS_2</span> 綁定的圓錐。
+
+### 3.3 `Environment`、`Cone`、`Ring` 的互動（對照對應 .st）
+
+- `Environment`：
+  - 先用兩顆 <span class="cfg-func">MC_Power()</span> 與兩顆 <span class="cfg-func">MC_MoveVelocity()</span>，讓 <span class="cfg-name">DriveRotaryTable</span> 與 <span class="cfg-name">DriveConveyorBelt</span> 持續運轉。
+  - 再建立三顆 `Cone` 與兩顆 `Ring` 的實例，並在第一次循環時做初始化（例如給定 `ring1StartPos`）。
+  - 最後輸出 `bRingOnTable`，表示目前是否有至少一個圓環在轉盤可用範圍內。
+
+- `Cone`：
+  - 使用 <span class="cfg-func">MC_TrackConveyorBelt()</span> 追蹤某一顆圓錐在輸送帶上的位置，並將 <span class="cfg-name">PCS_2</span> 綁定到這顆圓錐。
+  - 以 `state = 0 / 10 / 20` 區分「尚未出現」、「連結 PCS_2」、「在輸送帶上移動」三種狀態。
+  - `pActiveCone` 指向目前與機器人座標系綁定的圓錐，供 `Robot` 取用。
+
+- `Ring`：
+  - 使用 <span class="cfg-func">MC_TrackRotaryTable()</span> 追蹤轉盤上的圓環位置，並將 <span class="cfg-name">PCS_1</span> 綁定到該圓環。
+  - 狀態 0 表示待命在初始位置；狀態 20/30 表示在轉盤上等待機器人可用；狀態 40 則是圓環已被機器人夾持並跟隨 <span class="cfg-name">TCP</span>；狀態 50 表示圓環已放到圓錐上，等待圓錐離開。
+  - 兩顆 `Ring` 會互相參照，確保同一時間只有一顆圓環會被送到機器人前方。
+
+### 3.4 `DepictorCalculations` 與規劃程式
+
+- `DepictorCalculations` 使用 <span class="cfg-func">Tripod_Lin_Depictor()</span> 與三角函數 <span class="cfg-func">SIN()</span>、<span class="cfg-func">COS()</span>，在陣列 `aafPos` 中準備一組可視化用軌跡點。
+- `Tripod_PlanningPrg` 在原始 XML 中幾乎為空，僅作為規劃任務佔位；在實務專案裡，這裡可以擴充為離線路徑產生與插補規劃程式。
+
+---
+
+## 四、各支程式負責哪些功能？（由淺入深）
+
+### 4.1 `GVL.st` — 全域幾何與模式設定
+
+- **類型**：<span class="cfg-type">VAR_GLOBAL</span>、<span class="cfg-type">VAR_GLOBAL CONSTANT</span>。
+- **職責**：集中定義 Tripod 機構、輸送帶、轉盤的位置與大小，以及是否自動連續產生圓環。
+- **與硬體／通訊關係**：數值會直接影響 <span class="cfg-name">Tripod</span> 軸組與輸送帶、轉盤在空間中的相對位置，是調整「機械佈局」時的主要入口。
+
+### 4.2 `Environment.st` — 環境與工件管理
+
+- **類型**：<span class="cfg-keyword">PROGRAM</span>。
+- **職責**：
+  - 啟動並維持 <span class="cfg-name">DriveRotaryTable</span> 與 <span class="cfg-name">DriveConveyorBelt</span> 的運轉。
+  - 建立並驅動三顆 `Cone` 與兩顆 `Ring` 的狀態機。
+  - 對外提供 `bRingOnTable` 與 `pActiveCone`，讓 `Robot` 能判斷是否有環可取、要把環放在哪顆圓錐上。
+- **與硬體／通訊關係**：對應到 Device Tree 中軸的啟動與速度設定，並以狀態機的方式模擬輸送帶與轉盤上工件的流動。
+
+### 4.3 `Robot.st` — Tripod 機器人主控制程式
+
+- **類型**：<span class="cfg-keyword">PROGRAM</span>。
+- **職責**：完成一整輪 Pick & Place 流程，包含軸啟動、座標系設定、靠近圓環、夾持、移動到圓錐上方、放環與回到中立位置。
+- **與硬體／通訊關係**：直接操作 <span class="cfg-name">Tripod</span> 軸組，並根據 `Environment.bRingOnTable` 與 `Environment.pActiveCone` 來決定何時開始移動與要放到哪個圓錐上。
+
+### 4.4 `Cone.st` — 輸送帶上的圓錐狀態機
+
+- **類型**：<span class="cfg-keyword">FUNCTION_BLOCK</span>。
+- **職責**：描述單一圓錐在輸送帶上的運動與壽命週期，並決定何時把 <span class="cfg-name">PCS_2</span> 綁定到自己身上。
+- **與硬體／通訊關係**：透過 <span class="cfg-func">MC_TrackConveyorBelt()</span> 與 <span class="cfg-name">DriveConveyorBelt</span> 的運動，計算出圓錐在 <span class="cfg-name">PCS_2</span> 下的位置，並提供給 `Robot` 參考。
+
+### 4.5 `Ring.st` — 轉盤上的圓環狀態機
+
+- **類型**：<span class="cfg-keyword">FUNCTION_BLOCK</span>。
+- **職責**：描述單一圓環從轉盤待命、準備被機器人夾取、被夾持並跟隨 <span class="cfg-name">TCP</span> 移動，到最後放到圓錐上、再回到初始狀態的流程。
+- **與硬體／通訊關係**：透過 <span class="cfg-func">MC_TrackRotaryTable()</span> 與 <span class="cfg-name">DriveRotaryTable</span> 的運動獲得環的位置，並透過 `Robot.bReadyForMotion`、`Robot.bRingAttached`、`Robot.pTargetCone` 等旗標與 Robot 溝通。
+
+### 4.6 `DepictorCalculations.st` — 可視化軌跡計算
+
+- **類型**：<span class="cfg-keyword">PROGRAM</span>。
+- **職責**：計算 `aafPos` 陣列中的一組座標點，供 3D 視覺元件顯示輸送帶路徑與參考軌跡。
+- **與硬體／通訊關係**：從 <span class="cfg-name">DriveConveyorBelt</span> 的當前位置與週期長度推回帶面上的標記點，並結合 <span class="cfg-func">Tripod_Lin_Depictor()</span> 反映 Tripod 的運動。
+
+### 4.7 `Tripod_PlanningPrg.st` — 規劃任務佔位程式
+
+- **類型**：<span class="cfg-keyword">PROGRAM</span>。
+- **職責**：目前僅作為 <span class="cfg-name">Tripod_PlanningTask</span> 的佔位主程式，原始 XML 幾乎沒有實作。
+- **與硬體／通訊關係**：在實際專案中，可在此加入較重的運算（例如離線路徑產生），藉由獨立任務避免影響主控制迴圈的即時性。
+
+---
+
+## 五、函式庫與函式／功能塊一覽（用途、引數、回傳）
+
+### 5.1 函式庫（對照 `Libraries.md`）
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | SoftMotion 基礎運動控制功能塊與型態 |
+| <span class="cfg-name">#SM3_CamBuilder</span> | 與凸輪軌跡相關的功能（本範例主要使用線性移動） |
+| <span class="cfg-name">#System_VisuElem3DPath</span> | 3D 路徑視覺元件，顯示由 `DepictorCalculations` 計算的點 |
+| <span class="cfg-name">#System_VisuElemCamDisplayer</span> | 顯示凸輪或路徑的視覺元件 |
+
+### 5.2 主要運動控制功能塊
+
+- <span class="cfg-func">MC_Power()</span>  
+  - **用途**：啟用單一軸的驅動器與調節器。  
+  - **主要引數**：  
+    - <span class="cfg-arg">Axis</span>（<span class="cfg-type">AXIS_REF</span>，IN）：目標軸（例如 `Tripod1`）。  
+    - <span class="cfg-arg">Enable</span>（<span class="cfg-type">BOOL</span>，IN）：是否上電。  
+  - **重要輸出**：<span class="cfg-arg">Status</span>（<span class="cfg-type">BOOL</span>），表示軸是否已經就緒。
+
+- <span class="cfg-func">MC_SetPosition()</span>  
+  - **用途**：強制設定軸的實際位置，常用於啟動後的「基準位置」建立。  
+  - **主要引數**：<span class="cfg-arg">Axis</span>、<span class="cfg-arg">Execute</span>、<span class="cfg-arg">Position</span>。  
+  - **在本範例的用法**：把三個 Tripod 軸拉到 `gcTripod1PosOrig` 等預設位置。
+
+- <span class="cfg-func">MC_MoveLinearAbsolute()</span>、<span class="cfg-func">MC_MoveLinearRelative()</span>  
+  - **用途**：在指定座標系下進行直線絕對／相對移動。  
+  - **主要引數**：  
+    - <span class="cfg-arg">AxisGroup</span>（<span class="cfg-type">AXIS_GROUP_REF</span>）：例如 `Tripod`。  
+    - <span class="cfg-arg">Position</span> 或 <span class="cfg-arg">Distance</span>（<span class="cfg-type">SMC_POS_REF</span> 或對應型態）。  
+    - <span class="cfg-arg">Velocity</span>、<span class="cfg-arg">Acceleration</span>、<span class="cfg-arg">Deceleration</span>、<span class="cfg-arg">Jerk</span>。  
+  - **在本範例的用法**：構成「到環上方 → 抬起 → 回中立 → 到圓錐上方 → 放環 → 回中立」的直線路徑。
+
+- <span class="cfg-func">MC_GroupEnable()</span>  
+  - **用途**：啟用整個軸組，以便後續使用軸組層級的移動 FB。  
+  - **本範例重點**：啟用後才可以使用上述線性移動 FB 控制 <span class="cfg-name">Tripod</span>。
+
+- <span class="cfg-func">MC_TrackConveyorBelt()</span> / <span class="cfg-func">MC_TrackRotaryTable()</span>  
+  - **用途**：將工件位置繫結到輸送帶或轉盤的運動，同時提供座標系（`cs`）給使用者。  
+  - **在本範例的用法**：`Cone` 與 `Ring` 透過這兩個 FB 取得目前工件姿態，再搭配 <span class="cfg-func">SMC_Frame_To_CoordRef()</span> 轉成 <span class="cfg-type">MC_COORD_REF</span> 或 <span class="cfg-type">SMC_POS_REF</span> 方便使用。
+
+### 5.3 其他常見函數
+
+- <span class="cfg-func">SIN()</span>、<span class="cfg-func">COS()</span>：在 `DepictorCalculations` 中用來產生圓弧路徑。  
+- <span class="cfg-const">SMC_PI</span>：常數 π，搭配弧長計算路徑。
+
+---
+
+## 六、變數與常數一覽
+
+本範例 **未使用 RETAIN／PERSISTENT**，所有變數在 PLC 斷電後皆不保留。
+
+### 6.1 全域常數與變數（對照 `GVL.st`）
+
+| 名稱 | 型態 | 預設值 | 斷電記憶 | 說明 |
+|------|------|--------|----------|------|
+| <span class="cfg-const">gcTripodTransX</span> | <span class="cfg-type">LREAL</span> | 0 | 否 | Tripod 基座在世界座標 X 方向的平移量 |
+| <span class="cfg-const">gcTripodTransY</span> | <span class="cfg-type">LREAL</span> | 0 | 否 | Tripod 基座在世界座標 Y 方向的平移量 |
+| <span class="cfg-const">gcTripodTransZ</span> | <span class="cfg-type">LREAL</span> | 1700 | 否 | Tripod 基座在世界座標 Z 方向的高度 |
+| <span class="cfg-const">gcTripodSize</span> | <span class="cfg-type">LREAL</span> | 180 | 否 | Tripod 幾何尺寸基準，影響工作空間 |
+| <span class="cfg-const">gcBeltTransX</span> | <span class="cfg-type">LREAL</span> | 0 | 否 | 輸送帶座標系 X 位置 |
+| <span class="cfg-const">gcBeltTransY</span> | <span class="cfg-type">LREAL</span> | 500 | 否 | 輸送帶座標系 Y 位置 |
+| <span class="cfg-const">gcBeltTransZ</span> | <span class="cfg-type">LREAL</span> | 0 | 否 | 輸送帶座標系 Z 位置 |
+| <span class="cfg-const">gcTableTransX</span> | <span class="cfg-type">LREAL</span> | 0 | 否 | 轉盤座標系 X 位置 |
+| <span class="cfg-const">gcTableTransY</span> | <span class="cfg-type">LREAL</span> | -500 | 否 | 轉盤座標系 Y 位置 |
+| <span class="cfg-const">gcTableTransZ</span> | <span class="cfg-type">LREAL</span> | 0 | 否 | 轉盤座標系 Z 位置 |
+| <span class="cfg-const">gcTCP_Ring</span> | <span class="cfg-type">LREAL</span> | 0.02×gcTripodSize+15 | 否 | TCP 到圓環下緣的距離 |
+| <span class="cfg-const">gcTripod1PosOrig</span> | <span class="cfg-type">LREAL</span> | 50 | 否 | Tripod1 啟動基準位置 |
+| <span class="cfg-const">gcTripod2PosOrig</span> | <span class="cfg-type">LREAL</span> | 75 | 否 | Tripod2 啟動基準位置 |
+| <span class="cfg-const">gcTripod3PosOrig</span> | <span class="cfg-type">LREAL</span> | 25 | 否 | Tripod3 啟動基準位置 |
+| <span class="cfg-global">gbSetRing</span> | <span class="cfg-type">BOOL</span> | FALSE | 否 | 手動要求新增一顆圓環的旗標 |
+| <span class="cfg-global">gbAutomatic</span> | <span class="cfg-type">BOOL</span> | TRUE | 否 | TRUE 時自動連續產生圓環 |
+
+### 6.2 關鍵區域變數（節錄）
+
+| 所在 POU | 名稱 | 型態 | 說明 |
+|----------|------|------|------|
+| `Robot` | <span class="cfg-local">state</span> | <span class="cfg-type">INT</span> | 機器人狀態機目前的步驟編號 |
+| `Robot` | <span class="cfg-local">mcs</span> | <span class="cfg-type">MC_COORD_REF</span> | Tripod 在世界座標中的原點與姿態 |
+| `Robot` | <span class="cfg-local">mvToRing</span> 等 | <span class="cfg-type">MC_MoveLinearAbsolute</span> / <span class="cfg-type">MC_MoveLinearRelative</span> | 封裝不同路徑段的直線移動 FB |
+| `Environment` | <span class="cfg-local">bInit</span> | <span class="cfg-type">BOOL</span> | 第一次循環的初始化旗標 |
+| `Environment` | <span class="cfg-local">cone1</span>..`cone3` | <span class="cfg-type">Cone</span> | 三顆圓錐的狀態機實例 |
+| `Environment` | <span class="cfg-local">ring1</span>, `ring2` | <span class="cfg-type">Ring</span> | 兩顆圓環的狀態機實例 |
+| `Cone` | <span class="cfg-local">state</span> | <span class="cfg-type">DINT</span> | 圓錐狀態（0：未出現、10：連結 PCS_2、20：在輸送帶上） |
+| `Ring` | <span class="cfg-local">state</span> | <span class="cfg-type">DINT</span> | 圓環狀態（0/10/20/30/40/50 對應不同階段） |
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 使用座標系連結（PCS_1／PCS_2／WCS）
+
+本範例最大的觀念重點之一，是運用不同座標系來簡化運動規劃：
+
+- 旋轉工作台上的圓環以 <span class="cfg-name">PCS_1</span> 為基礎，由 <span class="cfg-func">MC_TrackRotaryTable()</span> 提供即時姿態。
+- 輸送帶上的圓錐以 <span class="cfg-name">PCS_2</span> 為基礎，由 <span class="cfg-func">MC_TrackConveyorBelt()</span> 提供即時姿態。
+- 休息位置與較大範圍的運動以世界座標 <span class="cfg-name">WCS</span> 表示。
+
+初學者可以把這三個座標系想成三張不同的「地圖」：  
+在 <span class="cfg-name">PCS_1</span> 地圖上，轉盤總是固定在原點，只是圓環角度在變；  
+在 <span class="cfg-name">PCS_2</span> 地圖上，輸送帶是一條直線；  
+在 <span class="cfg-name">WCS</span> 地圖上，整個工作站都看得到。
+
+### 7.2 狀態機設計模式
+
+`Robot`、`Cone`、`Ring` 都採用整數狀態 `state` 加上 `stateOld` 或區間判斷的寫法，優點是：
+
+- 流程一眼就能以「0 → 10 → 20 → …」的方式畫成流程圖。
+- 如果想插入新步驟，只要在中間插入新的數值區間，例如從 40 加一個 45 狀態即可。
+
+---
+
+## 八、重要參數與設定位置（實作時對照）
+
+### 8.1 任務週期與優先權
+
+- 在 `TaskConfiguration.md` 中，<span class="cfg-name">MainTask</span> 以 t#4ms 的週期運行，是控制迴圈的核心。  
+  若硬體負載較高，可以適度放大週期，但要注意運動軌跡會變得較不平滑。
+- <span class="cfg-name">Tripod_PlanningTask</span> 以 t#8ms 的 Freewheeling 模式執行，適合放較重的規劃演算法。
+
+### 8.2 速度與加速度設定（對照 `Robot.st`）
+
+- <span class="cfg-const">VEL</span>、<span class="cfg-const">ACC</span>、<span class="cfg-const">JRK</span> 定義了所有線性移動的速度、加速度與 Jerk。  
+  調整這三個常數可以同時改變整個 Pick & Place 流程的快慢與平順程度。
+
+### 8.3 幾何佈局參數（對照 `GVL.st`）
+
+- 調整 <span class="cfg-const">gcBeltTrans*</span> 與 <span class="cfg-const">gcTableTrans*</span> 可以改變輸送帶與轉盤相對於機器人的位置。
+- 調整 <span class="cfg-const">gcTripodSize</span> 與 <span class="cfg-const">gcTCP_Ring</span> 會影響機器人可及範圍與取放高度。
+
+在實務上，建議先在模擬環境中調整這些常數，使路徑安全且不碰撞，再套用到實際機台。
+
+---
+
+## 九、建議閱讀與修改順序
+
+1. **先看本說明文件**：建立對場景與整體流程的概念。  
+2. **閱讀 `TaskConfiguration.md` 與 `DeviceTree_Axes.md`**：搞清楚任務與軸的配置。  
+3. **打開 `GVL.st`**：理解幾何與模式相關常數，知道哪些數值可以調整。  
+4. **閱讀 `Environment.st`**：看懂輸送帶、轉盤以及圓錐／圓環的狀態機如何串在一起。  
+5. **依序閱讀 `Cone.st` 與 `Ring.st`**：練習追蹤單一工件的狀態變化與座標系切換。  
+6. **最後閱讀 `Robot.st`**：專注在 Pick & Place 狀態機，對照前面各程式輸出的旗標。  
+7. **如需可視化，可再看 `DepictorCalculations.st` 與視覺程式**：了解如何把運動資訊轉成畫面上的軌跡。
+
+修改程式時，建議先從 `GVL.st` 中較安全的幾何參數入手，再調整 `Robot.st` 中的路徑點與速度，最後才變動狀態機流程。
+
+---
+
+## 十、名詞對照
+
+| 英文／符號 | 說明 |
+|-----------|------|
+| <span class="cfg-name">Tripod</span> | 三角機器人軸組，由三個線性軸構成，可在三維空間移動 TCP |
+| <span class="cfg-name">PCS_1</span> | 「工件座標系 1」，本範例綁定到轉盤上的圓環位置 |
+| <span class="cfg-name">PCS_2</span> | 「工件座標系 2」，本範例綁定到輸送帶上的圓錐位置 |
+| <span class="cfg-name">WCS</span> | 世界座標系，通常以機台基座為原點 |
+| <span class="cfg-name">TCP</span> | Tool Center Point，機器人端點工具中心位置 |
+| <span class="cfg-name">MC_*</span> | Motion Control 函式庫內的標準運動控制功能塊前綴 |
+| <span class="cfg-name">SoftMotion</span> | CODESYS 提供的軟體運動控制與機器人控制套件 |
+
+---
+5:["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/softmotion","style":{"color":"var(--t-accent)"},"children":"SoftMotion 學習地圖"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"style":{"color":"var(--t-text)"},"children":"Pick & Place 機器人"}]]}],["$","header",null,{"className":"space-y-1","children":[["$","div",null,{"className":"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-text-muted)"},"children":[["$","span",null,{"className":"uppercase tracking-wide","children":"Robotics"}],["$","span",null,{"className":"h-1 w-1 rounded-full","style":{"backgroundColor":"var(--t-accent)"}}],["$","span",null,{"style":{"color":"var(--t-accent)"},"children":["步驟 ",1]}]]}],["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"Pick & Place 機器人"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"Tripod + 旋轉桌 + 輸送帶取放料，PCS_1/PCS_2、MC_TrackRotaryTable、MC_TrackConveyorBelt。"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":["官方專案："," ",["$","code",null,{"className":"rounded px-1 py-0.5","style":{"backgroundColor":"var(--t-border)","color":"var(--t-text)"},"children":"Robotics_PickAndPlace.project"}]]}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$Lf",null,{"content":"$10"}]}],false,"$L11"]}]
+12:I[85649,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"StCodeBlock"]
+13:T1c11,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">(*</span></span>
+<span class="line"><span style="color:#6A737D">    檔案用途：</span></span>
+<span class="line"><span style="color:#6A737D">      以狀態機方式描述單一圓錐（Cone）在輸送帶上的一生：</span></span>
+<span class="line"><span style="color:#6A737D">      何時出現、如何被輸送帶帶動、何時離開工作區域，以及如何更新 PCS_2。</span></span>
+<span class="line"><span style="color:#6A737D">    教學重點：</span></span>
+<span class="line"><span style="color:#6A737D">      - 透過 MC_TrackConveyorBelt 追蹤輸送帶上的物件位置，並與 Tripod 軸組連動。</span></span>
+<span class="line"><span style="color:#6A737D">      - 觀察 REPEAT / UNTIL 與 state / stateOld 的組合，如何實作「直到狀態穩定」的迴圈。</span></span>
+<span class="line"><span style="color:#6A737D">      - 理解 pActiveCone 與 pPreviousCone 指標，如何在三顆圓錐之間接續產生與移動。</span></span>
+<span class="line"><span style="color:#6A737D">*)</span></span>
+<span class="line"><span style="color:#24292E">FUNCTION_BLOCK Cone</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT</span></span>
+<span class="line"><span style="color:#24292E">	pActiveCone : </span><span style="color:#D73A49">POINTER</span><span style="color:#D73A49"> TO</span><span style="color:#24292E"> Cone;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_INPUT</span></span>
+<span class="line"><span style="color:#24292E">	pPreviousCone : </span><span style="color:#D73A49">POINTER</span><span style="color:#D73A49"> TO</span><span style="color:#24292E"> Cone;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#24292E">	pos : MC_COORD_REF;</span></span>
+<span class="line"><span style="color:#24292E">	state : DINT;</span></span>
+<span class="line"><span style="color:#24292E">	bOnBelt : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	conveyorBeltOrigin : MC_COORD_REF := (X := gcBeltTransX, Y := gcBeltTransY, Z := gcBeltTransZ);</span></span>
+<span class="line"><span style="color:#24292E">	initialConePosition : MC_COORD_REF := (X := -</span><span style="color:#005CC5">925</span><span style="color:#24292E">, Z := </span><span style="color:#005CC5">125</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	tcb : MC_TrackConveyorBelt := (ConveyorBeltOrigin := conveyorBeltOrigin,</span></span>
+<span class="line"><span style="color:#24292E">								   InitialObjectPosition := initialConePosition,</span></span>
+<span class="line"><span style="color:#24292E">								   CoordSystem := SMC_COORD_SYSTEM.PCS_2);</span></span>
+<span class="line"><span style="color:#24292E">	f : SMC_Frame;</span></span>
+<span class="line"><span style="color:#24292E">	stateOld : DINT;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">REPEAT</span></span>
+<span class="line"><span style="color:#24292E">	stateOld := state;</span></span>
+<span class="line"><span style="color:#D73A49">	CASE</span><span style="color:#24292E"> state </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#005CC5">	0</span><span style="color:#24292E">:	</span><span style="color:#6A737D">//cone invisible</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> Robot.bDontChangePCS_2 </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#D73A49">			IF</span><span style="color:#24292E"> pPreviousCone^.bOnBelt </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> pPreviousCone^.pos.X >= -</span><span style="color:#005CC5">250</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">				tcb(Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">, AxisGroup := Tripod, ConveyorBelt := DriveConveyorBelt);</span></span>
+<span class="line"><span style="color:#24292E">				tcb.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">				state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			END_IF</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"><span style="color:#005CC5">	10</span><span style="color:#24292E">:	</span><span style="color:#6A737D">//linking PCS_2 to the position of the cone</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> tcb.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			bOnBelt := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			pActiveCone := THIS;</span></span>
+<span class="line"><span style="color:#24292E">			state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"><span style="color:#005CC5">	20</span><span style="color:#24292E">:	</span><span style="color:#6A737D">//cone on belt</span></span>
+<span class="line"><span style="color:#24292E">		tcb.cs.GetPose(cs := f, fTime := Tripod1.fTaskCycle);</span></span>
+<span class="line"><span style="color:#24292E">		SMC_Frame_To_CoordRef(c := pos, f := f);</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> pos.X >= gcBeltTransX + </span><span style="color:#005CC5">725</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">			bOnBelt := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"><span style="color:#24292E">	END_CASE</span></span>
+<span class="line"><span style="color:#24292E">	tcb(AxisGroup := Tripod, ConveyorBelt := DriveConveyorBelt);</span></span>
+<span class="line"><span style="color:#D73A49">UNTIL</span><span style="color:#24292E"> state = stateOld</span></span>
+<span class="line"><span style="color:#24292E">END_REPEAT</span></span></code></pre>11:["$","section",null,{"className":"space-y-3","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"ST 程式碼"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。"}],["$","div",null,{"className":"space-y-2","children":[["$","$L12","Cone.st",{"title":"Cone.st","html":"$13"}],"$L14","$L15","$L16","$L17","$L18","$L19"]}]]}]
+1a:T2253,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">(*</span></span>
+<span class="line"><span style="color:#6A737D">    檔案用途：</span></span>
+<span class="line"><span style="color:#6A737D">      計算用於可視化的標記座標陣列 aafPos，讓視覺介面能畫出輸送帶路徑</span></span>
+<span class="line"><span style="color:#6A737D">      以及 Tripod 運動軌跡的參考線。</span></span>
+<span class="line"><span style="color:#6A737D">    教學重點：</span></span>
+<span class="line"><span style="color:#6A737D">      - 透過 Tripod_Lin_Depictor 取得 Tripod 軸組的線性插補資訊，作為可視化基底。</span></span>
+<span class="line"><span style="color:#6A737D">      - 使用 SIN、COS 與多段 if/else 邏輯，組合出一條封閉的輸送帶路徑。</span></span>
+<span class="line"><span style="color:#6A737D">      - 練習將實際軸位置（DriveConveyorBelt.fSetPosition 等）轉換成畫面上的座標點。</span></span>
+<span class="line"><span style="color:#6A737D">*)</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> DepictorCalculations</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#24292E">	aafPos : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">.</span><span style="color:#005CC5">.9</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#D73A49"> ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">.</span><span style="color:#005CC5">.1</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> LREAL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	dep : Tripod_Lin_Depictor;</span></span>
+<span class="line"><span style="color:#24292E">	fTemp : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">	i : INT;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">//tripod</span></span>
+<span class="line"><span style="color:#D73A49">IF</span><span style="color:#24292E"> Robot.state >= </span><span style="color:#005CC5">40</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">	dep(</span><span style="color:#D73A49">group</span><span style="color:#24292E"> := Tripod, kin := Tripod.trafo);</span></span>
+<span class="line"><span style="color:#24292E">END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">//markings on belt</span></span>
+<span class="line"><span style="color:#D73A49">FOR</span><span style="color:#24292E"> i := </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> TO</span><span style="color:#005CC5"> 9</span><span style="color:#D73A49"> DO</span></span>
+<span class="line"><span style="color:#24292E">	fTemp := DriveConveyorBelt.fSetPosition + INT_TO_LREAL(i) / </span><span style="color:#005CC5">10</span><span style="color:#24292E"> * DriveConveyorBelt.fPositionPeriod;</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> fTemp >= DriveConveyorBelt.fPositionPeriod </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		fTemp := fTemp - DriveConveyorBelt.fPositionPeriod;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> fTemp &#x3C;= </span><span style="color:#005CC5">1000</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">		aafPos[i][</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := fTemp;</span></span>
+<span class="line"><span style="color:#24292E">		aafPos[i][</span><span style="color:#005CC5">1</span><span style="color:#24292E">] := </span><span style="color:#005CC5">50</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">	ELSE</span></span>
+<span class="line"><span style="color:#24292E">		fTemp := fTemp - </span><span style="color:#005CC5">1000</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> fTemp &#x3C; </span><span style="color:#005CC5">50</span><span style="color:#24292E"> * SMC_PI </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			aafPos[i][</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := </span><span style="color:#005CC5">1000</span><span style="color:#24292E"> + </span><span style="color:#005CC5">50</span><span style="color:#24292E"> * SIN(fTemp / </span><span style="color:#005CC5">50</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">			aafPos[i][</span><span style="color:#005CC5">1</span><span style="color:#24292E">] := </span><span style="color:#005CC5">50</span><span style="color:#24292E"> * COS(fTemp / </span><span style="color:#005CC5">50</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">		ELSE</span></span>
+<span class="line"><span style="color:#24292E">			fTemp := fTemp - </span><span style="color:#005CC5">50</span><span style="color:#24292E"> * SMC_PI;</span></span>
+<span class="line"><span style="color:#D73A49">			IF</span><span style="color:#24292E"> fTemp &#x3C;= </span><span style="color:#005CC5">2000</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">				aafPos[i][</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := </span><span style="color:#005CC5">1000</span><span style="color:#24292E"> - fTemp;</span></span>
+<span class="line"><span style="color:#24292E">				aafPos[i][</span><span style="color:#005CC5">1</span><span style="color:#24292E">] := -</span><span style="color:#005CC5">50</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">			ELSE</span></span>
+<span class="line"><span style="color:#24292E">				fTemp := fTemp - </span><span style="color:#005CC5">2000</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">				IF</span><span style="color:#24292E"> fTemp &#x3C; </span><span style="color:#005CC5">50</span><span style="color:#24292E"> * SMC_PI </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">					aafPos[i][</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := -</span><span style="color:#005CC5">1000</span><span style="color:#24292E"> - </span><span style="color:#005CC5">50</span><span style="color:#24292E"> * SIN(fTemp / </span><span style="color:#005CC5">50</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">					aafPos[i][</span><span style="color:#005CC5">1</span><span style="color:#24292E">] := -</span><span style="color:#005CC5">50</span><span style="color:#24292E"> * COS(fTemp / </span><span style="color:#005CC5">50</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">				ELSE</span></span>
+<span class="line"><span style="color:#24292E">					fTemp := fTemp - </span><span style="color:#005CC5">50</span><span style="color:#24292E"> * SMC_PI;</span></span>
+<span class="line"><span style="color:#24292E">					aafPos[i][</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := -</span><span style="color:#005CC5">1000</span><span style="color:#24292E"> + fTemp;</span></span>
+<span class="line"><span style="color:#24292E">					aafPos[i][</span><span style="color:#005CC5">1</span><span style="color:#24292E">] := </span><span style="color:#005CC5">50</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">				END_IF</span></span>
+<span class="line"><span style="color:#24292E">			END_IF</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"><span style="color:#24292E">END_FOR</span></span></code></pre>14:["$","$L12","DepictorCalculations.st",{"title":"DepictorCalculations.st","html":"$1a"}]
+1b:T1de3,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">(*</span></span>
+<span class="line"><span style="color:#6A737D">    檔案用途：</span></span>
+<span class="line"><span style="color:#6A737D">      負責「環境」相關的裝置控制，包括旋轉工作台與輸送帶的驅動，</span></span>
+<span class="line"><span style="color:#6A737D">      並管理所有圓錐（Cone）與圓環（Ring）的狀態機，提供給機器人程式使用。</span></span>
+<span class="line"><span style="color:#6A737D">    教學重點：</span></span>
+<span class="line"><span style="color:#6A737D">      - 將與機器人本體無關、但會影響工作流程的設備集中在一支 PROGRAM 中管理。</span></span>
+<span class="line"><span style="color:#6A737D">      - 觀察如何透過 FUNCTION_BLOCK 實例（Cone、Ring）與指標，建立物件之間的關聯。</span></span>
+<span class="line"><span style="color:#6A737D">      - 使用簡單的初始化旗標 bInit 來區分「第一次循環」與「正常運轉」的寫法。</span></span>
+<span class="line"><span style="color:#6A737D">*)</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> Environment</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#24292E">	cone1, cone2, cone3 : Cone;</span></span>
+<span class="line"><span style="color:#24292E">	ring1, ring2 : Ring;</span></span>
+<span class="line"><span style="color:#24292E">	bRingOnTable : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">	pActiveCone : </span><span style="color:#D73A49">POINTER</span><span style="color:#D73A49"> TO</span><span style="color:#24292E"> Cone;	</span><span style="color:#6A737D">//the cone corresponding to PCS_2</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	powRotaryTable : MC_Power := (Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bRegulatorOn := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bDriveStart := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	powConveyorBelt : MC_Power := (Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bRegulatorOn := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bDriveStart := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	mvRotaryTable : MC_MoveVelocity := (Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, Velocity := </span><span style="color:#005CC5">50</span><span style="color:#24292E">, Acceleration := </span><span style="color:#005CC5">30</span><span style="color:#24292E">, Deceleration := </span><span style="color:#005CC5">30</span><span style="color:#24292E">, Jerk := </span><span style="color:#005CC5">1000</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	mvConveyorBelt : MC_MoveVelocity := (Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, Velocity := </span><span style="color:#005CC5">300</span><span style="color:#24292E">, Acceleration := </span><span style="color:#005CC5">150</span><span style="color:#24292E">, Deceleration := </span><span style="color:#005CC5">150</span><span style="color:#24292E">, Jerk := </span><span style="color:#005CC5">1000</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	ring1StartPos : MC_COORD_REF := (X := </span><span style="color:#005CC5">75</span><span style="color:#24292E">, Y := </span><span style="color:#005CC5">100</span><span style="color:#24292E">, Z := </span><span style="color:#005CC5">0</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	ring2StartPos : MC_COORD_REF := (X := -</span><span style="color:#005CC5">75</span><span style="color:#24292E">, Y := </span><span style="color:#005CC5">100</span><span style="color:#24292E">, Z := </span><span style="color:#005CC5">0</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	bInit : BOOL := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">//moving rotary-table-/ conveyor-belt-drive</span></span>
+<span class="line"><span style="color:#24292E">powRotaryTable(Axis := DriveRotaryTable);</span></span>
+<span class="line"><span style="color:#24292E">powConveyorBelt(Axis := DriveConveyorBelt);</span></span>
+<span class="line"><span style="color:#D73A49">IF</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> (powRotaryTable.Status </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> powConveyorBelt.Status) </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">	RETURN;</span></span>
+<span class="line"><span style="color:#24292E">END_IF</span></span>
+<span class="line"><span style="color:#24292E">mvRotaryTable(Axis := DriveRotaryTable);</span></span>
+<span class="line"><span style="color:#24292E">mvConveyorBelt(Axis := DriveConveyorBelt);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">//state-machines of cones / handling of PCS_2</span></span>
+<span class="line"><span style="color:#D73A49">IF</span><span style="color:#24292E"> bInit </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">	cone1.Start();</span></span>
+<span class="line"><span style="color:#24292E">END_IF</span></span>
+<span class="line"><span style="color:#24292E">cone1(pActiveCone := pActiveCone, pPreviousCone := ADR(cone3));</span></span>
+<span class="line"><span style="color:#24292E">cone2(pActiveCone := pActiveCone, pPreviousCone := ADR(cone1));</span></span>
+<span class="line"><span style="color:#24292E">cone3(pActiveCone := pActiveCone, pPreviousCone := ADR(cone2));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">//state-machines of rings / handling of PCS_1</span></span>
+<span class="line"><span style="color:#D73A49">IF</span><span style="color:#24292E"> bInit </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">	ring1.startPos := ring1StartPos;</span></span>
+<span class="line"><span style="color:#24292E">	ring2.startPos := ring2StartPos;</span></span>
+<span class="line"><span style="color:#24292E">END_IF</span></span>
+<span class="line"><span style="color:#24292E">ring1(pOtherRing := ADR(ring2));</span></span>
+<span class="line"><span style="color:#24292E">ring2(pOtherRing := ADR(ring1));</span></span>
+<span class="line"><span style="color:#24292E">bRingOnTable := ring1.bOnTable </span><span style="color:#D73A49">OR</span><span style="color:#24292E"> ring2.bOnTable;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">bInit := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span></code></pre>15:["$","$L12","Environment.st",{"title":"Environment.st","html":"$1b"}]
+1c:T1536,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">(* </span></span>
+<span class="line"><span style="color:#6A737D">    檔案用途：定義本範例中三角機器人、輸送帶與旋轉工作台的幾何位置常數，</span></span>
+<span class="line"><span style="color:#6A737D">              以及用來切換「自動／手動放環」的全域旗標。</span></span>
+<span class="line"><span style="color:#6A737D">    教學重點：這些數值會直接影響實際運動軌跡與畫面位置，修改前請先對照</span></span>
+<span class="line"><span style="color:#6A737D">              `DeviceTree_Axes.md` 與各 POU 程式中的使用方式再調整。</span></span>
+<span class="line"><span style="color:#6A737D">*)</span></span>
+<span class="line"><span style="color:#24292E">VAR_GLOBAL CONSTANT</span></span>
+<span class="line"><span style="color:#24292E">    gcTripodTransX : LREAL := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;       </span><span style="color:#6A737D">// Tripod 機構在世界座標中的 X 平移量</span></span>
+<span class="line"><span style="color:#24292E">    gcTripodTransY : LREAL := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;       </span><span style="color:#6A737D">// Tripod 機構在世界座標中的 Y 平移量</span></span>
+<span class="line"><span style="color:#24292E">    gcTripodTransZ : LREAL := </span><span style="color:#005CC5">1700</span><span style="color:#24292E">;    </span><span style="color:#6A737D">// Tripod 機構在世界座標中的 Z 平移量（機器人高度）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    gcTripodSize : LREAL := </span><span style="color:#005CC5">180</span><span style="color:#24292E">;       </span><span style="color:#6A737D">// Tripod 幾何尺寸基準，影響工作空間與 TCP 半徑</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    gcBeltTransX : LREAL := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;         </span><span style="color:#6A737D">// 輸送帶座標系（PCS_2）在世界座標中的 X 位置</span></span>
+<span class="line"><span style="color:#24292E">    gcBeltTransY : LREAL := </span><span style="color:#005CC5">500</span><span style="color:#24292E">;       </span><span style="color:#6A737D">// 輸送帶座標系在世界座標中的 Y 位置</span></span>
+<span class="line"><span style="color:#24292E">    gcBeltTransZ : LREAL := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;         </span><span style="color:#6A737D">// 輸送帶座標系在世界座標中的 Z 位置</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    gcTableTransX : LREAL := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;        </span><span style="color:#6A737D">// 旋轉工作台座標系（PCS_1）在世界座標中的 X 位置</span></span>
+<span class="line"><span style="color:#24292E">    gcTableTransY : LREAL := -</span><span style="color:#005CC5">500</span><span style="color:#24292E">;     </span><span style="color:#6A737D">// 旋轉工作台座標系在世界座標中的 Y 位置</span></span>
+<span class="line"><span style="color:#24292E">    gcTableTransZ : LREAL := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;        </span><span style="color:#6A737D">// 旋轉工作台座標系在世界座標中的 Z 位置</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    gcTCP_Ring : LREAL := </span><span style="color:#005CC5">0.02</span><span style="color:#24292E"> * gcTripodSize + </span><span style="color:#005CC5">15</span><span style="color:#24292E">;   </span><span style="color:#6A737D">// 末端工具座標系到圓環下緣的距離</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    gcTripod1PosOrig : LREAL := </span><span style="color:#005CC5">50</span><span style="color:#24292E">;    </span><span style="color:#6A737D">// Tripod1 初始軸位置</span></span>
+<span class="line"><span style="color:#24292E">    gcTripod2PosOrig : LREAL := </span><span style="color:#005CC5">75</span><span style="color:#24292E">;    </span><span style="color:#6A737D">// Tripod2 初始軸位置</span></span>
+<span class="line"><span style="color:#24292E">    gcTripod3PosOrig : LREAL := </span><span style="color:#005CC5">25</span><span style="color:#24292E">;    </span><span style="color:#6A737D">// Tripod3 初始軸位置</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_GLOBAL</span></span>
+<span class="line"><span style="color:#24292E">    gbSetRing : BOOL;                  </span><span style="color:#6A737D">// TRUE：由操作者手動要求在轉盤上放一個新環</span></span>
+<span class="line"><span style="color:#24292E">    gbAutomatic : BOOL := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;        </span><span style="color:#6A737D">// TRUE：環依邏輯自動連續產生；FALSE：完全由 gbSetRing 控制</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span></code></pre>16:["$","$L12","GVL.st",{"title":"GVL.st","html":"$1c"}]
+1d:T27a6,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">(*</span></span>
+<span class="line"><span style="color:#6A737D">    檔案用途：</span></span>
+<span class="line"><span style="color:#6A737D">      以狀態機方式描述單一圓環（Ring）從轉盤待命、被機器人取走、</span></span>
+<span class="line"><span style="color:#6A737D">      一直到被放到圓錐上、再回到初始狀態的整個流程。</span></span>
+<span class="line"><span style="color:#6A737D">    教學重點：</span></span>
+<span class="line"><span style="color:#6A737D">      - 使用 MC_TrackRotaryTable 取得轉盤上物件的即時位置，並映射到 PCS_1。</span></span>
+<span class="line"><span style="color:#6A737D">      - 觀察如何根據 Robot 的輸出旗標（bReadyForMotion、bRingAttached、pTargetCone）</span></span>
+<span class="line"><span style="color:#6A737D">        來協調「轉盤上兩個圓環」與「機器人」之間的合作。</span></span>
+<span class="line"><span style="color:#6A737D">      - 練習閱讀以 DINT state 切分的多段狀態（0/10/20/30/40/50），對照實際動作想像流程。</span></span>
+<span class="line"><span style="color:#6A737D">*)</span></span>
+<span class="line"><span style="color:#24292E">FUNCTION_BLOCK Ring</span></span>
+<span class="line"><span style="color:#24292E">VAR_INPUT</span></span>
+<span class="line"><span style="color:#24292E">	pOtherRing : </span><span style="color:#D73A49">POINTER</span><span style="color:#D73A49"> TO</span><span style="color:#24292E"> Ring;</span></span>
+<span class="line"><span style="color:#24292E">	startPos : MC_COORD_REF;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#24292E">	pos : MC_COORD_REF;</span></span>
+<span class="line"><span style="color:#24292E">	state : DINT;</span></span>
+<span class="line"><span style="color:#24292E">	bOnTable : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	stateOld : DINT;</span></span>
+<span class="line"><span style="color:#24292E">	fTemp : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">	f : SMC_Frame;</span></span>
+<span class="line"><span style="color:#24292E">	rotaryTableOrigin : MC_COORD_REF := (X := gcTableTransX, Y := gcTableTransY, Z := gcTableTransZ);</span></span>
+<span class="line"><span style="color:#24292E">	initialObjectPosition : MC_COORD_REF := (Y := </span><span style="color:#005CC5">400</span><span style="color:#24292E">, Z := </span><span style="color:#005CC5">20</span><span style="color:#24292E"> + </span><span style="color:#005CC5">10</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	trt : MC_TrackRotaryTable := (RotaryTableOrigin := rotaryTableOrigin, initialObjectPosition := initialObjectPosition, CoordSystem := SMC_COORD_SYSTEM.PCS_1);</span></span>
+<span class="line"><span style="color:#24292E">	pCone : </span><span style="color:#D73A49">POINTER</span><span style="color:#D73A49"> TO</span><span style="color:#24292E"> Cone;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">REPEAT</span></span>
+<span class="line"><span style="color:#24292E">	stateOld := state;</span></span>
+<span class="line"><span style="color:#D73A49">	CASE</span><span style="color:#24292E"> state </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#005CC5">	0</span><span style="color:#24292E">:	</span><span style="color:#6A737D">//ring at original position</span></span>
+<span class="line"><span style="color:#24292E">		pos := startPos;</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> Robot.bReadyForMotion </span><span style="color:#D73A49">AND</span></span>
+<span class="line"><span style="color:#24292E">		   (pOtherRing^.state = </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> OR</span><span style="color:#24292E"> pOtherRing^.state >= </span><span style="color:#005CC5">40</span><span style="color:#24292E">) </span><span style="color:#D73A49">AND</span></span>
+<span class="line"><span style="color:#24292E">		   (gbSetRing </span><span style="color:#D73A49">OR</span><span style="color:#24292E"> gbAutomatic) </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			trt(Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">, AxisGroup := Tripod, RotaryTable := DriveRotaryTable);</span></span>
+<span class="line"><span style="color:#24292E">			trt.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">	10</span><span style="color:#24292E">:	</span><span style="color:#6A737D">//linking PCS_1 to the position of the ring</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> trt.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">	20</span><span style="color:#24292E">:	</span><span style="color:#6A737D">//ring on rotary-table, wait until robot is free</span></span>
+<span class="line"><span style="color:#24292E">		trt.cs.GetPose(cs := f, fTime := Tripod1.fTaskCycle);</span></span>
+<span class="line"><span style="color:#24292E">		SMC_Frame_To_CoordRef(c := pos, f := f);</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> Robot.bRingAttached </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">	30</span><span style="color:#24292E">: </span><span style="color:#6A737D">//waiting for takeoff</span></span>
+<span class="line"><span style="color:#24292E">		trt.cs.GetPose(cs := f, fTime := Tripod1.fTaskCycle);</span></span>
+<span class="line"><span style="color:#24292E">		SMC_Frame_To_CoordRef(c := pos, f := f);</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> Robot.bRingAttached </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">	40</span><span style="color:#24292E">:	</span><span style="color:#6A737D">//ring attached to robot</span></span>
+<span class="line"><span style="color:#24292E">		pos.X := Robot.readPos.Position.c.X;</span></span>
+<span class="line"><span style="color:#24292E">		pos.Y := Robot.readPos.Position.c.Y;</span></span>
+<span class="line"><span style="color:#24292E">		pos.Z := Robot.readPos.Position.c.Z - gcTCP_Ring;</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> Robot.bRingAttached </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			pCone := Robot.pTargetCone;</span></span>
+<span class="line"><span style="color:#24292E">			state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">	50</span><span style="color:#24292E">:	</span><span style="color:#6A737D">//ring placed on cone</span></span>
+<span class="line"><span style="color:#24292E">		pos.X := pCone^.pos.X;</span></span>
+<span class="line"><span style="color:#24292E">		pos.Y := pCone^.pos.Y;</span></span>
+<span class="line"><span style="color:#24292E">		pos.Z := pCone^.pos.Z;</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> pCone^.bOnBelt </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			state := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"><span style="color:#24292E">	END_CASE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	trt(AxisGroup := Tripod, RotaryTable := DriveRotaryTable);</span></span>
+<span class="line"><span style="color:#D73A49">UNTIL</span><span style="color:#24292E"> state = stateOld</span></span>
+<span class="line"><span style="color:#24292E">END_REPEAT</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">bOnTable := state = </span><span style="color:#005CC5">20</span><span style="color:#D73A49"> OR</span><span style="color:#24292E"> state = </span><span style="color:#005CC5">30</span><span style="color:#24292E">;</span></span></code></pre>17:["$","$L12","Ring.st",{"title":"Ring.st","html":"$1d"}]
+1e:T6f04,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">(*</span></span>
+<span class="line"><span style="color:#6A737D">    檔案用途：</span></span>
+<span class="line"><span style="color:#6A737D">      控制 Tripod 三角機器人完成「從旋轉工作台拾取圓環，放置到輸送帶上圓錐」的</span></span>
+<span class="line"><span style="color:#6A737D">      完整 Pick &#x26; Place 循環，並回報目前是否可動作與是否已夾持圓環。</span></span>
+<span class="line"><span style="color:#6A737D">    教學重點：</span></span>
+<span class="line"><span style="color:#6A737D">      - 觀察如何使用多顆 MC_Power、MC_SetPosition、MC_MoveLinear* 等運動控制 FB</span></span>
+<span class="line"><span style="color:#6A737D">        來建立啟動流程與多段直線軌跡。</span></span>
+<span class="line"><span style="color:#6A737D">      - 搭配座標系（WCS、PCS_1、PCS_2）與位置常數，理解不同工位之間的轉換。</span></span>
+<span class="line"><span style="color:#6A737D">      - 透過整數變數 state 所構成的狀態機，練習閱讀與設計順序控制流程。</span></span>
+<span class="line"><span style="color:#6A737D">*)</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> Robot</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#24292E">    bReadyForMotion : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">	bRingAttached : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">	bDontChangePCS_2 : BOOL;	</span><span style="color:#6A737D">//there are several commands using PCS_2, which shall not change in the meantime</span></span>
+<span class="line"><span style="color:#24292E">	pTargetCone : </span><span style="color:#D73A49">POINTER</span><span style="color:#D73A49"> TO</span><span style="color:#24292E"> Cone;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">    pwA1 : MC_Power := (Enable:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bRegulatorOn:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bDriveStart:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    pwA2 : MC_Power := (Enable:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bRegulatorOn:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bDriveStart:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    pwA3 : MC_Power := (Enable:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bRegulatorOn:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bDriveStart:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">    spA1, spA2, spA3 : MC_SetPosition;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	enable : MC_GroupEnable;</span></span>
+<span class="line"><span style="color:#24292E">	setCoord : MC_SetCoordinateTransform;</span></span>
+<span class="line"><span style="color:#24292E">    mcs : MC_COORD_REF;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    mvToRing : MC_MoveLinearAbsolute := (Velocity := VEL, Acceleration := ACC, Deceleration := ACC, Jerk := JRK, </span><span style="color:#D73A49">Name</span><span style="color:#24292E">:= </span><span style="color:#032F62">'Move to ring'</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	mvToRestPos : MC_MoveLinearAbsolute := (Velocity := VEL, Acceleration := ACC, Deceleration := ACC, Jerk := JRK, </span><span style="color:#D73A49">Name</span><span style="color:#24292E">:= </span><span style="color:#032F62">'Move to rest position'</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	mvAboveCone : MC_MoveLinearAbsolute := (Velocity := VEL, Acceleration := ACC, Deceleration := ACC, Jerk := JRK, </span><span style="color:#D73A49">Name</span><span style="color:#24292E">:= </span><span style="color:#032F62">'Move above cone'</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	mvUpFromRing : MC_MoveLinearRelative := (Velocity := VEL, Acceleration := ACC, Deceleration := ACC, Jerk := JRK, </span><span style="color:#D73A49">Name</span><span style="color:#24292E">:= </span><span style="color:#032F62">'Move up from ring'</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	mvDownToCone : MC_MoveLinearAbsolute := (Velocity := VEL, Acceleration := ACC, Deceleration := ACC, Jerk := JRK, </span><span style="color:#D73A49">Name</span><span style="color:#24292E">:= </span><span style="color:#032F62">'Move down to cone'</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	mvUpFromCone : MC_MoveLinearAbsolute := (Velocity := VEL, Acceleration := ACC, Deceleration := ACC, Jerk := JRK, </span><span style="color:#D73A49">Name</span><span style="color:#24292E">:= </span><span style="color:#032F62">'Move up from cone'</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    mvBack : MC_MoveLinearAbsolute := (Velocity := VEL, Acceleration := ACC, Deceleration := ACC, Jerk := JRK, </span><span style="color:#D73A49">Name</span><span style="color:#24292E">:= </span><span style="color:#032F62">'Move back'</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	readStatus : MC_GroupReadStatus;</span></span>
+<span class="line"><span style="color:#24292E">    readPos : MC_GroupReadActualPosition;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	state : INT;</span></span>
+<span class="line"><span style="color:#24292E">	ton : TON := (PT := T</span><span style="color:#032F62">#200</span><span style="color:#24292E">MS);</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span><span style="color:#24292E"> CONSTANT</span></span>
+<span class="line"><span style="color:#24292E">    VEL : LREAL :=   </span><span style="color:#005CC5">1000</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">    ACC : LREAL :=  </span><span style="color:#005CC5">10000</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">    JRK : LREAL := </span><span style="color:#005CC5">100000</span><span style="color:#24292E"> ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    POS_ABOVE_RING_PCS_1 : SMC_POS_REF := (c:= (X:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Y:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Z:= gcTCP_Ring)) ;</span></span>
+<span class="line"><span style="color:#24292E">    POS_ABOVE_CONE_PCS_2 : SMC_POS_REF := (c:= (X:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Y:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Z:= </span><span style="color:#005CC5">200</span><span style="color:#24292E">)) ;</span></span>
+<span class="line"><span style="color:#24292E">    POS_ON_CONE_PCS_2 : SMC_POS_REF := (c:= (X:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Y:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Z:= gcTCP_Ring)) ;</span></span>
+<span class="line"><span style="color:#24292E">    POS_REST_WCS : SMC_POS_REF := (c:= (X:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Y:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Z:= </span><span style="color:#005CC5">300</span><span style="color:#24292E">)) ;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">pwA1(Axis:= Tripod1);</span></span>
+<span class="line"><span style="color:#24292E">pwA2(Axis:= Tripod2);</span></span>
+<span class="line"><span style="color:#24292E">pwA3(Axis:= Tripod3);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> state </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> pwA1.Status </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> pwA2.Status </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> pwA3.Status </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">        state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">10</span><span style="color:#24292E">:	</span><span style="color:#6A737D">//starting at given axis-positions</span></span>
+<span class="line"><span style="color:#24292E">    spA1(Axis:= Tripod1, Execute:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, Position:= gcTripod1PosOrig);</span></span>
+<span class="line"><span style="color:#24292E">    spA2(Axis:= Tripod2, Execute:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, Position:= gcTripod2PosOrig);</span></span>
+<span class="line"><span style="color:#24292E">    spA3(Axis:= Tripod3, Execute:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, Position:= gcTripod3PosOrig);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> spA1.Done </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> spA2.Done </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> spA3.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		setCoord(AxisGroup := Tripod, Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">20</span><span style="color:#24292E">:	</span><span style="color:#6A737D">//telling the robot its position in space</span></span>
+<span class="line"><span style="color:#24292E">	mcs.X := gcTripodTransX;</span></span>
+<span class="line"><span style="color:#24292E">	mcs.Y := gcTripodTransY;</span></span>
+<span class="line"><span style="color:#24292E">	mcs.Z := gcTripodTransZ;</span></span>
+<span class="line"><span style="color:#24292E">    setCoord(</span></span>
+<span class="line"><span style="color:#24292E">	        AxisGroup := Tripod,</span></span>
+<span class="line"><span style="color:#24292E">            Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">            CoordTransform := mcs,</span></span>
+<span class="line"><span style="color:#24292E">            CoordSystem := SMC_COORD_SYSTEM.MCS);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> setCoord.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">        state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">30</span><span style="color:#24292E">: </span><span style="color:#6A737D">//enabling the axis group</span></span>
+<span class="line"><span style="color:#24292E">    enable(AxisGroup:= Tripod, Execute:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> enable.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">40</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> Environment.bRingOnTable </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">		//approaching a ring on the table</span></span>
+<span class="line"><span style="color:#24292E">		mvToRing(AxisGroup:= Tripod, Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		mvToRing.Position := POS_ABOVE_RING_PCS_1 ;</span></span>
+<span class="line"><span style="color:#24292E">		mvToRing.BufferMode := MC_BUFFER_MODE.BlendingHigh;</span></span>
+<span class="line"><span style="color:#24292E">		mvToRing.TransitionMode := MC_TRANSITION_MODE.TMCornerDistance;</span></span>
+<span class="line"><span style="color:#24292E">		mvToRing.TransitionParameter[</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := </span><span style="color:#005CC5">500</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		mvToRing.CoordSystem := SMC_COORD_SYSTEM.PCS_1;</span></span>
+<span class="line"><span style="color:#24292E">		mvToRing.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    	state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">50</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> mvToRing.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		ton(</span><span style="color:#D73A49">IN</span><span style="color:#24292E"> := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">60</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">	ton(</span><span style="color:#D73A49">IN</span><span style="color:#24292E"> := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#6A737D">	//waiting some time (following the ring)</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> ton.Q </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">		//moving upwards (still in PCS_1)</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromRing(AxisGroup:= Tripod, Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromRing.Distance.c.Z := </span><span style="color:#005CC5">150</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromRing.CoordSystem := SMC_COORD_SYSTEM.PCS_1;</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromRing.BufferMode := MC_BUFFER_MODE.Buffered;</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromRing.TransitionMode := MC_TRANSITION_MODE.TMNone;</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromRing.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">70</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> mvUpFromRing.CommandAccepted </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">		//neutral position</span></span>
+<span class="line"><span style="color:#24292E">		mvToRestPos(AxisGroup:= Tripod, Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		mvToRestPos.Position := POS_REST_WCS ;</span></span>
+<span class="line"><span style="color:#24292E">		mvToRestPos.CoordSystem := SMC_COORD_SYSTEM.WCS;</span></span>
+<span class="line"><span style="color:#24292E">		mvToRestPos.BufferMode := MC_BUFFER_MODE.BlendingHigh;</span></span>
+<span class="line"><span style="color:#24292E">		mvToRestPos.TransitionMode := MC_TRANSITION_MODE.TMCornerDistance;</span></span>
+<span class="line"><span style="color:#24292E">		mvToRestPos.TransitionParameter[</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := </span><span style="color:#005CC5">500</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">		mvToRestPos.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">80</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> mvToRestPos.CommandAccepted </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">		//moving to some position above the next cone</span></span>
+<span class="line"><span style="color:#24292E">		pTargetCone := Environment.pActiveCone;</span></span>
+<span class="line"><span style="color:#24292E">		mvAboveCone(AxisGroup:= Tripod, Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		mvAboveCone.Position := POS_ABOVE_CONE_PCS_2 ;</span></span>
+<span class="line"><span style="color:#24292E">		mvAboveCone.CoordSystem := SMC_COORD_SYSTEM.PCS_2;</span></span>
+<span class="line"><span style="color:#24292E">		mvAboveCone.BufferMode := MC_BUFFER_MODE.BlendingHigh;</span></span>
+<span class="line"><span style="color:#24292E">		mvAboveCone.TransitionMode := MC_TRANSITION_MODE.TMCornerDistance;</span></span>
+<span class="line"><span style="color:#24292E">        mvAboveCone.TransitionParameter[</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := </span><span style="color:#005CC5">1000</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">		mvAboveCone.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">90</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> mvAboveCone.CommandAccepted </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">		//approaching the cone</span></span>
+<span class="line"><span style="color:#24292E">		mvDownToCone(AxisGroup:= Tripod, Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		mvDownToCone.Position := POS_ON_CONE_PCS_2 ;</span></span>
+<span class="line"><span style="color:#24292E">		mvDownToCone.BufferMode := MC_BUFFER_MODE.BlendingHigh;</span></span>
+<span class="line"><span style="color:#24292E">		mvDownToCone.TransitionMode := MC_TRANSITION_MODE.TMCornerDistance;</span></span>
+<span class="line"><span style="color:#24292E">		mvDownToCone.CoordSystem := SMC_COORD_SYSTEM.PCS_2;</span></span>
+<span class="line"><span style="color:#24292E">		mvDownToCone.TransitionParameter[</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := </span><span style="color:#005CC5">500</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		mvDownToCone.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">100</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> mvDownToCone.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">		//moving upwards (still following the belt)</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromCone(AxisGroup:= Tripod, Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromCone.Position := POS_ABOVE_CONE_PCS_2 ;</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromCone.BufferMode := MC_BUFFER_MODE.Buffered;</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromCone.TransitionMode := MC_TRANSITION_MODE.TMNone;</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromCone.CoordSystem := SMC_COORD_SYSTEM.PCS_2;</span></span>
+<span class="line"><span style="color:#24292E">		mvUpFromCone.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">110</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> mvUpFromCone.CommandAccepted </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">		//moving back</span></span>
+<span class="line"><span style="color:#24292E">		mvBack(AxisGroup:= Tripod, Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">		mvBack.Position := POS_REST_WCS ;</span></span>
+<span class="line"><span style="color:#24292E">		mvBack.CoordSystem := SMC_COORD_SYSTEM.WCS;</span></span>
+<span class="line"><span style="color:#24292E">		mvBack.BufferMode := MC_BUFFER_MODE.BlendingHigh;</span></span>
+<span class="line"><span style="color:#24292E">		mvBack.TransitionMode := MC_TRANSITION_MODE.TMCornerDistance;</span></span>
+<span class="line"><span style="color:#24292E">		mvBack.TransitionParameter[</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := </span><span style="color:#005CC5">500</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		mvBack.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		state := state + </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">120</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> mvBack.CommandAccepted </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		state := </span><span style="color:#005CC5">40</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">mvToRing(AxisGroup := Tripod);</span></span>
+<span class="line"><span style="color:#24292E">mvUpFromRing(AxisGroup := Tripod);</span></span>
+<span class="line"><span style="color:#24292E">mvToRestPos(AxisGroup := Tripod);</span></span>
+<span class="line"><span style="color:#24292E">mvAboveCone(AxisGroup := Tripod);</span></span>
+<span class="line"><span style="color:#24292E">mvDownToCone(AxisGroup := Tripod);</span></span>
+<span class="line"><span style="color:#24292E">mvUpFromCone(AxisGroup := Tripod);</span></span>
+<span class="line"><span style="color:#24292E">mvBack(AxisGroup := Tripod);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">readStatus(AxisGroup := Tripod, Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">readpos(AxisGroup:= Tripod, Enable:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, CoordSystem:= SMC_COORD_SYSTEM.WCS);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">bReadyForMotion := </span><span style="color:#D73A49">NOT</span><span style="color:#24292E"> readStatus.GroupDisabled </span><span style="color:#D73A49">AND</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> readStatus.GroupErrorStop;</span></span>
+<span class="line"><span style="color:#24292E">bRingAttached := state >= </span><span style="color:#005CC5">70</span><span style="color:#D73A49"> AND</span><span style="color:#24292E"> state &#x3C;= </span><span style="color:#005CC5">100</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">bDontChangePCS_2 := state >= </span><span style="color:#005CC5">90</span><span style="color:#D73A49"> AND</span><span style="color:#24292E"> state &#x3C;= </span><span style="color:#005CC5">110</span><span style="color:#24292E">;</span></span></code></pre>18:["$","$L12","Robot.st",{"title":"Robot.st","html":"$1e"}]
+1f:T54a,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">(*</span></span>
+<span class="line"><span style="color:#6A737D">    檔案用途：</span></span>
+<span class="line"><span style="color:#6A737D">      作為 Tripod_PlanningTask 任務掛載的主程式佔位元，對應到 DeviceTree 中</span></span>
+<span class="line"><span style="color:#6A737D">      Tripod 軸組的運動規劃。原始 XML 中此程式內容極少，本範例主要將</span></span>
+<span class="line"><span style="color:#6A737D">      運動邏輯放在 Robot 與相關 FB 中。</span></span>
+<span class="line"><span style="color:#6A737D">    教學重點：</span></span>
+<span class="line"><span style="color:#6A737D">      - 認識「規劃任務」與「主控制任務」可以分開掛載不同 PROGRAM。</span></span>
+<span class="line"><span style="color:#6A737D">      - 在實際專案中，這裡可以擴充為離線軌跡產生、路徑平滑化等較重的運算。</span></span>
+<span class="line"><span style="color:#6A737D">*)</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> Tripod_PlanningPrg</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">;</span></span></code></pre>19:["$","$L12","Tripod_PlanningPrg.st",{"title":"Tripod_PlanningPrg.st","html":"$1f"}]

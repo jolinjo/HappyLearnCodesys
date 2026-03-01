@@ -1,0 +1,338 @@
+<!DOCTYPE html><!--hE9wNZamtqMjFK5Z04D0M--><html lang="zh-Hant"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/HappyLearnCodesys/_next/static/chunks/74f28e1af7ed7ed3.js"/><script src="/HappyLearnCodesys/_next/static/chunks/a354d338f7d272f4.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/7de9141b1af425c3.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/d1d24926e41b63c4.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/turbopack-d027db068e712cbc.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js" async=""></script><title>CODESYS 教學網站</title><meta name="description" content="針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"/><script src="/HappyLearnCodesys/_next/static/chunks/a6dad97d9634a72d.js" noModule=""></script></head><body class="min-h-screen"><div hidden=""><!--$--><!--/$--></div><div class="mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6"><header class="mb-6 border-b pb-4" style="border-color:var(--t-border)"><div class="flex items-start justify-between gap-4"><div><h1 class="text-xl font-semibold tracking-tight"><a style="color:var(--t-accent)" class="hover:underline" href="/HappyLearnCodesys">CODESYS 教學網站</a></h1><p class="mt-1 text-sm" style="color:var(--t-text-muted)">用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。</p></div><nav class="flex shrink-0 items-center gap-2"><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys">回首頁</a><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys/offline-help">Offline Help</a><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys/search">搜尋</a></nav></div></header><main class="flex-1 pb-8"><div class="space-y-5"><nav class="text-xs" style="color:var(--t-text-muted)"><a style="color:var(--t-accent)" href="/HappyLearnCodesys/softmotion">SoftMotion 學習地圖</a><span class="mx-1">/</span><span style="color:var(--t-text)">虛擬時間軸電子凸輪</span></nav><header class="space-y-1"><div class="inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium" style="border-color:var(--t-border);background-color:var(--t-bg-card);color:var(--t-text-muted)"><span class="uppercase tracking-wide">PLCopen</span><span class="h-1 w-1 rounded-full" style="background-color:var(--t-accent)"></span><span style="color:var(--t-accent)">步驟 <!-- -->5</span></div><h1 class="text-xl font-semibold" style="color:var(--t-text)">虛擬時間軸電子凸輪</h1><p class="text-sm" style="color:var(--t-text-muted)">虛擬主軸 + 從軸建立週期性凸輪，MC_CamTableSelect、MC_CamIn、SMC_GetTappetValue。</p><p class="text-xs" style="color:var(--t-text-muted)">官方專案：<!-- --> <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)">PLCopenMulti.project</code></p></header><section class="rounded-lg border p-4" style="border-color:var(--t-border);background-color:var(--t-bg-card)"><div class="flex gap-6"><aside class="shrink-0 w-56 self-start sticky top-6 hidden lg:block" aria-label="本頁標題目錄"><nav class="rounded-lg border py-3 px-3 text-sm max-h-[calc(100vh-4rem)] overflow-y-auto" style="border-color:var(--t-border);background-color:var(--t-bg-card)"><div class="mb-2 flex items-center justify-between"><button type="button" class="text-[11px] hover:underline" style="color:var(--t-text-muted)">回上一層</button><div class="text-xs font-semibold uppercase tracking-wide" style="color:var(--t-text-muted)">目錄</div></div><ul class="space-y-1.5"><li><a href="#PLCopenMulti-—-整體架構與功能說明" class="block truncate py-0.5 hover:underline" style="padding-left:0;color:var(--t-text-muted);font-size:0.8125rem">PLCopenMulti — 整體架構與功能說明</a></li><li><a href="#一-這個專案在做什麼？（一句話＋情境）" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">一、這個專案在做什麼？（一句話＋情境）</a></li><li><a href="#二-使用情境與硬體／通訊架構" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">二、使用情境與硬體／通訊架構</a></li><li><a href="#2.1-硬體與軸配置" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">2.1 硬體與軸配置</a></li><li><a href="#2.2-任務與週期" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">2.2 任務與週期</a></li><li><a href="#2.3-資料流與角色分工" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">2.3 資料流與角色分工</a></li><li><a href="#三-控制流程：由淺入深" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">三、控制流程：由淺入深</a></li><li><a href="#3.1-整體概念" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">3.1 整體概念</a></li><li><a href="#3.2-初學者可以這樣理解" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">3.2 初學者可以這樣理解</a></li><li><a href="#四-各支程式負責哪些功能？（由淺入深）" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">四、各支程式負責哪些功能？（由淺入深）</a></li><li><a href="#4.1-MOTION_PRG.st" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">4.1 MOTION_PRG.st</a></li><li><a href="#五-函式庫與函式／功能塊一覽（用途-引數-回傳）" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">五、函式庫與函式／功能塊一覽（用途、引數、回傳）</a></li><li><a href="#5.1-函式庫清單（對照-Libraries.md）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">5.1 函式庫清單（對照 Libraries.md）</a></li><li><a href="#5.2-功能塊簡介" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">5.2 功能塊簡介</a></li><li><a href="#六-變數與常數一覽" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">六、變數與常數一覽</a></li><li><a href="#6.1-MOTION_PRG.st-內的變數" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">6.1 MOTION_PRG.st 內的變數</a></li><li><a href="#七-特別的演算法與觀念" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">七、特別的演算法與觀念</a></li><li><a href="#7.1-主從軸與凸輪同步的概念" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">7.1 主從軸與凸輪同步的概念</a></li><li><a href="#八-重要參數與設定位置（實作時對照）" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">八、重要參數與設定位置（實作時對照）</a></li><li><a href="#8.1-軸與任務" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">8.1 軸與任務</a></li><li><a href="#8.2-凸輪與運動參數" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">8.2 凸輪與運動參數</a></li><li><a href="#九-建議閱讀與修改順序（給初學者）" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">九、建議閱讀與修改順序（給初學者）</a></li><li><a href="#十-名詞對照" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">十、名詞對照</a></li></ul><button type="button" class="mt-3 w-full text-left hover:underline" style="font-size:0.75rem;color:var(--t-text-muted)">回到最上層</button></nav></aside><div class="min-w-0 flex-1 space-y-2"><div class="flex items-center gap-2 rounded-md border py-1.5 px-2 text-xs" style="border-color:var(--t-border);background-color:var(--t-bg);color:var(--t-text-muted)" role="group" aria-label="文字大小"><span class="shrink-0">文字大小：</span><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:transparent;color:var(--t-text-muted)" aria-pressed="false">小</button><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:var(--t-border);color:var(--t-text)" aria-pressed="true">中</button><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:transparent;color:var(--t-text-muted)" aria-pressed="false">大</button></div><article class="prose max-w-none md-content" style="color:var(--t-text)">
+<p class="my-2 leading-relaxed"><strong>顏色對應</strong>：<span class="cfg-func">內建函數 / 功能塊</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數 / 方法</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span></p>
+<h1 id="PLCopenMulti-—-整體架構與功能說明" class="text-2xl font-semibold scroll-mt-6" style="color:var(--t-text)">PLCopenMulti — 整體架構與功能說明</h1>
+<hr/>
+<h2 id="一-這個專案在做什麼？（一句話＋情境）" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">一、這個專案在做什麼？（一句話＋情境）</h2>
+<p class="my-2 leading-relaxed">這個範例示範在一個主虛擬軸與一個從軸的架構下，如何準備多軸凸輪同步控制所需的功能塊：包含兩個軸的上電、凸輪表選取、凸輪同步與虛擬主軸的速度控制，作為進入「多軸凸輪應用」前的中階練習。</p>
+<p class="my-2 leading-relaxed">可以把它想像成「一個主軸帶著一個從軸，沿著設定好的凸輪曲線運動」，例如包裝機裡由主軸帶著切刀軸依特定輪廓動作。</p>
+<hr/>
+<h2 id="二-使用情境與硬體／通訊架構" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">二、使用情境與硬體／通訊架構</h2>
+<h3 id="2.1-硬體與軸配置" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">2.1 硬體與軸配置</h3>
+<p class="my-2 leading-relaxed">根據 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">DeviceTree_Axes.md</code>，本範例包含兩根虛擬軸：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="my-3 overflow-x-auto rounded border" style="border-color:var(--t-border)"><table class="w-full text-sm"><thead><tr><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">軸名稱</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">類型</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">綁定任務</th></tr></thead><tbody><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">Drive</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">SM_Drive_Virtual</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">-</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">Virtual</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">SM_Drive_Virtual</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">-</td></tr></tbody></table></div>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><span class="cfg-name">Virtual</span>：可以視為「主軸」，由速度指令帶動。</li>
+<li class="leading-relaxed"><span class="cfg-name">Drive</span>：可以視為「從軸」，其運動輪廓由凸輪（Cam）定義，相對主軸運動。</li>
+</ul>
+<h3 id="2.2-任務與週期" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">2.2 任務與週期</h3>
+<p class="my-2 leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">TaskConfiguration.md</code> 顯示有兩個任務：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="my-3 overflow-x-auto rounded border" style="border-color:var(--t-border)"><table class="w-full text-sm"><thead><tr><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">任務名稱</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">類型</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">週期</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">優先權</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">POU 清單</th></tr></thead><tbody><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">Task</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">Cyclic</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">t#4ms</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">1</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">MOTION_PRG</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">VISU_TASK</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">Cyclic</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">t#100ms</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">10</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">VisuElems.Visu_Prg</td></tr></tbody></table></div>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Task</code> 每 4ms 執行一次 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MOTION_PRG</code>，負責主軸／從軸與凸輪同步邏輯。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">VISU_TASK</code> 每 100ms 執行 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">VisuElems.Visu_Prg</code>，用於可視化顯示與操作。</li>
+</ul>
+<h3 id="2.3-資料流與角色分工" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">2.3 資料流與角色分工</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MOTION_PRG</code> 應該負責：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">兩根軸的上電（透過 <span class="cfg-func">MC_Power</span>）。</li>
+<li class="leading-relaxed">選取並應用凸輪表（<span class="cfg-func">MC_CamTableSelect</span>、<span class="cfg-func">MC_CamIn</span>）。</li>
+<li class="leading-relaxed">控制虛擬主軸的速度（<span class="cfg-func">MC_MoveVelocity</span>）。</li>
+<li class="leading-relaxed">輔助位置判斷（<span class="cfg-func">SMC_GetTappetValue</span>）。</li>
+</ul>
+</li>
+</ul>
+<p class="my-2 leading-relaxed">在目前轉出的程式中主要保留了變數宣告與功能塊準備，實際的狀態機與呼叫邏輯可以根據教學需要再補充。</p>
+<hr/>
+<h2 id="三-控制流程：由淺入深" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">三、控制流程：由淺入深</h2>
+<h3 id="3.1-整體概念" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">3.1 整體概念</h3>
+<p class="my-2 leading-relaxed">雖然 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MOTION_PRG.st</code> 目前只看到變數宣告，但從功能塊型態可以推測出典型的多凸輪控制流程：</p>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed">對主軸 <span class="cfg-name">Virtual</span> 與從軸 <span class="cfg-name">Drive</span> 進行上電與啟動。</li>
+<li class="leading-relaxed">使用 <span class="cfg-func">MC_CamTableSelect</span> 選取合適的凸輪表（Cam Table）。</li>
+<li class="leading-relaxed">使用 <span class="cfg-func">MC_CamIn</span> 讓從軸依照凸輪表與主軸保持同步。</li>
+<li class="leading-relaxed">使用 <span class="cfg-func">MC_MoveVelocity</span> 讓主軸以固定速度運轉，帶動從軸執行周期性運動。</li>
+<li class="leading-relaxed">視需求使用 <span class="cfg-func">SMC_GetTappetValue</span> 判斷當前是否位在特定凸輪區段，以觸發其他邏輯。</li>
+</ol>
+<h3 id="3.2-初學者可以這樣理解" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">3.2 初學者可以這樣理解</h3>
+<p class="my-2 leading-relaxed">如果你已經看過 PLCopenSingle 的單軸範例，可以把這個案例想成：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">把「速度模式」從單軸提升到「主軸」，由主軸決定整體節奏。</li>
+<li class="leading-relaxed">把「絕對定位」換成「依照凸輪曲線運動的從軸」，從軸不再直接給位置，而是依照主軸角度與凸輪表運動。</li>
+</ul>
+<p class="my-2 leading-relaxed">這樣一來，整個系統的時間基準與運動節奏都由主軸控制，從軸只負責「依規則追隨」。</p>
+<hr/>
+<h2 id="四-各支程式負責哪些功能？（由淺入深）" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">四、各支程式負責哪些功能？（由淺入深）</h2>
+<p class="my-2 leading-relaxed">目前範例目錄中只有 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MOTION_PRG.st</code>，其餘 POU 與可視化程式在專案中管理。</p>
+<h3 id="4.1-MOTION_PRG.st" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">4.1 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MOTION_PRG.st</code></h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>類型</strong>：<span class="cfg-keyword">PROGRAM</span></li>
+<li class="leading-relaxed"><strong>職責（依變數宣告推估）</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">透過 <span class="cfg-local">power1</span>、<span class="cfg-local">power2</span> 對兩根軸上電與啟動。</li>
+<li class="leading-relaxed">用 <span class="cfg-local">TableSelect</span> 選取要使用的凸輪表。</li>
+<li class="leading-relaxed">用 <span class="cfg-local">CamIn</span> 啟動從軸與主軸之間的凸輪同步。</li>
+<li class="leading-relaxed">用 <span class="cfg-local">MoveVirtual</span> 控制主軸 <span class="cfg-name">Virtual</span> 的速度。</li>
+<li class="leading-relaxed">用 <span class="cfg-local">Tappet</span> 做區段判斷（例如：現在是否處於「切刀動作區」、「等待區」等）。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="五-函式庫與函式／功能塊一覽（用途-引數-回傳）" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">五、函式庫與函式／功能塊一覽（用途、引數、回傳）</h2>
+<h3 id="5.1-函式庫清單（對照-Libraries.md）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">5.1 函式庫清單（對照 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Libraries.md</code>）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="my-3 overflow-x-auto rounded border" style="border-color:var(--t-border)"><table class="w-full text-sm"><thead><tr><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">庫名稱</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">解析版本／備註</th></tr></thead><tbody><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">#SM3_Basic</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">提供基本運動控制功能塊（<span class="cfg-func">MC_Power</span>、<span class="cfg-func">MC_MoveVelocity</span> 等）。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">#SM3_CamBuilder</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">提供凸輪表的建立與管理功能。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">#System_VisuElem3DPath</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">視覺化 3D 運動路徑用的系統庫。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">#System_VisuElemCamDisplayer</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">用來在視覺化畫面中顯示凸輪曲線。</td></tr></tbody></table></div>
+<h3 id="5.2-功能塊簡介" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">5.2 功能塊簡介</h3>
+<h4>5.2.1 <span class="cfg-func">MC_Power()</span></h4>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">用途與引數說明同先前範例，這裡透過 <span class="cfg-local">power1</span>、<span class="cfg-local">power2</span> 對主軸與從軸分別上電。</li>
+</ul>
+<h4>5.2.2 <span class="cfg-func">MC_CamTableSelect()</span></h4>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>用途</strong>：選取一張凸輪表並建立相對應的 CamTableID，供 <span class="cfg-func">MC_CamIn</span> 使用。</li>
+<li class="leading-relaxed"><strong>主要引數（概念性）</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><span class="cfg-arg">Master</span> / <span class="cfg-arg">Slave</span>：指定主軸與從軸。</li>
+<li class="leading-relaxed"><span class="cfg-arg">CamTable</span>：要選取的凸輪表名稱。</li>
+<li class="leading-relaxed"><span class="cfg-arg">Execute</span>：TRUE 時啟動選取動作。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>重要輸出</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><span class="cfg-arg">CamTableID</span>：供 <span class="cfg-func">MC_CamIn</span> 使用的識別碼。</li>
+</ul>
+</li>
+</ul>
+<h4>5.2.3 <span class="cfg-func">MC_CamIn()</span></h4>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>用途</strong>：依指定的凸輪表，讓從軸追隨主軸的位移。</li>
+<li class="leading-relaxed"><strong>常見引數</strong>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><span class="cfg-arg">Master</span> / <span class="cfg-arg">Slave</span>：主軸／從軸。</li>
+<li class="leading-relaxed"><span class="cfg-arg">CamTableID</span>：來自 <span class="cfg-func">MC_CamTableSelect</span> 的 ID。</li>
+<li class="leading-relaxed">其他參數（例如 StartMode、BufferMode）則決定如何啟動與切換。</li>
+</ul>
+</li>
+</ul>
+<h4>5.2.4 <span class="cfg-func">SMC_GetTappetValue()</span></h4>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>用途</strong>：依主軸位置判斷目前是否落在某段凸輪區間，常用於分段觸發邏輯（例如「進刀段」、「退刀段」）。</li>
+</ul>
+<h4>5.2.5 <span class="cfg-func">MC_MoveVelocity()</span></h4>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">控制主軸 <span class="cfg-name">Virtual</span> 的速度，使整個多軸系統的節奏可控。</li>
+</ul>
+<hr/>
+<h2 id="六-變數與常數一覽" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">六、變數與常數一覽</h2>
+<p class="my-2 leading-relaxed">本範例沒有獨立 GVL 檔案，所有變數都在 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MOTION_PRG.st</code> 中宣告。</p>
+<h3 id="6.1-MOTION_PRG.st-內的變數" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">6.1 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MOTION_PRG.st</code> 內的變數</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="my-3 overflow-x-auto rounded border" style="border-color:var(--t-border)"><table class="w-full text-sm"><thead><tr><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">名稱</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">類別</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">型態</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">預設值</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">說明</th></tr></thead><tbody><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-local">power1</span>, <span class="cfg-local">power2</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">區域變數</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-type">MC_Power</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">功能塊預設</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">分別用來對主軸與從軸上電。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-local">TableSelect</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">區域變數</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-type">MC_CamTableSelect</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">功能塊預設</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">選取要使用的凸輪表。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-local">CamIn</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">區域變數</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-type">MC_CamIn</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">功能塊預設</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">依凸輪表控制從軸與主軸同步。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-local">Tappet</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">區域變數</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-type">SMC_GetTappetValue</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">功能塊預設</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">判斷是否處於特定凸輪段。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-local">MoveVirtual</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">區域變數</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-type">MC_MoveVelocity</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">功能塊預設</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">控制虛擬主軸 <span class="cfg-name">Virtual</span> 的速度。</td></tr></tbody></table></div>
+<hr/>
+<h2 id="七-特別的演算法與觀念" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">七、特別的演算法與觀念</h2>
+<h3 id="7.1-主從軸與凸輪同步的概念" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">7.1 主從軸與凸輪同步的概念</h3>
+<p class="my-2 leading-relaxed">在多軸應用中，一個常見的設計是：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">以一根主軸（例如輸送帶或主馬達）作為系統節奏來源。</li>
+<li class="leading-relaxed">讓其他軸（切刀、壓輪…）透過凸輪曲線相對主軸運動。</li>
+</ul>
+<p class="my-2 leading-relaxed">這個範例的結構正好對應到這個觀念：<br/>
+<span class="cfg-name">Virtual</span> 當主軸，<span class="cfg-name">Drive</span> 當從軸，而 <span class="cfg-func">MC_CamIn</span> 則負責把「主軸位置 → 從軸位置」的對應關係落實到運動控制上。</p>
+<hr/>
+<h2 id="八-重要參數與設定位置（實作時對照）" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">八、重要參數與設定位置（實作時對照）</h2>
+<h3 id="8.1-軸與任務" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">8.1 軸與任務</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="my-3 overflow-x-auto rounded border" style="border-color:var(--t-border)"><table class="w-full text-sm"><thead><tr><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">項目</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">名稱</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">說明</th></tr></thead><tbody><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">主軸</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">Virtual</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">SM_Drive_Virtual</span>，由 <span class="cfg-func">MC_MoveVelocity</span> 控制。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">從軸</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">Drive</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">SM_Drive_Virtual</span>，透過凸輪表與主軸同步。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">任務</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">Task</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">週期 4ms，執行 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MOTION_PRG</code>。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">任務</td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">VISU_TASK</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">週期 100ms，執行 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">VisuElems.Visu_Prg</code>。</td></tr></tbody></table></div>
+<h3 id="8.2-凸輪與運動參數" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">8.2 凸輪與運動參數</h3>
+<p class="my-2 leading-relaxed">實際的凸輪表內容定義於專案與 <span class="cfg-name">SM3_CamBuilder</span> 相關設定，這裡只需記得：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">要先選取凸輪表（<span class="cfg-func">MC_CamTableSelect</span>）。</li>
+<li class="leading-relaxed">再由 <span class="cfg-func">MC_CamIn</span> 使用選到的 <span class="cfg-arg">CamTableID</span> 進行同步。</li>
+<li class="leading-relaxed">主軸的速度設定在 <span class="cfg-func">MC_MoveVelocity</span> 裡，會直接影響從軸的整體節奏。</li>
+</ul>
+<hr/>
+<h2 id="九-建議閱讀與修改順序（給初學者）" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">九、建議閱讀與修改順序（給初學者）</h2>
+<ol class="my-2 ml-6 list-decimal space-y-1">
+<li class="leading-relaxed"><strong>先看 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">DeviceTree_Axes.md</code></strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">了解哪一根軸扮演主軸、哪一根軸扮演從軸。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>再閱讀 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MOTION_PRG.st</code> 的變數宣告</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">將各個功能塊名稱與角色對起來（上電、主軸速度、凸輪選取、凸輪同步、區段判斷）。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>最後對照第五章的功能塊說明與原始專案中的 VISU 畫面</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">觀察凸輪曲線如何影響從軸運動，以及主軸速度變化如何改變整體節奏。</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h2 id="十-名詞對照" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">十、名詞對照</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="my-3 overflow-x-auto rounded border" style="border-color:var(--t-border)"><table class="w-full text-sm"><thead><tr><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">英文 / 符號</th><th class="border-b px-2 py-1 text-left text-xs font-semibold" style="border-color:var(--t-border);background-color:var(--t-bg-code);color:var(--t-text)">說明</th></tr></thead><tbody><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">Virtual</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">本範例中的虛擬主軸名稱。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-name">Drive</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">本範例中的虛擬從軸名稱。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-func">MC_CamTableSelect</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">選取凸輪表並產生 CamTableID 的功能塊。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-func">MC_CamIn</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">依照凸輪表讓從軸追隨主軸的功能塊。</td></tr><tr><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)"><span class="cfg-func">SMC_GetTappetValue</span></td><td class="border-b px-2 py-1 text-xs" style="border-color:var(--t-border);color:var(--t-text)">用來判斷主軸位置是否在特定區段的函數。</td></tr></tbody></table></div></article></div></div></section><section class="space-y-3"><h2 class="text-base font-semibold" style="color:var(--t-text)">ST 程式碼</h2><p class="text-xs" style="color:var(--t-text-muted)">以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。</p><div class="space-y-2"><div class="rounded-lg border overflow-hidden" style="border-color:var(--t-border);background-color:var(--t-bg-code)"><button type="button" class="flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-sm font-medium transition" style="color:var(--t-text)"><span class="truncate">MOTION_PRG.st</span><span class="shrink-0 transition-transform " style="color:var(--t-text-muted)" aria-hidden="true">▼</span></button></div></div></section></div><!--$--><!--/$--></main><footer class="border-t pt-4 text-xs" style="border-color:var(--t-border);color:var(--t-text-muted)">內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。</footer></div><script src="/HappyLearnCodesys/_next/static/chunks/74f28e1af7ed7ed3.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[22016,[\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js\",\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\"],\"\"]\n3:I[39756,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n4:I[37457,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n6:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"OutletBoundary\"]\n7:\"$Sreact.suspense\"\n9:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"ViewportBoundary\"]\nb:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"MetadataBoundary\"]\nd:I[68027,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n:HL[\"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"hE9wNZamtqMjFK5Z04D0M\",\"c\":[\"\",\"softmotion\",\"plcopen-multi\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"softmotion\",{\"children\":[[\"slug\",\"plcopen-multi\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-Hant\",\"children\":[\"$\",\"body\",null,{\"className\":\"min-h-screen\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6\",\"children\":[[\"$\",\"header\",null,{\"className\":\"mb-6 border-b pb-4\",\"style\":{\"borderColor\":\"var(--t-border)\"},\"children\":[\"$\",\"div\",null,{\"className\":\"flex items-start justify-between gap-4\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-xl font-semibold tracking-tight\",\"children\":[\"$\",\"$L2\",null,{\"href\":\"/\",\"style\":{\"color\":\"var(--t-accent)\"},\"className\":\"hover:underline\",\"children\":\"CODESYS 教學網站\"}]}],[\"$\",\"p\",null,{\"className\":\"mt-1 text-sm\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。\"}]]}],[\"$\",\"nav\",null,{\"className\":\"flex shrink-0 items-center gap-2\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"回首頁\"}],[\"$\",\"$L2\",null,{\"href\":\"/offline-help\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"Offline Help\"}],[\"$\",\"$L2\",null,{\"href\":\"/search\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"搜尋\"}]]}]]}]}],[\"$\",\"main\",null,{\"className\":\"flex-1 pb-8\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"div\",null,{\"className\":\"flex flex-col items-center justify-center gap-4 py-12 text-center\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-4xl font-semibold\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"404\"}],[\"$\",\"p\",null,{\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"找不到這個頁面。\"}],[\"$\",\"nav\",null,{\"className\":\"mt-4 flex flex-wrap justify-center gap-3\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\",\"color\":\"var(--t-accent)\"},\"children\":\"回首頁\"}],[\"$\",\"$L2\",null,{\"href\":\"/softmotion\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"SoftMotion 學習地圖\"}],[\"$\",\"$L2\",null,{\"href\":\"/licensing\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"授權說明\"}],[\"$\",\"$L2\",null,{\"href\":\"/guidelines\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"開發規範\"}]]}]]}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"border-t pt-4 text-xs\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。\"}]]}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js\",\"async\":true,\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-1\",{\"src\":\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L6\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@8\"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lb\",null,{\"children\":\"$Lc\"}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",[]],\"S\":true}\n"])</script><script>self.__next_f.push([1,"c:[\"$\",\"$7\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Le\"}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"8:null\ne:[[\"$\",\"title\",\"0\",{\"children\":\"CODESYS 教學網站\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。\"}]]\n"])</script><script>self.__next_f.push([1,"f:I[35977,[\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js\",\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\"],\"MarkdownWithToc\"]\n10:T311d,"])</script><script>self.__next_f.push([1,"\u003cstyle\u003e\nhtml, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,\n[id^=\"preview\"], [class*=\"markdown-preview\"] {\n  background-color: #FDF5E6 !important;\n  font-size: 14px;\n}\n\n/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */\n.cfg-func,\n.cfg-global,\n.cfg-local,\n.cfg-custom,\n.cfg-const,\n.cfg-keyword,\n.cfg-type,\n.cfg-arg,\n.cfg-name,\ncode {\n  font-family: ui-monospace, \"Cascadia Code\", \"Source Code Pro\", Consolas, Monaco, \"Courier New\", monospace;\n}\n\n/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */\n.markdown-preview-section :not(pre) \u003e code,\n.markdown-preview :not(pre) \u003e code,\n.markdown-body :not(pre) \u003e code {\n  background: transparent !important;\n  padding: 0 !important;\n  border: none !important;\n  border-radius: 0 !important;\n  box-shadow: none !important;\n}\n\n.cfg-func   { color: #6f42c1 !important; background: none !important; }\n.cfg-global { color: #953800 !important; background: none !important; }\n.cfg-local  { color: #0a6c0a !important; background: none !important; }\n.cfg-custom { color: #8250df !important; background: none !important; }\n.cfg-const  { color: #0d9488 !important; background: none !important; }\n.cfg-keyword{ color: #0550ae !important; background: none !important; }\n.cfg-type   { color: #cf222e !important; background: none !important; }\n.cfg-arg    { color: #c2410c !important; background: none !important; }\n.cfg-name   { color: #b45309 !important; background: none !important; }\n\u003c/style\u003e\n\n**顏色對應**：\u003cspan class=\"cfg-func\"\u003e內建函數 / 功能塊\u003c/span\u003e \u003cspan class=\"cfg-global\"\u003e全域變數\u003c/span\u003e \u003cspan class=\"cfg-local\"\u003e區域變數\u003c/span\u003e \u003cspan class=\"cfg-custom\"\u003e自訂函數 / 方法\u003c/span\u003e \u003cspan class=\"cfg-const\"\u003e常數\u003c/span\u003e \u003cspan class=\"cfg-keyword\"\u003e保留字\u003c/span\u003e \u003cspan class=\"cfg-type\"\u003e型態\u003c/span\u003e \u003cspan class=\"cfg-arg\"\u003e引數\u003c/span\u003e \u003cspan class=\"cfg-name\"\u003e專有名詞\u003c/span\u003e\n\n# PLCopenMulti — 整體架構與功能說明\n\n---\n\n## 一、這個專案在做什麼？（一句話＋情境）\n\n這個範例示範在一個主虛擬軸與一個從軸的架構下，如何準備多軸凸輪同步控制所需的功能塊：包含兩個軸的上電、凸輪表選取、凸輪同步與虛擬主軸的速度控制，作為進入「多軸凸輪應用」前的中階練習。\n\n可以把它想像成「一個主軸帶著一個從軸，沿著設定好的凸輪曲線運動」，例如包裝機裡由主軸帶著切刀軸依特定輪廓動作。\n\n---\n\n## 二、使用情境與硬體／通訊架構\n\n### 2.1 硬體與軸配置\n\n根據 `DeviceTree_Axes.md`，本範例包含兩根虛擬軸：\n\n| 軸名稱 | 類型 | 綁定任務 |\n|--------|------|----------|\n| \u003cspan class=\"cfg-name\"\u003eDrive\u003c/span\u003e | \u003cspan class=\"cfg-name\"\u003eSM_Drive_Virtual\u003c/span\u003e | - |\n| \u003cspan class=\"cfg-name\"\u003eVirtual\u003c/span\u003e | \u003cspan class=\"cfg-name\"\u003eSM_Drive_Virtual\u003c/span\u003e | - |\n\n- \u003cspan class=\"cfg-name\"\u003eVirtual\u003c/span\u003e：可以視為「主軸」，由速度指令帶動。  \n- \u003cspan class=\"cfg-name\"\u003eDrive\u003c/span\u003e：可以視為「從軸」，其運動輪廓由凸輪（Cam）定義，相對主軸運動。\n\n### 2.2 任務與週期\n\n`TaskConfiguration.md` 顯示有兩個任務：\n\n| 任務名稱 | 類型 | 週期 | 優先權 | POU 清單 |\n|----------|------|------|--------|----------|\n| Task | Cyclic | t#4ms | 1 | MOTION_PRG |\n| VISU_TASK | Cyclic | t#100ms | 10 | VisuElems.Visu_Prg |\n\n- `Task` 每 4ms 執行一次 `MOTION_PRG`，負責主軸／從軸與凸輪同步邏輯。  \n- `VISU_TASK` 每 100ms 執行 `VisuElems.Visu_Prg`，用於可視化顯示與操作。\n\n### 2.3 資料流與角色分工\n\n- `MOTION_PRG` 應該負責：  \n  - 兩根軸的上電（透過 \u003cspan class=\"cfg-func\"\u003eMC_Power\u003c/span\u003e）。  \n  - 選取並應用凸輪表（\u003cspan class=\"cfg-func\"\u003eMC_CamTableSelect\u003c/span\u003e、\u003cspan class=\"cfg-func\"\u003eMC_CamIn\u003c/span\u003e）。  \n  - 控制虛擬主軸的速度（\u003cspan class=\"cfg-func\"\u003eMC_MoveVelocity\u003c/span\u003e）。  \n  - 輔助位置判斷（\u003cspan class=\"cfg-func\"\u003eSMC_GetTappetValue\u003c/span\u003e）。  \n\n在目前轉出的程式中主要保留了變數宣告與功能塊準備，實際的狀態機與呼叫邏輯可以根據教學需要再補充。\n\n---\n\n## 三、控制流程：由淺入深\n\n### 3.1 整體概念\n\n雖然 `MOTION_PRG.st` 目前只看到變數宣告，但從功能塊型態可以推測出典型的多凸輪控制流程：\n\n1. 對主軸 \u003cspan class=\"cfg-name\"\u003eVirtual\u003c/span\u003e 與從軸 \u003cspan class=\"cfg-name\"\u003eDrive\u003c/span\u003e 進行上電與啟動。  \n2. 使用 \u003cspan class=\"cfg-func\"\u003eMC_CamTableSelect\u003c/span\u003e 選取合適的凸輪表（Cam Table）。  \n3. 使用 \u003cspan class=\"cfg-func\"\u003eMC_CamIn\u003c/span\u003e 讓從軸依照凸輪表與主軸保持同步。  \n4. 使用 \u003cspan class=\"cfg-func\"\u003eMC_MoveVelocity\u003c/span\u003e 讓主軸以固定速度運轉，帶動從軸執行周期性運動。  \n5. 視需求使用 \u003cspan class=\"cfg-func\"\u003eSMC_GetTappetValue\u003c/span\u003e 判斷當前是否位在特定凸輪區段，以觸發其他邏輯。\n\n### 3.2 初學者可以這樣理解\n\n如果你已經看過 PLCopenSingle 的單軸範例，可以把這個案例想成：\n\n- 把「速度模式」從單軸提升到「主軸」，由主軸決定整體節奏。  \n- 把「絕對定位」換成「依照凸輪曲線運動的從軸」，從軸不再直接給位置，而是依照主軸角度與凸輪表運動。\n\n這樣一來，整個系統的時間基準與運動節奏都由主軸控制，從軸只負責「依規則追隨」。\n\n---\n\n## 四、各支程式負責哪些功能？（由淺入深）\n\n目前範例目錄中只有 `MOTION_PRG.st`，其餘 POU 與可視化程式在專案中管理。\n\n### 4.1 `MOTION_PRG.st`\n\n- **類型**：\u003cspan class=\"cfg-keyword\"\u003ePROGRAM\u003c/span\u003e  \n- **職責（依變數宣告推估）**：  \n  - 透過 \u003cspan class=\"cfg-local\"\u003epower1\u003c/span\u003e、\u003cspan class=\"cfg-local\"\u003epower2\u003c/span\u003e 對兩根軸上電與啟動。  \n  - 用 \u003cspan class=\"cfg-local\"\u003eTableSelect\u003c/span\u003e 選取要使用的凸輪表。  \n  - 用 \u003cspan class=\"cfg-local\"\u003eCamIn\u003c/span\u003e 啟動從軸與主軸之間的凸輪同步。  \n  - 用 \u003cspan class=\"cfg-local\"\u003eMoveVirtual\u003c/span\u003e 控制主軸 \u003cspan class=\"cfg-name\"\u003eVirtual\u003c/span\u003e 的速度。  \n  - 用 \u003cspan class=\"cfg-local\"\u003eTappet\u003c/span\u003e 做區段判斷（例如：現在是否處於「切刀動作區」、「等待區」等）。\n\n---\n\n## 五、函式庫與函式／功能塊一覽（用途、引數、回傳）\n\n### 5.1 函式庫清單（對照 `Libraries.md`）\n\n| 庫名稱 | 解析版本／備註 |\n|--------|----------------|\n| \u003cspan class=\"cfg-name\"\u003e#SM3_Basic\u003c/span\u003e | 提供基本運動控制功能塊（\u003cspan class=\"cfg-func\"\u003eMC_Power\u003c/span\u003e、\u003cspan class=\"cfg-func\"\u003eMC_MoveVelocity\u003c/span\u003e 等）。 |\n| \u003cspan class=\"cfg-name\"\u003e#SM3_CamBuilder\u003c/span\u003e | 提供凸輪表的建立與管理功能。 |\n| \u003cspan class=\"cfg-name\"\u003e#System_VisuElem3DPath\u003c/span\u003e | 視覺化 3D 運動路徑用的系統庫。 |\n| \u003cspan class=\"cfg-name\"\u003e#System_VisuElemCamDisplayer\u003c/span\u003e | 用來在視覺化畫面中顯示凸輪曲線。 |\n\n### 5.2 功能塊簡介\n\n#### 5.2.1 \u003cspan class=\"cfg-func\"\u003eMC_Power()\u003c/span\u003e\n\n- 用途與引數說明同先前範例，這裡透過 \u003cspan class=\"cfg-local\"\u003epower1\u003c/span\u003e、\u003cspan class=\"cfg-local\"\u003epower2\u003c/span\u003e 對主軸與從軸分別上電。\n\n#### 5.2.2 \u003cspan class=\"cfg-func\"\u003eMC_CamTableSelect()\u003c/span\u003e\n\n- **用途**：選取一張凸輪表並建立相對應的 CamTableID，供 \u003cspan class=\"cfg-func\"\u003eMC_CamIn\u003c/span\u003e 使用。  \n- **主要引數（概念性）**：  \n  - \u003cspan class=\"cfg-arg\"\u003eMaster\u003c/span\u003e / \u003cspan class=\"cfg-arg\"\u003eSlave\u003c/span\u003e：指定主軸與從軸。  \n  - \u003cspan class=\"cfg-arg\"\u003eCamTable\u003c/span\u003e：要選取的凸輪表名稱。  \n  - \u003cspan class=\"cfg-arg\"\u003eExecute\u003c/span\u003e：TRUE 時啟動選取動作。  \n- **重要輸出**：  \n  - \u003cspan class=\"cfg-arg\"\u003eCamTableID\u003c/span\u003e：供 \u003cspan class=\"cfg-func\"\u003eMC_CamIn\u003c/span\u003e 使用的識別碼。  \n\n#### 5.2.3 \u003cspan class=\"cfg-func\"\u003eMC_CamIn()\u003c/span\u003e\n\n- **用途**：依指定的凸輪表，讓從軸追隨主軸的位移。  \n- **常見引數**：  \n  - \u003cspan class=\"cfg-arg\"\u003eMaster\u003c/span\u003e / \u003cspan class=\"cfg-arg\"\u003eSlave\u003c/span\u003e：主軸／從軸。  \n  - \u003cspan class=\"cfg-arg\"\u003eCamTableID\u003c/span\u003e：來自 \u003cspan class=\"cfg-func\"\u003eMC_CamTableSelect\u003c/span\u003e 的 ID。  \n  - 其他參數（例如 StartMode、BufferMode）則決定如何啟動與切換。\n\n#### 5.2.4 \u003cspan class=\"cfg-func\"\u003eSMC_GetTappetValue()\u003c/span\u003e\n\n- **用途**：依主軸位置判斷目前是否落在某段凸輪區間，常用於分段觸發邏輯（例如「進刀段」、「退刀段」）。  \n\n#### 5.2.5 \u003cspan class=\"cfg-func\"\u003eMC_MoveVelocity()\u003c/span\u003e\n\n- 控制主軸 \u003cspan class=\"cfg-name\"\u003eVirtual\u003c/span\u003e 的速度，使整個多軸系統的節奏可控。\n\n---\n\n## 六、變數與常數一覽\n\n本範例沒有獨立 GVL 檔案，所有變數都在 `MOTION_PRG.st` 中宣告。\n\n### 6.1 `MOTION_PRG.st` 內的變數\n\n| 名稱 | 類別 | 型態 | 預設值 | 說明 |\n|------|------|------|--------|------|\n| \u003cspan class=\"cfg-local\"\u003epower1\u003c/span\u003e, \u003cspan class=\"cfg-local\"\u003epower2\u003c/span\u003e | 區域變數 | \u003cspan class=\"cfg-type\"\u003eMC_Power\u003c/span\u003e | 功能塊預設 | 分別用來對主軸與從軸上電。 |\n| \u003cspan class=\"cfg-local\"\u003eTableSelect\u003c/span\u003e | 區域變數 | \u003cspan class=\"cfg-type\"\u003eMC_CamTableSelect\u003c/span\u003e | 功能塊預設 | 選取要使用的凸輪表。 |\n| \u003cspan class=\"cfg-local\"\u003eCamIn\u003c/span\u003e | 區域變數 | \u003cspan class=\"cfg-type\"\u003eMC_CamIn\u003c/span\u003e | 功能塊預設 | 依凸輪表控制從軸與主軸同步。 |\n| \u003cspan class=\"cfg-local\"\u003eTappet\u003c/span\u003e | 區域變數 | \u003cspan class=\"cfg-type\"\u003eSMC_GetTappetValue\u003c/span\u003e | 功能塊預設 | 判斷是否處於特定凸輪段。 |\n| \u003cspan class=\"cfg-local\"\u003eMoveVirtual\u003c/span\u003e | 區域變數 | \u003cspan class=\"cfg-type\"\u003eMC_MoveVelocity\u003c/span\u003e | 功能塊預設 | 控制虛擬主軸 \u003cspan class=\"cfg-name\"\u003eVirtual\u003c/span\u003e 的速度。 |\n\n---\n\n## 七、特別的演算法與觀念\n\n### 7.1 主從軸與凸輪同步的概念\n\n在多軸應用中，一個常見的設計是：\n\n- 以一根主軸（例如輸送帶或主馬達）作為系統節奏來源。  \n- 讓其他軸（切刀、壓輪…）透過凸輪曲線相對主軸運動。  \n\n這個範例的結構正好對應到這個觀念：  \n\u003cspan class=\"cfg-name\"\u003eVirtual\u003c/span\u003e 當主軸，\u003cspan class=\"cfg-name\"\u003eDrive\u003c/span\u003e 當從軸，而 \u003cspan class=\"cfg-func\"\u003eMC_CamIn\u003c/span\u003e 則負責把「主軸位置 → 從軸位置」的對應關係落實到運動控制上。\n\n---\n\n## 八、重要參數與設定位置（實作時對照）\n\n### 8.1 軸與任務\n\n| 項目 | 名稱 | 說明 |\n|------|------|------|\n| 主軸 | \u003cspan class=\"cfg-name\"\u003eVirtual\u003c/span\u003e | \u003cspan class=\"cfg-name\"\u003eSM_Drive_Virtual\u003c/span\u003e，由 \u003cspan class=\"cfg-func\"\u003eMC_MoveVelocity\u003c/span\u003e 控制。 |\n| 從軸 | \u003cspan class=\"cfg-name\"\u003eDrive\u003c/span\u003e | \u003cspan class=\"cfg-name\"\u003eSM_Drive_Virtual\u003c/span\u003e，透過凸輪表與主軸同步。 |\n| 任務 | \u003cspan class=\"cfg-name\"\u003eTask\u003c/span\u003e | 週期 4ms，執行 `MOTION_PRG`。 |\n| 任務 | \u003cspan class=\"cfg-name\"\u003eVISU_TASK\u003c/span\u003e | 週期 100ms，執行 `VisuElems.Visu_Prg`。 |\n\n### 8.2 凸輪與運動參數\n\n實際的凸輪表內容定義於專案與 \u003cspan class=\"cfg-name\"\u003eSM3_CamBuilder\u003c/span\u003e 相關設定，這裡只需記得：\n\n- 要先選取凸輪表（\u003cspan class=\"cfg-func\"\u003eMC_CamTableSelect\u003c/span\u003e）。  \n- 再由 \u003cspan class=\"cfg-func\"\u003eMC_CamIn\u003c/span\u003e 使用選到的 \u003cspan class=\"cfg-arg\"\u003eCamTableID\u003c/span\u003e 進行同步。  \n- 主軸的速度設定在 \u003cspan class=\"cfg-func\"\u003eMC_MoveVelocity\u003c/span\u003e 裡，會直接影響從軸的整體節奏。\n\n---\n\n## 九、建議閱讀與修改順序（給初學者）\n\n1. **先看 `DeviceTree_Axes.md`**  \n   - 了解哪一根軸扮演主軸、哪一根軸扮演從軸。  \n2. **再閱讀 `MOTION_PRG.st` 的變數宣告**  \n   - 將各個功能塊名稱與角色對起來（上電、主軸速度、凸輪選取、凸輪同步、區段判斷）。  \n3. **最後對照第五章的功能塊說明與原始專案中的 VISU 畫面**  \n   - 觀察凸輪曲線如何影響從軸運動，以及主軸速度變化如何改變整體節奏。\n\n---\n\n## 十、名詞對照\n\n| 英文 / 符號 | 說明 |\n|-------------|------|\n| \u003cspan class=\"cfg-name\"\u003eVirtual\u003c/span\u003e | 本範例中的虛擬主軸名稱。 |\n| \u003cspan class=\"cfg-name\"\u003eDrive\u003c/span\u003e | 本範例中的虛擬從軸名稱。 |\n| \u003cspan class=\"cfg-func\"\u003eMC_CamTableSelect\u003c/span\u003e | 選取凸輪表並產生 CamTableID 的功能塊。 |\n| \u003cspan class=\"cfg-func\"\u003eMC_CamIn\u003c/span\u003e | 依照凸輪表讓從軸追隨主軸的功能塊。 |\n| \u003cspan class=\"cfg-func\"\u003eSMC_GetTappetValue\u003c/span\u003e | 用來判斷主軸位置是否在特定區段的函數。 |\n\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"div\",null,{\"className\":\"space-y-5\",\"children\":[[\"$\",\"nav\",null,{\"className\":\"text-xs\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/softmotion\",\"style\":{\"color\":\"var(--t-accent)\"},\"children\":\"SoftMotion 學習地圖\"}],[\"$\",\"span\",null,{\"className\":\"mx-1\",\"children\":\"/\"}],[\"$\",\"span\",null,{\"style\":{\"color\":\"var(--t-text)\"},\"children\":\"虛擬時間軸電子凸輪\"}]]}],[\"$\",\"header\",null,{\"className\":\"space-y-1\",\"children\":[[\"$\",\"div\",null,{\"className\":\"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\",\"color\":\"var(--t-text-muted)\"},\"children\":[[\"$\",\"span\",null,{\"className\":\"uppercase tracking-wide\",\"children\":\"PLCopen\"}],[\"$\",\"span\",null,{\"className\":\"h-1 w-1 rounded-full\",\"style\":{\"backgroundColor\":\"var(--t-accent)\"}}],[\"$\",\"span\",null,{\"style\":{\"color\":\"var(--t-accent)\"},\"children\":[\"步驟 \",5]}]]}],[\"$\",\"h1\",null,{\"className\":\"text-xl font-semibold\",\"style\":{\"color\":\"var(--t-text)\"},\"children\":\"虛擬時間軸電子凸輪\"}],[\"$\",\"p\",null,{\"className\":\"text-sm\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"虛擬主軸 + 從軸建立週期性凸輪，MC_CamTableSelect、MC_CamIn、SMC_GetTappetValue。\"}],[\"$\",\"p\",null,{\"className\":\"text-xs\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":[\"官方專案：\",\" \",[\"$\",\"code\",null,{\"className\":\"rounded px-1 py-0.5\",\"style\":{\"backgroundColor\":\"var(--t-border)\",\"color\":\"var(--t-text)\"},\"children\":\"PLCopenMulti.project\"}]]}]]}],[\"$\",\"section\",null,{\"className\":\"rounded-lg border p-4\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\"},\"children\":[\"$\",\"$Lf\",null,{\"content\":\"$10\"}]}],false,\"$L11\"]}]\n"])</script><script>self.__next_f.push([1,"12:I[85649,[\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js\",\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\"],\"StCodeBlock\"]\n13:T73d,"])</script><script>self.__next_f.push([1,"\u003cpre class=\"shiki github-light\" style=\"background-color:#fff;color:#24292e\" tabindex=\"0\"\u003e\u003ccode\u003e\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#6A737D\"\u003e// MOTION_PRG：多軸凸輪（Cam）同步範例的主控制程式\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#6A737D\"\u003e// 主要負責準備兩個軸的上電、選取凸輪表、啟動 CamIn 同步，以及以虛擬主軸帶動從軸運動\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#D73A49\"\u003ePROGRAM\u003c/span\u003e\u003cspan style=\"color:#24292E\"\u003e MOTION_PRG\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#D73A49\"\u003eVAR\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#6A737D\"\u003e\t// power1, power2：對實體軸與虛擬軸分別上電的 MC_Power 功能塊\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#24292E\"\u003e\tpower1, power2: MC_Power;\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#6A737D\"\u003e\t// TableSelect：從函式庫中選取欲使用的凸輪表（Cam Table）的功能塊\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#24292E\"\u003e\tTableSelect: MC_CamTableSelect;\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#6A737D\"\u003e\t// CamIn：根據選取的凸輪表，讓從軸跟隨主軸的凸輪同步功能塊\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#24292E\"\u003e\tCamIn: MC_CamIn;\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#6A737D\"\u003e\t// Tappet：用來取得某一位置是否落在特定凸輪段內的 SMC_GetTappetValue 函數\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#24292E\"\u003e\tTappet: SMC_GetTappetValue;\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#6A737D\"\u003e\t// MoveVirtual：對虛擬主軸送出速度模式命令的 MC_MoveVelocity 功能塊\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#24292E\"\u003e\tMoveVirtual: MC_MoveVelocity;\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"line\"\u003e\u003cspan style=\"color:#24292E\"\u003eEND_VAR\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e"])</script><script>self.__next_f.push([1,"11:[\"$\",\"section\",null,{\"className\":\"space-y-3\",\"children\":[[\"$\",\"h2\",null,{\"className\":\"text-base font-semibold\",\"style\":{\"color\":\"var(--t-text)\"},\"children\":\"ST 程式碼\"}],[\"$\",\"p\",null,{\"className\":\"text-xs\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。\"}],[\"$\",\"div\",null,{\"className\":\"space-y-2\",\"children\":[[\"$\",\"$L12\",\"MOTION_PRG.st\",{\"title\":\"MOTION_PRG.st\",\"html\":\"$13\"}]]}]]}]\n"])</script></body></html>

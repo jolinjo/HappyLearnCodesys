@@ -1,0 +1,297 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+8:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+4:T2d07,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# CODESYS Getting Started 入門教學 Your First CODESYS Program
+
+> 本文件依據 Offline Help 中 `Your First CODESYS Program` 與相關章節（Configuring CODESYS、Installing / Extending Offline Help），整理成一步步的實作教學，協助你從安裝到完成第一個可執行的簡單應用程式。
+
+---
+
+## 1. 前置準備 Preparation
+
+在開始寫程式之前，建議先完成以下事項：
+
+### 1.1 安裝 CODESYS Development System
+
+- 從 **CODESYS Store** 下載並安裝：
+  - International：`https://store.codesys.com`
+  - North America：`https://us.store.codesys.com`
+- 安裝完成後，你會得到：
+  - CODESYS Development System（IDE）
+  - CODESYS Installer（用來管理多個安裝與 Add‑ons）
+
+### 1.2 安裝 Offline Help（建議）
+
+根據 `Installing CODESYS Offline Help` 章節：
+
+- Offline Help 幾乎包含 Online Help 的所有內容，例外：
+  - Library 文件（可在 Library Manager 中各自閱讀）。
+  - `LibDevSummary`。
+  - `CODESYS Development System Scripting API`。
+- 安裝方式：
+  - 可從 **Help Portal** 的起始頁安裝，或
+  - 透過 **CODESYS Installer** 安裝 Offline Help 套件。
+- 啟用方式：
+  - 在 `Tools → Options → Help` 中勾選  
+    `Use Offline Help instead of Online Help`。
+
+### 1.3 設定介面與說明語言（可選）
+
+- 在 `Options → International Settings` 中可設定：
+  - IDE 顯示語言。
+  - Help 說明語言。
+- 若你在多語系團隊中工作，可以依團隊慣用語言設定 UI，但在教學中仍保持英文關鍵字，以利與官方文件對照。
+
+---
+
+## 2. 建立第一個專案 Creating Your First Project
+
+以下步驟對應 CODESYS Help 中的 `Creating and Configuring a Project` 及 `Your First CODESYS Program` 相關章節。
+
+### 2.1 啟動 CODESYS 並建立 Standard Project
+
+1. 啟動 `CODESYS`。
+2. 在起始畫面點選 **Standard project**，或選單 `File → New Project…` 並選擇：
+   - **Project Type**：`Standard project`
+   - **Language**：建議選 `ST`（Structured Text）做為第一個 Program 的語言。
+3. 選擇目標裝置（Device）：
+   - 若尚未連接實體 PLC，可先選擇示範用的 **SoftPLC** 或對應的目標裝置（例如 `CODESYS Control Win V3`）。
+
+建立完成後，專案視窗中會看到：
+
+- 一個根節點（通常為 `Device`）。
+- 底下包含 `PLC Logic` 節點與預設的 `MAIN` 程式（視版本不同略有差異）。
+
+### 2.2 認識專案樹與基本物件
+
+在 Device Tree 中常見的物件：
+
+- **Device / PLC**：代表實際控制器或模擬環境。
+- **Task Configuration**：定義哪些程式被週期性執行。
+- **Application / PLC_PRG / MAIN** 等程式物件：放置你的控制邏輯。
+- **GVL（Global Variable List）**：宣告多個 Program / FB 共用的變數。
+
+第一次入門時，先專注在：
+
+- 編輯 `MAIN` 或 `PLC_PRG` 程式。
+- 確認該程式已被 Task 週期性呼叫（通常預設已設定）。
+
+---
+
+## 3. 撰寫簡單控制程式 Programming the Controller Application
+
+官方冰箱範例會建立一個溫度控制邏輯，這裡以更簡化的版本示範結構與寫法。
+
+### 3.1 建立程式骨架
+
+1. 在專案樹中雙擊 `MAIN`（或 `PLC_PRG`）。
+2. 確認程式語言為 `ST`；若不是，可在 **Object → Change Object** 中切換為 ST。
+3. 在宣告區與實作區輸入以下程式碼：
+
+```iecst
+VAR
+    rTemperature   : REAL;  (* 目前溫度（模擬用） *)
+    rSetpoint      : REAL;  (* 設定溫度 *)
+    rHysteresis    : REAL;  (* 回差，避免頻繁切換 *)
+    bCompressorOn  : BOOL;  (* 壓縮機啟動輸出 *)
+END_VAR
+
+(* 簡易初始化，實務上可改為參數或 HMI 設定 *)
+IF rSetpoint = 0.0 THEN
+    rSetpoint   := 4.0;     (* 目標溫度 4°C *)
+    rHysteresis := 1.0;     (* 上下 1°C 回差 *)
+END_IF;
+
+(* 這裡先用簡單數學模擬溫度變化，之後可改為實際 AI 讀值 *)
+IF bCompressorOn THEN
+    rTemperature := rTemperature - 0.05;  (* 壓縮機開啟時降溫 *)
+ELSE
+    rTemperature := rTemperature + 0.02;  (* 壓縮機關閉時緩慢回溫 *)
+END_IF;
+
+(* 控制邏輯：低於下限關閉，高於上限開啟 *)
+IF rTemperature > rSetpoint + rHysteresis THEN
+    bCompressorOn := TRUE;
+ELSIF rTemperature < rSetpoint - rHysteresis THEN
+    bCompressorOn := FALSE;
+END_IF;
+```
+
+這段程式展示了：
+
+- 變數宣告區與實作區的分離。
+- 使用 `IF / ELSIF` 進行溫度控制與回差（hysteresis）判斷。
+- 即使目前沒有實際 I/O，也可以透過簡單的數學模擬行為，方便在 Simulation 模式下觀察。
+
+### 3.2 將變數連到 I/O（可選）
+
+若你已經有實體溫度感測與繼電器輸出，可以：
+
+1. 在 Device Tree 的 I/O（例如 `EtherCAT I/O` 或內建 I/O）上建立通道。
+2. 透過 **I/O Mapping**：
+   - 將類比輸入通道對應到 `rTemperature` 或中介變數。
+   - 將數位輸出（控制繼電器）對應到 `bCompressorOn`。
+
+這部分的詳解會在 `IO_Configuration_教學文件.md` 中進一步說明。
+
+---
+
+## 4. 建立與 PLC（或模擬器）的連線 Connecting to the PLC
+
+接下來要讓程式真的在控制器上執行。
+
+### 4.1 選擇目標裝置與通訊設定
+
+1. 在 Device Tree 中選擇根節點（例如 `Device (CODESYS Control Win V3)`）。
+2. 在工具列或右鍵選單點選 **Communication Settings**（實際名稱依版本略有差異）。
+3. 設定：
+   - 通訊協定：通常為 CODESYS 的 TCP 通訊。
+   - 目標 IP：實體 PLC 的 IP 或 `localhost`（如果使用 PC‑based SoftPLC）。
+4. 透過 `Scan Network` 或 `Browse` 功能尋找可用的 PLC，並綁定到目前的 Device。
+
+### 4.2 使用 Simulation 模式（無實機時）
+
+若沒有實機，可以啟用內建 **Simulation**：
+
+1. 在工具列選擇 `Simulation` 作為 Communication 目標。
+2. 或在 Device 右鍵選單中勾選 `Simulation`。
+
+這樣就能在 PC 上模擬執行應用程式，不依賴真實硬體。
+
+---
+
+## 5. 編譯、下載與執行 Building, Downloading and Running
+
+### 5.1 編譯專案
+
+1. 在主選單選 `Build → Build`，或按快捷鍵（通常為 `Ctrl + F11`）。
+2. 若有語法錯誤，於 `Messages` 視窗中會顯示：
+   - 點選錯誤可跳回對應的程式碼位置。
+
+### 5.2 登入與下載程式
+
+1. 按下工具列上的 **Login** 按鈕，或 `Online → Login`。
+2. 若目標 PLC 尚未載入程式，IDE 會詢問是否 **Download Application**：
+   - 選擇 `Download` 將編譯結果下載到 PLC 或 Simulation。
+3. 下載完成後，可以選擇：
+   - `Online → Run` 或點擊工具列的 **Start** 按鈕啟動應用程式。
+
+### 5.3 監看與測試
+
+啟動後，可以：
+
+- 在 ST 編輯器中按下 **監控模式**（通常為眼睛圖示），即進入線上監看：
+  - 變數會以不同顏色顯示目前值。
+  - 可以 Force 或 Write 變數，以測試不同情境。
+- 觀察：
+  - `rTemperature` 是否隨時間變化。
+  - `bCompressorOn` 是否在設定的回差區間內切換。
+
+這個步驟對應 Offline Help 中「Testing in Simulation Mode」、「Forcing and Writing of Variables」與「Monitoring of Values」等主題的最基本用法。
+
+---
+
+## 6. 建立 Boot Application（開機自動啟動）
+
+若使用的裝置支援開機自動執行應用程式，可以：
+
+1. 在程式處於 **Run** 狀態下，於 `Online` 選單中選擇：
+   - `Create Boot Application`。
+2. 這會將目前的應用程式儲存為 **Boot Project**：
+   - PLC 下次上電或重開機時，會自動載入並執行這份程式。
+
+這一部分對應 `Creating a Boot Application` 章節的內容，實際操作方式視目標裝置而定，但概念相同。
+
+---
+
+## 7. 延伸 Offline Help：加入你自己的說明頁
+
+根據 `Extending CODESYS Offline Help with Your Own Contents`，你也可以把自己的教學頁整合進 Offline Help 中：
+
+- 需要準備：
+  - 你的說明頁（HTML）檔案，放在 `C:\ProgramData\CODESYS\Offline Help\<language>`。
+  - 幾個 JSON 設定檔：
+    - `<name>-productinfo.json`：決定在「Product Help Overview」中的條目。
+    - `<name>-toc.json`：決定新頁面插入 TOC 的位置。
+    - `<name>-search.json`：提供離線搜尋索引（可選）。
+- CODESYS 啟動時會：
+  - 將這些 JSON 內容合併到標準的 `fuzzydata.js`、`productsinfo.js`、`toc.js` 中。
+  - 原始檔會備份到 `backup` 資料夾。
+
+對你目前這個專案而言，`Offline-Help/zh-TW/` 底下的教學 `.md` 之後就可以轉為 HTML，再透過上述機制插入 Offline Help，或用 Next.js 網站呈現。
+
+---
+
+## 8. 小結：從零到第一個運轉中的應用程式
+
+整理整個流程，可以得到一個簡化 checklist：
+
+1. **安裝工具與 Offline Help**
+   - 安裝 CODESYS Development System 與 Offline Help。
+2. **建立標準專案**
+   - 使用 `Standard project` 精靈，選擇語言與目標裝置。
+3. **撰寫 ST 程式**
+   - 在 `MAIN` 中撰寫基本控制邏輯（如簡易溫度控制）。
+4. **設定通訊與目標**
+   - 選擇實體 PLC 或 Simulation，設定 IP 與連線方式。
+5. **編譯與下載**
+   - Build 專案、登入、下載並啟動 Run。
+6. **線上監看與測試**
+   - 監控變數、做強制寫入或模擬輸入，確認邏輯正確。
+7. **建立 Boot Application（可選）**
+   - 若希望 PLC 上電自動執行，建立 Boot Project。
+
+完成以上步驟，你就已經成功從官方 Offline Help 中的「Your First CODESYS Program」走完一個實務版流程，後續可以在此基礎上加入 I/O、Motion、SoftMotion 或 HMI 等更進階主題。 
+
+0:{"buildId":"hE9wNZamtqMjFK5Z04D0M","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/offline-help","style":{"color":"var(--t-accent)"},"children":"Offline Help 首頁"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"children":"CODESYS 概觀與入門"}]]}],["$","header",null,{"className":"space-y-2","children":[["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"CODESYS Getting Started 入門教學"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"一步步帶你從安裝 CODESYS、建立第一個 Standard Project，到下載、Simulation 與建立 Boot Application 的完整流程。"}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],"$L5"]}],["$L6"],"$L7"]}],"loading":null,"isPartial":false}
+5:["$","section",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"text-sm font-semibold","style":{"color":"var(--t-text)"},"children":"相關批次學習路線"}],["$","ul",null,{"className":"space-y-1.5 text-xs","children":[["$","li","batch-01-codesys-overview",{"children":["$","$L2",null,{"href":"/offline-help/batch/batch-01-codesys-overview","className":"hover:underline","style":{"color":"var(--t-accent)"},"children":"Batch 01：CODESYS 概觀與入門教學"}]}]]}]]}]
+6:["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true}]
+7:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]
+a:null

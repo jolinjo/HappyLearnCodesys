@@ -1,0 +1,641 @@
+<!DOCTYPE html><!--mGRRbc9mQkxUGXHACoBp3--><html lang="zh-Hant"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/HappyLearnCodesys/_next/static/chunks/74f28e1af7ed7ed3.js"/><script src="/HappyLearnCodesys/_next/static/chunks/a354d338f7d272f4.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/7de9141b1af425c3.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/d1d24926e41b63c4.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/turbopack-d027db068e712cbc.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js" async=""></script><script src="/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js" async=""></script><title>CODESYS 教學網站</title><meta name="description" content="針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"/><script src="/HappyLearnCodesys/_next/static/chunks/a6dad97d9634a72d.js" noModule=""></script></head><body class="min-h-screen"><div hidden=""><!--$--><!--/$--></div><div class="mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6"><header class="mb-6 border-b pb-4" style="border-color:var(--t-border)"><div class="flex items-start justify-between gap-4"><div><h1 class="text-xl font-semibold tracking-tight"><a style="color:var(--t-accent)" class="hover:underline" href="/HappyLearnCodesys">CODESYS 教學網站</a></h1><p class="mt-1 text-sm" style="color:var(--t-text-muted)">用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。</p></div><nav class="flex shrink-0 items-center gap-2"><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys">回首頁</a><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys/offline-help">Offline Help</a><a class="rounded border px-3 py-1.5 text-sm hover:underline" style="border-color:var(--t-border);color:var(--t-text-muted)" href="/HappyLearnCodesys/search">搜尋</a></nav></div></header><main class="flex-1 pb-8"><div class="space-y-5"><header class="space-y-1"><h2 class="text-lg font-semibold" style="color:var(--t-accent)">開發規範與語言搭配</h2><p class="text-sm" style="color:var(--t-text-muted)">ST / CFC / SFC / FBD / LD 在專案裡各自適合放哪邊，用實際場景來說明。</p></header><section class="rounded-lg border p-4 text-sm" style="border-color:var(--t-border);background-color:var(--t-bg-card);color:var(--t-text-muted)"><h3 class="font-semibold mb-2" style="color:var(--t-accent)">如何使用這份規範</h3><ul class="list-disc list-inside space-y-1"><li><strong style="color:var(--t-text)">先看第 1 節</strong>：了解各語言的定位（ST 當核心、CFC 拼裝、SFC 管流程）。</li><li><strong style="color:var(--t-text)">再看第 2 節</strong>：上層 SFC、中層 CFC、底層 ST 的分層架構。</li><li><strong style="color:var(--t-text)">實作時對照第 5 節</strong>：單軸站、多工位、三軸機床、轉盤、SCARA 飛抓等實際範例的語言搭配建議。</li></ul></section><section class="rounded-lg border p-4" style="border-color:var(--t-border);background-color:var(--t-bg-card)"><div class="flex gap-6"><aside class="shrink-0 w-56 self-start sticky top-6 hidden lg:block" aria-label="本頁標題目錄"><nav class="rounded-lg border py-3 px-3 text-sm max-h-[calc(100vh-4rem)] overflow-y-auto" style="border-color:var(--t-border);background-color:var(--t-bg-card)"><div class="mb-2 flex items-center justify-between"><button type="button" class="text-[11px] hover:underline" style="color:var(--t-text-muted)">回上一層</button><div class="text-xs font-semibold uppercase tracking-wide" style="color:var(--t-text-muted)">目錄</div></div><ul class="space-y-1.5"><li><a href="#CODESYS-開發規範：CFC-/-SFC-/-ST-/-FBD-/-LD-運用指引" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">CODESYS 開發規範：CFC / SFC / ST / FBD / LD 運用指引</a></li><li><a href="#1.-語言定位與使用情境" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">1. 語言定位與使用情境</a></li><li><a href="#1.1-ST（Structured-Text）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">1.1 ST（Structured Text）</a></li><li><a href="#1.2-CFC（Continuous-Function-Chart）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">1.2 CFC（Continuous Function Chart）</a></li><li><a href="#1.3-SFC（Sequential-Function-Chart）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">1.3 SFC（Sequential Function Chart）</a></li><li><a href="#1.4-FBD（Function-Block-Diagram-功能塊圖）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">1.4 FBD（Function Block Diagram，功能塊圖）</a></li><li><a href="#1.5-LD-/-LD2（Ladder-Diagram-梯形圖）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">1.5 LD / LD2（Ladder Diagram，梯形圖）</a></li><li><a href="#2.-推薦的分層架構" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">2. 推薦的分層架構</a></li><li><a href="#2.1-上層：流程與狀態控制（以-SFC-為主）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">2.1 上層：流程與狀態控制（以 SFC 為主）</a></li><li><a href="#2.2-中層：模組-/-站別邏輯與訊號組裝（以-CFC-為主-可輔以-LD）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">2.2 中層：模組 / 站別邏輯與訊號組裝（以 CFC 為主，可輔以 LD）</a></li><li><a href="#2.3-底層：核心算法與共用功能（以-ST-為主）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">2.3 底層：核心算法與共用功能（以 ST 為主）</a></li><li><a href="#3.-實務開發規範建議" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">3. 實務開發規範建議</a></li><li><a href="#3.1-語言選擇準則" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">3.1 語言選擇準則</a></li><li><a href="#3.2-專案結構建議（示意）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">3.2 專案結構建議（示意）</a></li><li><a href="#3.3-版本控管與協作" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">3.3 版本控管與協作</a></li><li><a href="#3.4-教學與文件化" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">3.4 教學與文件化</a></li><li><a href="#4.-在-SoftMotion-範例中的應用建議" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">4. 在 SoftMotion 範例中的應用建議</a></li><li><a href="#5.-實際範例：語言搭配與使用情境" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">5. 實際範例：語言搭配與使用情境</a></li><li><a href="#5.1-範例一：單軸定位站（簡易上下料機構）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">5.1 範例一：單軸定位站（簡易上下料機構）</a></li><li><a href="#5.2-範例二：多工位輸送線（多站同步-/-互鎖）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">5.2 範例二：多工位輸送線（多站同步 / 互鎖）</a></li><li><a href="#5.3-範例三：三軸機床上料-+-供料機控制" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">5.3 範例三：三軸機床上料 + 供料機控制</a></li><li><a href="#5.4-範例四：轉盤四分割多工站製程（每站獨立工作）" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">5.4 範例四：轉盤四分割多工站製程（每站獨立工作）</a></li><li><a href="#5.5-範例五：SCARA-機械手-+-輸送帶飛抓上料" class="block truncate py-0.5 hover:underline" style="padding-left:1.25rem;color:var(--t-text-muted);font-size:0.75rem">5.5 範例五：SCARA 機械手 + 輸送帶飛抓上料</a></li><li><a href="#6.-總結" class="block truncate py-0.5 hover:underline" style="padding-left:0.75rem;color:var(--t-text-muted);font-size:0.75rem">6. 總結</a></li></ul><button type="button" class="mt-3 w-full text-left hover:underline" style="font-size:0.75rem;color:var(--t-text-muted)">回到最上層</button></nav></aside><div class="min-w-0 flex-1 space-y-2"><div class="flex items-center gap-2 rounded-md border py-1.5 px-2 text-xs" style="border-color:var(--t-border);background-color:var(--t-bg);color:var(--t-text-muted)" role="group" aria-label="文字大小"><span class="shrink-0">文字大小：</span><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:transparent;color:var(--t-text-muted)" aria-pressed="false">小</button><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:var(--t-border);color:var(--t-text)" aria-pressed="true">中</button><button type="button" class="rounded px-2 py-0.5 font-medium transition-colors hover:underline" style="background-color:transparent;color:var(--t-text-muted)" aria-pressed="false">大</button></div><article class="prose max-w-none md-content" style="color:var(--t-text)"><h2 id="CODESYS-開發規範：CFC-/-SFC-/-ST-/-FBD-/-LD-運用指引" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">CODESYS 開發規範：CFC / SFC / ST / FBD / LD 運用指引</h2>
+<p class="my-2 leading-relaxed">本文件針對使用 CODESYS（特別是 SoftMotion 示例）時，如何在專案中合理運用 <strong>CFC / SFC / ST / FBD / LD（含 LD2）</strong> 等 IEC 61131-3 語言，建立一套「可長期維護、易於協作與教學」的開發習慣。</p>
+<hr/>
+<h2 id="1.-語言定位與使用情境" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">1. 語言定位與使用情境</h2>
+<h3 id="1.1-ST（Structured-Text）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">1.1 ST（Structured Text）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>定位</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">作為專案的「程式邏輯核心語言」。</li>
+<li class="leading-relaxed">適合高複雜度邏輯、數學運算、資料處理、通訊協定、可重複利用的功能模組。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>典型用途</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">標準功能方塊（Function Block）實作，例如：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">軸控制封裝（回零、點位移動、點到點流程）。</li>
+<li class="leading-relaxed">通訊封裝（Modbus / TCP / 自訂協定）。</li>
+<li class="leading-relaxed">資料運算（插補、補償、濾波）。</li>
+</ul>
+</li>
+<li class="leading-relaxed">工具函式（Function），例如：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">單純計算或邏輯判斷。</li>
+<li class="leading-relaxed">資料結構處理（陣列、紀錄型別）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>優點</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">靠近一般軟體工程語言，容易導入軟體開發最佳實務（重構、單元測試、設計模式）。</li>
+<li class="leading-relaxed">文字檔對版本控制（Git 等）非常友善，Diff 及 Code Review 容易。</li>
+<li class="leading-relaxed">易於封裝、抽象，建立「公司級共用函式庫」。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>不建議的用法</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">硬要用 ST 寫高度圖形化、流程導向的邏輯，反而不利於操作人員理解。</li>
+</ul>
+</li>
+</ul>
+<h3 id="1.2-CFC（Continuous-Function-Chart）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">1.2 CFC（Continuous Function Chart）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>定位</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">作為「功能方塊與訊號的拼裝層」，提供直覺的資料流視覺化。</li>
+<li class="leading-relaxed">適合法方塊之間的連線、簡單邏輯組合與訊號流向展示。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>典型用途</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">將多個 ST 實作的 Function Block 串接起來，形成一個「站別」或「模組」邏輯。</li>
+<li class="leading-relaxed">做簡單互鎖、基本安全條件、啟停條件的圖形化描述：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">例如：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Start AND NOT Stop AND SafetyOK</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">EnableAxis</code>.</li>
+</ul>
+</li>
+<li class="leading-relaxed">作為對初學者或現場人員說明邏輯的「示意圖」。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>優點</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">資料流與訊號方向一眼可見，易於講解與教學。</li>
+<li class="leading-relaxed">對電機與現場工程背景的開發者非常直覺。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>風險與限制</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">專案規模變大時，CFC 畫面容易變得過於擁擠，難以閱讀與維護。</li>
+<li class="leading-relaxed">圖形檔在版本控制系統中不易比對與合併，合併衝突不易解決。</li>
+<li class="leading-relaxed">不適合實作複雜演算法或大量條件分支，應避免在 CFC 直接堆疊過多邏輯。</li>
+</ul>
+</li>
+</ul>
+<h3 id="1.3-SFC（Sequential-Function-Chart）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">1.3 SFC（Sequential Function Chart）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>定位</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">作為「流程 / 狀態機」的上層語言，用來描述系統運行階段與步驟轉換。</li>
+<li class="leading-relaxed">對應現場常見的自動循環與工藝流程。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>典型用途</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">自動運轉流程：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Idle</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Prepare</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">AutoRun</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Stop</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">ErrorHandling</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed">多階段加工或工藝流程：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Load</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Clamp</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Process</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Unclamp</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Unload</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed">以 Step / Transition 形式管理模式與狀態旗標。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>優點</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">流程的每一步與切換條件清楚可視化，對操作員與維護人員十分友善。</li>
+<li class="leading-relaxed">易於對照操作說明書與 FMEA，作為安全與流程審查的基礎。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>風險與限制</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">若 Step 過度細分或在 Step 內硬塞太多邏輯，會導致圖面複雜、難以維護。</li>
+<li class="leading-relaxed">核心計算與機構細節不宜直接寫在 SFC Step 內，應委派給下層 FB / 程式。</li>
+</ul>
+</li>
+</ul>
+<h3 id="1.4-FBD（Function-Block-Diagram-功能塊圖）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">1.4 FBD（Function Block Diagram，功能塊圖）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>定位</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">圖形化的功能塊連線語言，與 CFC 類似，但通常採「網路 / Page」方式呈現，版面較規整。</li>
+<li class="leading-relaxed">適合中小型邏輯網路、訊號處理與控制迴路。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>典型用途</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">將 PID、比較器、計時器、邏輯閘等功能塊以圖形方式串接。</li>
+<li class="leading-relaxed">簡單的模擬量處理（比例縮放、限制、濾波）。</li>
+<li class="leading-relaxed">單一控制迴路（例如溫控、壓力控制）之內部邏輯。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>優點</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">與模擬控制與控制理論中的框圖概念接近，對有控制背景的人直覺。</li>
+<li class="leading-relaxed">比 CFC 更偏向「整齊排列的網路」，在較小規模下畫面清楚。</li>
+<li class="leading-relaxed">對梯形圖較不熟悉、但習慣方塊圖的開發者友善。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>風險與限制</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">與 CFC 一樣，圖形檔在版本控制中不易比對與合併。</li>
+<li class="leading-relaxed">當控制邏輯跨多個網路或頁面時，訊號追蹤仍可能困難。</li>
+<li class="leading-relaxed">核心演算法不適合在 FBD 中直接堆疊，仍應封裝為 ST Function / FB。</li>
+</ul>
+</li>
+</ul>
+<h3 id="1.5-LD-/-LD2（Ladder-Diagram-梯形圖）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">1.5 LD / LD2（Ladder Diagram，梯形圖）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>定位</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">從繼電器邏輯演化而來的語言，對純電氣背景的工程師尤其熟悉。</li>
+<li class="leading-relaxed">CODESYS 中的 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">LD</code> 與 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">LD2</code> 在語意上相似，多為編輯器與版面配置差異，可視為同一家族。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>典型用途</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">安全迴路與互鎖邏輯的圖形化呈現（緊急停止、護罩開關、雙手啟動等）。</li>
+<li class="leading-relaxed">簡單的啟停控制與保持電路（Self-hold）。</li>
+<li class="leading-relaxed">將 IO 狀態以接點 / 線圈方式顯示，方便與實際配線圖對照。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>優點</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">對現場電氣技術員與維護人員非常親切，便於現場溝通與除錯。</li>
+<li class="leading-relaxed">「一路一路看下來」的閱讀方式，適合檢查安全與互鎖條件。</li>
+<li class="leading-relaxed">配合註解，可直接對照電氣原理圖，降低誤解。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>風險與限制</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">不適合描述高層流程與狀態機（比 SFC 難以掌握全局）。</li>
+<li class="leading-relaxed">大量邏輯堆在同一網路或多跨網路時，閱讀成本高。</li>
+<li class="leading-relaxed">與 FBD / CFC 類似，對版本控制與合併不友善，建議將關鍵邏輯下沉至 ST。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="2.-推薦的分層架構" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">2. 推薦的分層架構</h2>
+<p class="my-2 leading-relaxed">為了兼顧 <strong>可讀性、可維護性、版本控管與教學需求</strong>，建議以「三層式」結構設計專案：</p>
+<h3 id="2.1-上層：流程與狀態控制（以-SFC-為主）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">2.1 上層：流程與狀態控制（以 SFC 為主）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">責任範圍
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">定義機台或產線的主要運轉流程與狀態：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">開機 / 待機 / 自動 / 手動 / 停機 / 抱警 / 復歸。</li>
+</ul>
+</li>
+<li class="leading-relaxed">在每個 Step 中：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">啟動或停止對應的機構功能方塊。</li>
+<li class="leading-relaxed">設定模式旗標（如 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">bAutoMode</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">bManualMode</code>）。</li>
+<li class="leading-relaxed">監控條件是否達成以進入下一步（完成信號、安全信號、操作員輸入）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed">設計原則
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">每個 Step 的職責要明確，避免「一個 Step 做太多事」。</li>
+<li class="leading-relaxed">Transition 條件盡量簡潔易懂，複雜條件應封裝成 ST 函式或布林變數。</li>
+<li class="leading-relaxed">流程較大的系統可拆成多個子 SFC（子流程 / 子站）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2.2-中層：模組-/-站別邏輯與訊號組裝（以-CFC-為主-可輔以-LD）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">2.2 中層：模組 / 站別邏輯與訊號組裝（以 CFC 為主，可輔以 LD）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">責任範圍
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">以「站別」或「機構」為單位，將輸入輸出訊號與功能方塊串接起來。</li>
+<li class="leading-relaxed">實作：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">基本啟停條件與互鎖。</li>
+<li class="leading-relaxed">安全條件檢查與 Error 訊號彙整。</li>
+<li class="leading-relaxed">站別內各軸、IO 的簡單邏輯組合。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed">設計原則
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">將畫面依機構或功能區切分，避免單一 CFC 畫面過於龐大。</li>
+<li class="leading-relaxed">一條 CFC「區塊」只表達一段明確的邏輯，並在文件中搭配說明其用途。</li>
+<li class="leading-relaxed">避免在 CFC 中堆疊多層條件判斷與計算，應該將複雜邏輯下沉至 ST FB。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2.3-底層：核心算法與共用功能（以-ST-為主）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">2.3 底層：核心算法與共用功能（以 ST 為主）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">責任範圍
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">統一定義並實作所有可重複利用的功能，作為「公司級函式庫」。</li>
+<li class="leading-relaxed">常見模組：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">軸控制：回原點、點位移動、回零檢查、定位完成判斷等。</li>
+<li class="leading-relaxed">訊號去抖動、計時、計數器。</li>
+<li class="leading-relaxed">通訊封包解析與封裝。</li>
+<li class="leading-relaxed">資料計算（速度規劃、加減速曲線、插補演算法）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed">設計原則
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">使用清晰的 Input / Output 介面，避免過度依賴全域變數。</li>
+<li class="leading-relaxed">嚴格區分「狀態」與「指令」，例如：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Enable</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Start</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Reset</code> 為輸入命令。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Busy</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Done</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Error</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">ErrorID</code> 為輸出狀態。</li>
+</ul>
+</li>
+<li class="leading-relaxed">盡量保持 FB 的單一職責，方便未來測試與重用。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="3.-實務開發規範建議" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">3. 實務開發規範建議</h2>
+<h3 id="3.1-語言選擇準則" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">3.1 語言選擇準則</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>優先順序建議</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">流程 / 狀態機：<strong>優先使用 SFC</strong>。</li>
+<li class="leading-relaxed">核心運算與可共用邏輯：<strong>優先使用 ST</strong>。</li>
+<li class="leading-relaxed">功能方塊與訊號組裝、教學示意：<strong>優先使用 CFC</strong>。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>避免情境</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">不在 CFC 或 SFC 內直接編寫大量計算與複雜條件。</li>
+<li class="leading-relaxed">不在 ST 中硬寫完整的大型流程狀態機而完全不使用 SFC，導致現場難以理解。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3.2-專案結構建議（示意）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">3.2 專案結構建議（示意）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Programs/</code> 或類似資料夾中，可考慮以下分層：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Flow/</code>：SFC 主流程與子流程。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Stations/</code>：各站別或各機構之 CFC / LD 程式。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FBs/</code>：全部共用的 ST Function Block 實作。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Funcs/</code>：純計算或工具性 ST Function。</li>
+</ul>
+</li>
+<li class="leading-relaxed">在範例專案中，可為每一層加入簡短說明文件（Markdown），協助初學者理解用途。</li>
+</ul>
+<h3 id="3.3-版本控管與協作" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">3.3 版本控管與協作</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">優先將關鍵邏輯集中在 ST 中，方便：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">使用 Git 等版本控管工具進行 Diff 與 Review。</li>
+<li class="leading-relaxed">進行功能比較、Bug 追蹤與分支管理。</li>
+</ul>
+</li>
+<li class="leading-relaxed">避免頻繁對同一個大型 CFC / SFC 繪圖檔進行多人同時修改，以降低合併衝突風險。</li>
+<li class="leading-relaxed">對於圖形程式（CFC / SFC），應輔以：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">說明文件（如本目錄下的 Markdown）。</li>
+<li class="leading-relaxed">版本變更紀錄（Changelog），記錄每次邏輯調整的目的。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3.4-教學與文件化" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">3.4 教學與文件化</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">對於初學者：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">以 CFC / SFC 作為入門說明介面，搭配示意圖講解流程與訊號流向。</li>
+<li class="leading-relaxed">再逐步引導閱讀 ST 程式，理解實際演算法與實作細節。</li>
+</ul>
+</li>
+<li class="leading-relaxed">推薦做法：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">每個主要 SFC Step / CFC 區塊在文件中都配一段白話描述，說明其控制目標與條件。</li>
+<li class="leading-relaxed">對於重要 FB，在 ST 程式註解中描述使用方式、前提條件與狀態轉換邏輯（註解採繁體中文撰寫）。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="4.-在-SoftMotion-範例中的應用建議" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">4. 在 SoftMotion 範例中的應用建議</h2>
+<p class="my-2 leading-relaxed">針對 SoftMotion 相關範例專案，可採用以下思路進行教學與擴充：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">將官方範例中的：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">流程控制部分整理成 SFC 範例，示範如何管理機台狀態。</li>
+<li class="leading-relaxed">單軸 / 多軸控制邏輯封裝為 ST Function Block，便於在不同專案重用。</li>
+<li class="leading-relaxed">IO 與軸控制的關係以 CFC 呈現，方便展示啟停條件、互鎖與安全邏輯。</li>
+</ul>
+</li>
+<li class="leading-relaxed">在本目錄中，可對每一個例題增加：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">一小節說明其 SFC / CFC / ST 分工。</li>
+<li class="leading-relaxed">未來實際專案如何將範例「升級」為可維護架構的建議。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="5.-實際範例：語言搭配與使用情境" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">5. 實際範例：語言搭配與使用情境</h2>
+<p class="my-2 leading-relaxed">以下以幾個典型機台 / 產線情境，說明各語言的實際運用方式與優缺點取捨。</p>
+<h3 id="5.1-範例一：單軸定位站（簡易上下料機構）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">5.1 範例一：單軸定位站（簡易上下料機構）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>需求描述</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">一支伺服軸，負責從「待料位」移動到「加工位」，再退回原位。</li>
+<li class="leading-relaxed">具備「自動模式 / 手動點動 / 急停與安全門」等基本功能。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>建議語言搭配</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>SFC</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">描述狀態流程：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Idle</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Home</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">WaitStart</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MoveToWork</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">WaitProcessDone</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MoveToHome</code>。</li>
+<li class="leading-relaxed">每個 Step 只負責切換指令（例如給 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">CmdHome</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">CmdMoveToWork</code>）。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>ST</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">將單軸控制封裝為 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_AxisSingleStation</code>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">Inputs：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">CmdHome</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">CmdMoveToPosWork</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">CmdMoveToPosHome</code> 等。</li>
+<li class="leading-relaxed">Outputs：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">bBusy</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">bDone</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">bError</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">udiErrorID</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed">內部處理回零、定位、錯誤判斷等細節。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>CFC / FBD</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在站別的 CFC / FBD 畫面中，將：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">安全門、急停、啟動按鈕等 IO 與 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_AxisSingleStation</code> 的 Enable / Start 端子串接。</li>
+</ul>
+</li>
+<li class="leading-relaxed">初學者可經由此畫面了解「哪些條件滿足時馬達會動」。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>LD / LD2</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">若團隊電氣背景濃厚，可用 LD / LD2 畫出：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">急停迴路、護罩互鎖、自保持啟動線路。</li>
+</ul>
+</li>
+<li class="leading-relaxed">優勢是能直接與電氣原理圖對照，方便維護。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>綜合說明</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">流程變動時，主要改 SFC；訊號接線或安全邏輯改 CFC / LD；軸控制細節改 ST FB。</li>
+<li class="leading-relaxed">區分清楚之後，長期擴充與教學皆較容易。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5.2-範例二：多工位輸送線（多站同步-/-互鎖）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">5.2 範例二：多工位輸送線（多站同步 / 互鎖）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>需求描述</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">一條輸送線上有多個工位（Station1~StationN），每站有感測器與執行元件。</li>
+<li class="leading-relaxed">需要站間互鎖（前一站未完成，下一站不得進料），並具備總體自動 / 手動控制。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>建議語言搭配</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>SFC</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">頂層 SFC 管理整線狀態：<code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">LineIdle</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">LineAuto</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">LineStop</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">LineError</code>。</li>
+<li class="leading-relaxed">每一站可選擇：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">用子 SFC 描述站內流程，或</li>
+<li class="leading-relaxed">由頂層 SFC 透過旗標驅動各站別邏輯。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>ST</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">為每一站建立 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_StationX</code>，內含：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">站內步驟狀態（可以是小型 SFC 或 ST 模擬狀態機）。</li>
+<li class="leading-relaxed">感測器與執行元件邏輯。</li>
+</ul>
+</li>
+<li class="leading-relaxed">再建立共用工具 FB，如 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_InterlockManager</code> 整理站間互鎖。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>CFC / FBD</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在每一站的 CFC / FBD 畫面上，將：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">該站的感測器、氣缸 / 馬達訊號接到 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_StationX</code> 上。</li>
+<li class="leading-relaxed">簡單互鎖（例如「前一站 OK 且當前站空閒才允許進料」）可直接以 FBD / CFC 表示。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>LD / LD2</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">使用 LD / LD2 描繪安全迴路及總急停 / 區域急停之邏輯。</li>
+<li class="leading-relaxed">若某些站別邏輯與繼電器思維高度一致，也可選擇用 LD 實作該部分。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>綜合說明</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">站數增加時，主要增的是 ST FB 實例與 CFC / FBD 接線，頂層 SFC 只需小量調整。</li>
+<li class="leading-relaxed">這種結構在規模擴張及日後維護時具備良好可伸縮性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5.3-範例三：三軸機床上料-+-供料機控制" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">5.3 範例三：三軸機床上料 + 供料機控制</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>需求描述</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">一台三軸（X/Y/Z）加工機，搭配簡易上料機構與一組震動供料機或皮帶供料機。</li>
+<li class="leading-relaxed">流程為：供料機出料 → 機床夾持工件 → 完成加工 → 退料或下料至料盒。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>建議語言搭配</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>SFC</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">頂層流程例如：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Idle</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">WaitPart</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">PickFromFeeder</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Clamp</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">MachineProcess</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Unclamp</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Unload</code>.</li>
+</ul>
+</li>
+<li class="leading-relaxed">針對「等待供料」、「缺料 / 堵料」等情況，設計對應 Error / Retry 分支。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>ST</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">建立：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_3AxisMachining</code>：負責三軸插補點位、加工路徑進給與安全檢查。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_FeederControl</code>：負責供料機啟停、料位偵測、防堵料計時邏輯。</li>
+</ul>
+</li>
+<li class="leading-relaxed">將三軸的進給與安全（行程極限、軟極限）封裝在 FB 內，避免上層流程誤用。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>FBD / CFC</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">在機床站的 CFC / FBD 中：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">將三軸伺服驅動的 Enable / Power / Ready / Fault 訊號與 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_3AxisMachining</code> 串接。</li>
+<li class="leading-relaxed">將供料機馬達、震動盤、光電感測器與 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_FeederControl</code> 串接。</li>
+</ul>
+</li>
+<li class="leading-relaxed">比較清楚地展示「哪些安全條件滿足才允許啟動供料與加工」。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>LD / LD2</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">使用 LD / LD2 描繪：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">主接觸器與馬達驅動器電源的互鎖。</li>
+<li class="leading-relaxed">安全門 / 护罩 / 急停的安全鏈。</li>
+</ul>
+</li>
+<li class="leading-relaxed">維護人員可直接對照實體接觸器與迴路理解邏輯。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>綜合說明</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">三軸加工路徑與供料演算法多半較複雜，應堅持放在 ST FB 中；CFC / FBD 僅負責拼裝與顯示。</li>
+<li class="leading-relaxed">流程調整（例如增加清理動作或換刀步驟）以修改 SFC 為主，對底層 FB 影響較小。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5.4-範例四：轉盤四分割多工站製程（每站獨立工作）" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">5.4 範例四：轉盤四分割多工站製程（每站獨立工作）</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>需求描述</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">一個四分割轉盤，每個 Index 位置是一個工站（例如：上料、預加工、主加工、檢測 / 下料）。</li>
+<li class="leading-relaxed">轉盤按固定節拍旋轉，各工站在停靠期間獨立作業。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>建議語言搭配</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>SFC</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">頂層 SFC 管理轉盤節拍與總體狀態：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Idle</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Indexing</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Processing</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Error</code>。</li>
+</ul>
+</li>
+<li class="leading-relaxed">可在 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Processing</code> Step 中，依時間或條件觸發各工站子流程。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>ST</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">每個工站實作獨立 FB，如：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_StationLoad</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_StationPreProcess</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_StationMainProcess</code>, <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_StationInspect</code>.</li>
+</ul>
+</li>
+<li class="leading-relaxed">轉盤本身的 Index 控制封裝為 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_IndexTable</code>：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">處理目標工位計數、到位感測確認、夾治具鎖定等。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>CFC / FBD</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">為每個工站建立一張 CFC / FBD 畫面：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">清楚顯示該工站的 IO（氣缸、真空、感測器）與站內 FB 的串接。</li>
+</ul>
+</li>
+<li class="leading-relaxed">轉盤 Index 驅動相關訊號可單獨一張 CFC / FBD，說明互鎖邏輯（例如：所有工站都收刀 / 退回安全位才允許旋轉）。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>LD / LD2</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">安全迴路與轉盤鎖銷、夾具鎖緊等高安全需求邏輯可用 LD / LD2 呈現。</li>
+<li class="leading-relaxed">若有硬體安全繼電器或安全 PLC，可對應到 LD 圖上輕鬆說明。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>綜合說明</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">工站數量擴充（四分割 → 六分割）時，主要是新增 / 調整 ST FB 與 CFC 畫面，SFC 僅需更新節拍與同步方式。</li>
+<li class="leading-relaxed">這種結構適合多專案複用，只要替換各工站 FB 即可對應不同製程。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5.5-範例五：SCARA-機械手-+-輸送帶飛抓上料" class="mt-4 text-lg font-semibold scroll-mt-6" style="color:var(--t-text)">5.5 範例五：SCARA 機械手 + 輸送帶飛抓上料</h3>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>需求描述</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">一台 SCARA 機械手從連續運行的輸送帶上「飛抓」工件，再放置到定位治具或托盤。</li>
+<li class="leading-relaxed">需要處理工件偵測、位置追蹤、時間 / 速度同步與安全互鎖。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>建議語言搭配</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>SFC</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">描述高層動作模式：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Idle</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">WaitConveyorReady</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">TrackingPick</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Place</code> → <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">Return</code>.</li>
+</ul>
+</li>
+<li class="leading-relaxed">流程中處理「無料」、「逃料」、「暫停輸送帶」等例外情況。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>ST</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">關鍵邏輯以 ST 實作：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_ConveyorTracking</code>：根據光電觸發時間、編碼器脈衝，計算工件在機械手座標系中的即時位置。</li>
+<li class="leading-relaxed"><code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_ScaraMotion</code>：封裝 SCARA 的點位運動、插補指令、安全範圍限制。</li>
+</ul>
+</li>
+<li class="leading-relaxed">Tracking 演算法（速度、加減速、補償）強烈建議全部 ST 實作，利於調整與重用。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>FBD / CFC</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">以 FBD / CFC 處理：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">輸送帶變頻器 / 驅動啟停條件。</li>
+<li class="leading-relaxed">光電感測器、編碼器信號前處理（濾波、邊沿偵測、超時判斷）。</li>
+</ul>
+</li>
+<li class="leading-relaxed">同時將 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_ConveyorTracking</code> 與 <code class="rounded px-1 py-0.5" style="background-color:var(--t-border);color:var(--t-text)" node="[object Object]">FB_ScaraMotion</code> 的介面串接，做為教學示意圖。</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>LD / LD2</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">對於與實際安全有關的邏輯（保護門、光柵、急停、機械手安全區），使用 LD / LD2 表示。</li>
+<li class="leading-relaxed">方便與安全電路設計人員共同檢查。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="leading-relaxed"><strong>綜合說明</strong>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">飛抓系統對時間與位置同步要求高，演算法與調變必須集中於 ST。</li>
+<li class="leading-relaxed">透過 SFC、CFC / FBD、LD / LD2 的搭配，可同時滿足：
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">控制工程師對精度與演算法的要求。</li>
+<li class="leading-relaxed">現場維護人員對流程與安全迴路可視化的需求。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="6.-總結" class="mt-6 text-xl font-semibold scroll-mt-6" style="color:var(--t-text)">6. 總結</h2>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed"><strong>SFC</strong>：負責「流程與狀態」—— 讓機台怎麼走每一步一目了然。</li>
+<li class="leading-relaxed"><strong>CFC</strong>：負責「訊號與方塊拼裝」—— 讓訊號流與互鎖邏輯圖形化，方便教學與現場溝通。</li>
+<li class="leading-relaxed"><strong>ST</strong>：負責「核心邏輯與演算法」—— 提供高可讀、易重用且適合版本控管的實作。</li>
+</ul>
+<p class="my-2 leading-relaxed">在新專案或教學範例中，建議依上述分層與規範進行設計與實作，以兼顧：</p>
+<ul class="my-2 ml-6 list-disc space-y-1">
+<li class="leading-relaxed">現場工程師與初學者的學習曲線。</li>
+<li class="leading-relaxed">長期維護與擴充的彈性。</li>
+<li class="leading-relaxed">版本控管與團隊協作的效率。</li>
+</ul></article></div></div></section></div><!--$--><!--/$--></main><footer class="border-t pt-4 text-xs" style="border-color:var(--t-border);color:var(--t-text-muted)"><p>內容來源整理自 CODESYS 官方文件與教學筆記，僅供學習使用。</p><p class="mt-1">© <!-- -->2026<!-- --> jolinjo</p></footer></div><script src="/HappyLearnCodesys/_next/static/chunks/74f28e1af7ed7ed3.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[22016,[\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\"],\"\"]\n3:I[39756,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n4:I[37457,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n6:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"OutletBoundary\"]\n7:\"$Sreact.suspense\"\n9:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"ViewportBoundary\"]\nb:I[97367,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"MetadataBoundary\"]\nd:I[68027,[\"/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js\",\"/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js\"],\"default\"]\n:HL[\"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"mGRRbc9mQkxUGXHACoBp3\",\"c\":[\"\",\"guidelines\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"guidelines\",{\"children\":[\"__PAGE__\",{}]}]},\"$undefined\",\"$undefined\",true],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-Hant\",\"children\":[\"$\",\"body\",null,{\"className\":\"min-h-screen\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6\",\"children\":[[\"$\",\"header\",null,{\"className\":\"mb-6 border-b pb-4\",\"style\":{\"borderColor\":\"var(--t-border)\"},\"children\":[\"$\",\"div\",null,{\"className\":\"flex items-start justify-between gap-4\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-xl font-semibold tracking-tight\",\"children\":[\"$\",\"$L2\",null,{\"href\":\"/\",\"style\":{\"color\":\"var(--t-accent)\"},\"className\":\"hover:underline\",\"children\":\"CODESYS 教學網站\"}]}],[\"$\",\"p\",null,{\"className\":\"mt-1 text-sm\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。\"}]]}],[\"$\",\"nav\",null,{\"className\":\"flex shrink-0 items-center gap-2\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"回首頁\"}],[\"$\",\"$L2\",null,{\"href\":\"/offline-help\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"Offline Help\"}],[\"$\",\"$L2\",null,{\"href\":\"/search\",\"className\":\"rounded border px-3 py-1.5 text-sm hover:underline\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"搜尋\"}]]}]]}]}],[\"$\",\"main\",null,{\"className\":\"flex-1 pb-8\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"div\",null,{\"className\":\"flex flex-col items-center justify-center gap-4 py-12 text-center\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-4xl font-semibold\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"404\"}],[\"$\",\"p\",null,{\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"找不到這個頁面。\"}],[\"$\",\"nav\",null,{\"className\":\"mt-4 flex flex-wrap justify-center gap-3\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\",\"color\":\"var(--t-accent)\"},\"children\":\"回首頁\"}],[\"$\",\"$L2\",null,{\"href\":\"/softmotion\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"SoftMotion 學習地圖\"}],[\"$\",\"$L2\",null,{\"href\":\"/licensing\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"授權說明\"}],[\"$\",\"$L2\",null,{\"href\":\"/guidelines\",\"className\":\"rounded border px-4 py-2 text-sm hover:opacity-90\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":\"開發規範\"}]]}]]}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"border-t pt-4 text-xs\",\"style\":{\"borderColor\":\"var(--t-border)\",\"color\":\"var(--t-text-muted)\"},\"children\":[[\"$\",\"p\",null,{\"children\":\"內容來源整理自 CODESYS 官方文件與教學筆記，僅供學習使用。\"}],[\"$\",\"p\",null,{\"className\":\"mt-1\",\"children\":[\"© \",2026,\" jolinjo\"]}]]}]]}]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",[[\"$\",\"script\",\"script-0\",{\"src\":\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"$L6\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@8\"}]}]]}],{},null,false,false]},null,false,false]},null,false,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lb\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Lc\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",[]],\"S\":true}\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"8:null\nc:[[\"$\",\"title\",\"0\",{\"children\":\"CODESYS 教學網站\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。\"}]]\n"])</script><script>self.__next_f.push([1,"e:I[35977,[\"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js\",\"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js\"],\"MarkdownWithToc\"]\nf:T499c,"])</script><script>self.__next_f.push([1,"## CODESYS 開發規範：CFC / SFC / ST / FBD / LD 運用指引\n\n本文件針對使用 CODESYS（特別是 SoftMotion 示例）時，如何在專案中合理運用 **CFC / SFC / ST / FBD / LD（含 LD2）** 等 IEC 61131-3 語言，建立一套「可長期維護、易於協作與教學」的開發習慣。\n\n---\n\n## 1. 語言定位與使用情境\n\n### 1.1 ST（Structured Text）\n\n- **定位**\n  - 作為專案的「程式邏輯核心語言」。\n  - 適合高複雜度邏輯、數學運算、資料處理、通訊協定、可重複利用的功能模組。\n- **典型用途**\n  - 標準功能方塊（Function Block）實作，例如：\n    - 軸控制封裝（回零、點位移動、點到點流程）。\n    - 通訊封裝（Modbus / TCP / 自訂協定）。\n    - 資料運算（插補、補償、濾波）。\n  - 工具函式（Function），例如：\n    - 單純計算或邏輯判斷。\n    - 資料結構處理（陣列、紀錄型別）。\n- **優點**\n  - 靠近一般軟體工程語言，容易導入軟體開發最佳實務（重構、單元測試、設計模式）。\n  - 文字檔對版本控制（Git 等）非常友善，Diff 及 Code Review 容易。\n  - 易於封裝、抽象，建立「公司級共用函式庫」。\n- **不建議的用法**\n  - 硬要用 ST 寫高度圖形化、流程導向的邏輯，反而不利於操作人員理解。\n\n### 1.2 CFC（Continuous Function Chart）\n\n- **定位**\n  - 作為「功能方塊與訊號的拼裝層」，提供直覺的資料流視覺化。\n  - 適合法方塊之間的連線、簡單邏輯組合與訊號流向展示。\n- **典型用途**\n  - 將多個 ST 實作的 Function Block 串接起來，形成一個「站別」或「模組」邏輯。\n  - 做簡單互鎖、基本安全條件、啟停條件的圖形化描述：\n    - 例如：`Start AND NOT Stop AND SafetyOK` → `EnableAxis`.\n  - 作為對初學者或現場人員說明邏輯的「示意圖」。\n- **優點**\n  - 資料流與訊號方向一眼可見，易於講解與教學。\n  - 對電機與現場工程背景的開發者非常直覺。\n- **風險與限制**\n  - 專案規模變大時，CFC 畫面容易變得過於擁擠，難以閱讀與維護。\n  - 圖形檔在版本控制系統中不易比對與合併，合併衝突不易解決。\n  - 不適合實作複雜演算法或大量條件分支，應避免在 CFC 直接堆疊過多邏輯。\n\n### 1.3 SFC（Sequential Function Chart）\n\n- **定位**\n  - 作為「流程 / 狀態機」的上層語言，用來描述系統運行階段與步驟轉換。\n  - 對應現場常見的自動循環與工藝流程。\n- **典型用途**\n  - 自動運轉流程：\n    - `Idle` → `Prepare` → `AutoRun` → `Stop` → `ErrorHandling`。\n  - 多階段加工或工藝流程：\n    - `Load` → `Clamp` → `Process` → `Unclamp` → `Unload`。\n  - 以 Step / Transition 形式管理模式與狀態旗標。\n- **優點**\n  - 流程的每一步與切換條件清楚可視化，對操作員與維護人員十分友善。\n  - 易於對照操作說明書與 FMEA，作為安全與流程審查的基礎。\n- **風險與限制**\n  - 若 Step 過度細分或在 Step 內硬塞太多邏輯，會導致圖面複雜、難以維護。\n  - 核心計算與機構細節不宜直接寫在 SFC Step 內，應委派給下層 FB / 程式。\n\n### 1.4 FBD（Function Block Diagram，功能塊圖）\n\n- **定位**\n  - 圖形化的功能塊連線語言，與 CFC 類似，但通常採「網路 / Page」方式呈現，版面較規整。\n  - 適合中小型邏輯網路、訊號處理與控制迴路。\n- **典型用途**\n  - 將 PID、比較器、計時器、邏輯閘等功能塊以圖形方式串接。\n  - 簡單的模擬量處理（比例縮放、限制、濾波）。\n  - 單一控制迴路（例如溫控、壓力控制）之內部邏輯。\n- **優點**\n  - 與模擬控制與控制理論中的框圖概念接近，對有控制背景的人直覺。\n  - 比 CFC 更偏向「整齊排列的網路」，在較小規模下畫面清楚。\n  - 對梯形圖較不熟悉、但習慣方塊圖的開發者友善。\n- **風險與限制**\n  - 與 CFC 一樣，圖形檔在版本控制中不易比對與合併。\n  - 當控制邏輯跨多個網路或頁面時，訊號追蹤仍可能困難。\n  - 核心演算法不適合在 FBD 中直接堆疊，仍應封裝為 ST Function / FB。\n\n### 1.5 LD / LD2（Ladder Diagram，梯形圖）\n\n- **定位**\n  - 從繼電器邏輯演化而來的語言，對純電氣背景的工程師尤其熟悉。\n  - CODESYS 中的 `LD` 與 `LD2` 在語意上相似，多為編輯器與版面配置差異，可視為同一家族。\n- **典型用途**\n  - 安全迴路與互鎖邏輯的圖形化呈現（緊急停止、護罩開關、雙手啟動等）。\n  - 簡單的啟停控制與保持電路（Self-hold）。\n  - 將 IO 狀態以接點 / 線圈方式顯示，方便與實際配線圖對照。\n- **優點**\n  - 對現場電氣技術員與維護人員非常親切，便於現場溝通與除錯。\n  - 「一路一路看下來」的閱讀方式，適合檢查安全與互鎖條件。\n  - 配合註解，可直接對照電氣原理圖，降低誤解。\n- **風險與限制**\n  - 不適合描述高層流程與狀態機（比 SFC 難以掌握全局）。\n  - 大量邏輯堆在同一網路或多跨網路時，閱讀成本高。\n  - 與 FBD / CFC 類似，對版本控制與合併不友善，建議將關鍵邏輯下沉至 ST。\n\n---\n\n## 2. 推薦的分層架構\n\n為了兼顧 **可讀性、可維護性、版本控管與教學需求**，建議以「三層式」結構設計專案：\n\n### 2.1 上層：流程與狀態控制（以 SFC 為主）\n\n- 責任範圍\n  - 定義機台或產線的主要運轉流程與狀態：\n    - 開機 / 待機 / 自動 / 手動 / 停機 / 抱警 / 復歸。\n  - 在每個 Step 中：\n    - 啟動或停止對應的機構功能方塊。\n    - 設定模式旗標（如 `bAutoMode`, `bManualMode`）。\n    - 監控條件是否達成以進入下一步（完成信號、安全信號、操作員輸入）。\n- 設計原則\n  - 每個 Step 的職責要明確，避免「一個 Step 做太多事」。\n  - Transition 條件盡量簡潔易懂，複雜條件應封裝成 ST 函式或布林變數。\n  - 流程較大的系統可拆成多個子 SFC（子流程 / 子站）。\n\n### 2.2 中層：模組 / 站別邏輯與訊號組裝（以 CFC 為主，可輔以 LD）\n\n- 責任範圍\n  - 以「站別」或「機構」為單位，將輸入輸出訊號與功能方塊串接起來。\n  - 實作：\n    - 基本啟停條件與互鎖。\n    - 安全條件檢查與 Error 訊號彙整。\n    - 站別內各軸、IO 的簡單邏輯組合。\n- 設計原則\n  - 將畫面依機構或功能區切分，避免單一 CFC 畫面過於龐大。\n  - 一條 CFC「區塊」只表達一段明確的邏輯，並在文件中搭配說明其用途。\n  - 避免在 CFC 中堆疊多層條件判斷與計算，應該將複雜邏輯下沉至 ST FB。\n\n### 2.3 底層：核心算法與共用功能（以 ST 為主）\n\n- 責任範圍\n  - 統一定義並實作所有可重複利用的功能，作為「公司級函式庫」。\n  - 常見模組：\n    - 軸控制：回原點、點位移動、回零檢查、定位完成判斷等。\n    - 訊號去抖動、計時、計數器。\n    - 通訊封包解析與封裝。\n    - 資料計算（速度規劃、加減速曲線、插補演算法）。\n- 設計原則\n  - 使用清晰的 Input / Output 介面，避免過度依賴全域變數。\n  - 嚴格區分「狀態」與「指令」，例如：\n    - `Enable`, `Start`, `Reset` 為輸入命令。\n    - `Busy`, `Done`, `Error`, `ErrorID` 為輸出狀態。\n  - 盡量保持 FB 的單一職責，方便未來測試與重用。\n\n---\n\n## 3. 實務開發規範建議\n\n### 3.1 語言選擇準則\n\n- **優先順序建議**\n  - 流程 / 狀態機：**優先使用 SFC**。\n  - 核心運算與可共用邏輯：**優先使用 ST**。\n  - 功能方塊與訊號組裝、教學示意：**優先使用 CFC**。\n- **避免情境**\n  - 不在 CFC 或 SFC 內直接編寫大量計算與複雜條件。\n  - 不在 ST 中硬寫完整的大型流程狀態機而完全不使用 SFC，導致現場難以理解。\n\n### 3.2 專案結構建議（示意）\n\n- `Programs/` 或類似資料夾中，可考慮以下分層：\n  - `Flow/`：SFC 主流程與子流程。\n  - `Stations/`：各站別或各機構之 CFC / LD 程式。\n  - `FBs/`：全部共用的 ST Function Block 實作。\n  - `Funcs/`：純計算或工具性 ST Function。\n- 在範例專案中，可為每一層加入簡短說明文件（Markdown），協助初學者理解用途。\n\n### 3.3 版本控管與協作\n\n- 優先將關鍵邏輯集中在 ST 中，方便：\n  - 使用 Git 等版本控管工具進行 Diff 與 Review。\n  - 進行功能比較、Bug 追蹤與分支管理。\n- 避免頻繁對同一個大型 CFC / SFC 繪圖檔進行多人同時修改，以降低合併衝突風險。\n- 對於圖形程式（CFC / SFC），應輔以：\n  - 說明文件（如本目錄下的 Markdown）。\n  - 版本變更紀錄（Changelog），記錄每次邏輯調整的目的。\n\n### 3.4 教學與文件化\n\n- 對於初學者：\n  - 以 CFC / SFC 作為入門說明介面，搭配示意圖講解流程與訊號流向。\n  - 再逐步引導閱讀 ST 程式，理解實際演算法與實作細節。\n- 推薦做法：\n  - 每個主要 SFC Step / CFC 區塊在文件中都配一段白話描述，說明其控制目標與條件。\n  - 對於重要 FB，在 ST 程式註解中描述使用方式、前提條件與狀態轉換邏輯（註解採繁體中文撰寫）。\n\n---\n\n## 4. 在 SoftMotion 範例中的應用建議\n\n針對 SoftMotion 相關範例專案，可採用以下思路進行教學與擴充：\n\n- 將官方範例中的：\n  - 流程控制部分整理成 SFC 範例，示範如何管理機台狀態。\n  - 單軸 / 多軸控制邏輯封裝為 ST Function Block，便於在不同專案重用。\n  - IO 與軸控制的關係以 CFC 呈現，方便展示啟停條件、互鎖與安全邏輯。\n- 在本目錄中，可對每一個例題增加：\n  - 一小節說明其 SFC / CFC / ST 分工。\n  - 未來實際專案如何將範例「升級」為可維護架構的建議。\n\n---\n\n## 5. 實際範例：語言搭配與使用情境\n\n以下以幾個典型機台 / 產線情境，說明各語言的實際運用方式與優缺點取捨。\n\n### 5.1 範例一：單軸定位站（簡易上下料機構）\n\n- **需求描述**\n  - 一支伺服軸，負責從「待料位」移動到「加工位」，再退回原位。\n  - 具備「自動模式 / 手動點動 / 急停與安全門」等基本功能。\n- **建議語言搭配**\n  - **SFC**\n    - 描述狀態流程：`Idle` → `Home` → `WaitStart` → `MoveToWork` → `WaitProcessDone` → `MoveToHome`。\n    - 每個 Step 只負責切換指令（例如給 `CmdHome`, `CmdMoveToWork`）。\n  - **ST**\n    - 將單軸控制封裝為 `FB_AxisSingleStation`：\n      - Inputs：`CmdHome`, `CmdMoveToPosWork`, `CmdMoveToPosHome` 等。\n      - Outputs：`bBusy`, `bDone`, `bError`, `udiErrorID`。\n    - 內部處理回零、定位、錯誤判斷等細節。\n  - **CFC / FBD**\n    - 在站別的 CFC / FBD 畫面中，將：\n      - 安全門、急停、啟動按鈕等 IO 與 `FB_AxisSingleStation` 的 Enable / Start 端子串接。\n    - 初學者可經由此畫面了解「哪些條件滿足時馬達會動」。\n  - **LD / LD2**\n    - 若團隊電氣背景濃厚，可用 LD / LD2 畫出：\n      - 急停迴路、護罩互鎖、自保持啟動線路。\n    - 優勢是能直接與電氣原理圖對照，方便維護。\n- **綜合說明**\n  - 流程變動時，主要改 SFC；訊號接線或安全邏輯改 CFC / LD；軸控制細節改 ST FB。\n  - 區分清楚之後，長期擴充與教學皆較容易。\n\n### 5.2 範例二：多工位輸送線（多站同步 / 互鎖）\n\n- **需求描述**\n  - 一條輸送線上有多個工位（Station1~StationN），每站有感測器與執行元件。\n  - 需要站間互鎖（前一站未完成，下一站不得進料），並具備總體自動 / 手動控制。\n- **建議語言搭配**\n  - **SFC**\n    - 頂層 SFC 管理整線狀態：`LineIdle`, `LineAuto`, `LineStop`, `LineError`。\n    - 每一站可選擇：\n      - 用子 SFC 描述站內流程，或\n      - 由頂層 SFC 透過旗標驅動各站別邏輯。\n  - **ST**\n    - 為每一站建立 `FB_StationX`，內含：\n      - 站內步驟狀態（可以是小型 SFC 或 ST 模擬狀態機）。\n      - 感測器與執行元件邏輯。\n    - 再建立共用工具 FB，如 `FB_InterlockManager` 整理站間互鎖。\n  - **CFC / FBD**\n    - 在每一站的 CFC / FBD 畫面上，將：\n      - 該站的感測器、氣缸 / 馬達訊號接到 `FB_StationX` 上。\n      - 簡單互鎖（例如「前一站 OK 且當前站空閒才允許進料」）可直接以 FBD / CFC 表示。\n  - **LD / LD2**\n    - 使用 LD / LD2 描繪安全迴路及總急停 / 區域急停之邏輯。\n    - 若某些站別邏輯與繼電器思維高度一致，也可選擇用 LD 實作該部分。\n- **綜合說明**\n  - 站數增加時，主要增的是 ST FB 實例與 CFC / FBD 接線，頂層 SFC 只需小量調整。\n  - 這種結構在規模擴張及日後維護時具備良好可伸縮性。\n\n### 5.3 範例三：三軸機床上料 + 供料機控制\n\n- **需求描述**\n  - 一台三軸（X/Y/Z）加工機，搭配簡易上料機構與一組震動供料機或皮帶供料機。\n  - 流程為：供料機出料 → 機床夾持工件 → 完成加工 → 退料或下料至料盒。\n- **建議語言搭配**\n  - **SFC**\n    - 頂層流程例如：\n      - `Idle` → `WaitPart` → `PickFromFeeder` → `Clamp` → `MachineProcess` → `Unclamp` → `Unload`.\n    - 針對「等待供料」、「缺料 / 堵料」等情況，設計對應 Error / Retry 分支。\n  - **ST**\n    - 建立：\n      - `FB_3AxisMachining`：負責三軸插補點位、加工路徑進給與安全檢查。\n      - `FB_FeederControl`：負責供料機啟停、料位偵測、防堵料計時邏輯。\n    - 將三軸的進給與安全（行程極限、軟極限）封裝在 FB 內，避免上層流程誤用。\n  - **FBD / CFC**\n    - 在機床站的 CFC / FBD 中：\n      - 將三軸伺服驅動的 Enable / Power / Ready / Fault 訊號與 `FB_3AxisMachining` 串接。\n      - 將供料機馬達、震動盤、光電感測器與 `FB_FeederControl` 串接。\n    - 比較清楚地展示「哪些安全條件滿足才允許啟動供料與加工」。\n  - **LD / LD2**\n    - 使用 LD / LD2 描繪：\n      - 主接觸器與馬達驅動器電源的互鎖。\n      - 安全門 / 护罩 / 急停的安全鏈。\n    - 維護人員可直接對照實體接觸器與迴路理解邏輯。\n- **綜合說明**\n  - 三軸加工路徑與供料演算法多半較複雜，應堅持放在 ST FB 中；CFC / FBD 僅負責拼裝與顯示。\n  - 流程調整（例如增加清理動作或換刀步驟）以修改 SFC 為主，對底層 FB 影響較小。\n\n### 5.4 範例四：轉盤四分割多工站製程（每站獨立工作）\n\n- **需求描述**\n  - 一個四分割轉盤，每個 Index 位置是一個工站（例如：上料、預加工、主加工、檢測 / 下料）。\n  - 轉盤按固定節拍旋轉，各工站在停靠期間獨立作業。\n- **建議語言搭配**\n  - **SFC**\n    - 頂層 SFC 管理轉盤節拍與總體狀態：\n      - `Idle` → `Indexing` → `Processing` → `Error`。\n    - 可在 `Processing` Step 中，依時間或條件觸發各工站子流程。\n  - **ST**\n    - 每個工站實作獨立 FB，如：\n      - `FB_StationLoad`, `FB_StationPreProcess`, `FB_StationMainProcess`, `FB_StationInspect`.\n    - 轉盤本身的 Index 控制封裝為 `FB_IndexTable`：\n      - 處理目標工位計數、到位感測確認、夾治具鎖定等。\n  - **CFC / FBD**\n    - 為每個工站建立一張 CFC / FBD 畫面：\n      - 清楚顯示該工站的 IO（氣缸、真空、感測器）與站內 FB 的串接。\n    - 轉盤 Index 驅動相關訊號可單獨一張 CFC / FBD，說明互鎖邏輯（例如：所有工站都收刀 / 退回安全位才允許旋轉）。\n  - **LD / LD2**\n    - 安全迴路與轉盤鎖銷、夾具鎖緊等高安全需求邏輯可用 LD / LD2 呈現。\n    - 若有硬體安全繼電器或安全 PLC，可對應到 LD 圖上輕鬆說明。\n- **綜合說明**\n  - 工站數量擴充（四分割 → 六分割）時，主要是新增 / 調整 ST FB 與 CFC 畫面，SFC 僅需更新節拍與同步方式。\n  - 這種結構適合多專案複用，只要替換各工站 FB 即可對應不同製程。\n\n### 5.5 範例五：SCARA 機械手 + 輸送帶飛抓上料\n\n- **需求描述**\n  - 一台 SCARA 機械手從連續運行的輸送帶上「飛抓」工件，再放置到定位治具或托盤。\n  - 需要處理工件偵測、位置追蹤、時間 / 速度同步與安全互鎖。\n- **建議語言搭配**\n  - **SFC**\n    - 描述高層動作模式：\n      - `Idle` → `WaitConveyorReady` → `TrackingPick` → `Place` → `Return`.\n    - 流程中處理「無料」、「逃料」、「暫停輸送帶」等例外情況。\n  - **ST**\n    - 關鍵邏輯以 ST 實作：\n      - `FB_ConveyorTracking`：根據光電觸發時間、編碼器脈衝，計算工件在機械手座標系中的即時位置。\n      - `FB_ScaraMotion`：封裝 SCARA 的點位運動、插補指令、安全範圍限制。\n    - Tracking 演算法（速度、加減速、補償）強烈建議全部 ST 實作，利於調整與重用。\n  - **FBD / CFC**\n    - 以 FBD / CFC 處理：\n      - 輸送帶變頻器 / 驅動啟停條件。\n      - 光電感測器、編碼器信號前處理（濾波、邊沿偵測、超時判斷）。\n    - 同時將 `FB_ConveyorTracking` 與 `FB_ScaraMotion` 的介面串接，做為教學示意圖。\n  - **LD / LD2**\n    - 對於與實際安全有關的邏輯（保護門、光柵、急停、機械手安全區），使用 LD / LD2 表示。\n    - 方便與安全電路設計人員共同檢查。\n- **綜合說明**\n  - 飛抓系統對時間與位置同步要求高，演算法與調變必須集中於 ST。\n  - 透過 SFC、CFC / FBD、LD / LD2 的搭配，可同時滿足：\n    - 控制工程師對精度與演算法的要求。\n    - 現場維護人員對流程與安全迴路可視化的需求。\n\n---\n\n## 6. 總結\n\n- **SFC**：負責「流程與狀態」—— 讓機台怎麼走每一步一目了然。\n- **CFC**：負責「訊號與方塊拼裝」—— 讓訊號流與互鎖邏輯圖形化，方便教學與現場溝通。\n- **ST**：負責「核心邏輯與演算法」—— 提供高可讀、易重用且適合版本控管的實作。\n\n在新專案或教學範例中，建議依上述分層與規範進行設計與實作，以兼顧：\n\n- 現場工程師與初學者的學習曲線。\n- 長期維護與擴充的彈性。\n- 版本控管與團隊協作的效率。\n\n"])</script><script>self.__next_f.push([1,"5:[\"$\",\"div\",null,{\"className\":\"space-y-5\",\"children\":[[\"$\",\"header\",null,{\"className\":\"space-y-1\",\"children\":[[\"$\",\"h2\",null,{\"className\":\"text-lg font-semibold\",\"style\":{\"color\":\"var(--t-accent)\"},\"children\":\"開發規範與語言搭配\"}],[\"$\",\"p\",null,{\"className\":\"text-sm\",\"style\":{\"color\":\"var(--t-text-muted)\"},\"children\":\"ST / CFC / SFC / FBD / LD 在專案裡各自適合放哪邊，用實際場景來說明。\"}]]}],[\"$\",\"section\",null,{\"className\":\"rounded-lg border p-4 text-sm\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\",\"color\":\"var(--t-text-muted)\"},\"children\":[[\"$\",\"h3\",null,{\"className\":\"font-semibold mb-2\",\"style\":{\"color\":\"var(--t-accent)\"},\"children\":\"如何使用這份規範\"}],[\"$\",\"ul\",null,{\"className\":\"list-disc list-inside space-y-1\",\"children\":[[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"style\":{\"color\":\"var(--t-text)\"},\"children\":\"先看第 1 節\"}],\"：了解各語言的定位（ST 當核心、CFC 拼裝、SFC 管流程）。\"]}],[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"style\":{\"color\":\"var(--t-text)\"},\"children\":\"再看第 2 節\"}],\"：上層 SFC、中層 CFC、底層 ST 的分層架構。\"]}],[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"style\":{\"color\":\"var(--t-text)\"},\"children\":\"實作時對照第 5 節\"}],\"：單軸站、多工位、三軸機床、轉盤、SCARA 飛抓等實際範例的語言搭配建議。\"]}]]}]]}],[\"$\",\"section\",null,{\"className\":\"rounded-lg border p-4\",\"style\":{\"borderColor\":\"var(--t-border)\",\"backgroundColor\":\"var(--t-bg-card)\"},\"children\":[\"$\",\"$Le\",null,{\"content\":\"$f\"}]}]]}]\n"])</script></body></html>

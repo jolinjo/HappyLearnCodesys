@@ -1,0 +1,192 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+7:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+4:T267f,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# Application at Runtime and Backup 執行階段操作與備份 教學整理
+
+> 本文件基於 CODESYS Offline Help 中 **Application at Runtime**（`_cds_struct_application_in_operation.html`）、**Backup and Restore**（`_cds_restoring_applications_and_rts.html`）、**Copying Files to/from the PLC**（`_cds_copy_files_from_to_plc.html`）、**PLC Operation Control via System Variables**（`_cds_operation_control_via_system_variables.html`）、**Reading the PLC Log**（`_cds_reading_plc_log.html`）等主題整理而成。  
+> 目標是說明應用程式在 PLC 上運行時的日常監控方式、以系統變數控制 Run/Stop、Task 狀態與 PLC Log 的檢視，以及備份／還原與檔案複製的實務流程。
+
+---
+
+## 1. 總覽：執行階段可用的功能
+
+當應用程式已在 PLC 上運行時，CODESYS 開發系統提供下列能力：
+
+- **監控與修改變數**：即時檢視變數值、寫入或強制變數以影響程式行為（詳見《Debug and Monitoring 測試與除錯》教學文件）。
+- **記錄與儲存歷程**：例如 Trace 取樣、PLC Log 日誌。
+- **查詢 PLC 資訊**：透過 PLC Shell 等查詢應用程式與控制器狀態。
+- **檢視 PLC Log**：讀取控制器日誌，診斷事件與錯誤。
+- **檢視 Core Dump**：發生嚴重錯誤時的分析用資訊。
+- **監看 Task 時序**：Task 執行與週期行為（詳見《Debug and Monitoring》）。
+- **以系統變數控制 Run/Stop**：在關鍵狀態下，可透過開發系統的線上指令限制對運行中應用程式的存取，例如暫停執行；通常透過 **ComponentManager** 函式庫中的模組與系統變數實作。
+- **備份與還原**：備份應用程式與 Runtime，以便還原或遷移。
+- **檔案複製**：在開發機與 PLC 之間複製檔案（設定檔、配方等）。
+
+以下依「日常操作」「系統變數控制」「PLC Log」「備份／還原」「檔案複製」分節說明。
+
+---
+
+## 2. 日常操作：Run/Stop 與監控
+
+### 2.1 啟動與停止應用程式
+
+- 在連線（Login）且已完成 Download 後，可透過工具列或 **Online** 選單的 **Start** / **Stop** 控制應用程式是否執行。
+- **Stop** 會暫停應用程式執行，變數狀態通常會保留（依變數類型與設定而異）；**Start** 會從目前狀態繼續執行。
+
+### 2.2 監看變數與 Task
+
+- 使用 **Watch List** 即時查看關鍵變數。
+- 使用 **Monitoring Tasks** 檢視各 Task 的執行狀態與週期，確認無逾時或過載。
+- 需要歷程分析時可使用 **Trace** 對變數取樣並檢視曲線。
+
+---
+
+## 3. Operation Control via System Variables 以系統變數控制操作
+
+### 3.1 概念
+
+- 在機器處於關鍵狀態時，可透過**線上指令**從開發系統對運行中的應用程式進行存取限制或操作控制。
+- 此功能通常藉由 **ComponentManager** 函式庫中的模組提供，透過特定**系統變數**（System Variables）可下達 Run/Stop 或類似控制。
+- 實際提供的變數與行為依裝置與 CODESYS 版本而異，請參閱裝置手冊與 Offline Help「PLC Operation Control via System Variables」。
+
+### 3.2 實務注意
+
+- 系統變數通常具高權限，操作前請確認不會影響安全與製程；建議在測試環境先驗證行為。
+
+---
+
+## 4. Reading the PLC Log 讀取 PLC 日誌
+
+### 4.1 概念
+
+- **PLC Log** 記錄控制器執行期間的訊息與事件（例如啟動、停止、錯誤、警告）。
+- 在開發系統中可透過對應功能**讀取** PLC 上的日誌，用於事後診斷當機、重啟或異常行為。
+
+### 4.2 實務步驟（概念）
+
+- 與 PLC 連線後，在 **Application at Runtime** 相關視窗或選單中找到「Reading the PLC Log」或「PLC Log」。
+- 選擇要檢視的時間範圍或筆數，即可在開發機上檢視日誌內容。
+- 若需長期保存，可將日誌匯出為檔案。
+
+### 4.3 實務例子
+
+- **情境**：現場回報 PLC 昨夜曾重啟。連線後讀取 PLC Log，查看重啟前後的錯誤碼或訊息，可判斷是否為電源、看門狗或程式異常，再決定是否需更新程式或硬體。
+
+---
+
+## 5. Backup and Restore 備份與還原
+
+### 5.1 概念
+
+- **Backup** 可將目前 PLC 上的應用程式與（依裝置支援）Runtime 狀態儲存成備份檔，以便日後**還原**或複製到另一台裝置。
+- 還原時會將備份檔寫回 PLC，覆蓋目前應用程式（與依設定而定的其他資料）；執行前請確認目標裝置與版本相容性。
+
+### 5.2 建立備份檔（概念）
+
+- 在 **Backup and Restore** 或 **Restoring Applications and RTS** 相關畫面中，選擇建立備份。
+- 選擇要備份的範圍（例如僅應用程式、或含 Runtime 設定），並指定本機儲存路徑。
+- 備份完成後會產生檔案，請妥善保存並定期更新，以利災難復原或機台複製。
+
+### 5.3 還原（概念）
+
+- 選擇已存在的備份檔，並指定要還原的目標 PLC（需連線）。
+- 還原會改寫目標上的應用程式與（若備份內含）相關設定；執行前請確認不會影響正在運轉的製程，必要時先停機並通知現場。
+
+### 5.4 實務建議
+
+- 在重大程式或參數變更前先做一次備份；現場多台相同機台時，可保留一份「標準備份」供還原或新機部署使用。
+- 備份檔建議加上日期或版本註記，並與專案原始碼一併納入版控或備份流程。
+
+---
+
+## 6. Copying Files to/from the PLC 與 PLC 之間複製檔案
+
+### 6.1 概念與前提
+
+- 在裝置編輯器（Device Editor）的 **Files** 標籤頁中，可於**本機檔案系統**與 **PLC（Runtime）** 之間複製檔案。
+- **前提**：裝置製造商已開放該 **Files** 標籤；在裝置樹中已設定與 PLC 的連線；裝置處於運行狀態。
+
+### 6.2 操作步驟（概念）
+
+1. 在裝置樹中雙擊 PLC 裝置，開啟 **Device Editor**。
+2. 切換至 **Files** 標籤。
+3. **Host（本機）**：在左側設定本機路徑（例如 `D:\FileTransferWithPLC`），必要時可建立新資料夾。
+4. **Runtime（PLC）**：在右側設定 PLC 上要存取之目錄。
+5. 在兩側檔案樹中選取要複製的檔案或資料夾（可多選）。
+6. 使用畫面中央的**箭頭按鈕**（向左或向右）執行複製：  
+   - 若目標尚無該檔案則會建立；若已存在且非唯讀則會覆寫，並顯示對應訊息。
+
+### 6.3 實務用途
+
+- **上傳設定檔**：將本機準備好的設定檔或配方上傳至 PLC。
+- **下載記錄檔**：將 PLC 上記錄的資料（例如日誌、Trace 匯出）複製回本機分析。
+- **備份特定檔案**：將 PLC 上重要設定或資料目錄複製到本機作為額外備份。
+
+### 6.4 注意事項
+
+- 複製前請確認路徑與權限，避免覆蓋系統或應用程式必要檔案；若裝置有安全或寫入保護設定，可能限制寫入範圍。
+
+---
+
+## 7. 小結：建議的日常與備份流程
+
+| 情境           | 建議做法                                                                 |
+|----------------|--------------------------------------------------------------------------|
+| 日常監控       | 使用 Watch List、Task 監看、必要時 Trace；定期查看 PLC Log。            |
+| 異常診斷       | 讀取 PLC Log、必要時檢視 Core Dump；比對變數與 Task 行為。              |
+| 重大變更前     | 建立應用程式／Runtime 備份；若使用檔案儲存設定，可另用 Files 複製備份。  |
+| 還原或新機部署 | 使用既有備份還原；或以檔案複製還原設定檔與資料。                        |
+
+以上內容對應 Offline Help：`_cds_struct_application_in_operation.html`、`_cds_operation_control_via_system_variables.html`、`_cds_reading_plc_log.html`、`_cds_restoring_applications_and_rts.html`、`_cds_copy_files_from_to_plc.html`。  
+實際選單名稱與步驟請以您使用的 CODESYS 與裝置版本為準。
+0:{"buildId":"mGRRbc9mQkxUGXHACoBp3","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/offline-help","style":{"color":"var(--t-accent)"},"children":"Offline Help 首頁"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"children":"下載、測試、除錯與執行階段"}]]}],["$","header",null,{"className":"space-y-2","children":[["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"Application at Runtime and Backup 執行階段操作與備份 教學整理"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"說明運行中應用程式的監控方式、系統變數操作、PLC Log、備份與還原與檔案複製策略。"}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],false]}],["$L5"],"$L6"]}],"loading":null,"isPartial":false}
+5:["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true}]
+6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
+9:null

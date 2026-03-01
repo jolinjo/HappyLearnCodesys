@@ -1,0 +1,688 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[39756,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+4:I[37457,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+6:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+a:I[68027,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+:HL["/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","style"]
+0:{"P":null,"b":"mGRRbc9mQkxUGXHACoBp3","c":["","softmotion","cnc14-path-preprocessing"],"q":"","i":false,"f":[[["",{"children":["softmotion",{"children":[["slug","cnc14-path-preprocessing","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-Hant","children":["$","body",null,{"className":"min-h-screen","children":["$","div",null,{"className":"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6","children":[["$","header",null,{"className":"mb-6 border-b pb-4","style":{"borderColor":"var(--t-border)"},"children":["$","div",null,{"className":"flex items-start justify-between gap-4","children":[["$","div",null,{"children":[["$","h1",null,{"className":"text-xl font-semibold tracking-tight","children":["$","$L2",null,{"href":"/","style":{"color":"var(--t-accent)"},"className":"hover:underline","children":"CODESYS 教學網站"}]}],["$","p",null,{"className":"mt-1 text-sm","style":{"color":"var(--t-text-muted)"},"children":"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。"}]]}],["$","nav",null,{"className":"flex shrink-0 items-center gap-2","children":[["$","$L2",null,{"href":"/","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"回首頁"}],["$","$L2",null,{"href":"/offline-help","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"Offline Help"}],["$","$L2",null,{"href":"/search","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"搜尋"}]]}]]}]}],["$","main",null,{"className":"flex-1 pb-8","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex flex-col items-center justify-center gap-4 py-12 text-center","children":[["$","p",null,{"className":"text-4xl font-semibold","style":{"color":"var(--t-text-muted)"},"children":"404"}],["$","p",null,{"style":{"color":"var(--t-text-muted)"},"children":"找不到這個頁面。"}],["$","nav",null,{"className":"mt-4 flex flex-wrap justify-center gap-3","children":[["$","$L2",null,{"href":"/","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-accent)"},"children":"回首頁"}],["$","$L2",null,{"href":"/softmotion","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"SoftMotion 學習地圖"}],["$","$L2",null,{"href":"/licensing","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"授權說明"}],["$","$L2",null,{"href":"/guidelines","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"開發規範"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t pt-4 text-xs","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":[["$","p",null,{"children":"內容來源整理自 CODESYS 官方文件與教學筆記，僅供學習使用。"}],["$","p",null,{"className":"mt-1","children":["© ",2026," jolinjo"]}]]}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L9",false]],"m":"$undefined","G":["$a",[]],"S":true}
+b:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"ViewportBoundary"]
+d:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"MetadataBoundary"]
+9:["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}]
+c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+e:[["$","title","0",{"children":"CODESYS 教學網站"}],["$","meta","1",{"name":"description","content":"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"}]]
+f:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+10:T3646,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# CNC14_PathPreprocessing — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？
+
+本範例示範在 CNC 路徑上套用 **多段前處理**：先用 <span class="cfg-func">SMC_SmoothPath</span> 對路徑做五次樣條平滑（Min Curvature），再透過自訂功能塊 <span class="cfg-custom">LimitTangentVelocity</span> 依曲率限制切線速度，最後再交給 <span class="cfg-func">SMC_CheckVelocities</span> 檢查整體速度。藉由這個流程可以在不更改 G-code 的前提下，同時達到路徑平滑化與速度上限控制。
+
+---
+
+## 二、使用情境與硬體／通訊架構
+
+### 2.1 任務配置
+
+對照 `TaskConfiguration.md`：
+
+| 任務名稱 | 類型 | 週期 | 優先權 | POU 清單 |
+|----------|------|------|--------|----------|
+| MainTask | Cyclic | t#4ms | 1 | `PLC_PRG` |
+| Path | Cyclic | t#8ms | 2 | `Path` |
+
+- **Path 任務**：以 8 ms 的週期負責 G-code 解碼與前處理。  
+- **MainTask**：以 4 ms 的週期執行插補與三軸控制。
+
+### 2.2 軸與裝置
+
+對照 `DeviceTree_Axes.md`：
+
+| 軸名稱 | 類型 | 綁定任務 |
+|--------|------|----------|
+| DriveX | SM_Drive_Virtual | - |
+| DriveY | SM_Drive_Virtual | - |
+| DriveC | SM_Drive_Virtual | - |
+
+三支虛擬軸可想成 X / Y 線性軸與 C 旋轉軸，`PLC_PRG` 透過 <span class="cfg-func">SMC_TRAFO_GantryCutter2</span> 將插補結果轉換為三軸指令並寫入。
+
+### 2.3 函式庫
+
+`Libraries.md` 顯示本範例使用：
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | 基礎運動控制功能塊。 |
+| <span class="cfg-name">#SM3_Basic_Visu</span> | 視覺化輔助。 |
+| <span class="cfg-name">#SM3_CamBuilder</span> | 凸輪相關。 |
+| <span class="cfg-name">#SM3_CNC</span> | CNC 解碼、前處理與插補相關功能塊。 |
+
+---
+
+## 三、控制流程：由淺入深
+
+### 3.1 Path 任務：解碼、平滑與速度限制
+
+`Path` 程式（`Path.st`）流程：
+
+1. **NC 解碼**：  
+   - 使用 <span class="cfg-func">SMC_NCDecoder</span> `dec` 讀取 CNC 物件 `ncprog := CNC`，並在緩衝區 `aBufDec` 中產生幾何段佇列。  
+2. **路徑平滑（SmoothPath）**：  
+   - <span class="cfg-func">SMC_SmoothPath</span> `sp` 接收 `dec.poqDataOut`，設定：  
+     - `eMode := SMC_SMOOTHPATHMODE.SP_SPLINE5_MIN_CURVATURE`：使用五次樣條最小曲率模式。  
+     - `bSymmetricalDistances := TRUE`、`bImprovedSymmetricCuts := TRUE`：改善前後對稱與切割品質。  
+   - 输出佇列使用 `aBufSp` 緩衝。  
+3. **切線速度限制（LimitTangentVelocity）**：  
+   - 自訂 FB <span class="cfg-custom">LimitTangentVelocity</span> 接上 `sp.poqDataOut`，指定：  
+     - `maxAngularVelocity_deg`：切線最大角速度（°/s）。  
+     - `featureFlag`：由 G38/G39 控制是否對該段路徑啟用本功能。  
+   - 內部會根據曲率計算對應的最大路徑速度並修改 GEOINFO 中的 `dVel`。  
+4. **速度檢查（CheckVelocities）**：  
+   - <span class="cfg-func">SMC_CheckVelocities</span> `cv` 最終對 `limitTangentVel.poqDataOut` 做速度檢查，輸出插補器可使用的佇列。
+
+Path 任務的輸出即為 `cv.poqDataOut`，供 `PLC_PRG` 內插補器使用。
+
+### 3.2 MainTask：插補與三軸驅動
+
+`PLC_PRG` 程式（`PLC_PRG.st`）流程：
+
+1. 三軸上電：三個 <span class="cfg-func">MC_Power</span> `pwX` / `pwY` / `pwC` 將 `DriveX`、`DriveY`、`DriveC` 啟動。  
+2. 插補器：<span class="cfg-func">SMC_Interpolator</span> `ipo`  
+   - `bExecute := bStart`（輸入）。  
+   - `poqDataIn := Path.cv.poqDataOut`，接收經全部前處理後的路徑佇列。  
+   - `iVelMode := SMC_INT_VELMODE.QUADRATIC`、`dwIpoTime := 4000`、`dJerkMax := 10000` 等插補參數。  
+3. 機構轉換：  
+   - <span class="cfg-func">SMC_TRAFO_GantryCutter2</span> `trafo` 使用 `ipo.piSetPosition` 與 `ipo.vecActTangent`，計算出對 `DriveX` / `DriveY` / `DriveC` 的對應位移 `dx` / `dy` / `dr`。  
+4. 三軸位置控制：  
+   - 三個 <span class="cfg-func">SMC_ControlAxisByPos</span> `cabpX` / `cabpY` / `cabpC` 將 `trafo.dx/dy/dr` 寫入對應軸。  
+
+Trace 設定中監看 `DriveX/Y/C.fSetPosition`、`fSetVelocity` 與 `PLC_PRG.ipo.dVel` 等變數，有助於觀察前處理對速度與曲線的影響。
+
+---
+
+## 四、各支程式負責哪些功能？
+
+### 4.1 `PLC_PRG.st`
+
+- **類型**：PROGRAM。  
+- **職責**：  
+  - 三軸上電。  
+  - 以 <span class="cfg-func">SMC_Interpolator</span> 消費前處理後的路徑佇列。  
+  - 以 <span class="cfg-func">SMC_TRAFO_GantryCutter2</span> 轉換為 X/Y/C 三軸位置。  
+  - 以 <span class="cfg-func">SMC_ControlAxisByPos</span> 驅動三軸。  
+
+### 4.2 `Path.st`
+
+- **類型**：PROGRAM。  
+- **職責**：  
+  - G-code 解碼（<span class="cfg-func">SMC_NCDecoder</span>）。  
+  - 路徑平滑（<span class="cfg-func">SMC_SmoothPath</span>）。  
+  - 切線速度限制（<span class="cfg-custom">LimitTangentVelocity</span>）。  
+  - 速度檢查（<span class="cfg-func">SMC_CheckVelocities</span>）。  
+- **輸出**：  
+  - `cv.poqDataOut` 為最終路徑佇列，供插補器使用。
+
+### 4.3 `LimitTangentVelocity.st`
+
+- **類型**：FUNCTION_BLOCK（自訂 FB）。  
+- **介面**：  
+  - 輸入：`Execute`、`poqDataIn`、`nSizeOutQueue`、`pbyBufferOutQueue`、`maxAngularVelocity_deg`、`featureFlag`。  
+  - 輸出：`Done`、`Busy`、`Error`、`ErrorID`、`poqDataOut`、`velMin`。  
+- **職責**：  
+  - 逐一從輸入佇列讀取幾何段（<span class="cfg-type">SMC_GeoInfo</span>），對啟用指定 featureFlag 的段落，計算最大曲率並換算允許的最大路徑速度，修改 `dVel` 後寫入輸出佇列。  
+  - 同時維護 `velMin` 以記錄目前最嚴格的速度限制。  
+  - 處理 G75 相關 queue synchronization 標記，確保與前後 FB 串接正確。  
+
+### 4.4 `ComputeMaxCurvature.st`
+
+- **類型**：FUNCTION。  
+- **介面**：  
+  - IN\_OUT：`geo: SMC_GeoInfo`。  
+  - 輸出：`kappa: LREAL`。  
+- **職責**：  
+  - 依 `geo.iMoveType` 決定如何計算最大曲率 `kappa`：  
+    - 線段（LIN 系列）→ 曲率 0。  
+    - SPLINE 系列 → 使用 <span class="cfg-func">SMC_CalcSplineMinCurvatureRadius</span> 反算曲率。  
+    - 圓弧 / 橢圓 → 由半徑或橢圓長短軸推得最大曲率。  
+  - 回傳 <span class="cfg-keyword">TRUE</span> / <span class="cfg-keyword">FALSE</span> 表示是否成功計算。
+
+---
+
+## 五、函式庫與函式／功能塊一覽
+
+只列出與理解本範例前處理鏈結有關的主要元件。
+
+| 名稱 | 類別 | 用途 |
+|------|------|------|
+| <span class="cfg-func">SMC_NCDecoder</span> | FB | 將 CNC 程式 `CNC` 解碼成幾何段佇列。 |
+| <span class="cfg-func">SMC_SmoothPath</span> | FB | 對路徑做樣條平滑，降低轉角尖銳度。 |
+| <span class="cfg-custom">LimitTangentVelocity</span> | FB | 自訂前處理，依曲率限制切線速度。 |
+| <span class="cfg-custom">ComputeMaxCurvature</span> | 函式 | 計算單一幾何段的最大曲率。 |
+| <span class="cfg-func">SMC_CheckVelocities</span> | FB | 速度檢查與限制。 |
+| <span class="cfg-func">SMC_Interpolator</span> | FB | 從前處理後路徑插補位置與速度。 |
+| <span class="cfg-func">SMC_TRAFO_GantryCutter2</span> | FB | 將插補路徑轉換成三軸（X/Y/C）位移。 |
+| <span class="cfg-func">SMC_ControlAxisByPos</span> | FB | 依目標位置控制單軸。 |
+
+---
+
+## 六、變數與常數一覽
+
+本範例未使用 RETAIN／PERSISTENT；路徑與前處理狀態皆在執行期由程式維護。
+
+### 6.1 `Path` 重要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">dec</span> | <span class="cfg-type">SMC_NCDecoder</span> | G-code 解碼器。 |
+| <span class="cfg-local">sp</span> | <span class="cfg-type">SMC_SmoothPath</span> | 路徑平滑處理。 |
+| <span class="cfg-local">limitTangentVel</span> | <span class="cfg-type">LimitTangentVelocity</span> | 自訂速度限制 FB。 |
+| <span class="cfg-local">cv</span> | <span class="cfg-type">SMC_CheckVelocities</span> | 最終速度檢查。 |
+| <span class="cfg-local">aBufDec</span> / <span class="cfg-local">aBufSp</span> / <span class="cfg-local">aBufLimit</span> | <span class="cfg-type">ARRAY OF SMC_GeoInfo</span> | 各階段輸出緩衝。 |
+
+### 6.2 `LimitTangentVelocity` 重要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">maxAngularVelocity_deg</span> | <span class="cfg-type">LREAL</span> | 允許的最大切線角速度（°/s）。 |
+| <span class="cfg-local">featureFlag</span> | <span class="cfg-type">USINT</span> | 對應 G38/G39 的 feature bit，決定哪些段要套用限制。 |
+| <span class="cfg-local">m_maxAngularVelocity_rad</span> | <span class="cfg-type">LREAL</span> | 將角速度轉成 rad/s 後的內部使用值。 |
+| <span class="cfg-local">m_geo</span> | <span class="cfg-type">SMC_GeoInfo</span> | 正在處理的幾何段副本。 |
+| <span class="cfg-local">velMin</span> | <span class="cfg-type">LREAL</span> | 目前看到的最小允許速度，用於統計。 |
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 曲率與速度上限的關係
+
+在 `LimitTangentVelocity` 中，對啟用該 feature 的每一段路徑執行：
+
+1. 透過 <span class="cfg-custom">ComputeMaxCurvature()</span> 計算該段最大曲率 `kappa_max`。  
+2. 將 `maxAngularVelocity_deg` 轉為 `m_maxAngularVelocity_rad`。  
+3. 若 `kappa_max > 0`，則以  
+   \[
+   v_\text{max} = \frac{\text{m\_maxAngularVelocity\_rad}}{\kappa_\text{max}}
+   \]  
+   計算最大路徑速度；若 `kappa_max = 0` 則不限制。  
+4. 將 `m_geo.dVel` 改為 `MIN(m_geo.dVel, v_max)`，並寫回輸出佇列。  
+
+這樣可以在曲率大的地方自動降低速度，避免慣量過大或機構超出能力。
+
+### 7.2 前處理鏈結與 G75 支援
+
+`LimitTangentVelocity` 內部還處理與前後 FB 串接相關的控制碼（例如 `MCOMMAND` 與 `iHelpID` 特定值），用來表示 queue synchronization（G75 相關），確保在 Look-Ahead 與 queue 清空時，不會因為前處理而破壞插補器的假設。
+
+---
+
+## 八、重要參數與設定位置
+
+| 參數 | 檔案 / 位置 | 說明 |
+|------|-------------|------|
+| 任務週期 t#4ms | `TaskConfiguration.md`（MainTask） | 插補與軸控制更新頻率。 |
+| 任務週期 t#8ms | `TaskConfiguration.md`（Path） | 解碼與前處理頻率。 |
+| `maxAngularVelocity_deg` | `Path.st` 內 `limitTangentVel` 初始值 | 最大切線角速度，直接影響彎曲處的速度上限。 |
+| `featureFlag` | 同上 | 指定對哪些路徑段套用速度限制（對應 G-code 內的 feature bit）。 |
+
+---
+
+## 九、建議閱讀與修改順序
+
+1. 先看 `TaskConfiguration.md` 與 `DeviceTree_Axes.md`，理解任務與三軸結構。  
+2. 再看 `Path.st`，弄清楚 Decoder → SmoothPath → LimitTangentVelocity → CheckVelocities 的串接方式。  
+3. 接著看 `LimitTangentVelocity.st` 與 `ComputeMaxCurvature.st`，了解速度限制的數學邏輯。  
+4. 最後看 `PLC_PRG.st`，理解插補與三軸控制如何接上整條前處理鏈。  
+5. 實驗時可先調小 `maxAngularVelocity_deg` 觀察速度被壓低的程度，再配合 Trace 檢查軸速度與位置。
+
+---
+
+## 十、名詞對照
+
+| 英文 / 符號 | 說明 |
+|-------------|------|
+| <span class="cfg-name">Path Preprocessing</span> | 路徑前處理，指在插補前對路徑做平滑、補償、速度限制等。 |
+| <span class="cfg-name">Tangent Velocity</span> | 沿路徑切線方向的速度。 |
+| <span class="cfg-name">Curvature</span> / κ | 曲率，描述路徑彎曲程度，半徑愈小曲率愈大。 |
+| <span class="cfg-func">SMC_SmoothPath</span> | SoftMotion 路徑平滑功能塊。 |
+| <span class="cfg-custom">LimitTangentVelocity</span> | 本範例自訂前處理 FB，以曲率限制切線速度。 |
+
+5:["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/softmotion","style":{"color":"var(--t-accent)"},"children":"SoftMotion 學習地圖"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"style":{"color":"var(--t-text)"},"children":"PathPreprocessing 綜合範例"}]]}],["$","header",null,{"className":"space-y-1","children":[["$","div",null,{"className":"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-text-muted)"},"children":[["$","span",null,{"className":"uppercase tracking-wide","children":"CNC"}],["$","span",null,{"className":"h-1 w-1 rounded-full","style":{"backgroundColor":"var(--t-accent)"}}],["$","span",null,{"style":{"color":"var(--t-accent)"},"children":["步驟 ",14]}]]}],["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"PathPreprocessing 綜合範例"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"G51/G52、G40～G43、G60/G61、G70/G71，多個前處理 FB 串接。"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":["官方專案："," ",["$","code",null,{"className":"rounded px-1 py-0.5","style":{"backgroundColor":"var(--t-border)","color":"var(--t-text)"},"children":"CNC14_PathPreprocessing.project"}]]}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$Lf",null,{"content":"$10"}]}],false,"$L11"]}]
+12:I[85649,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"StCodeBlock"]
+13:T17e0,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">/// Comptues the maximum curvature of a path object.</span></span>
+<span class="line"><span style="color:#D73A49">FUNCTION</span><span style="color:#6F42C1"> ComputeMaxCurvature</span><span style="color:#24292E"> : BOOL</span></span>
+<span class="line"><span style="color:#24292E">VAR_IN_OUT CONSTANT</span></span>
+<span class="line"><span style="color:#24292E">    geo : SMC_GeoInfo;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#24292E">    kappa : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">    dR : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">    dA : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">    dB : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> geo.iMoveType </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.LIN,</span></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.LINADDAXES,</span></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.LINNODELTA,</span></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.LINPOS,</span></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.MCOMMAND,</span></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.INITPOS:</span></span>
+<span class="line"><span style="color:#24292E">    kappa := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    ComputeMaxCurvature := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.SPLINE,</span></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.SPLINE3D,</span></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.SPLINE3D_5:</span></span>
+<span class="line"><span style="color:#24292E">    dR := SMC_CalcSplineMinCurvatureRadius(ADR(geo));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> dR > </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">        kappa := </span><span style="color:#005CC5">1</span><span style="color:#24292E">/dR;</span></span>
+<span class="line"><span style="color:#24292E">        ComputeMaxCurvature := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    ELSE</span></span>
+<span class="line"><span style="color:#24292E">        ComputeMaxCurvature := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.CCLW,</span></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.CLW:</span></span>
+<span class="line"><span style="color:#24292E">    dR := geo.dP3;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> dR > </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">        kappa := </span><span style="color:#005CC5">1</span><span style="color:#24292E">/dR;</span></span>
+<span class="line"><span style="color:#24292E">        ComputeMaxCurvature := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    ELSE</span></span>
+<span class="line"><span style="color:#24292E">        ComputeMaxCurvature := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.ELLCCLW,</span></span>
+<span class="line"><span style="color:#24292E">SMC_MOVTYP.ELLCLW:</span></span>
+<span class="line"><span style="color:#24292E">    dA := geo.dP3;</span></span>
+<span class="line"><span style="color:#24292E">    dB := geo.dP4;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> dA > </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> AND</span><span style="color:#24292E"> dB > </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">        kappa := MAX(dA / (dB*dB), dB / (dA*dA));</span></span>
+<span class="line"><span style="color:#24292E">        ComputeMaxCurvature := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    ELSE</span></span>
+<span class="line"><span style="color:#24292E">        ComputeMaxCurvature := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">ELSE</span></span>
+<span class="line"><span style="color:#24292E">    ComputeMaxCurvature := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span></code></pre>11:["$","section",null,{"className":"space-y-3","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"ST 程式碼"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。"}],["$","div",null,{"className":"space-y-2","children":[["$","$L12","ComputeMaxCurvature.st",{"title":"ComputeMaxCurvature.st","html":"$13"}],"$L14","$L15","$L16"]}]]}]
+17:T5e8b,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">/// Limits the velocity on the path so that the tangent velocity will not</span></span>
+<span class="line"><span style="color:#6A737D">/// exceed a configured maximum angular velocity.</span></span>
+<span class="line"><span style="color:#24292E">FUNCTION_BLOCK LimitTangentVelocity</span></span>
+<span class="line"><span style="color:#24292E">VAR_INPUT</span></span>
+<span class="line"><span style="color:#6A737D">    /// Starts on rising edge</span></span>
+<span class="line"><span style="color:#24292E">	Execute : BOOL;</span></span>
+<span class="line"><span style="color:#6A737D">    /// Input path queue</span></span>
+<span class="line"><span style="color:#24292E">	poqDataIn : </span><span style="color:#D73A49">POINTER</span><span style="color:#D73A49"> TO</span><span style="color:#24292E"> SMC_OUTQUEUE;</span></span>
+<span class="line"><span style="color:#6A737D">    /// The size of pbyBufferOutQueue in bytes</span></span>
+<span class="line"><span style="color:#24292E">	nSizeOutQueue : UDINT;</span></span>
+<span class="line"><span style="color:#6A737D">    /// The buffer for the output queue</span></span>
+<span class="line"><span style="color:#24292E">	pbyBufferOutQueue : </span><span style="color:#D73A49">POINTER</span><span style="color:#D73A49"> TO</span><span style="color:#D73A49"> ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">.</span><span style="color:#005CC5">.0</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> SMC_GEOINFO;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /// The maximum allowed angular velocity of the tangent, in [°/s].</span></span>
+<span class="line"><span style="color:#6A737D">    /// Must be positive.</span></span>
+<span class="line"><span style="color:#24292E">    maxAngularVelocity_deg : LREAL;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /// The feature bit (0..31) used for smoothing (controlled by G38/G39)</span></span>
+<span class="line"><span style="color:#24292E">    featureFlag : USINT;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#6A737D">    /// Indicates the entire input path has been processed</span></span>
+<span class="line"><span style="color:#24292E">	Done : BOOL;</span></span>
+<span class="line"><span style="color:#6A737D">    /// Indicates the function block is still busy processing</span></span>
+<span class="line"><span style="color:#24292E">	Busy : BOOL;</span></span>
+<span class="line"><span style="color:#6A737D">    /// An error has occurred</span></span>
+<span class="line"><span style="color:#24292E">	Error : BOOL;</span></span>
+<span class="line"><span style="color:#6A737D">    /// Error-ID</span></span>
+<span class="line"><span style="color:#24292E">	ErrorID : SMC_ERROR;</span></span>
+<span class="line"><span style="color:#6A737D">    /// Output path queue</span></span>
+<span class="line"><span style="color:#24292E">	poqDataOut : </span><span style="color:#D73A49">POINTER</span><span style="color:#D73A49"> TO</span><span style="color:#24292E"> SMC_OUTQUEUE;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /// The minimum path velocity computed so far.  Reset on a rising</span></span>
+<span class="line"><span style="color:#6A737D">    /// edge of Execute, initialized with -1.</span></span>
+<span class="line"><span style="color:#24292E">    velMin : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	m_data : SMC_OUTQUEUE := (byGenerator := </span><span style="color:#005CC5">19</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	m_featureFlag : USINT;</span></span>
+<span class="line"><span style="color:#24292E">    m_maxAngularVelocity_rad : LREAL;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	m_state : UDINT;</span></span>
+<span class="line"><span style="color:#24292E">	m_oldExecute : BOOL;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	m_geo : SMC_GeoInfo;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#24292E">VAR_TEMP</span></span>
+<span class="line"><span style="color:#24292E">    xdwAddr : __XWORD;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    pgeo : </span><span style="color:#D73A49">POINTER</span><span style="color:#D73A49"> TO</span><span style="color:#24292E"> SMC_GeoInfo;</span></span>
+<span class="line"><span style="color:#24292E">    kappa_max : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">    ok : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">    vel : LREAL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span><span style="color:#24292E"> CONSTANT</span></span>
+<span class="line"><span style="color:#24292E">	STATE_IDLE : UDINT := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_INIT : UDINT := </span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_RUN  : UDINT := </span><span style="color:#005CC5">10</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_DONE : UDINT := </span><span style="color:#005CC5">500</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_ERROR : UDINT := </span><span style="color:#005CC5">1000</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">poqDATAOUT := ADR(m_data);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">IF</span><span style="color:#24292E"> Execute </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> m_oldExecute </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		SMC_OutQueueInit(ADR(m_data));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">        // Checks of input parameters and additional initialization can</span></span>
+<span class="line"><span style="color:#6A737D">        // be done here.</span></span>
+<span class="line"><span style="color:#D73A49">        IF</span><span style="color:#24292E"> featureFlag > </span><span style="color:#005CC5">31</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">			m_state := STATE_ERROR;</span></span>
+<span class="line"><span style="color:#24292E">			ErrorID := SMC_INVALID_FEATURE_FLAG;</span></span>
+<span class="line"><span style="color:#24292E">        ELSIF maxAngularVelocity_deg &#x3C;= </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">            m_state := STATE_ERROR;</span></span>
+<span class="line"><span style="color:#24292E">            ErrorID := SMC_INVALID_PARAMETER;</span></span>
+<span class="line"><span style="color:#D73A49">		ELSE</span></span>
+<span class="line"><span style="color:#24292E">			m_featureFlag := featureFlag;</span></span>
+<span class="line"><span style="color:#24292E">            m_maxAngularVelocity_rad := maxAngularVelocity_deg * SMC_FACTOR_DEG_TO_RAD;</span></span>
+<span class="line"><span style="color:#24292E">            velMin := -</span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		    m_state := STATE_INIT;</span></span>
+<span class="line"><span style="color:#24292E">        END_IF</span></span>
+<span class="line"><span style="color:#24292E">		OnExit();</span></span>
+<span class="line"><span style="color:#24292E">		RETURN;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"><span style="color:#24292E">ELSIF </span><span style="color:#D73A49">NOT</span><span style="color:#24292E"> Execute </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> m_state >= STATE_DONE </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">    m_state := STATE_IDLE;</span></span>
+<span class="line"><span style="color:#24292E">    ErrorID := SMC_NO_ERROR;</span></span>
+<span class="line"><span style="color:#24292E">    OnExit();</span></span>
+<span class="line"><span style="color:#24292E">    RETURN;</span></span>
+<span class="line"><span style="color:#24292E">END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/// Cyclically copy the pointers. This is done to support</span></span>
+<span class="line"><span style="color:#6A737D">/// an online change where objects can move in memory.</span></span>
+<span class="line"><span style="color:#24292E">m_data.pbyBuffer := pbyBufferOutQueue;</span></span>
+<span class="line"><span style="color:#24292E">xdwAddr := m_data.pbyBuffer;</span></span>
+<span class="line"><span style="color:#D73A49">IF</span><span style="color:#24292E"> (xdwAddr </span><span style="color:#D73A49">MOD</span><span style="color:#005CC5"> 4</span><span style="color:#24292E">) > </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">    m_state := STATE_ERROR;</span></span>
+<span class="line"><span style="color:#24292E">    ErrorID := SMC_GEOINFO_BUFFER_MISALIGNED;</span></span>
+<span class="line"><span style="color:#24292E">    OnExit();</span></span>
+<span class="line"><span style="color:#24292E">	RETURN;</span></span>
+<span class="line"><span style="color:#24292E">END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">SMC_SetQueueCapacity(ADR(m_data), nSizeOutQueue);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">IF</span><span style="color:#24292E"> m_state = STATE_IDLE </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">	OnExit();</span></span>
+<span class="line"><span style="color:#24292E">	RETURN;</span></span>
+<span class="line"><span style="color:#24292E">ELSIF m_state = STATE_INIT </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">	// Wait until input queue has been set by previous</span></span>
+<span class="line"><span style="color:#6A737D">	// path processing function block</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> poqDataIn &#x3C;> </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">		m_state := STATE_RUN;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"><span style="color:#24292E">END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">IF</span><span style="color:#24292E"> STATE_IDLE &#x3C; m_state </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> m_state &#x3C; STATE_DONE </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> poqDataIn = </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> OR</span><span style="color:#24292E"> pbyBufferOutQueue = </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> OR</span><span style="color:#24292E"> nSizeOutQueue = </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">		OnExit();</span></span>
+<span class="line"><span style="color:#24292E">		RETURN;</span></span>
+<span class="line"><span style="color:#24292E">	ELSIF poqDataIn^.wOUTQUEUEStructID &#x3C;> </span><span style="color:#005CC5">16</span><span style="color:#032F62">#9878</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#24292E">		m_state := STATE_ERROR;</span></span>
+<span class="line"><span style="color:#24292E">		ErrorID := SMC_NO_OUTQUEUE_TYPE;</span></span>
+<span class="line"><span style="color:#24292E">		OnExit();</span></span>
+<span class="line"><span style="color:#24292E">		RETURN;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"><span style="color:#24292E">	m_data.strProgramName := poqDataIn^.strProgramName;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	// output queue full -> wait</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> poqDataIn^.nCapacity = </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> OR</span><span style="color:#24292E"> m_data.bFull </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		OnExit();</span></span>
+<span class="line"><span style="color:#24292E">		RETURN;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	// Wait until input queue is filled</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> (</span><span style="color:#D73A49">NOT</span><span style="color:#24292E"> poqDataIn^.bEndOfList </span><span style="color:#D73A49">AND</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> poqDataIn^.bFull) </span><span style="color:#D73A49">OR_ELSE</span></span>
+<span class="line"><span style="color:#24292E">       SMC_GetCount(poqDataIn) = </span><span style="color:#005CC5">0</span></span>
+<span class="line"><span style="color:#D73A49">    THEN</span></span>
+<span class="line"><span style="color:#24292E">		m_data.bEndOfList := poqDataIn^.bEndOfList;</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> m_data.bEndOfList </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			m_state := STATE_DONE;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"><span style="color:#24292E">		OnExit();</span></span>
+<span class="line"><span style="color:#24292E">		RETURN;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"><span style="color:#24292E">END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> m_state </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#24292E">STATE_RUN:</span></span>
+<span class="line"><span style="color:#24292E">	pgeo := SMC_GetObj(poqDataIn, </span><span style="color:#005CC5">0</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // Handle G75 (queue synchronization) which will empty the queue of</span></span>
+<span class="line"><span style="color:#6A737D">	// all preprocessing blocks until the interpolator has reached the</span></span>
+<span class="line"><span style="color:#6A737D">	// lookahead.</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> pgeo^.iMoveType = SMC_MOVTYP.MCOMMAND </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> pgeo^.iHelpID[</span><span style="color:#005CC5">0</span><span style="color:#24292E">] = -</span><span style="color:#005CC5">3</span><span style="color:#D73A49"> THEN</span><span style="color:#6A737D"> (* queue emptied *)</span></span>
+<span class="line"><span style="color:#24292E">        SMC_DeleteObj(poqDataIn, </span><span style="color:#005CC5">0</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">        OnExit();</span></span>
+<span class="line"><span style="color:#24292E">        RETURN;</span></span>
+<span class="line"><span style="color:#24292E">    ELSIF pgeo^.iMoveType = SMC_MOVTYP.MCOMMAND </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> pgeo^.iHelpID[</span><span style="color:#005CC5">0</span><span style="color:#24292E">] = -</span><span style="color:#005CC5">2</span><span style="color:#D73A49"> THEN</span><span style="color:#6A737D"> (* queue filling object *)</span></span>
+<span class="line"><span style="color:#24292E">		ErrorID := SMC_OutQueue_AppendChecked(m_data, pgeo^);</span></span>
+<span class="line"><span style="color:#D73A49">        IF</span><span style="color:#24292E"> ErrorID &#x3C;> SMC_NO_ERROR </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			m_state := STATE_ERROR;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"><span style="color:#6A737D">		// Signal to previous FB that the G75 has been processed</span></span>
+<span class="line"><span style="color:#24292E">        pgeo^.iHelpID[</span><span style="color:#005CC5">0</span><span style="color:#24292E">] := -</span><span style="color:#005CC5">3</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">        OnExit();</span></span>
+<span class="line"><span style="color:#24292E">        RETURN;</span></span>
+<span class="line"><span style="color:#24292E">    END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // Our velocity limitation comes here. This modifies an element from the</span></span>
+<span class="line"><span style="color:#6A737D">    // input queue and copies the modified element to the output queue.</span></span>
+<span class="line"><span style="color:#6A737D">    // Finally, the element is removed from the input queue</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	// Copy the element.  This is done to avoid accidentally modifying an element</span></span>
+<span class="line"><span style="color:#6A737D">	// from the input queue, which is not recommended.</span></span>
+<span class="line"><span style="color:#24292E">    m_geo := pgeo^;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // Note: the feature flags set in the G-Code with G38/G39 can be queried</span></span>
+<span class="line"><span style="color:#6A737D">    // by reading m_geo.dwFeatureFlags, like this:</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> (</span><span style="color:#D73A49">SHR</span><span style="color:#24292E">(m_geo.dwFeatureFlags, m_featureFlag) </span><span style="color:#D73A49">AND</span><span style="color:#005CC5"> 1</span><span style="color:#24292E">) = </span><span style="color:#005CC5">1</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#6A737D">        // feature is turned on</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        ok := ComputeMaxCurvature(m_geo, kappa=> kappa_max);</span></span>
+<span class="line"><span style="color:#D73A49">        IF</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> ok </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">            // Curvature cannot be computed</span></span>
+<span class="line"><span style="color:#24292E">            m_state := STATE_ERROR;</span></span>
+<span class="line"><span style="color:#24292E">		    ErrorID := SMC_INVALID_PARAMETER;</span></span>
+<span class="line"><span style="color:#24292E">		    OnExit();</span></span>
+<span class="line"><span style="color:#24292E">		    RETURN;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">        // Compute maximum allowed path velocity based on maximum curvature</span></span>
+<span class="line"><span style="color:#6A737D">        // and maximum allowed angular velocity</span></span>
+<span class="line"><span style="color:#D73A49">        IF</span><span style="color:#24292E"> kappa_max = </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> THEN</span></span>
+<span class="line"><span style="color:#6A737D">            // No curvature, no limitation necessary</span></span>
+<span class="line"><span style="color:#24292E">            vel := m_geo.dVel;</span></span>
+<span class="line"><span style="color:#D73A49">        ELSE</span></span>
+<span class="line"><span style="color:#24292E">            vel := m_maxAngularVelocity_rad / kappa_max;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        IF</span><span style="color:#24292E"> velMin &#x3C; </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> OR</span><span style="color:#24292E"> vel &#x3C; velMin </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">            velMin := vel;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">        // Set new maximum velocity for the element</span></span>
+<span class="line"><span style="color:#24292E">        m_geo.dVel := MIN(m_geo.dVel, vel);</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	ErrorID := SMC_OutQueue_AppendChecked(m_data, m_geo);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> ErrorID &#x3C;> SMC_NO_ERROR </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">        m_state := STATE_ERROR;</span></span>
+<span class="line"><span style="color:#D73A49">    ELSE</span></span>
+<span class="line"><span style="color:#24292E">		SMC_DeleteObj(poqDataIn, </span><span style="color:#005CC5">0</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> SMC_GetCount(poqDataIn) = </span><span style="color:#005CC5">0</span><span style="color:#D73A49"> AND_THEN</span><span style="color:#24292E"> poqDataIn^.bEndOfList </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">			m_data.bEndOfList := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			m_state := STATE_DONE;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">OnExit();</span></span></code></pre>14:["$","$L12","LimitTangentVelocity.st",{"title":"LimitTangentVelocity.st","html":"$17"}]
+18:T1206,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> Path</span></span>
+<span class="line"><span style="color:#24292E">VAR_INPUT</span></span>
+<span class="line"><span style="color:#24292E">    bExecute : BOOL;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">    dec : SMC_NCDecoder := (bEnableSyntaxChecks:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    sp : SMC_SmoothPath := (</span></span>
+<span class="line"><span style="color:#24292E">		eMode:= SMC_SMOOTHPATHMODE.SP_SPLINE5_MIN_CURVATURE,</span></span>
+<span class="line"><span style="color:#24292E">        bSymmetricalDistances:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        bImprovedSymmetricCuts:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    limitTangentVel : LimitTangentVelocity := (maxAngularVelocity_deg:= </span><span style="color:#005CC5">45</span><span style="color:#24292E">, featureFlag:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    cv : SMC_CheckVelocities;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    aBufDec : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">.</span><span style="color:#005CC5">.15</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> SMC_GeoInfo;</span></span>
+<span class="line"><span style="color:#24292E">    aBufSp : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">.</span><span style="color:#005CC5">.15</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> SMC_GeoInfo;</span></span>
+<span class="line"><span style="color:#24292E">    aBufLimit : </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">.</span><span style="color:#005CC5">.99</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> SMC_GeoInfo;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">dec(</span></span>
+<span class="line"><span style="color:#24292E">	ncprog:= CNC,</span></span>
+<span class="line"><span style="color:#24292E">	bExecute:= bExecute,</span></span>
+<span class="line"><span style="color:#24292E">	nSizeOutQueue:= SIZEOF(aBufDec),</span></span>
+<span class="line"><span style="color:#24292E">	pbyBufferOutQueue:= ADR(aBufDec));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">sp(</span></span>
+<span class="line"><span style="color:#24292E">    bExecute:= bExecute,</span></span>
+<span class="line"><span style="color:#24292E">    poqDataIn:= dec.poqDataOut,</span></span>
+<span class="line"><span style="color:#24292E">    nSizeOutQueue:= SIZEOF(aBufSp),</span></span>
+<span class="line"><span style="color:#24292E">    pbyBufferOutQueue:= ADR(aBufSp));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">limitTangentVel(</span></span>
+<span class="line"><span style="color:#24292E">	Execute:= bExecute,</span></span>
+<span class="line"><span style="color:#24292E">	poqDataIn:= sp.poqDataOut,</span></span>
+<span class="line"><span style="color:#24292E">	nSizeOutQueue:= SIZEOF(aBufLimit),</span></span>
+<span class="line"><span style="color:#24292E">	pbyBufferOutQueue:= ADR(aBufLimit));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">cv(</span></span>
+<span class="line"><span style="color:#24292E">	bExecute:= bExecute,</span></span>
+<span class="line"><span style="color:#24292E">	poqDataIn:= limitTangentVel.poqDataOut);</span></span></code></pre>15:["$","$L12","Path.st",{"title":"Path.st","html":"$18"}]
+19:T1664,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> PLC_PRG</span></span>
+<span class="line"><span style="color:#24292E">VAR_INPUT</span></span>
+<span class="line"><span style="color:#24292E">    bStart : BOOL ;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">    ipo : SMC_Interpolator ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    trafo : SMC_TRAFO_GantryCutter2 ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    pwX, pwY, pwC : MC_Power ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    cabpX, cabpY, cabpC : SMC_ControlAxisByPos ;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">pwX(Axis:= DriveX,</span></span>
+<span class="line"><span style="color:#24292E">    Enable:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    bRegulatorOn:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    bDriveStart:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">pwY(Axis:= DriveY,</span></span>
+<span class="line"><span style="color:#24292E">    Enable:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    bRegulatorOn:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    bDriveStart:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">pwC(Axis:= DriveC,</span></span>
+<span class="line"><span style="color:#24292E">    Enable:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    bRegulatorOn:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    bDriveStart:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">ipo(</span></span>
+<span class="line"><span style="color:#24292E">	bExecute:= bStart,</span></span>
+<span class="line"><span style="color:#24292E">	poqDataIn:= Path.cv.poqDataOut,</span></span>
+<span class="line"><span style="color:#24292E">	iVelMode:= SMC_INT_VELMODE.QUADRATIC,</span></span>
+<span class="line"><span style="color:#24292E">	dwIpoTime:= </span><span style="color:#005CC5">4000</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">	dLastWayPos:= ipo.dWayPos,</span></span>
+<span class="line"><span style="color:#24292E">	dJerkMax:= </span><span style="color:#005CC5">10000</span><span style="color:#24292E">) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">trafo(</span></span>
+<span class="line"><span style="color:#24292E">	pi:= ipo.piSetPosition,</span></span>
+<span class="line"><span style="color:#24292E">	v:= ipo.vecActTangent,</span></span>
+<span class="line"><span style="color:#24292E">	iDirectionR:= </span><span style="color:#005CC5">1</span><span style="color:#24292E">) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">cabpX(</span></span>
+<span class="line"><span style="color:#24292E">    Axis:= DriveX,</span></span>
+<span class="line"><span style="color:#24292E">    iStatus:= ipo.iStatus,</span></span>
+<span class="line"><span style="color:#24292E">    bEnable:= ipo.bWorking,</span></span>
+<span class="line"><span style="color:#24292E">    bAvoidGaps:= </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    fSetPosition := trafo.dx) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">cabpY(</span></span>
+<span class="line"><span style="color:#24292E">    Axis:= DriveY,</span></span>
+<span class="line"><span style="color:#24292E">    iStatus:= ipo.iStatus,</span></span>
+<span class="line"><span style="color:#24292E">    bEnable:= ipo.bWorking,</span></span>
+<span class="line"><span style="color:#24292E">    bAvoidGaps:= </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    fSetPosition := trafo.dy) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">cabpC(</span></span>
+<span class="line"><span style="color:#24292E">    Axis:= DriveC,</span></span>
+<span class="line"><span style="color:#24292E">    iStatus:= ipo.iStatus,</span></span>
+<span class="line"><span style="color:#24292E">    bEnable:= ipo.bWorking,</span></span>
+<span class="line"><span style="color:#24292E">    bAvoidGaps:= </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    fSetPosition := trafo.dr) ;</span></span></code></pre>16:["$","$L12","PLC_PRG.st",{"title":"PLC_PRG.st","html":"$19"}]

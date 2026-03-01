@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:"$Sreact.suspense"
+3:I[23482,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/c325b0df4bd99c72.js"],"SearchUI"]
+4:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+0:{"buildId":"mGRRbc9mQkxUGXHACoBp3","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","header",null,{"children":[["$","h2",null,{"className":"text-lg font-semibold","style":{"color":"var(--t-text)"},"children":"站內搜尋"}],["$","p",null,{"className":"mt-1 text-sm","style":{"color":"var(--t-text-muted)"},"children":"可搜尋函數／功能塊名稱（如 MC_Power、SMC_ReadNCFile2）或關鍵字，結果來自範例說明、授權與開發規範文件。"}]]}],["$","$2",null,{"fallback":["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"載入中…"}],"children":["$","$L3",null,{"initialQuery":""}]}]]}],[["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/c325b0df4bd99c72.js","async":true}]],["$","$L4",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

@@ -1,0 +1,351 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+a:I[85649,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"StCodeBlock"]
+c:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+d:"$Sreact.suspense"
+4:T39e7,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數 / 功能塊</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數 / 方法</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# PLCopenSingle — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？（一句話＋情境）
+
+這個範例示範如何使用 <span class="cfg-func">MC_Power</span> 與 <span class="cfg-func">MC_MoveAbsolute</span>，在一根虛擬軸 <span class="cfg-name">Drive</span> 上反覆執行「移動到目標位置再回到原點」的往返絕對定位動作，適合初學者練習最基本的單軸定位控制。
+
+在實務上，可以把這個範例想成「只有一個軸的簡單點到點移動」，例如：小型平台在 0 與 100mm 之間來回移動。
+
+---
+
+## 二、使用情境與硬體／通訊架構
+
+### 2.1 硬體與軸配置
+
+對照 `DeviceTree_Axes.md`，本範例只包含一根虛擬軸：
+
+| 軸名稱 | 類型 | 綁定任務 |
+|--------|------|----------|
+| <span class="cfg-name">Drive</span> | <span class="cfg-name">SM_Drive_Virtual</span> | - |
+
+這代表程式是在「軟體模擬軸」上練習運動控制指令，實際連線到實體驅動器前，可以先用這種虛擬軸驗證程式流程是否正確。
+
+### 2.2 任務與週期
+
+根據 `TaskConfiguration.md`，專案只有一個主要任務：
+
+| 任務名稱 | 類型 | 週期 | 優先權 | POU 清單 |
+|----------|------|------|--------|----------|
+| Task | Cyclic | t#4ms | 1 | MOTION_PRG |
+
+- 任務 `Task` 每 4ms 週期性執行一次 <span class="cfg-name">MOTION_PRG</span>，負責驅動整個運動流程。
+- 由於只有一個任務與一個 POU，控制結構非常單純，適合用來觀察狀態機邏輯與功能塊行為。
+
+### 2.3 資料流與角色分工（誰控制誰）
+
+- 任務 `Task` 週期性呼叫程式 <span class="cfg-name">MOTION_PRG</span>。
+- <span class="cfg-name">MOTION_PRG</span> 內部透過 <span class="cfg-func">MC_Power</span> 與 <span class="cfg-func">MC_MoveAbsolute</span> 控制軸 <span class="cfg-name">Drive</span>。
+- 軸 <span class="cfg-name">Drive</span> 將指令轉換成實際（或模擬）運動。
+
+---
+
+## 三、控制流程：由淺入深
+
+### 3.1 整體流程概觀
+
+整體流程可以用下面幾句話理解：
+
+1. 一開始，程式先替軸 <span class="cfg-name">Drive</span> 「上電並啟動」。
+2. 軸準備好之後，執行一次絕對定位，從目前位置移動到目標位置 <span class="cfg-local">p</span>（預設 100）。
+3. 抵達目標位置後，再執行第二次絕對定位，從 <span class="cfg-local">p</span> 回到 0。
+4. 接著重複步驟 2 與 3，在 0 與 <span class="cfg-local">p</span> 之間來回移動。
+
+這個流程完全由變數 <span class="cfg-local">iStatus</span> 控制，是一個經典的「狀態機」寫法。
+
+### 3.2 狀態機細部說明（iStatus）
+
+在 `MOTION_PRG.st` 中，主要控制流程寫成：
+
+- 狀態 0：上電與啟動軸  
+  - 呼叫 <span class="cfg-func">MC_Power()</span>，把 `Enable`、`bRegulatorOn`、`bDriveStart` 都設為 TRUE。  
+  - 當 `Power.Status` 為 TRUE 時，代表軸已經上電完成，將 <span class="cfg-local">iStatus</span> 改為 1。
+
+- 狀態 1：從目前位置移到 <span class="cfg-local">p</span>  
+  - 呼叫 <span class="cfg-func">MC_MoveAbsolute()</span>，參數 `Position := p`，`Velocity/Acceleration/Deceleration := 100`。  
+  - 一直維持 `Execute := TRUE`，直到 `MoveAbsolute.Done` 變成 TRUE。  
+  - 達到目標位置後，先以 `Execute := FALSE` 結束這次命令，再把 <span class="cfg-local">iStatus</span> 改為 2。
+
+- 狀態 2：從 <span class="cfg-local">p</span> 移回 0  
+  - 再次呼叫 <span class="cfg-func">MC_MoveAbsolute()</span>，這次 `Position := 0`。  
+  - 同樣等待 `MoveAbsolute.Done`，完成後以 `Execute := FALSE` 結束命令。  
+  - 把 <span class="cfg-local">iStatus</span> 改回 1，形成「1 → 2 → 1 → 2」的循環。
+
+初學者可以把 <span class="cfg-local">iStatus</span> 想成「流程目前進行到第幾步」，每個數字代表一個階段。
+
+### 3.3 與實體機台的對應想像（進階小節）
+
+雖然本範例使用的是 <span class="cfg-name">SM_Drive_Virtual</span>，但在實體應用中，你可以把 <span class="cfg-name">Drive</span> 想像成：
+
+- 一根直線平台：在 0mm 與 100mm 之間往返。
+- 一支旋轉軸：在 0 度與 100 度之間反覆定位。
+
+了解這個簡單單軸範例後，再把同樣的寫法擴展到多軸或更複雜的狀態機，就會容易許多。
+
+---
+
+## 四、各支程式負責哪些功能？（由淺入深）
+
+本範例只有一支程式 `MOTION_PRG.st`，沒有額外的 GVL 或其他 POU，因此閱讀負擔很小。
+
+### 4.1 `MOTION_PRG.st`
+
+- **類型**：<span class="cfg-keyword">PROGRAM</span>  
+- **主要職責**：  
+  - 以 <span class="cfg-local">iStatus</span> 為核心狀態機，依序完成「上電 → 移到目標位置 → 移回原點」三個階段。  
+  - 透過 <span class="cfg-func">MC_Power</span> 啟動軸 <span class="cfg-name">Drive</span>，再用 <span class="cfg-func">MC_MoveAbsolute</span> 發出絕對定位指令。  
+- **與硬體／通訊的關係**：  
+  - 直接操作 Device 樹中的虛擬軸 <span class="cfg-name">Drive</span>。  
+  - 若改成實體軸，只要在 CODESYS 中把 <span class="cfg-name">Drive</span> 綁定到實際驅動器即可，程式寫法基本相同。
+
+建議閱讀 `MOTION_PRG.st` 時，一邊看 <span class="cfg-local">iStatus</span> 的值如何改變，一邊對照 CASE 區塊內各個狀態的敘述。
+
+---
+
+## 五、函式庫與函式／功能塊一覽（用途、引數、回傳）
+
+### 5.1 函式庫清單（對照 `Libraries.md`）
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | （系統庫／提供 <span class="cfg-func">MC_Power</span>、<span class="cfg-func">MC_MoveAbsolute</span> 等基本運動控制功能塊） |
+| <span class="cfg-name">#SM3_CamBuilder</span> | （系統庫／本範例未直接使用其凸輪功能，但可與其他範例搭配） |
+
+### 5.2 功能塊與主要引數
+
+以下僅列出在本範例程式中實際使用到的功能塊與重要引數，方便對照程式學習。
+
+#### 5.2.1 <span class="cfg-func">MC_Power()</span>
+
+- **用途**：  
+  - 對指定軸上電、啟用調節器、啟動驅動器，使其可以接受運動指令。
+- **主要引數**：  
+  - <span class="cfg-arg">Axis</span> : <span class="cfg-type">AXIS_REF</span> — 要控制的軸（此處為 <span class="cfg-name">Drive</span>）。  
+  - <span class="cfg-arg">Enable</span> : <span class="cfg-type">BOOL</span> — TRUE 時請求上電。  
+  - <span class="cfg-arg">bRegulatorOn</span> : <span class="cfg-type">BOOL</span> — TRUE 時啟用位置/速度控制器。  
+  - <span class="cfg-arg">bDriveStart</span> : <span class="cfg-type">BOOL</span> — TRUE 時啟動驅動器。  
+- **重要輸出**：  
+  - <span class="cfg-arg">Status</span> : <span class="cfg-type">BOOL</span> — TRUE 代表軸已準備就緒。
+- **回傳型態**：<span class="cfg-type">VOID</span>（功能塊型式，無直接回傳值）。
+
+#### 5.2.2 <span class="cfg-func">MC_MoveAbsolute()</span>
+
+- **用途**：  
+  - 讓軸以指定的速度與加減速度，移動到某個絕對位置。
+- **主要引數**：  
+  - <span class="cfg-arg">Axis</span> : <span class="cfg-type">AXIS_REF</span> — 目標軸（此處為 <span class="cfg-name">Drive</span>）。  
+  - <span class="cfg-arg">Execute</span> : <span class="cfg-type">BOOL</span> — 上升緣觸發一次新的移動命令。  
+  - <span class="cfg-arg">Position</span> : <span class="cfg-type">LREAL</span> — 目標位置（程式中分別給 <span class="cfg-local">p</span> 與 `0`）。  
+  - <span class="cfg-arg">Velocity</span> : <span class="cfg-type">LREAL</span> — 最大運動速度。  
+  - <span class="cfg-arg">Acceleration</span> / <span class="cfg-arg">Deceleration</span> : <span class="cfg-type">LREAL</span> — 加速度與減速度。  
+- **重要輸出**：  
+  - <span class="cfg-arg">Done</span> : <span class="cfg-type">BOOL</span> — 達到目標位置且命令完成。  
+  - <span class="cfg-arg">Busy</span> : <span class="cfg-type">BOOL</span> — 命令執行中。  
+- **回傳型態**：<span class="cfg-type">VOID</span>。
+
+---
+
+## 六、變數與常數一覽
+
+本範例沒有獨立的 GVL 檔案，所有變數都在 `MOTION_PRG.st` 中宣告，也未使用 <span class="cfg-name">RETAIN</span> / <span class="cfg-name">PERSISTENT</span>。
+
+### 6.1 `MOTION_PRG.st` 內的變數
+
+| 名稱 | 類別 | 型態 | 預設值 | 說明 |
+|------|------|------|--------|------|
+| <span class="cfg-local">iStatus</span> | 區域變數 | <span class="cfg-type">INT</span> | 0 | 狀態機狀態編號，決定目前是在上電、移到目標位置或移回原點。 |
+| <span class="cfg-local">Power</span> | 區域變數 | <span class="cfg-type">MC_Power</span> | 功能塊預設 | 控制軸 <span class="cfg-name">Drive</span> 上電與啟動的功能塊執例。 |
+| <span class="cfg-local">MoveAbsolute</span> | 區域變數 | <span class="cfg-type">MC_MoveAbsolute</span> | 功能塊預設 | 讓軸移動到絕對位置的功能塊執例。 |
+| <span class="cfg-local">p</span> | 區域變數 | <span class="cfg-type">REAL</span> | 100 | 目標位置，用來決定往返的遠端位置，可視需求修改。 |
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 簡單狀態機寫法
+
+這個範例最重要的觀念是：用一個整數變數 <span class="cfg-local">iStatus</span> 搭配 <span class="cfg-keyword">CASE</span> 敘述，就可以把整個流程拆成幾個清楚的階段。
+
+你可以這樣理解：
+
+- 每一個狀態是「流程的一小步」，例如「上電」、「移到目標」、「移回原點」。
+- 在每個狀態裡，只做一件事情，完成後就把 <span class="cfg-local">iStatus</span> 改成下一個數字。
+- 這樣一來，即使之後流程變長，只要再新增幾個狀態即可，程式仍然容易閱讀與維護。
+
+### 7.2 功能塊呼叫與 Done 訊號
+
+在使用 <span class="cfg-func">MC_MoveAbsolute()</span> 時，有兩個關鍵點：
+
+1. 以 `Execute := TRUE` 啟動命令，並持續呼叫，直到 `Done = TRUE`。  
+2. 命令完成後，記得再呼叫一次並把 `Execute := FALSE`，讓功能塊「收尾」，避免下次命令無法正確觸發。
+
+這種模式在其他運動控制功能塊上也很常見，可以把它當成共通的操作樣式。
+
+---
+
+## 八、重要參數與設定位置（實作時對照）
+
+### 8.1 軸與軸組
+
+本範例沒有軸組，僅有一根軸：
+
+| 名稱 | 類型 | 設定位置 |
+|------|------|----------|
+| <span class="cfg-name">Drive</span> | <span class="cfg-name">SM_Drive_Virtual</span> | 在 Device 樹中建立虛擬軸，並命名為 Drive；程式中直接以 `Axis := Drive` 連接。 |
+
+### 8.2 任務週期與運動參數
+
+- 任務週期：在 `TaskConfiguration.md` 中，`Task` 週期為 `t#4ms`，代表每 4ms 呼叫一次程式。  
+- 運動參數：  
+  - <span class="cfg-local">p</span> 預設為 `100`，可在 `MOTION_PRG.st` 中直接修改。  
+  - <span class="cfg-func">MC_MoveAbsolute</span> 的 `Velocity/Acceleration/Deceleration` 都設定為 `100`，若想觀察不同運動表現，可以調整這三個數值。
+
+在實務應用中，通常會把這些參數放到 GVL 或結構體中集中管理，這個範例則用最直接的寫法幫助理解。
+
+---
+
+## 九、建議閱讀與修改順序（給初學者）
+
+1. **先看 `MOTION_PRG.st` 開頭的變數宣告**  
+   - 弄清楚 <span class="cfg-local">iStatus</span>、<span class="cfg-local">Power</span>、<span class="cfg-local">MoveAbsolute</span>、<span class="cfg-local">p</span> 各自代表什麼。  
+2. **接著閱讀 `CASE iStatus OF` 區塊**  
+   - 逐一對照狀態 0、1、2 內的程式，並在紙上畫出流程箭頭。  
+3. **最後再回頭對照本文件第三章與第五章**  
+   - 把 <span class="cfg-func">MC_Power</span>、<span class="cfg-func">MC_MoveAbsolute</span> 的引數與 Done 行為串起來理解。
+
+當你能夠清楚說出這個程式「在什麼條件下從哪個狀態跳到哪個狀態」，就代表已經掌握這個範例的核心。
+
+---
+
+## 十、名詞對照
+
+| 英文 / 符號 | 說明 |
+|-------------|------|
+| <span class="cfg-name">Axis</span> | 在運動控制中，代表一根可被控制的軸（實體或虛擬）。 |
+| <span class="cfg-name">Drive</span> | 本範例中的虛擬軸名稱，用來模擬實際驅動器。 |
+| <span class="cfg-func">MC_Power</span> | 來自 <span class="cfg-name">SM3_Basic</span> 函式庫的功能塊，用於軸上電與啟動。 |
+| <span class="cfg-func">MC_MoveAbsolute</span> | 來自 <span class="cfg-name">SM3_Basic</span> 函式庫的功能塊，用於絕對位置運動。 |
+| <span class="cfg-name">Task</span> | CODESYS 中的任務，負責以固定週期呼叫 POU。 |
+
+0:{"buildId":"hE9wNZamtqMjFK5Z04D0M","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/softmotion","style":{"color":"var(--t-accent)"},"children":"SoftMotion 學習地圖"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"style":{"color":"var(--t-text)"},"children":"單軸運動控制"}]]}],["$","header",null,{"className":"space-y-1","children":[["$","div",null,{"className":"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-text-muted)"},"children":[["$","span",null,{"className":"uppercase tracking-wide","children":"PLCopen"}],["$","span",null,{"className":"h-1 w-1 rounded-full","style":{"backgroundColor":"var(--t-accent)"}}],["$","span",null,{"style":{"color":"var(--t-accent)"},"children":["步驟 ",1]}]]}],["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"單軸運動控制"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"使用 MC_Power、MC_MoveAbsolute 控制單一虛擬軸，建立上電、運動、完成偵測的基本流程。"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":["官方專案："," ",["$","code",null,{"className":"rounded px-1 py-0.5","style":{"backgroundColor":"var(--t-border)","color":"var(--t-text)"},"children":"PLCopenSingle.project"}]]}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],"$L5","$L6"]}],["$L7","$L8"],"$L9"]}],"loading":null,"isPartial":false}
+5:["$","section",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"延伸閱讀：Offline Help"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"建議搭配以下 Offline Help 教學，一起理解 CODESYS 開發系統與基礎操作。"}],["$","ul",null,{"className":"space-y-1.5 text-xs","children":[["$","li","overview-codesys-overview",{"children":["$","$L2",null,{"href":"/offline-help/overview/codesys-overview","className":"hover:underline","style":{"color":"var(--t-accent)"},"children":"CODESYS Development System 概觀 Overview 教學整理"}]}]]}]]}]
+b:T1e66,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">// MOTION_PRG：單軸往返絕對定位範例主程式</span></span>
+<span class="line"><span style="color:#6A737D">// 在虛擬軸 Drive 上先移動到正向位置 p，再移回原點，透過 iStatus 狀態機反覆執行</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> MOTION_PRG</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#6A737D">	// iStatus：控制整個運動流程的狀態機編號（0=上電、1=移到 p、2=移回 0）</span></span>
+<span class="line"><span style="color:#24292E">	iStatus: INT;</span></span>
+<span class="line"><span style="color:#6A737D">	// Power：對軸 Drive 送出啟動命令的 MC_Power 功能塊</span></span>
+<span class="line"><span style="color:#24292E">	Power: MC_Power;</span></span>
+<span class="line"><span style="color:#6A737D">	// MoveAbsolute：對軸 Drive 送出絕對定位命令的 MC_MoveAbsolute 功能塊</span></span>
+<span class="line"><span style="color:#24292E">	MoveAbsolute: MC_MoveAbsolute;</span></span>
+<span class="line"><span style="color:#6A737D">	// p：目標位置，單位為軸所對應的工程單位（例如度、mm），預設為 100</span></span>
+<span class="line"><span style="color:#24292E">	p: </span><span style="color:#D73A49">REAL</span><span style="color:#24292E"> := </span><span style="color:#005CC5">100</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 依目前 iStatus 狀態，決定要執行哪一段運動流程</span></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> iStatus </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#6A737D">// 狀態 0：先對軸 Drive 上電並啟動</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#6A737D">	// 持續呼叫 Power，要求啟用調節器與啟動軸</span></span>
+<span class="line"><span style="color:#24292E">	Power(Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bRegulatorOn := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bDriveStart := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, Axis := Drive);</span></span>
+<span class="line"><span style="color:#6A737D">	// 當 Power.Status 變為 TRUE，代表軸已經成功上電並可控制</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> Power.Status </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">		// 進入下一個狀態：準備做第一次 MoveAbsolute</span></span>
+<span class="line"><span style="color:#24292E">		iStatus := iStatus + </span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 狀態 1：從目前位置移動到目標位置 p</span></span>
+<span class="line"><span style="color:#005CC5">1</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#6A737D">	// 持續以 Execute=TRUE 呼叫 MoveAbsolute，命令軸移動到位置 p</span></span>
+<span class="line"><span style="color:#24292E">	MoveAbsolute(</span></span>
+<span class="line"><span style="color:#24292E">		Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Position := p,</span></span>
+<span class="line"><span style="color:#24292E">		Velocity := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Acceleration := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Deceleration := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Axis := Drive</span></span>
+<span class="line"><span style="color:#24292E">	);</span></span>
+<span class="line"><span style="color:#6A737D">	// Done 變為 TRUE 表示運動已完成</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> MoveAbsolute.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">		// 將 Execute 設為 FALSE 讓指令結束，避免持續佔用功能塊</span></span>
+<span class="line"><span style="color:#24292E">		MoveAbsolute(Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">, Axis := Drive);</span></span>
+<span class="line"><span style="color:#6A737D">		// 進入下一個狀態：從 p 移回原點 0</span></span>
+<span class="line"><span style="color:#24292E">		iStatus := iStatus + </span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 狀態 2：從位置 p 移回位置 0</span></span>
+<span class="line"><span style="color:#005CC5">2</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#6A737D">	// 再次使用 MoveAbsolute，這次目標位置改為 0</span></span>
+<span class="line"><span style="color:#24292E">	MoveAbsolute(</span></span>
+<span class="line"><span style="color:#24292E">		Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Position := </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Velocity := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Acceleration := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Deceleration := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Axis := Drive</span></span>
+<span class="line"><span style="color:#24292E">	);</span></span>
+<span class="line"><span style="color:#6A737D">	// 第二次運動完成後</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> MoveAbsolute.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#6A737D">		// 結束本次 MoveAbsolute 命令</span></span>
+<span class="line"><span style="color:#24292E">		MoveAbsolute(Execute := </span><span style="color:#005CC5">FALSE</span><span style="color:#24292E">, Axis := Drive);</span></span>
+<span class="line"><span style="color:#6A737D">		// 將狀態改回 1，形成「p 與 0 之間往返運動」的循環</span></span>
+<span class="line"><span style="color:#24292E">		iStatus := </span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span></code></pre>6:["$","section",null,{"className":"space-y-3","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"ST 程式碼"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。"}],["$","div",null,{"className":"space-y-2","children":[["$","$La","MOTION_PRG.st",{"title":"MOTION_PRG.st","html":"$b"}]]}]]}]
+7:["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","async":true}]
+8:["$","script","script-1",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true}]
+9:["$","$Lc",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@e"}]}]
+e:null

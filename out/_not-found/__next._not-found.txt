@@ -1,0 +1,4 @@
+1:"$Sreact.fragment"
+2:I[39756,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+3:I[37457,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+0:{"buildId":"mGRRbc9mQkxUGXHACoBp3","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}

@@ -1,0 +1,274 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+a:I[85649,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"StCodeBlock"]
+c:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+d:"$Sreact.suspense"
+4:T2f1e,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數 / 功能塊</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數 / 方法</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# PLCopenSingle2 — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？（一句話＋情境）
+
+這個範例示範如何在同一個程式中，事先準備三個常用的運動控制功能塊：<span class="cfg-func">MC_Power</span>、<span class="cfg-func">MC_MoveVelocity</span>、<span class="cfg-func">MC_MoveAbsolute</span>，並透過初始化參數設定好「上電」、「速度模式運動」與「絕對定位」的預設行為。
+
+你可以把它想成「先把所有運動指令的模板設定好」，再由其他程式或可視化畫面依需求去啟動對應的命令。
+
+---
+
+## 二、使用情境與硬體／通訊架構
+
+### 2.1 硬體與軸配置
+
+`DeviceTree_Axes.md` 顯示本範例只有一根虛擬軸：
+
+| 軸名稱 | 類型 | 綁定任務 |
+|--------|------|----------|
+| <span class="cfg-name">Drive</span> | <span class="cfg-name">SM_Drive_Virtual</span> | - |
+
+同樣是使用虛擬軸 <span class="cfg-name">Drive</span> 來模擬實際驅動器行為，方便在沒有硬體的情況下做程式測試。
+
+### 2.2 任務與週期
+
+從 `TaskConfiguration.md` 可以看到有兩個任務：
+
+| 任務名稱 | 類型 | 週期 | 優先權 | POU 清單 |
+|----------|------|------|--------|----------|
+| Task | Cyclic | t#4ms | 1 | MOTION_PRG |
+| VISU_TASK | Cyclic | t#100ms | 10 | VisuElems.Visu_Prg |
+
+- `Task` 每 4ms 呼叫一次 `MOTION_PRG`，主要負責運動相關的運算與狀態更新。  
+- `VISU_TASK` 每 100ms 呼叫一次 `VisuElems.Visu_Prg`，通常用來更新可視化畫面，例如顯示軸位置或按鈕狀態。
+
+### 2.3 資料流與角色分工
+
+- 任務 `Task` 調用 `MOTION_PRG`，裡面準備了三個運動功能塊的執例。  
+- 可視化程式 `VisuElems.Visu_Prg` 可能透過變數或參照，去操作這些功能塊的 `Execute` 或設定值（實際細節依專案原始設計而定）。  
+- 軸 <span class="cfg-name">Drive</span> 負責執行這些命令並回報實際位置／速度等資訊。
+
+---
+
+## 三、控制流程：由淺入深
+
+### 3.1 MOTION_PRG 的角色
+
+開啟 `MOTION_PRG.st` 可以看到，程式中目前只包含變數宣告區塊，沒有進一步的流程控制或狀態機。這代表它在這個範例裡扮演的是「集中宣告與初始化運動控制功能塊」的角色：
+
+- <span class="cfg-local">mcp</span>：負責上電與啟動軸。  
+- <span class="cfg-local">mcmv</span>：負責速度模式運動。  
+- <span class="cfg-local">mcma</span>：負責絕對位置運動。
+
+實際的呼叫順序、觸發時機，很可能由其他程式（特別是可視化）來決定，MOTION_PRG 只負責「把功能塊準備好、設定好預設值」。
+
+### 3.2 速度模式與絕對定位的概念
+
+這個範例同時準備了速度模式與絕對定位兩種指令：
+
+- 速度模式（<span class="cfg-func">MC_MoveVelocity</span>）：  
+  - 給定一個速度與加減速度後，軸會持續以該速度旋轉或移動，適合用在「連續輸送帶」或「需要連續運轉」的場景。  
+
+- 絕對定位（<span class="cfg-func">MC_MoveAbsolute</span>）：  
+  - 給定一個目標位置，軸會以指定的速度與加減速度移動到該點，適合用在「點到點定位」或「需要精準位置」的場景。
+
+初學者可以把這兩種功能塊的設定值當成「運動菜單」的預設參數，之後只要改變 `Execute` 或目標位置，就能反覆使用。
+
+---
+
+## 四、各支程式負責哪些功能？（由淺入深）
+
+本目錄的程式檔案主要是 `MOTION_PRG.st`，其餘可視化程式在專案中以名稱 `VisuElems.Visu_Prg` 存在，但不在此目錄。
+
+### 4.1 `MOTION_PRG.st`
+
+- **類型**：<span class="cfg-keyword">PROGRAM</span>  
+- **職責**：  
+  - 集中宣告並初始化三個運動控制功能塊：<span class="cfg-func">MC_Power</span>、<span class="cfg-func">MC_MoveVelocity</span>、<span class="cfg-func">MC_MoveAbsolute</span>。  
+  - 為每一個功能塊預先設定合理的速度、加速度、減速度與目標位置等參數。  
+- **與硬體／通訊關係**：  
+  - 功能塊實際連結的軸為 <span class="cfg-name">Drive</span>，在 Device 樹中對應到 <span class="cfg-name">SM_Drive_Virtual</span>。  
+  - 其他程式（如視覺化程式）可以透過共享變數或全域參照來操作這些功能塊。
+
+---
+
+## 五、函式庫與函式／功能塊一覽（用途、引數、回傳）
+
+### 5.1 函式庫清單（對照 `Libraries.md`）
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | （系統庫，提供基本運動控制功能塊，如 <span class="cfg-func">MC_Power</span>、<span class="cfg-func">MC_MoveVelocity</span>、<span class="cfg-func">MC_MoveAbsolute</span>） |
+| <span class="cfg-name">#SM3_CamBuilder</span> | （系統庫，本範例未直接使用其凸輪功能） |
+| <span class="cfg-name">#System_VisuElem3DPath</span> | （系統庫，提供 3D 路徑視覺化元件） |
+| <span class="cfg-name">#System_VisuElemCamDisplayer</span> | （系統庫，提供顯示 Cam 曲線的視覺化元件） |
+
+### 5.2 功能塊與主要引數
+
+#### 5.2.1 <span class="cfg-func">MC_Power()</span>
+
+- 用途、引數與輸出說明可參考 PLCopenSingle 範例，本處同理。  
+- 在此範例中，<span class="cfg-local">mcp</span> 預設 `Enable := TRUE`，讓上電請求在專案啟動後立即成立。
+
+#### 5.2.2 <span class="cfg-func">MC_MoveVelocity()</span>
+
+- **用途**：  
+  - 讓軸以指定速度連續運動，直到外部條件（例如 `Execute := FALSE`）結束動作。  
+- **主要引數**（僅列出本範例有設定者）：  
+  - <span class="cfg-arg">Velocity</span> : <span class="cfg-type">LREAL</span> — 目標速度，程式中設為 `100`。  
+  - <span class="cfg-arg">Acceleration</span> / <span class="cfg-arg">Deceleration</span> : <span class="cfg-type">LREAL</span> — 速度變化的加速度與減速度。  
+  - <span class="cfg-arg">Direction</span> : <span class="cfg-type">MC_Direction</span> — 運動方向，本範例設為 `positive`。  
+- **回傳型態**：<span class="cfg-type">VOID</span>（功能塊）。
+
+#### 5.2.3 <span class="cfg-func">MC_MoveAbsolute()</span>
+
+- 與 PLCopenSingle 範例類似，但此處預設位置與速度略有不同：  
+  - <span class="cfg-arg">Position</span> 設為 `180`。  
+  - 速度與加減速度同樣為 `100`，方向為 `positive`。
+
+---
+
+## 六、變數與常數一覽
+
+本範例未使用獨立 GVL 檔案，所有變數皆在 `MOTION_PRG.st` 中宣告，亦未使用 <span class="cfg-name">RETAIN</span> / <span class="cfg-name">PERSISTENT</span>。
+
+### 6.1 `MOTION_PRG.st` 內的變數
+
+| 名稱 | 類別 | 型態 | 預設值 | 說明 |
+|------|------|------|--------|------|
+| <span class="cfg-local">mcp</span> | 區域變數 | <span class="cfg-type">MC_Power</span> | `Enable := TRUE`，其他為預設 | 軸上電與啟動用的功能塊執例。 |
+| <span class="cfg-local">mcmv</span> | 區域變數 | <span class="cfg-type">MC_MoveVelocity</span> | `Velocity := 100`，`Acceleration/Deceleration := 100`，`Direction := positive` | 速度模式運動的功能塊執例。 |
+| <span class="cfg-local">mcma</span> | 區域變數 | <span class="cfg-type">MC_MoveAbsolute</span> | `Position := 180`，`Velocity/Acceleration/Deceleration := 100`，`Direction := positive` | 絕對定位運動的功能塊執例。 |
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 以「初始化」為主的程式寫法
+
+雖然 `MOTION_PRG` 目前沒有流程控制邏輯，但它示範了一種常見的寫法：  
+先在程式裡集中宣告所有會用到的運動控制功能塊，並透過結構化的初始化語法，直接給定每個功能塊的預設參數。
+
+這樣做有幾個優點：
+
+- 不需要在程式的多個地方重複設定相同的速度／加速度。  
+- 所有關鍵運動參數都在同一個地方，方便日後調整。  
+- 其他程式只要控制 `Execute` 或個別引數，就可以重複使用這些預設設定。
+
+---
+
+## 八、重要參數與設定位置（實作時對照）
+
+### 8.1 軸與任務
+
+| 項目 | 名稱 | 說明 |
+|------|------|------|
+| 軸 | <span class="cfg-name">Drive</span> | 在 Device 樹中設定為 <span class="cfg-name">SM_Drive_Virtual</span>，對應到本範例中的單一虛擬軸。 |
+| 任務 | <span class="cfg-name">Task</span> | 週期 4ms，負責呼叫 `MOTION_PRG`。 |
+| 任務 | <span class="cfg-name">VISU_TASK</span> | 週期 100ms，負責呼叫 `VisuElems.Visu_Prg`（視覺化）。 |
+
+### 8.2 運動參數
+
+- 速度模式（<span class="cfg-local">mcmv</span>）：`Velocity := 100`，`Acceleration/Deceleration := 100`。  
+- 絕對定位（<span class="cfg-local">mcma</span>）：`Position := 180`，`Velocity/Acceleration/Deceleration := 100`。  
+
+實務上若想要改變運動特性，可以直接在 `MOTION_PRG.st` 的初始化區塊中調整這些數值。
+
+---
+
+## 九、建議閱讀與修改順序（給初學者）
+
+1. **先看 `MOTION_PRG.st` 的變數區塊**  
+   - 理解 <span class="cfg-local">mcp</span>、<span class="cfg-local">mcmv</span>、<span class="cfg-local">mcma</span> 各自對應的功能塊與初始化參數。  
+2. **再對照第五章的功能塊說明**  
+   - 把每個初始化欄位（例如 `Velocity`、`Position`）與實際運動行為連結起來。  
+3. **最後在 CODESYS 中開啟 VISU 畫面（若有）**  
+   - 觀察按鈕或控制項如何操作這些功能塊，強化對「程式參數」與「畫面操作」之間關係的理解。
+
+---
+
+## 十、名詞對照
+
+| 英文 / 符號 | 說明 |
+|-------------|------|
+| <span class="cfg-func">MC_Power</span> | 軸上電與啟動的功能塊，來自 <span class="cfg-name">SM3_Basic</span>。 |
+| <span class="cfg-func">MC_MoveVelocity</span> | 連續速度模式運動的功能塊。 |
+| <span class="cfg-func">MC_MoveAbsolute</span> | 絕對位置運動的功能塊。 |
+| <span class="cfg-name">Drive</span> | 本範例的虛擬軸名稱。 |
+| <span class="cfg-name">VISU_TASK</span> | 用於執行可視化程式的任務。 |
+
+0:{"buildId":"hE9wNZamtqMjFK5Z04D0M","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/softmotion","style":{"color":"var(--t-accent)"},"children":"SoftMotion 學習地圖"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"style":{"color":"var(--t-text)"},"children":"單軸 PLCopen 變體／初始化範本"}]]}],["$","header",null,{"className":"space-y-1","children":[["$","div",null,{"className":"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-text-muted)"},"children":[["$","span",null,{"className":"uppercase tracking-wide","children":"PLCopen"}],["$","span",null,{"className":"h-1 w-1 rounded-full","style":{"backgroundColor":"var(--t-accent)"}}],["$","span",null,{"style":{"color":"var(--t-accent)"},"children":["步驟 ",2]}]]}],["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"單軸 PLCopen 變體／初始化範本"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"集中宣告並初始化 MC_Power、MC_MoveVelocity、MC_MoveAbsolute，預設參數供 Visu 或程式重複使用。"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":["官方專案："," ",["$","code",null,{"className":"rounded px-1 py-0.5","style":{"backgroundColor":"var(--t-border)","color":"var(--t-text)"},"children":"PLCopenSingle2.project"}]]}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],"$L5","$L6"]}],["$L7","$L8"],"$L9"]}],"loading":null,"isPartial":false}
+5:["$","section",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"延伸閱讀：Offline Help"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"建議搭配以下 Offline Help 教學，一起理解 CODESYS 開發系統與基礎操作。"}],["$","ul",null,{"className":"space-y-1.5 text-xs","children":[["$","li","overview-codesys-overview",{"children":["$","$L2",null,{"href":"/offline-help/overview/codesys-overview","className":"hover:underline","style":{"color":"var(--t-accent)"},"children":"CODESYS Development System 概觀 Overview 教學整理"}]}]]}]]}]
+b:Td01,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">// MOTION_PRG：示範同時準備速度模式與絕對定位的運動控制功能塊</span></span>
+<span class="line"><span style="color:#6A737D">// 在這個範例中只宣告並初始化 MC_Power、MC_MoveVelocity、MC_MoveAbsolute，實際呼叫可能在其他程式或可視化中完成</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> MOTION_PRG</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#6A737D">	// mcp：軸上電與啟動用的 MC_Power 功能塊，預設啟用 Enable/調節器/啟動軸</span></span>
+<span class="line"><span style="color:#24292E">	mcp: MC_Power := (</span></span>
+<span class="line"><span style="color:#24292E">		Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		bRegulatorOn := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		bDriveStart := </span><span style="color:#005CC5">TRUE</span></span>
+<span class="line"><span style="color:#24292E">	);</span></span>
+<span class="line"><span style="color:#6A737D">	// mcmv：速度模式運動用的 MC_MoveVelocity，預設速度 100、加減速度 100，方向為正向</span></span>
+<span class="line"><span style="color:#24292E">	mcmv: MC_MoveVelocity := (</span></span>
+<span class="line"><span style="color:#24292E">		Velocity := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Acceleration := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Deceleration := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Direction := positive</span></span>
+<span class="line"><span style="color:#24292E">	);</span></span>
+<span class="line"><span style="color:#6A737D">	// mcma：絕對定位用的 MC_MoveAbsolute，預設目標位置 180、速度 100、加減速度 100，方向為正向</span></span>
+<span class="line"><span style="color:#24292E">	mcma: MC_MoveAbsolute := (</span></span>
+<span class="line"><span style="color:#24292E">		Position := </span><span style="color:#005CC5">180</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Velocity := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Acceleration := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Deceleration := </span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">		Direction := positive</span></span>
+<span class="line"><span style="color:#24292E">	);</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span></code></pre>6:["$","section",null,{"className":"space-y-3","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"ST 程式碼"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。"}],["$","div",null,{"className":"space-y-2","children":[["$","$La","MOTION_PRG.st",{"title":"MOTION_PRG.st","html":"$b"}]]}]]}]
+7:["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","async":true}]
+8:["$","script","script-1",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true}]
+9:["$","$Lc",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@e"}]}]
+e:null

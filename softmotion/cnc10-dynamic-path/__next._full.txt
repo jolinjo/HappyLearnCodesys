@@ -1,0 +1,347 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[39756,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+4:I[37457,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+6:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"ViewportBoundary"]
+c:I[68027,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+:HL["/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","style"]
+0:{"P":null,"b":"hE9wNZamtqMjFK5Z04D0M","c":["","softmotion","cnc10-dynamic-path"],"q":"","i":false,"f":[[["",{"children":["softmotion",{"children":[["slug","cnc10-dynamic-path","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-Hant","children":["$","body",null,{"className":"min-h-screen","children":["$","div",null,{"className":"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6","children":[["$","header",null,{"className":"mb-6 border-b pb-4","style":{"borderColor":"var(--t-border)"},"children":["$","div",null,{"className":"flex items-start justify-between gap-4","children":[["$","div",null,{"children":[["$","h1",null,{"className":"text-xl font-semibold tracking-tight","children":["$","$L2",null,{"href":"/","style":{"color":"var(--t-accent)"},"className":"hover:underline","children":"CODESYS 教學網站"}]}],["$","p",null,{"className":"mt-1 text-sm","style":{"color":"var(--t-text-muted)"},"children":"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。"}]]}],["$","nav",null,{"className":"flex shrink-0 items-center gap-2","children":[["$","$L2",null,{"href":"/","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"回首頁"}],["$","$L2",null,{"href":"/offline-help","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"Offline Help"}],["$","$L2",null,{"href":"/search","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"搜尋"}]]}]]}]}],["$","main",null,{"className":"flex-1 pb-8","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex flex-col items-center justify-center gap-4 py-12 text-center","children":[["$","p",null,{"className":"text-4xl font-semibold","style":{"color":"var(--t-text-muted)"},"children":"404"}],["$","p",null,{"style":{"color":"var(--t-text-muted)"},"children":"找不到這個頁面。"}],["$","nav",null,{"className":"mt-4 flex flex-wrap justify-center gap-3","children":[["$","$L2",null,{"href":"/","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-accent)"},"children":"回首頁"}],["$","$L2",null,{"href":"/softmotion","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"SoftMotion 學習地圖"}],["$","$L2",null,{"href":"/licensing","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"授權說明"}],["$","$L2",null,{"href":"/guidelines","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"開發規範"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t pt-4 text-xs","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。"}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":"$Lb"}],null]}],false]],"m":"$undefined","G":["$c",[]],"S":true}
+d:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"MetadataBoundary"]
+b:["$","$Ld",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Le"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+e:[["$","title","0",{"children":"CODESYS 教學網站"}],["$","meta","1",{"name":"description","content":"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"}]]
+f:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+10:T2dca,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# CNC10_DynamicPath — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？
+
+本範例示範如何在 **不使用 G-code 檔案或 CNC 物件的情況下，由 PLC 程式在執行期間動態產生 CNC 路徑**。`Path` 程式使用陣列 `xp` / `yp` 定義一串目標點，依序組裝 <span class="cfg-type">SMC_GeoInfo</span> 並追加到 <span class="cfg-type">SMC_OUTQUEUE</span> 佇列，經 <span class="cfg-func">SMC_CheckVelocities</span> 檢查後提供給 `Ipo` 程式的 <span class="cfg-func">SMC_Interpolator</span> 使用；`Ipo` 再透過二軸龍門座標轉換與位置控制驅動 `X_Drive` / `Y_Drive`。
+
+---
+
+## 二、使用情境與硬體／通訊架構
+
+### 2.1 任務與程式
+
+`TaskConfiguration.md` 中顯示：
+
+```markdown
+# 任務設定（自 XML 轉出）
+
+（本專案 XML 未解析到任務或結構不同）
+```
+
+XML 未解析出完整任務設定，但典型 SoftMotion 架構為：
+
+- **Path 任務**：執行 `Path`，負責動態產生幾何段並檢查速度。  
+- **Motion 任務**：執行 `Ipo`，負責插補與二軸控制。  
+
+對應本目錄程式：
+
+- `Path.st`：路徑佇列產生與速度檢查。  
+- `Ipo.st`：插補、座標轉換與二軸位置控制。
+
+### 2.2 軸與裝置
+
+`DeviceTree_Axes.md`：
+
+| 軸名稱 | 類型 | 綁定任務 |
+|--------|------|----------|
+| X_Drive | SM_Drive_Virtual | - |
+| Y_Drive | SM_Drive_Virtual | - |
+
+兩支虛擬軸對應 CNC 平面 X/Y 軸，實機專案中會綁定到實際驅動器。
+
+### 2.3 函式庫
+
+`Libraries.md`：
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | SoftMotion 基礎運動控制。 |
+| <span class="cfg-name">#SM3_CamBuilder</span> | 凸輪相關。 |
+| <span class="cfg-name">#System_VisuElem3DPath</span> | 3D Path 視覺化。 |
+| <span class="cfg-name">#System_VisuElemCamDisplayer</span> | 凸輪視覺化。 |
+
+---
+
+## 三、控制流程：由淺入深
+
+### 3.1 Path：動態組裝路徑佇列
+
+`Path.st` 的主要內容（含前面我們已加的中文註解）可簡化描述如下：
+
+```pascal
+PROGRAM Path
+VAR
+	iState: INT;
+	CheckVel: SMC_CheckVelocities;
+
+	QUEUE: SMC_OUTQUEUE;
+	BUF: ARRAY[0..99] OF SMC_GEOINFO;
+	GEO: SMC_GEOINFO := (... 預設速度、加減速 ...);
+	n: INT := 0;
+	xp: ARRAY[1..7] OF REAL := [100,50,50,10,90,0,0];
+	yp: ARRAY[1..7] OF REAL := [0,100,0,50,100,100,0];
+END_VAR
+```
+
+流程：
+
+1. **狀態 0：初始化佇列**  
+   - `QUEUE.pbyBuffer := ADR(BUF[0]);`  
+   - <span class="cfg-func">SM3_CNC.SMC_SetQueueCapacity</span>(`ADR(QUEUE)`, `SIZEOF(BUF)`)，指定佇列容量。  
+   - `iState := 1`。  
+2. **狀態 1：填滿佇列**  
+   - 在 `WHILE NOT QUEUE.bFull` 迴圈中：  
+     - `n := n + 1;`，依序處理 `xp[n]` / `yp[n]`。  
+     - `GEO.iSourceLine_No := n;`。  
+     - `GEO.piStartPos := GEO.piDestPos;`，上一點為本段起點。  
+     - `GEO.iMoveType := LIN;`，設定線性移動。  
+     - `GEO.iObjNo := GEO.iObjNo + 1;`。  
+     - `GEO.piDestPos.dX := xp[n]; GEO.piDestPos.dY := yp[n];`。  
+     - <span class="cfg-func">SMC_CalcLengthGeo</span>(`ADR(GEO)`)，計算幾何長度。  
+     - <span class="cfg-func">SMC_AppendObj</span>(`ADR(QUEUE)`, `ADR(GEO)`)，追加到佇列。  
+     - 如果 `n` 已達陣列長度，設定 `QUEUE.bEndOfList := TRUE; iState := 2; EXIT;`。  
+3. **狀態 2：完成**  
+   - 不再新增幾何段，維持佇列內容。  
+4. **速度檢查**  
+   - 每個週期呼叫 `CheckVel(bExecute := TRUE, poqDataIn := ADR(QUEUE));`，輸出路徑供插補器使用。
+
+總結來說，`Path` 將一組點列（xp/yp）動態轉成 CNC 路徑，而非依賴固定的 G-code 檔案。
+
+### 3.2 Ipo：插補、龍門座標轉換與軸控制
+
+`Ipo.st`：
+
+```pascal
+PROGRAM Ipo
+VAR
+	trafo: SMC_TRAFO_Gantry2;
+	p1,p2: SMC_ControlAxisByPos;
+	trafof: SMC_TRAFOF_Gantry2;
+	smci: SMC_Interpolator;
+	mcp1, mcp2: MC_Power;
+END_VAR
+```
+
+典型實作流程（與其他 CNC 範例類似）：
+
+1. 兩軸上電：  
+   - `mcp1(Enable := TRUE, bRegulatorOn := TRUE, bDriveStart := TRUE, Axis := X_Drive);`  
+   - `mcp2(Enable := TRUE, bRegulatorOn := TRUE, bDriveStart := TRUE, Axis := Y_Drive);`  
+2. 插補器：  
+   - `smci` 以 `poqDataIn := Path.CheckVel.poqDataOut` 為輸入（實際程式在 `Interpolation()` 中呼叫），將 OutQueue 轉成連續的 SetPosition（X/Y）。  
+3. 座標轉換：  
+   - `trafo` / `trafof` 將插補輸出的機械座標轉成 X/Y 驅動軸的 SetPosition，支援龍門結構與視覺化。  
+4. 軸控制：  
+   - `p1` / `p2`（<span class="cfg-func">SMC_ControlAxisByPos</span>）以 `fSetPosition` 寫入 `X_Drive` / `Y_Drive`。  
+
+---
+
+## 四、各支程式負責哪些功能？
+
+### 4.1 `Ipo.st`
+
+- **類型**：PROGRAM。  
+- **職責**：  
+  - 上電 X/Y 兩軸。  
+  - 從 `Path` 產生的路徑佇列插補 SetPosition。  
+  - 經二軸龍門座標轉換後驅動兩軸。  
+
+### 4.2 `Path.st`
+
+- **類型**：PROGRAM。  
+- **職責**：  
+  - 動態組裝 <span class="cfg-type">SMC_OUTQUEUE</span>：以 `xp` / `yp` 陣列產生線段幾何段（`SMC_GeoInfo`），設定速度、加減速與目標座標。  
+  - 透過 <span class="cfg-func">SMC_SetQueueCapacity</span>、<span class="cfg-func">SMC_AppendObj</span> 控制佇列容量與內容。  
+  - 使用 <span class="cfg-func">SMC_CheckVelocities</span> 對整條路徑作速度檢查，輸出給插補器。  
+
+---
+
+## 五、函式庫與函式／功能塊一覽
+
+| 名稱 | 類別 | 用途 |
+|------|------|------|
+| <span class="cfg-func">SMC_SetQueueCapacity</span> | 函式 | 設定 OutQueue 的容量。 |
+| <span class="cfg-func">SMC_AppendObj</span> | 函式 | 將一段 `SMC_GeoInfo` 追加到 OutQueue。 |
+| <span class="cfg-func">SMC_CalcLengthGeo</span> | 函式 | 計算幾何段長度等資訊。 |
+| <span class="cfg-func">SMC_CheckVelocities</span> | FB | 路徑速度檢查與限制。 |
+| <span class="cfg-func">SMC_Interpolator</span> | FB | 從 OutQueue 插補出 SetPosition。 |
+| <span class="cfg-func">SMC_TRAFO_Gantry2</span> / <span class="cfg-func">SMC_TRAFOF_Gantry2</span> | FB | 二軸龍門座標轉換與浮點版視覺化。 |
+| <span class="cfg-func">SMC_ControlAxisByPos</span> | FB | 依 SetPosition 控制單軸位置。 |
+| <span class="cfg-func">MC_Power</span> | FB | 軸上電與驅動啟動。 |
+
+---
+
+## 六、變數與常數一覽
+
+本範例未使用 RETAIN／PERSISTENT，全域常數也未由 XML 匯出；所有變數皆為區域變數。
+
+### 6.1 `Path` 主要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">QUEUE</span> | <span class="cfg-type">SMC_OUTQUEUE</span> | 動態組裝的路徑佇列。 |
+| <span class="cfg-local">BUF</span> | <span class="cfg-type">ARRAY[0..99] OF SMC_GEOINFO</span> | OutQueue 緩衝區。 |
+| <span class="cfg-local">GEO</span> | <span class="cfg-type">SMC_GeoInfo</span> | 單一線段幾何描述，內含起點、終點與速度資訊。 |
+| <span class="cfg-local">xp/yp</span> | <span class="cfg-type">ARRAY[1..7] OF REAL</span> | 定義路徑上各個 X/Y 目標點。 |
+| <span class="cfg-local">iState</span> | <span class="cfg-type">INT</span> | Path 狀態機（0=初始化、1=填佇列、2=完成）。 |
+
+### 6.2 `Ipo` 主要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">smci</span> | <span class="cfg-type">SMC_Interpolator</span> | 插補器。 |
+| <span class="cfg-local">trafo/trafof</span> | <span class="cfg-type">SMC_TRAFO_Gantry2</span> / <span class="cfg-type">SMC_TRAFOF_Gantry2</span> | 二軸龍門座標轉換。 |
+| <span class="cfg-local">p1/p2</span> | <span class="cfg-type">SMC_ControlAxisByPos</span> | 兩軸位置控制。 |
+| <span class="cfg-local">mcp1/mcp2</span> | <span class="cfg-type">MC_Power</span> | 兩軸上電。 |
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 為什麼要動態產生路徑？
+
+相較於從 G-code 檔案讀取，本範例的做法適用於：
+
+- 路徑由 PLC 計算（例如依感測器輸入、配方或線上演算法）。  
+- 外部系統直接傳入點列（table of points），PLC 端再組裝成幾何段。  
+- 需要在運轉中隨時插入、修改、重建路徑的應用。  
+
+這種「程式組裝幾何段」的方式比編輯 G-code 更易於與控制邏輯整合。
+
+### 7.2 OutQueue 的結構與生命週期
+
+- `SMC_OUTQUEUE` 代表一條待插補的路徑序列，可以重複被 CheckVel / Interpolator 消費。  
+- `bEndOfList := TRUE` 標記路徑已經到結尾。  
+- 可以在執行期間重建 QUEUE，例如改變 `xp/yp` 後重新進入狀態 0/1 產生新路徑。
+
+---
+
+## 八、重要參數與設定位置
+
+| 參數 | 檔案 / 位置 | 說明 |
+|------|-------------|------|
+| `xp` / `yp` 內容 | `Path.st` | 定義整條路徑的形狀。 |
+| `GEO.dVel/dAccel/dDecel` | `Path.st` 中 `GEO` 預設值 | 每段線段的速度與加減速設定。 |
+| OutQueue 容量 | `Path.st` 中 `BUF` 大小與 `SMC_SetQueueCapacity` | 決定最多可緩衝多少幾何段。 |
+
+---
+
+## 九、建議閱讀與修改順序
+
+1. 先讀 `Path.st`，理解狀態機與 `QUEUE` / `GEO` / `xp` / `yp` 的關係。  
+2. 再讀 `Ipo.st`，與 CNC01 的 `Ipo` 對照，確認插補與二軸控制結構。  
+3. 在 CODESYS 中將 `xp/yp` 改為其他點，觀察路徑與運動結果變化。  
+4. 若要加入圓弧或樣條，可在產生 `GEO` 時改用對應的 `iMoveType` 與參數。  
+
+---
+
+## 十、名詞對照
+
+| 英文 / 符號 | 說明 |
+|-------------|------|
+| <span class="cfg-name">Dynamic Path</span> | 由 PLC 執行期間動態組裝的路徑，而非固定 G-code。 |
+| <span class="cfg-type">SMC_OUTQUEUE</span> | CNC 路徑佇列結構。 |
+| <span class="cfg-type">SMC_GeoInfo</span> | 單一幾何段的描述（線段、圓弧等）。 |
+
+5:["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/softmotion","style":{"color":"var(--t-accent)"},"children":"SoftMotion 學習地圖"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"style":{"color":"var(--t-text)"},"children":"CNC Example 10：動態 CNC 路徑"}]]}],["$","header",null,{"className":"space-y-1","children":[["$","div",null,{"className":"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-text-muted)"},"children":[["$","span",null,{"className":"uppercase tracking-wide","children":"CNC"}],["$","span",null,{"className":"h-1 w-1 rounded-full","style":{"backgroundColor":"var(--t-accent)"}}],["$","span",null,{"style":{"color":"var(--t-accent)"},"children":["步驟 ",10]}]]}],["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"CNC Example 10：動態 CNC 路徑"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"PLC 中組裝 SMC_OUTQUEUE/SMC_GEOINFO，SMC_CalcLengthGeo、SMC_AppendObj 動態產生路徑。"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":["官方專案："," ",["$","code",null,{"className":"rounded px-1 py-0.5","style":{"backgroundColor":"var(--t-border)","color":"var(--t-text)"},"children":"CNC10_DynamicPath.project"}]]}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$Lf",null,{"content":"$10"}]}],false,"$L11"]}]
+12:I[85649,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"StCodeBlock"]
+13:T1f17,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> Path</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">	iState: INT;</span></span>
+<span class="line"><span style="color:#24292E">	CheckVel: SMC_CheckVelocities;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	QUEUE: SMC_OUTQUEUE;</span></span>
+<span class="line"><span style="color:#24292E">	BUF: </span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">0</span><span style="color:#24292E">.</span><span style="color:#005CC5">.99</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#24292E"> SMC_GEOINFO;</span></span>
+<span class="line"><span style="color:#24292E">	GEO: SMC_GEOINFO:=(dT1:=</span><span style="color:#005CC5">0</span><span style="color:#24292E">, dT2:=</span><span style="color:#005CC5">1</span><span style="color:#24292E">, dToolRadius:=</span><span style="color:#005CC5">0</span><span style="color:#24292E">, dVel:=</span><span style="color:#005CC5">100</span><span style="color:#24292E">, dVelEnd:=</span><span style="color:#005CC5">100</span><span style="color:#24292E">, dAccel:=</span><span style="color:#005CC5">200</span><span style="color:#24292E">, dDecel:=</span><span style="color:#005CC5">500</span><span style="color:#24292E">, iObjNo:=</span><span style="color:#005CC5">0</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">	n: INT:=</span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">	xp:</span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">1</span><span style="color:#24292E">.</span><span style="color:#005CC5">.7</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#D73A49"> REAL</span><span style="color:#24292E">:= [</span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span><span style="color:#005CC5">50</span><span style="color:#24292E">,</span><span style="color:#005CC5">50</span><span style="color:#24292E">,</span><span style="color:#005CC5">10</span><span style="color:#24292E">,</span><span style="color:#005CC5">90</span><span style="color:#24292E">,</span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span><span style="color:#005CC5">0</span><span style="color:#24292E">];</span></span>
+<span class="line"><span style="color:#24292E">	yp:</span><span style="color:#D73A49">ARRAY</span><span style="color:#24292E">[</span><span style="color:#005CC5">1</span><span style="color:#24292E">.</span><span style="color:#005CC5">.7</span><span style="color:#24292E">] </span><span style="color:#D73A49">OF</span><span style="color:#D73A49"> REAL</span><span style="color:#24292E">:= [</span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span><span style="color:#005CC5">50</span><span style="color:#24292E">,</span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span><span style="color:#005CC5">100</span><span style="color:#24292E">,</span><span style="color:#005CC5">0</span><span style="color:#24292E">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> iState </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#6A737D">	//initialize Queue</span></span>
+<span class="line"><span style="color:#24292E">	QUEUE.pbyBuffer := ADR(BUF[</span><span style="color:#005CC5">0</span><span style="color:#24292E">]);</span></span>
+<span class="line"><span style="color:#24292E">	SM3_CNC.SMC_SetQueueCapacity(ADR(QUEUE), SIZEOF(BUF));</span></span>
+<span class="line"><span style="color:#24292E">	iState := iState + </span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">1</span><span style="color:#24292E">: 	</span><span style="color:#6A737D">//fill queue</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">	WHILE</span><span style="color:#D73A49"> NOT</span><span style="color:#24292E"> QUEUE.bFull </span><span style="color:#D73A49">DO</span><span style="color:#6A737D">					// when the Queue is full, wait until it has been processed by the following FBs</span></span>
+<span class="line"><span style="color:#24292E">		n := n + </span><span style="color:#005CC5">1</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		GEO.iSourceLine_No := n;</span></span>
+<span class="line"><span style="color:#24292E">		GEO.piStartPos := GEO.piDestPos;		</span><span style="color:#6A737D">// copy last destination</span></span>
+<span class="line"><span style="color:#24292E">		GEO.iMoveType := LIN;					</span><span style="color:#6A737D">// generate linear movement</span></span>
+<span class="line"><span style="color:#24292E">		GEO.iObjNo := GEO.iObjNo + </span><span style="color:#005CC5">1</span><span style="color:#24292E">;			</span><span style="color:#6A737D">// calculate number</span></span>
+<span class="line"><span style="color:#24292E">		GEO.piDestPos.dX := xp[n];				</span><span style="color:#6A737D">// generate position</span></span>
+<span class="line"><span style="color:#24292E">		GEO.piDestPos.dY := yp[n];</span></span>
+<span class="line"><span style="color:#24292E">		SMC_CalcLengthGeo(pg := ADR(GEO));		</span><span style="color:#6A737D">// calculate length of object with the help of the standard function</span></span>
+<span class="line"><span style="color:#24292E">		SMC_AppendObj(poq:=ADR(QUEUE), pgi:=ADR(GEO));	</span><span style="color:#6A737D">//append object to queue</span></span>
+<span class="line"><span style="color:#D73A49">		IF</span><span style="color:#24292E"> n = SIZEOF(xp)/SIZEOF(xp[</span><span style="color:#005CC5">1</span><span style="color:#24292E">]) </span><span style="color:#D73A49">THEN</span><span style="color:#6A737D">	// all target positions processed</span></span>
+<span class="line"><span style="color:#24292E">			QUEUE.bEndOfList := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			n := </span><span style="color:#005CC5">0</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">			iState := </span><span style="color:#005CC5">2</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">			EXIT</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">		END_IF</span></span>
+<span class="line"><span style="color:#24292E">	END_WHILE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">2</span><span style="color:#24292E">:	</span><span style="color:#6A737D">//done</span></span>
+<span class="line"><span style="color:#24292E">	;</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">CheckVel(bExecute:=</span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> , poqDataIn:=ADR(queue));</span></span>
+<span class="line"></span></code></pre>11:["$","section",null,{"className":"space-y-3","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"ST 程式碼"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。"}],["$","div",null,{"className":"space-y-2","children":[["$","$L12","Ipo.st",{"title":"Ipo.st","html":"<pre class=\"shiki github-light\" style=\"background-color:#fff;color:#24292e\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#D73A49\">PROGRAM</span><span style=\"color:#24292E\"> Ipo</span></span>\n<span class=\"line\"><span style=\"color:#D73A49\">VAR</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">\ttrafo: SMC_TRAFO_Gantry2;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">\tp1,p2: SMC_ControlAxisByPos;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">\ttrafof: SMC_TRAFOF_Gantry2;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">\tsmci: SMC_Interpolator;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">\tmcp1, mcp2: MC_Power;</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">END_VAR</span></span></code></pre>"}],["$","$L12","Path.st",{"title":"Path.st","html":"$13"}]]}]]}]

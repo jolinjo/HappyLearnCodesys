@@ -1,0 +1,304 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+7:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+4:T28ed,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# Operators 運算子 教學整理
+
+> 本文件基於 CODESYS Offline Help 中 **Operators**（`_cds_struct_reference_operators.html`）及其子頁（如 `_cds_operator_add.html`、比較／位元／位址運算子等）整理而成。
+> 目標是整理運算子分類與常用運算子（ADD、GT、AND、ADR 等）的概念與 ST 範例，便於查閱與教學；完整語法與優先順序請參閱 Offline Help。
+
+---
+
+## 1. 整體概念：運算子是什麼？
+
+- **Operators 運算子**：在 CODESYS / IEC 61131-3 中，用來「處理資料」或「控制流程」的關鍵符號或關鍵字，例如 `ADD`, `AND`, `GT`, `ADR` 等。
+- **使用位置**：幾乎所有 POU（`PROGRAM` / `FUNCTION` / `FUNCTION_BLOCK`）的程式碼裡都會用到運算子。
+- **官方說明重點整理**：
+  - CODESYS V3 支援 **IEC 61131-3 所有標準運算子**。
+  - 另外還擴充了一些 **非 IEC 標準但很實用的運算子**（例如同步、多核心、命名空間相關）。
+  - ST 中的運算子有「優先順序」，詳細可見官方文件的 **ST expressions** 章節。
+
+在教學或實務上，比較常用的分類可以簡化為：
+
+1. Arithmetic operators **算術運算子**
+2. Bitstring operators **位元邏輯運算子**
+3. Bitshift operators **位移運算子**
+4. Selection operators **選擇運算子**
+5. Comparison operators **比較運算子**
+6. Address operators **位址／指標運算子**
+7. Type conversion operators **型別轉換運算子**
+8. Numeric operators **數值運算函式**
+9. Namespace operators **命名空間運算子**
+10. Multicore operators **多核心同步運算子**
+11. Other operators **其他進階運算子**
+
+下面先用常用、好入門的幾類（算術、比較、位元）作為教學範例，示範之後可以怎麼寫整套 SoftMotion / CODESYS 教材。
+
+---
+
+## 2. 算術運算子 Arithmetic operators
+
+對應原始說明頁面：`_cds_struct_reference_operators.html` → **Arithmetic operators** 區段。
+
+官方列出的運算子：
+
+- `ADD`：加法
+- `SUB`：減法
+- `MUL`：乘法
+- `DIV`：除法
+- `MOD`：取餘數
+- `MOVE`：搬移（賦值）
+- `INDEXOF`：在陣列或字串中尋找索引
+- `SIZEOF`：回傳型別或變數佔用的大小
+- `XSIZEOF`：擴充版本的 `SIZEOF`，多用於特定平台／型別
+
+### 2.1 `ADD` 加法運算子
+
+對應原始文件：`_cds_operator_add.html`
+
+- **英文名稱**：`ADD`
+- **中文說明**：加總兩個以上的數值或時間／日期相關資料型別。
+- **關鍵內容摘要（來自官方說明）**：
+  - IEC 標準加法運算子。
+  - 支援的資料型別很多（整數、實數、時間 `TIME`、長時間 `LTIME`、日期時間 `DATE_AND_TIME` 等）。
+  - 對 `TIME` / `LTIME` / `TOD` / `DT` 等時間型別有「合法組合」，例如：
+    - `TIME + TIME = TIME`
+    - `TIME + LTIME = LTIME`
+    - `TOD + TIME = TOD`
+    - `DT + TIME = DT`
+    - `TOD + LTIME = LTOD`
+    - `DT + LTIME = LDT`
+- **FBD/LD 編輯器特性**：
+  - 在 FBD/LD 編輯器中，`ADD` 可以擴充成多輸入（不只兩個輸入腳），方便一次加多個數值。
+
+#### 2.1.1 基本語法（ST）
+
+```iecst
+(* 兩個整數相加 *)
+resultInt := iA + iB;
+
+(* 多個常數相加 *)
+result := 7 + 2 + 4 + 7;
+```
+
+#### 2.1.2 時間型別加法範例
+
+```iecst
+VAR
+    tDelay  : TIME;   (* 一般時間延遲 *)
+    tStep   : TIME;   (* 每次增加的時間 *)
+    tTotal  : TIME;   (* 總延遲時間 *)
+END_VAR
+
+tDelay := T#1S;
+tStep  := T#200MS;
+tTotal := tDelay + tStep;  (* 結果：1.2 秒 *)
+```
+
+#### 2.1.3 實務教學建議
+
+- **教學重點**：
+  - 從「整數加法」開始，再帶到「時間加法」。
+  - 強調：時間加法時，結果的型別會依組合規則自動提升為適當型別（例如加上 `LTIME` 會變成 `LTIME`）。
+- **常見錯誤提醒**：
+  - 加法結果超過目標型別範圍時（溢位）會依硬體實作決定行為；建議在安全需求高的專案中，搭配 **範圍檢查** 或使用較大範圍的型別（例如 `LINT` / `LREAL`）。
+
+---
+
+## 3. 比較運算子 Comparison operators
+
+對應原始說明頁面：`_cds_struct_reference_operators.html` → **Comparison Operators** 區段。
+
+官方列出的運算子：
+
+- `GT`：greater than，大於
+- `LT`：less than，小於
+- `LE`：less or equal，小於等於
+- `GE`：greater or equal，大於等於
+- `EQ`：equal，相等
+- `NE`：not equal，不相等
+
+### 3.1 使用概念
+
+- **輸入**：兩個運算元（可以是數值、時間、布林等可比較型別）。
+- **輸出**：`BOOL`，用來做流程控制（`IF` / `CASE` / `WHILE` 等）。
+
+### 3.2 ST 範例
+
+```iecst
+VAR
+    iSpeed     : INT;   (* 目前速度 *)
+    iSetpoint  : INT;   (* 設定速度 *)
+    bTooFast   : BOOL;  (* 是否過快 *)
+END_VAR
+
+bTooFast := iSpeed > iSetpoint;   (* 使用 GT *)
+
+IF iSpeed = 0 THEN               (* 使用 EQ *)
+    (* 馬達停止邏輯 *)
+END_IF;
+```
+
+### 3.3 教學提示
+
+- 建議在教學文件中，用 **真值表＋實際邏輯條件**, 例如：
+  - `iSpeed >= iLimit`：過載保護觸發。
+  - `tElapsed >= tTimeout`：逾時判斷。
+- 可以搭配圖示說明「比較運算子只是回傳 BOOL，真正的行為是下游的 `IF / CASE / TON` 等 FB 決定」。
+
+---
+
+## 4. 位元邏輯運算子 Bitstring operators
+
+對應原始說明頁面：**Bitstring operators** 區段。
+
+官方列出的運算子：
+
+- `AND`：位元 AND（且）
+- `OR`：位元 OR（或）
+- `XOR`：位元 XOR（互斥或）
+- `NOT`：位元 NOT（反相）
+- `AND_THEN`：短路 AND（左邊為 `FALSE` 時，不再計算右邊）
+- `OR_ELSE`：短路 OR（左邊為 `TRUE` 時，不再計算右邊）
+
+### 4.1 基本範例（BOOL）
+
+```iecst
+VAR
+    bSensor1 : BOOL;
+    bSensor2 : BOOL;
+    bOK      : BOOL;
+END_VAR
+
+(* 兩個感測器都為 TRUE 才算 OK *)
+bOK := bSensor1 AND bSensor2;
+```
+
+### 4.2 位元遮罩範例（WORD）
+
+```iecst
+VAR
+    wStatus : WORD;   (* 狀態暫存器 *)
+    wMask   : WORD;   (* 要檢查的位元遮罩 *)
+    bError  : BOOL;
+END_VAR
+
+wMask  := 16#0004;             (* 第 2 bit *)
+bError := (wStatus AND wMask) <> 0;
+```
+
+### 4.3 `AND_THEN` / `OR_ELSE` 的教學重點
+
+- 與 `AND` / `OR` 邏輯相同，但 **具有「短路（short-circuit）」特性**：
+  - `A AND_THEN B`：若 `A = FALSE`，`B` 不會被計算。
+  - `A OR_ELSE  B`：若 `A = TRUE`，`B` 不會被計算。
+- 適合用在：
+  - 右側運算代價較高（例如呼叫函式、存取 I/O）的情境。
+  - 需要避免在某些條件下執行右側運算（如避免除以零）。
+
+```iecst
+VAR
+    iDivisor : INT;
+    iValue   : INT;
+    bValid   : BOOL;
+END_VAR
+
+(* 避免除以零：只有在 iDivisor <> 0 時才檢查右側條件 *)
+bValid := (iDivisor <> 0) AND_THEN (iValue / iDivisor < 100);
+```
+
+---
+
+## 5. 位址運算子 Address operators
+
+對應原始說明頁面：**Address operators** 區段。
+
+常用運算子：
+
+- **`ADR`**：取得變數或物件的**位址**，回傳型別為 `POINTER TO` 所對應的位址型別；可用於間接存取或與 C 函式庫介接。
+- 其他位址／指標相關運算子（如 `^` 解參考）請參閱 Offline Help「Operators」章節。
+
+### 5.1 使用概念
+
+- **輸入**：變數、函式區塊實例等可定址的物件。
+- **輸出**：位址（pointer）；後續可透過 `^` 解參考或傳給支援指標的函式。
+
+### 5.2 ST 範例（概念）
+
+```iecst
+VAR
+    iValue  : INT := 42;
+    pInt    : POINTER TO INT;   (* 指向 INT 的指標 *)
+    iResult : INT;
+END_VAR
+
+(* 取得 iValue 的位址並賦值給 pInt *)
+pInt := ADR(iValue);
+
+(* 透過指標讀取該位址的內容（解參考） *)
+iResult := pInt^;   (* iResult = 42 *)
+```
+
+### 5.3 教學提示
+
+- 位址運算子多用於進階情境（例如與外部 DLL、C 函式庫、或特定 Runtime API 介接）；初學時以算術、比較、位元運算子為主。
+- 使用指標時須注意**生命週期**：勿存取已失效的位址，以免未定義行為或當機。
+
+---
+
+## 6. 型別轉換與其他運算子
+
+- **Type conversion 型別轉換**：例如 `INT_TO_REAL`、`BYTE_TO_WORD` 等，將一型別轉為另一型別；語法與可用轉換請參閱 Offline Help「Type conversion operators」。
+- **Numeric 數值運算**：如 `MIN`、`MAX`、`LIMIT`、`SEL` 等，用於數值選擇或限制；可與比較、算術運算子搭配使用。
+- 運算子**優先順序**與完整列表請參閱 CODESYS Offline Help 之 **Operators** 與 **ST expressions** 章節；本文件以常用分類與 ST 範例為主，便於查閱與教學。
+
+0:{"buildId":"hE9wNZamtqMjFK5Z04D0M","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/offline-help","style":{"color":"var(--t-accent)"},"children":"Offline Help 首頁"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"children":"程式設計基礎與語言核心"}]]}],["$","header",null,{"className":"space-y-2","children":[["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"Operators 運算子 教學整理"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"整理算術、比較、位元、位址與型別轉換等運算子的分類與 ST 範例，作為撰寫 ST 程式的快速參考。"}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],false]}],["$L5"],"$L6"]}],"loading":null,"isPartial":false}
+5:["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true}]
+6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
+9:null

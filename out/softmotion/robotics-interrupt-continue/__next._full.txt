@@ -1,0 +1,441 @@
+1:"$Sreact.fragment"
+2:I[22016,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],""]
+3:I[39756,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+4:I[37457,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+6:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+a:I[68027,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"default"]
+:HL["/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","style"]
+0:{"P":null,"b":"mGRRbc9mQkxUGXHACoBp3","c":["","softmotion","robotics-interrupt-continue"],"q":"","i":false,"f":[[["",{"children":["softmotion",{"children":[["slug","robotics-interrupt-continue","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/HappyLearnCodesys/_next/static/chunks/60ec29ac5a98b3d6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-Hant","children":["$","body",null,{"className":"min-h-screen","children":["$","div",null,{"className":"mx-auto flex min-h-screen max-w-5xl flex-col px-4 py-6","children":[["$","header",null,{"className":"mb-6 border-b pb-4","style":{"borderColor":"var(--t-border)"},"children":["$","div",null,{"className":"flex items-start justify-between gap-4","children":[["$","div",null,{"children":[["$","h1",null,{"className":"text-xl font-semibold tracking-tight","children":["$","$L2",null,{"href":"/","style":{"color":"var(--t-accent)"},"className":"hover:underline","children":"CODESYS 教學網站"}]}],["$","p",null,{"className":"mt-1 text-sm","style":{"color":"var(--t-text-muted)"},"children":"用比較人性、好理解的方式，陪你把 CODESYS、SoftMotion 與周邊觀念一步一步補齊。"}]]}],["$","nav",null,{"className":"flex shrink-0 items-center gap-2","children":[["$","$L2",null,{"href":"/","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"回首頁"}],["$","$L2",null,{"href":"/offline-help","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"Offline Help"}],["$","$L2",null,{"href":"/search","className":"rounded border px-3 py-1.5 text-sm hover:underline","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"搜尋"}]]}]]}]}],["$","main",null,{"className":"flex-1 pb-8","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex flex-col items-center justify-center gap-4 py-12 text-center","children":[["$","p",null,{"className":"text-4xl font-semibold","style":{"color":"var(--t-text-muted)"},"children":"404"}],["$","p",null,{"style":{"color":"var(--t-text-muted)"},"children":"找不到這個頁面。"}],["$","nav",null,{"className":"mt-4 flex flex-wrap justify-center gap-3","children":[["$","$L2",null,{"href":"/","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-accent)"},"children":"回首頁"}],["$","$L2",null,{"href":"/softmotion","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"SoftMotion 學習地圖"}],["$","$L2",null,{"href":"/licensing","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"授權說明"}],["$","$L2",null,{"href":"/guidelines","className":"rounded border px-4 py-2 text-sm hover:opacity-90","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":"開發規範"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t pt-4 text-xs","style":{"borderColor":"var(--t-border)","color":"var(--t-text-muted)"},"children":[["$","p",null,{"children":"內容來源整理自 CODESYS 官方文件與教學筆記，僅供學習使用。"}],["$","p",null,{"className":"mt-1","children":["© ",2026," jolinjo"]}]]}]]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L9",false]],"m":"$undefined","G":["$a",[]],"S":true}
+b:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"ViewportBoundary"]
+d:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"MetadataBoundary"]
+9:["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}]
+c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+e:[["$","title","0",{"children":"CODESYS 教學網站"}],["$","meta","1",{"name":"description","content":"針對初學者設計的 CODESYS / SoftMotion 與相關授權、開發規範教學網站。"}]]
+f:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
+10:T34da,<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# Robotics_Interrupt_Continue — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？（一句話＋情境）
+
+這個範例示範如何在機器人軸組執行一連串插補運動時，**中斷目前運動、插入中間動作、再從中斷點繼續原路徑**。  
+你可以把它想成：機器人在移動途中收到「暫停去做一件事」的指令，完成後再回到原路徑，平順地把剩下的動作做完。
+
+---
+
+## 二、使用情境與硬體／通訊架構
+
+### 2.1 任務與程式對應（對照 `TaskConfiguration.md`）
+
+| 任務名稱 | 類型 | 週期 | 優先權 | 執行的 POU |
+|----------|------|------|--------|------------|
+| MainTask | Cyclic | t#4ms | 1 | `PLC_PRG` |
+| SoftMotion_PlanningTask | Freewheeling | t#2ms | 15 | - |
+
+所有中斷與續行邏輯皆在 `PLC_PRG` 裡，由 MainTask 週期性執行。  
+本範例沒有額外的規劃程式，重點放在 MC_GroupInterrupt / MC_GroupContinue 的使用方式。
+
+### 2.2 軸與裝置結構（對照 `DeviceTree_Axes.md`）
+
+| 軸名稱 | 類型 | 綁定任務 |
+|--------|------|----------|
+| Drive_A1 | SM_Drive_Virtual | - |
+| Drive_A2 | SM_Drive_Virtual | - |
+| Drive_A3 | SM_Drive_Virtual | - |
+
+三個虛擬軸組成一個簡化的軸組（可想像為三自由度的機構），用來示範中斷與續行，不涉及完整機器人運動學。
+
+### 2.3 Trace 與觀察點（對照 `TraceConfig.md`）
+
+| 變數名 | 說明 |
+|--------|------|
+| `PLC_PRG.state` | 主狀態機目前狀態 |
+| `PLC_PRG.moveLinearA.Active`、`moveLinearB.Active` | 兩段線性運動是否正在執行 |
+| `PLC_PRG.interrupt.Busy`、`PLC_PRG.cont.Busy` | 中斷與續行 FB 忙碌狀態 |
+| `PLC_PRG.moveToContinuePos.Active` | 移動回中斷點過程是否啟動 |
+| `PLC_PRG.Position.c.X/Y/Z` | 目前位置，用來觀察路徑和中斷點位置 |
+
+透過這些 Trace，可以清楚看到「原始運動 → 中斷 → 中間動作 → 回到中斷點 → 繼續原運動」的完整軌跡。
+
+---
+
+## 三、控制流程：由淺入深（對照 `PLC_PRG.st`）
+
+### 3.1 整體狀態機
+
+`PLC_PRG` 使用 <span class="cfg-local">state</span> 與一組常數（<span class="cfg-const">STATE_POWER_ON</span> 等）表示流程：
+
+- **STATE_POWER_ON (0)**  
+  - 呼叫 <span class="cfg-func">SMC_GroupPower()</span>（<span class="cfg-local">power</span>）與 <span class="cfg-func">MC_GroupEnable()</span>（<span class="cfg-local">enable</span>）啟動軸組。  
+  - 啟動成功後，啟用 `readPos`（<span class="cfg-func">SMC_GroupReadSetPosition()</span>），並啟動第一段線性運動 `moveLinearA`。
+
+- **STATE_START_MOVING (10)**  
+  - 一旦 `moveLinearA.CommandAccepted = TRUE`，代表第一段運動已被接受，便啟動第二段運動 `moveLinearB`。  
+  - 當 `moveLinearB.Active = TRUE` 時，呼叫 <span class="cfg-func">MC_GroupInterrupt()</span>（<span class="cfg-local">interrupt</span>），進入中斷流程。
+
+- **STATE_INTERRUPT (20)**  
+  - 等待中斷完成（`interrupt.Done = TRUE`），此時原本的運動會暫停並將續行所需資料寫入 <span class="cfg-local">data</span>（型態 <span class="cfg-type">SMC_AXIS_GROUP_CONTINUE_DATA</span>）。  
+  - 隨後啟動 `movePTP`，讓軸組執行一段相對運動（例如往上抬一段距離）。
+
+- **STATE_INTERMEDIATE_MOVEMENT (30)**  
+  - 等待 `movePTP.Done = TRUE`，表示中間動作完成。  
+  - 接著啟動 `getContinuePos`（<span class="cfg-func">SMC_GroupGetContinuePosition()</span>），要求系統計算「若從中斷點繼續，應該往哪個位置移動」。
+
+- **STATE_GET_CONTINUE_POS (40)**  
+  - 等待 `getContinuePos.Done = TRUE`，此時得到 `getContinuePos.Position` 與 `getContinuePos.CoordSystem`。  
+  - 將這些位置資訊指定給 `moveToContinuePos.Position` 與 `moveToContinuePos.CoordSystem`，然後啟動 `moveToContinuePos`。
+
+- **STATE_MOVE_TO_CONTINUE_POS (50)**  
+  - 等待 `moveToContinuePos.Done = TRUE`，表示軸組已移動回續行點。  
+  - 此時呼叫 <span class="cfg-func">MC_GroupContinue()</span>（<span class="cfg-local">cont</span>），讓系統從中斷位置繼續原本的運動。
+
+- **STATE_CONTINUE (60)**  
+  - 等待 `cont.Done = TRUE`，代表續行指令已處理。  
+  - 接著進入 `STATE_FINISH_MOVE`，監控第二段運動何時真正完成。
+
+- **STATE_FINISH_MOVE (70)**  
+  - 等待 `moveLinearB.Done = TRUE`，表示原始整段運動（含中斷與續行）已走完。  
+  - 切換到 `STATE_DONE` 並將 `Done := TRUE`。
+
+- **STATE_ERROR (1000)**  
+  - 若任何運動或中斷相關 FB 出現 Error，狀態機會進到錯誤狀態，`Error := TRUE`。
+
+### 3.2 續行資料的傳遞（`data : SMC_AXIS_GROUP_CONTINUE_DATA`）
+
+- `interrupt` 呼叫時將 `continueData := data`，中斷完成後 `data` 中會帶有「原本運動未完成部分」的資訊。  
+- `getContinuePos` 與 `cont` 在呼叫時同樣使用 `continueData := data`，代表它們都在處理同一筆續行資料。  
+- 透過這個結構，系統可以：  
+  - 算出「若要從中斷點繼續，應該回到哪個姿態」，也就是 `getContinuePos` 的 Position。  
+  - 在 `cont` 被呼叫時，知道原本運動還剩哪些路徑需要完成。
+
+---
+
+## 四、各支程式負責哪些功能？（本專案僅 `PLC_PRG.st`）
+
+### 4.1 `PLC_PRG.st` — 中斷與續行的範例主程式
+
+- **類型**：<span class="cfg-keyword">PROGRAM</span>。  
+- **職責**：
+  - 啟動軸組並下達兩段線性運動。  
+  - 在第二段運動途中執行中斷，並插入一段「中間運動」`movePTP`。  
+  - 利用 `SMC_GroupGetContinuePosition` 計算續行位置，先平滑移回該位置，再呼叫 `MC_GroupContinue` 續行原運動。  
+  - 監控每個功能塊的 Error 狀態，決定是否進入 `STATE_ERROR`。
+
+---
+
+## 五、函式庫與函式／功能塊一覽（用途、引數、回傳）
+
+### 5.1 函式庫（對照 `Libraries.md`）
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | 提供 MC_* 及部分 SMC_* 群組運動功能塊 |
+| <span class="cfg-name">#SM3_CamBuilder</span> | 路徑／凸輪相關功能（本範例聚焦在中斷與續行） |
+
+### 5.2 主要功能塊
+
+- <span class="cfg-func">SMC_GroupPower()</span>（<span class="cfg-local">power</span>）與 <span class="cfg-func">MC_GroupEnable()</span>（<span class="cfg-local">enable</span>）  
+  - 啟動軸組，是所有運動前的前置條件。
+
+- <span class="cfg-func">MC_MoveLinearAbsolute()</span>（<span class="cfg-local">moveLinearA</span>、<span class="cfg-local">moveLinearB</span>）  
+  - 兩段主要線性運動，其中 B 使用 `BufferMode := MC_BUFFER_MODE.BlendingHigh` 形成連續路徑。
+
+- <span class="cfg-func">MC_GroupInterrupt()</span>（<span class="cfg-local">interrupt</span>）  
+  - 中斷當前由群組功能塊控制的運動，並將續行所需資料寫入 `data`。  
+
+- <span class="cfg-func">SMC_GroupGetContinuePosition()</span>（<span class="cfg-local">getContinuePos</span>）  
+  - 根據 `data` 計算「應該從哪個位置繼續」，並輸出位置與座標系。  
+
+- <span class="cfg-func">MC_MoveDirectRelative()</span>（<span class="cfg-local">movePTP</span>）  
+  - 中斷後插入的相對運動，用來模擬去做一件「中間動作」。  
+
+- <span class="cfg-func">MC_MoveLinearAbsolute()</span>（<span class="cfg-local">moveToContinuePos</span>）  
+  - 用 `getContinuePos` 輸出的 Position 與 CoordSystem 把軸組移回續行點。  
+
+- <span class="cfg-func">MC_GroupContinue()</span>（<span class="cfg-local">cont</span>）  
+  - 使用同一份 `data`，令軸組從中斷點繼續執行尚未完成的原運動。
+
+---
+
+## 六、變數與常數一覽
+
+### 6.1 重要常數
+
+| 名稱 | 型態 | 預設值 | 說明 |
+|------|------|--------|------|
+| <span class="cfg-const">STATE_POWER_ON</span>..`STATE_DONE` | <span class="cfg-type">UDINT</span> | 如程式設定 | 狀態機各階段定義 |
+| <span class="cfg-const">VEL</span> | <span class="cfg-type">LREAL</span> | 50 | 線性運動速度 |
+| <span class="cfg-const">ACC</span> | <span class="cfg-type">LREAL</span> | 500 | 加速度 |
+| <span class="cfg-const">JERK</span> | <span class="cfg-type">LREAL</span> | 10000 | Jerk |
+
+### 6.2 重要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">moveLinearA</span>, <span class="cfg-local">moveLinearB</span> | <span class="cfg-type">MC_MoveLinearAbsolute</span> | 兩段主要運動 |
+| <span class="cfg-local">interrupt</span> | <span class="cfg-type">MC_GroupInterrupt</span> | 負責中斷運動並填入 `data` |
+| <span class="cfg-local">cont</span> | <span class="cfg-type">MC_GroupContinue</span> | 根據 `data` 續行原運動 |
+| <span class="cfg-local">getContinuePos</span> | <span class="cfg-type">SMC_GroupGetContinuePosition</span> | 計算續行位置與座標系 |
+| <span class="cfg-local">movePTP</span> | <span class="cfg-type">MC_MoveDirectRelative</span> | 中間插入的相對運動 |
+| <span class="cfg-local">moveToContinuePos</span> | <span class="cfg-type">MC_MoveLinearAbsolute</span> | 將軸組移回續行點 |
+| <span class="cfg-local">data</span> | <span class="cfg-type">SMC_AXIS_GROUP_CONTINUE_DATA</span> | 承載續行資訊的結構 |
+| <span class="cfg-local">state</span> | <span class="cfg-type">UDINT</span> | 主狀態機 |
+
+本範例未使用 RETAIN／PERSISTENT。
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 中斷與續行的安全流程
+
+這個範例強調的觀念是：  
+不要直接「停止運動再重啟」，而是透過中斷與續行保持軌跡連續性：
+
+1. 用 <span class="cfg-func">MC_GroupInterrupt()</span> 暫停運動並取得續行資料。  
+2. 插入必要的中間運動（例如離開工件、避開障礙）。  
+3. 透過 <span class="cfg-func">SMC_GroupGetContinuePosition()</span> 計算續行起點。  
+4. 精準移回該點後，再呼叫 <span class="cfg-func">MC_GroupContinue()</span> 繼續原運動。
+
+這樣做可以確保「剩餘路徑」與原本設計的軌跡一致，不會因為單純重新下達路徑而產生偏差。
+
+### 7.2 續行資料結構的使用方式
+
+`SMC_AXIS_GROUP_CONTINUE_DATA` 在中斷、取得續行位置與續行動作之間被重複使用：  
+只要確保整個流程都用同一份 `data`，SoftMotion 就能正確追蹤「哪一條原始運動被中斷、目前進度在哪裡」。
+
+---
+
+## 八、建議閱讀與修改順序
+
+1. 先閱讀本說明，建立整體中斷／續行流程的概念。  
+2. 再看 `TaskConfiguration.md` 與 `DeviceTree_Axes.md`，確認任務週期與軸組成員。  
+3. 打開 `PLC_PRG.st`：  
+   - 先沿著狀態機常數（STATE_*）畫一張流程圖；  
+   - 再對照每一段程式碼，弄清楚各 FB 何時被啟動、何時 Done。  
+4. 搭配 Trace，觀察：  
+   - `Position.c.*` 如何隨中斷／中間運動／續行而變化；  
+   - `moveLinearA.Active`、`moveLinearB.Active`、`interrupt.Busy`、`cont.Busy` 在流程中的變化。
+
+若要延伸應用，可以將中間運動 `movePTP` 換成更複雜的安全動作，例如避開人員進入區域、繞開障礙物等。
+
+---
+
+## 九、名詞對照
+
+| 英文／符號 | 說明 |
+|-----------|------|
+| <span class="cfg-name">Interrupt</span> | 中斷目前插補運動並暫停在安全狀態 |
+| <span class="cfg-name">Continue</span> | 根據先前中斷紀錄，繼續尚未走完的軌跡 |
+| <span class="cfg-name">ContinueData</span> | 續行資料，記錄中斷時的運動狀態與剩餘路徑 |
+
+---
+5:["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/softmotion","style":{"color":"var(--t-accent)"},"children":"SoftMotion 學習地圖"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"style":{"color":"var(--t-text)"},"children":"中斷與繼續"}]]}],["$","header",null,{"className":"space-y-1","children":[["$","div",null,{"className":"inline-flex items-center gap-2 rounded-full border px-2 py-1 text-[11px] font-medium","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)","color":"var(--t-text-muted)"},"children":[["$","span",null,{"className":"uppercase tracking-wide","children":"Robotics"}],["$","span",null,{"className":"h-1 w-1 rounded-full","style":{"backgroundColor":"var(--t-accent)"}}],["$","span",null,{"style":{"color":"var(--t-accent)"},"children":["步驟 ",6]}]]}],["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"中斷與繼續"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"中斷後安全停止，再平滑回到路徑繼續運動，MC_Stop、MC_Halt、MC_Continue。"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":["官方專案："," ",["$","code",null,{"className":"rounded px-1 py-0.5","style":{"backgroundColor":"var(--t-border)","color":"var(--t-text)"},"children":"Robotics_Interrupt_Continue.project"}]]}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$Lf",null,{"content":"$10"}]}],false,"$L11"]}]
+12:I[85649,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/64a29366fc2259d2.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"StCodeBlock"]
+13:T43c5,<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">(* </span></span>
+<span class="line"><span style="color:#6A737D">    檔案用途：</span></span>
+<span class="line"><span style="color:#6A737D">      示範如何在一段正在執行的軸組運動中「中斷、插入中間動作、再從中斷點繼續」，</span></span>
+<span class="line"><span style="color:#6A737D">      使用 MC_GroupInterrupt / MC_GroupContinue / SMC_GroupGetContinuePosition 等 FB。</span></span>
+<span class="line"><span style="color:#6A737D">    教學重點：</span></span>
+<span class="line"><span style="color:#6A737D">      - 看懂完整的狀態機：啟動 → 兩段線性運動 → 中斷 → 執行中間運動 → 回到中斷點 → 繼續原運動。</span></span>
+<span class="line"><span style="color:#6A737D">      - 理解 continueData（SMC_AXIS_GROUP_CONTINUE_DATA）如何在 Interrupt 與 Continue 之間傳遞。</span></span>
+<span class="line"><span style="color:#6A737D">      - 練習在有插補運動的情況下，安全地中斷並恢復軌跡。</span></span>
+<span class="line"><span style="color:#6A737D">*)</span></span>
+<span class="line"><span style="color:#D73A49">PROGRAM</span><span style="color:#24292E"> PLC_PRG</span></span>
+<span class="line"><span style="color:#24292E">VAR_OUTPUT</span></span>
+<span class="line"><span style="color:#24292E">    Error : BOOL ;</span></span>
+<span class="line"><span style="color:#24292E">	Done : BOOL ;</span></span>
+<span class="line"><span style="color:#24292E">	Position : SMC_POS_REF ;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span></span>
+<span class="line"><span style="color:#24292E">    power : SMC_GroupPower := (bRegulatorOn:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">, bDriveStart:= </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E">) ;</span></span>
+<span class="line"><span style="color:#24292E">    enable : MC_GroupEnable ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	readPos : SMC_GroupReadSetPosition :=</span></span>
+<span class="line"><span style="color:#24292E">		(CoordSystem:= SMC_COORD_SYSTEM.MCS) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    moveLinearA: MC_MoveLinearAbsolute :=</span></span>
+<span class="line"><span style="color:#24292E">		(Position:= (c:= (X:= </span><span style="color:#005CC5">100</span><span style="color:#24292E">, Y:= </span><span style="color:#005CC5">90</span><span style="color:#24292E">, Z:= </span><span style="color:#005CC5">10</span><span style="color:#24292E">)),</span></span>
+<span class="line"><span style="color:#24292E">	     CoordSystem:= SMC_COORD_SYSTEM.MCS,</span></span>
+<span class="line"><span style="color:#24292E">		 Velocity:= VEL,</span></span>
+<span class="line"><span style="color:#24292E">	     Acceleration:= ACC,</span></span>
+<span class="line"><span style="color:#24292E">		 Deceleration:= ACC,</span></span>
+<span class="line"><span style="color:#24292E">	     Jerk:= JERK) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	moveLinearB: MC_MoveLinearAbsolute :=</span></span>
+<span class="line"><span style="color:#24292E">		(Position:= (c:= (X:= </span><span style="color:#005CC5">150</span><span style="color:#24292E">, Y:= </span><span style="color:#005CC5">10</span><span style="color:#24292E">, Z:= -</span><span style="color:#005CC5">20</span><span style="color:#24292E">)),</span></span>
+<span class="line"><span style="color:#24292E">         CoordSystem:= SMC_COORD_SYSTEM.MCS,</span></span>
+<span class="line"><span style="color:#24292E">		 Velocity:= VEL,</span></span>
+<span class="line"><span style="color:#24292E">	     Acceleration:= ACC,</span></span>
+<span class="line"><span style="color:#24292E">		 Deceleration:= ACC,</span></span>
+<span class="line"><span style="color:#24292E">	     Jerk:= JERK,</span></span>
+<span class="line"><span style="color:#24292E">		 BufferMode:= MC_BUFFER_MODE.BlendingHigh) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">     startVelocityB : SMC_StartVelocity := (</span></span>
+<span class="line"><span style="color:#24292E">        Factor:= </span><span style="color:#005CC5">1</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        Axes:= SMC_StartVelocityAxes.KINEMATIC);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">	interrupt</span><span style="color:#24292E"> : MC_GroupInterrupt ;</span></span>
+<span class="line"><span style="color:#24292E">	cont : MC_GroupContinue ;</span></span>
+<span class="line"><span style="color:#24292E">	getContinuePos : SMC_GroupGetContinuePosition ;</span></span>
+<span class="line"><span style="color:#24292E">	data : SMC_AXIS_GROUP_CONTINUE_DATA ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	movePTP : MC_MoveDirectRelative :=</span></span>
+<span class="line"><span style="color:#24292E">		(Distance:= (c:= (X:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Y:= </span><span style="color:#005CC5">0</span><span style="color:#24292E">, Z:= </span><span style="color:#005CC5">55</span><span style="color:#24292E">)),</span></span>
+<span class="line"><span style="color:#24292E">		 CoordSystem:= SMC_COORD_SYSTEM.MCS);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	moveToContinuePos : MC_MoveLinearAbsolute :=</span></span>
+<span class="line"><span style="color:#24292E">		(Velocity:= VEL,</span></span>
+<span class="line"><span style="color:#24292E">		 Acceleration:= ACC,</span></span>
+<span class="line"><span style="color:#24292E">		 Deceleration:= ACC,</span></span>
+<span class="line"><span style="color:#24292E">		 Jerk:= Jerk) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    state : UDINT ;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"><span style="color:#D73A49">VAR</span><span style="color:#24292E"> CONSTANT</span></span>
+<span class="line"><span style="color:#24292E">	STATE_POWER_ON : UDINT := </span><span style="color:#005CC5">0</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_START_MOVING : UDINT := </span><span style="color:#005CC5">10</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_INTERRUPT : UDINT := </span><span style="color:#005CC5">20</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_INTERMEDIATE_MOVEMENT : UDINT := </span><span style="color:#005CC5">30</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_GET_CONTINUE_POS : UDINT := </span><span style="color:#005CC5">40</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_MOVE_TO_CONTINUE_POS : UDINT := </span><span style="color:#005CC5">50</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_CONTINUE : UDINT := </span><span style="color:#005CC5">60</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_FINISH_MOVE : UDINT := </span><span style="color:#005CC5">70</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_DONE : UDINT := </span><span style="color:#005CC5">80</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">	STATE_ERROR : UDINT := </span><span style="color:#005CC5">1000</span><span style="color:#24292E"> ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">	VEL : LREAL  := </span><span style="color:#005CC5">50</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">    ACC : LREAL  := </span><span style="color:#005CC5">500</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">    JERK : LREAL := </span><span style="color:#005CC5">10000</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">END_VAR</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">CASE</span><span style="color:#24292E"> state </span><span style="color:#D73A49">OF</span></span>
+<span class="line"><span style="color:#24292E">STATE_POWER_ON:</span></span>
+<span class="line"><span style="color:#24292E">    power.Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">    enable.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> power.Status </span><span style="color:#D73A49">AND</span><span style="color:#24292E"> enable.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		moveLinearA.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">		readPos.Enable := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">        state := STATE_START_MOVING ;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">STATE_START_MOVING:</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> moveLinearA.CommandAccepted </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">        moveLinearB.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> moveLinearB.Active </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#D73A49">		interrupt</span><span style="color:#24292E">.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">		state := STATE_INTERRUPT ;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">STATE_INTERRUPT:</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#D73A49"> interrupt</span><span style="color:#24292E">.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		movePTP.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">        state := STATE_INTERMEDIATE_MOVEMENT ;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">STATE_INTERMEDIATE_MOVEMENT:</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> movePTP.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		getContinuePos.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">		state := STATE_GET_CONTINUE_POS ;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">STATE_GET_CONTINUE_POS:</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> getContinuePos.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		moveToContinuePos.Position := getContinuePos.Position ;</span></span>
+<span class="line"><span style="color:#24292E">		moveToContinuePos.CoordSystem := getContinuePos.CoordSystem ;</span></span>
+<span class="line"><span style="color:#24292E">		moveToContinuePos.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">		state := STATE_MOVE_TO_CONTINUE_POS ;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">STATE_MOVE_TO_CONTINUE_POS:</span></span>
+<span class="line"><span style="color:#D73A49">	IF</span><span style="color:#24292E"> moveToContinuePos.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">		cont.Execute := </span><span style="color:#005CC5">TRUE</span><span style="color:#24292E"> ;</span></span>
+<span class="line"><span style="color:#24292E">		state := STATE_CONTINUE ;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">STATE_CONTINUE:</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> cont.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">        state := STATE_FINISH_MOVE ;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">STATE_FINISH_MOVE:</span></span>
+<span class="line"><span style="color:#D73A49">    IF</span><span style="color:#24292E"> moveLinearB.Done </span><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">        state := STATE_DONE ;</span></span>
+<span class="line"><span style="color:#24292E">	END_IF</span></span>
+<span class="line"><span style="color:#24292E">END_CASE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">power(AxisGroup:= AxisGroup) ;</span></span>
+<span class="line"><span style="color:#24292E">enable(AxisGroup:= AxisGroup) ;</span></span>
+<span class="line"><span style="color:#24292E">readPos(AxisGroup:= AxisGroup, Position=> Position) ;</span></span>
+<span class="line"><span style="color:#24292E">moveLinearA(AxisGroup:= AxisGroup) ;</span></span>
+<span class="line"><span style="color:#24292E">startVelocityB();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">moveLinearB(</span></span>
+<span class="line"><span style="color:#24292E">    AxisGroup:= AxisGroup,</span></span>
+<span class="line"><span style="color:#24292E">    TransitionMode:= startVelocityB.TransitionMode,</span></span>
+<span class="line"><span style="color:#24292E">    TransitionParameter:= startVelocityB.TransitionParameter) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">interrupt</span><span style="color:#24292E">(AxisGroup:= AxisGroup, continueData:= data) ;</span></span>
+<span class="line"><span style="color:#24292E">cont(AxisGroup:= AxisGroup, continueData:= data) ;</span></span>
+<span class="line"><span style="color:#24292E">getContinuePos(AxisGroup:= AxisGroup, continueData:= data) ;</span></span>
+<span class="line"><span style="color:#24292E">movePTP(AxisGroup:= AxisGroup) ;</span></span>
+<span class="line"><span style="color:#24292E">moveToContinuePos(AxisGroup:= AxisGroup) ;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">IF</span><span style="color:#24292E"> moveLinearA.Error </span><span style="color:#D73A49">OR</span><span style="color:#24292E"> moveLinearB.Error </span><span style="color:#D73A49">OR</span><span style="color:#D73A49"> interrupt</span><span style="color:#24292E">.Error </span><span style="color:#D73A49">OR</span><span style="color:#24292E"> cont.Error </span><span style="color:#D73A49">OR</span></span>
+<span class="line"><span style="color:#24292E">   getContinuePos.Error </span><span style="color:#D73A49">OR</span><span style="color:#24292E"> movePTP.Error </span><span style="color:#D73A49">OR</span><span style="color:#24292E"> moveToContinuePos.Error</span></span>
+<span class="line"><span style="color:#D73A49">THEN</span></span>
+<span class="line"><span style="color:#24292E">	state := STATE_ERROR ;</span></span>
+<span class="line"><span style="color:#24292E">END_IF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">Error := state = STATE_ERROR ;</span></span>
+<span class="line"><span style="color:#24292E">Done := state = STATE_DONE ;</span></span></code></pre>11:["$","section",null,{"className":"space-y-3","children":[["$","h2",null,{"className":"text-base font-semibold","style":{"color":"var(--t-text)"},"children":"ST 程式碼"}],["$","p",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":"以下為本範例的 ST 檔，預設收合；可展開後使用「放大」或字體大小按鈕閱讀。"}],["$","div",null,{"className":"space-y-2","children":[["$","$L12","PLC_PRG.st",{"title":"PLC_PRG.st","html":"$13"}]]}]]}]
