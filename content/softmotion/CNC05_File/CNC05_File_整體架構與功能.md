@@ -1,0 +1,315 @@
+<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# CNC05_File — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？
+
+本範例示範如何在 CNC 系統中 **從控制器檔案系統讀取 ASCII G-code 檔案並執行**。G-code 儲存在 `_cnc/CNC1.cnc` 之類的檔案中，由 PathTask 透過 <span class="cfg-func">SMC_ReadNCFile2</span> 與 <span class="cfg-func">SMC_NCInterpreter</span> 讀檔與解譯，再經 <span class="cfg-func">SMC_CheckVelocities</span> 速度檢查後供插補器使用；MotionTask 則以插補器、三軸龍門座標轉換與三軸位置控制來實際驅動 `AxisX` / `AxisY` / `AxisZ`。
+
+---
+
+## 二、使用情境與硬體／通訊架構
+
+### 2.1 任務與程式
+
+`TaskConfiguration.md`：
+
+| 任務名稱 | 類型 | 週期 | 優先權 | POU 清單 |
+|----------|------|------|--------|----------|
+| MotionTask | Cyclic | t#gc_dwCycle | 1 | `CNC` |
+| PathTask | Cyclic | t#20ms | 5 | `CNC_PreparePath` |
+| VISU_TASK | Cyclic | t#100ms | 10 | `VisuElems.Visu_Prg` |
+
+- **MotionTask（CNC）**：以 `gc_dwCycle`（預設 4000 μs）週期執行三軸插補與軸控制。  
+- **PathTask（CNC_PreparePath）**：以 20 ms 週期從 G-code 檔案讀取、解譯並進行速度檢查。  
+- **VISU_TASK**：執行視覺化程式，與本範例說明無直接關聯。
+
+### 2.2 軸與裝置
+
+`DeviceTree_Axes.md`：
+
+| 軸名稱 | 類型 | 綁定任務 |
+|--------|------|----------|
+| AxisX | SM_Drive_Virtual | - |
+| AxisY | SM_Drive_Virtual | - |
+| AxisZ | SM_Drive_Virtual | - |
+
+三軸皆為虛擬軸，在實機專案中會改綁到實際伺服驅動器；本範例集中示範 G-code 讀檔與三軸 CNC 執行流程。
+
+### 2.3 函式庫
+
+`Libraries.md`：
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | SoftMotion 基礎運動控制。 |
+| <span class="cfg-name">#SM3_CamBuilder</span> | 凸輪相關。 |
+| <span class="cfg-name">#System_VisuElem3DPath</span> | 3D Path 視覺化。 |
+| <span class="cfg-name">#System_VisuElemCamDisplayer</span> | 凸輪視覺化。 |
+
+---
+
+## 三、控制流程：由淺入深
+
+### 3.1 PathTask：從檔案讀取 G-code 並產生路徑佇列
+
+`CNC_PreparePath.st`：
+
+```pascal
+PROGRAM CNC_PreparePath
+VAR_INPUT
+	xStart: BOOL;
+	sFileName: STRING := '_cnc/CNC1.cnc';
+END_VAR
+VAR_OUTPUT
+	xStartIpo: BOOL;
+	poqPath: Pointer to SMC_Outqueue;
+END_VAR
+VAR
+	iState: INT;
+	rncf2 : SMC_ReadNCFile2;
+	nci: SMC_NCInterpreter;
+	cv: SMC_CheckVelocities;
+	agiBufInterpreter: ARRAY[0..99] OF SMC_GeoInfo;
+END_VAR
+```
+
+1. `poqPath := cv.poqDataOut`：PathTask 的輸出即為速度檢查後的路徑佇列。  
+2. 狀態機 `iState`：  
+   - `0`（idle）：  
+     - 等待 `xStart = TRUE`，通常由 HMI 或上層程式發出。  
+     - 清除 `rncf2` / `nci` / `cv` 的 `bExecute`，重置狀態。  
+   - 進入 `10`（start reading and processing）：  
+     - `rncf2(bExecute := TRUE, sFileName := sFileName)`：以 <span class="cfg-func">SMC_ReadNCFile2</span> 讀取 `_cnc` 底下的 CNC 檔案。  
+     - `nci(bExecute := TRUE, sentences := rncf2.sentences, ...)`：以 <span class="cfg-func">SMC_NCInterpreter</span> 解譯 G-code 句子為幾何段，輸出到 `agiBufInterpreter`。  
+     - `cv(bExecute := TRUE, poqDataIn := nci.poqDataOut)`：以 <span class="cfg-func">SMC_CheckVelocities</span> 對幾何段做速度檢查。  
+     - 將 `xStartIpo := TRUE`，代表路徑已可供插補器使用。  
+     - 當 `cv.bBusy = FALSE` 時，回到 `iState := 0`，準備下一次讀檔。  
+
+這條流程可以重複用來讀取不同檔案，只要修改 `sFileName` 即可，例如 `_cnc/part1.cnc`、`_cnc/part2.cnc`。
+
+### 3.2 MotionTask：三軸插補與驅動
+
+`CNC.st`：
+
+```pascal
+PROGRAM CNC
+VAR
+	iState: INT;
+	pX, pY, pZ: MC_Power;
+
+	ipo: SMC_Interpolator;
+	trafo: SMC_TRAFO_Gantry3;
+	trafof: SMC_TRAFOF_Gantry3D;
+	cabpX, 	cabpY, 	cabpZ: SMC_ControlAxisByPos;
+END_VAR
+```
+
+核心片段：
+
+```pascal
+pX(Enable:=TRUE , bRegulatorOn:=TRUE , bDriveStart:=TRUE , Axis:=AxisX);
+pY(Enable:=TRUE , bRegulatorOn:=TRUE , bDriveStart:=TRUE , Axis:=AxisY);
+pZ(Enable:=TRUE , bRegulatorOn:=TRUE , bDriveStart:=TRUE , Axis:=AxisZ);
+
+CASE iState OF
+0:
+	IF pX.Status AND pY.Status AND pZ.Status THEN
+		iState:=100;
+	END_IF
+100:
+	Interpolation();
+END_CASE
+```
+
+1. 三軸上電：三個 <span class="cfg-func">MC_Power</span> `pX` / `pY` / `pZ` 對 `AxisX` / `AxisY` / `AxisZ` 上電並啟動驅動。  
+2. 狀態機 `iState`：  
+   - `0`：等待三軸 `Status` 都為 TRUE。  
+   - `100`：呼叫 `Interpolation()`，實際的插補與座標轉換、軸控制邏輯通常在此函式中實作（在匯出檔中未展開，但結構與其他 CNC 範例類似）。  
+3. 在 `Interpolation()` 裡，典型會做：  
+   - <span class="cfg-func">SMC_Interpolator</span> `ipo` 從 `CNC_PreparePath.poqPath` 取得路徑佇列。  
+   - <span class="cfg-func">SMC_TRAFO_Gantry3</span> / <span class="cfg-func">SMC_TRAFOF_Gantry3D</span> 將插補結果轉成三軸 SetPosition。  
+   - 三個 <span class="cfg-func">SMC_ControlAxisByPos</span> `cabpX` / `cabpY` / `cabpZ` 寫入三軸位置。
+
+---
+
+## 四、各支程式負責哪些功能？
+
+### 4.1 `CNC.st`
+
+- **類型**：PROGRAM。  
+- **職責**：  
+  - 三軸上電與就緒檢查。  
+  - 呼叫 `Interpolation()` 完成插補、座標轉換與三軸位置控制。  
+- **與硬體／通訊關係**：  
+  - 透過 <span class="cfg-func">MC_Power</span> 與 <span class="cfg-func">SMC_ControlAxisByPos</span> 直接與 `AxisX/Y/Z` 對應的驅動器互動。
+
+### 4.2 `CNC_PreparePath.st`
+
+- **類型**：PROGRAM。  
+- **職責**：  
+  - 使用 <span class="cfg-func">SMC_ReadNCFile2</span> 從 `_cnc` 目錄讀取 ASCII G-code 檔。  
+  - 使用 <span class="cfg-func">SMC_NCInterpreter</span> 解譯 G-code 為幾何段。  
+  - 使用 <span class="cfg-func">SMC_CheckVelocities</span> 做速度檢查，輸出 `poqPath`。  
+  - 透過 `xStart` / `xStartIpo` 與 MotionTask 做簡單的同步：Path 準備好路徑後再啟動插補。  
+
+### 4.3 `GVL.st`
+
+```pascal
+VAR_GLOBAL CONSTANT
+	gc_dwCycle : DWORD := 4000;
+END_VAR
+```
+
+- **類型**：全域常數表。  
+- **職責**：  
+  - `gc_dwCycle`：MotionTask 插補週期（μs 單位），PathTask 透過 `t#gc_dwCycle` 引用此值，使任務週期設定與程式一致。
+
+---
+
+## 五、函式庫與函式／功能塊一覽
+
+| 名稱 | 類別 | 用途 |
+|------|------|------|
+| <span class="cfg-func">SMC_ReadNCFile2</span> | FB | 從檔案系統讀取 ASCII G-code 程式。 |
+| <span class="cfg-func">SMC_NCInterpreter</span> | FB | 將 G-code 句子解譯為幾何段。 |
+| <span class="cfg-func">SMC_CheckVelocities</span> | FB | 檢查與限制路徑速度。 |
+| <span class="cfg-func">SMC_Interpolator</span> | FB | 插補路徑產生 SetPosition。 |
+| <span class="cfg-func">SMC_TRAFO_Gantry3</span> / <span class="cfg-func">SMC_TRAFOF_Gantry3D</span> | FB | 三軸龍門座標轉換。 |
+| <span class="cfg-func">SMC_ControlAxisByPos</span> | FB | 根據 SetPosition 控制單軸位置。 |
+| <span class="cfg-func">MC_Power</span> | FB | 軸上電與驅動啟動。 |
+
+---
+
+## 六、變數與常數一覽
+
+本範例未使用 RETAIN／PERSISTENT。
+
+### 6.1 全域常數（`GVL.st`）
+
+| 名稱 | 型態 | 預設值 | 說明 |
+|------|------|--------|------|
+| <span class="cfg-const">gc_dwCycle</span> | <span class="cfg-type">DWORD</span> | 4000 | MotionTask 插補週期（μs），對應 t#gc\_dwCycle。 |
+
+### 6.2 `CNC_PreparePath` 主要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">xStart</span> | <span class="cfg-type">BOOL</span>（VAR\_INPUT） | 啟動一次讀檔與路徑準備。 |
+| <span class="cfg-local">sFileName</span> | <span class="cfg-type">STRING</span> | G-code 檔路徑，預設 `_cnc/CNC1.cnc`。 |
+| <span class="cfg-local">xStartIpo</span> | <span class="cfg-type">BOOL</span>（VAR\_OUTPUT） | 路徑準備完成，通知插補器可啟動。 |
+| <span class="cfg-local">poqPath</span> | <span class="cfg-type">POINTER TO SMC_Outqueue</span> | 指向速度檢查後的路徑佇列。 |
+| <span class="cfg-local">rncf2</span> | <span class="cfg-type">SMC_ReadNCFile2</span> | 檔案讀取 FB。 |
+| <span class="cfg-local">nci</span> | <span class="cfg-type">SMC_NCInterpreter</span> | 解譯 G-code。 |
+| <span class="cfg-local">cv</span> | <span class="cfg-type">SMC_CheckVelocities</span> | 速度檢查。 |
+
+### 6.3 `CNC` 主要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">pX/pY/pZ</span> | <span class="cfg-type">MC_Power</span> | 三軸上電。 |
+| <span class="cfg-local">ipo</span> | <span class="cfg-type">SMC_Interpolator</span> | 插補器。 |
+| <span class="cfg-local">trafo</span> / <span class="cfg-local">trafof</span> | <span class="cfg-type">SMC_TRAFO_Gantry3</span> / <span class="cfg-type">SMC_TRAFOF_Gantry3D</span> | 座標轉換。 |
+| <span class="cfg-local">cabpX/cabpY/cabpZ</span> | <span class="cfg-type">SMC_ControlAxisByPos</span> | 三軸位置控制。 |
+| <span class="cfg-local">iState</span> | <span class="cfg-type">INT</span> | 簡單狀態機：0=等待上電完成、100=插補執行。 |
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 檔案式 G-code 與參數式 G-code
+
+相對於 CNC02（線上解碼 + 變數）、CNC03（線上解碼 + 前處理），CNC05\_File 強調的是：
+
+- G-code 來源是 **控制器檔案系統**（例如由 CAM 或外部系統匯入的檔案）。  
+- 程式可透過修改 `sFileName` 或變更 `_cnc` 目錄下的檔案內容來更換加工程式，而不必重新編譯 PLC 程式。  
+
+這對於「由外部 CAM 生成刀路」「大量不同工件各自有一個 G-code 檔案」的場景特別重要。
+
+### 7.2 PathTask 與 MotionTask 的職責分離
+
+- **PathTask**（20 ms）：  
+  - 主要負責 I/O 相對較慢的讀檔與解譯工作。  
+  - 產生路徑佇列，並在完成時將 `bEndOfList` 標記。  
+- **MotionTask**（4 ms）：  
+  - 只關注插補與三軸位置控制，確保運動平滑與即時。  
+
+這種設計可避免把檔案讀取與插補混在同一任務內，導致即時性降低。
+
+---
+
+## 八、重要參數與設定位置
+
+| 參數 | 檔案 / 位置 | 說明 |
+|------|-------------|------|
+| <span class="cfg-const">gc_dwCycle</span> | `GVL.st` | MotionTask 插補週期。 |
+| `sFileName` | `CNC_PreparePath.st`（VAR\_INPUT 預設） | 要讀取的 G-code 檔案，例如 `_cnc/CNC1.cnc`。 |
+| 軸名稱 `AxisX/Y/Z` | `DeviceTree_Axes.md` | 三軸對應之驅動軸，實機專案中需替換成實際驅動器。 |
+| 任務週期 t#gc\_dwCycle / t#20ms | `TaskConfiguration.md` | 插補與讀檔解譯的更新頻率。 |
+
+---
+
+## 九、建議閱讀與修改順序
+
+1. 先看 `GVL.st` 與 `TaskConfiguration.md`，了解 MotionTask / PathTask 的週期與關係。  
+2. 再看 `DeviceTree_Axes.md`，確認三軸結構。  
+3. 閱讀 `CNC_PreparePath.st`，理解 ReadNCFile2 + NCInterpreter + CheckVel 的檔案式讀取流程。  
+4. 閱讀 `CNC.st`，特別是狀態機與 `Interpolation()` 呼叫點，對照其他 CNC 範例推敲插補與軸控制的實作。  
+5. 實際調整 `sFileName` 或在 CODESYS 專案中更換 `_cnc` 下的 G-code 檔，觀察 CNC 執行結果。  
+
+---
+
+## 十、名詞對照
+
+| 英文 / 符號 | 說明 |
+|-------------|------|
+| <span class="cfg-name">ASCII G-code</span> | 純文字 G-code 檔案，通常由 CAM 或外部軟體產生。 |
+| <span class="cfg-func">SMC_ReadNCFile2</span> | 從檔案系統讀取 G-code 的 SoftMotion 功能塊。 |
+| <span class="cfg-name">PathTask</span> | 負責讀檔與解譯的任務。 |
+| <span class="cfg-name">MotionTask</span> | 負責插補與軸控制的任務。 |
+

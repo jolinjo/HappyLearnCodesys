@@ -1,0 +1,4 @@
+VAR_GLOBAL
+	g_x: REAL:=100;
+	g_y:REAL:=50;
+END_VAR

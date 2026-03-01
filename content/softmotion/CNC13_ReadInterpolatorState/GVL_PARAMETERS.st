@@ -1,0 +1,3 @@
+VAR_GLOBAL CONSTANT
+	dAngleTol : LREAL := 0.001;
+END_VAR

@@ -1,0 +1,7 @@
+FUNCTION_BLOCK CNC_Sel IMPLEMENTS SMC_NC_IFunction
+VAR
+    argTypes : ARRAY[0..2] OF SMC_GVar_Type :=
+		[SMC_GVar_Type.T_BOOL,
+		 SMC_GVar_Type.T_OTHER,
+		 SMC_GVar_Type.T_OTHER];
+END_VAR

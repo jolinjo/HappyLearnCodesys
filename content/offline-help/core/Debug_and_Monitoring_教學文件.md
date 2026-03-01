@@ -1,0 +1,219 @@
+<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# Testing and Debugging 測試與除錯 教學整理
+
+> 本文件基於 CODESYS Offline Help 中 **Testing and Debugging**（`_cds_struct_test_application.html`）及其子頁整理而成，涵蓋：  
+> Simulation、Breakpoints、Stepping、Forcing、Watch List、Trace、Task 監看、PLC Log。  
+> 目標是讓開發者在無硬體或連線 PLC 時也能驗證邏輯，並在線上時精準除錯與監控。
+
+---
+
+## 1. 總覽：測試與除錯工具
+
+CODESYS 提供多種方式測試應用程式並找出錯誤：
+
+- **Simulation 模擬模式**：不需連接硬體即可啟動程式，適合邏輯驗證。
+- **Breakpoints 中斷點**與 **Stepping 單步執行**：針對程式特定區塊檢查執行流程與變數。
+- **Forcing / Writing 強制與寫入**：在執行中覆寫變數值，影響程式行為。
+- **Watch List 監看清單**：即時檢視選定變數的數值。
+- **Trace 追蹤**：對變數進行取樣並記錄歷程，適合分析時序（例如馬達速度回授）。
+- **Task 監看**：檢視各 Task 的執行與週期。
+- **PLC Log**：查閱控制器日誌，協助診斷執行期事件與錯誤。
+
+另有 **Reset** 相關指令，可依需求從「僅重設非持久變數」到「控制器恢復出廠設定」不同程度還原。  
+以下依實務順序說明各工具概念與典型用法。
+
+---
+
+## 2. Simulation 模擬模式
+
+### 2.1 概念與適用情境
+
+- **Simulation Mode** 讓你在**未連接實際 PLC** 的情況下執行應用程式。
+- 程式在開發環境內以軟體方式運行，I/O 可透過模擬或手動寫入來模擬現場訊號。
+- 適合：撰寫完邏輯後的第一次驗證、無實機時的除錯、教學與示範。
+
+### 2.2 實務步驟（概念）
+
+1. 在專案中選擇目標為 **Simulation** 或對應的軟體 PLC（例如 CODESYS Control Win）。
+2. 編譯專案後使用 **Online → Login** 連線至模擬器。
+3. **Download** 並 **Start** 應用程式。
+4. 利用 Watch List、Breakpoints、Trace 等工具觀察與除錯。
+
+### 2.3 實務例子
+
+- **情境**：一段安全條件判斷（例如兩顆感測器都到位才允許動作）。  
+  在模擬下可手動對感測器變數寫入 TRUE/FALSE，確認邏輯是否正確，無需接線。
+
+---
+
+## 3. Breakpoints 中斷點
+
+### 3.1 概念
+
+- **Breakpoint** 可設在程式某一程式行；當執行到該行時，程式會**暫停**，方便檢查當時變數值與呼叫堆疊。
+- 常見類型：**程式碼中斷點**（設在 ST/FBD 等編輯器的一行）、**Data breakpoint**（當某變數被讀寫時觸發）。
+
+### 3.2 使用方式（概念）
+
+- 在 ST 編輯器左側行號區點擊即可設定／取消程式碼中斷點。
+- 透過 **Debug** 選單可設定 Data breakpoint（依裝置與版本支援）。
+- 程式執行到中斷點會停下，此時可搭配 **Watch List** 與 **Stepping** 觀察。
+
+### 3.3 實務例子
+
+- **情境**：懷疑某段「安全條件判斷」在特定情況下未如預期。  
+  在條件判斷那一行設中斷點，執行到時暫停，檢查感測器與內部變數是否與預期一致，再以單步執行確認分支走向。
+
+---
+
+## 4. Stepping 單步執行
+
+### 4.1 概念
+
+- **Stepping** 是在程式暫停（例如停在中斷點）後，一次執行一行或一個敘述的除錯方式。
+- 常用指令：**Step Over**（執行完目前這一行，不進入被呼叫的 POU）、**Step Into**（若該行有呼叫則進入被呼叫的 POU）、**Step Out**（執行到目前 POU結束並返回呼叫端）。
+
+### 4.2 實務例子
+
+- **情境**：已在中斷點停下，要確認下一行計算式是否正確。  
+  使用 **Step Over** 執行該行，再在 Watch List 中查看結果變數；若該行呼叫了 FUNCTION_BLOCK，可用 **Step Into** 進入該 FB 逐步檢查。
+
+---
+
+## 5. Forcing and Writing 強制與寫入變數
+
+### 5.1 概念與差異
+
+- **Write**：在線上時對變數寫入一個值；程式仍會照常執行，該變數可能在下一個週期被程式再度改寫。
+- **Force**：強制讓變數維持在指定值，**程式的寫入會被覆蓋**，直到取消強制。多用於測試特定情境（例如強制感測器為 TRUE）。
+
+### 5.2 注意事項
+
+- Forcing 會改變程式實際行為，僅建議在除錯或驗證時使用；完成後務必 **Unforce** 或移除強制，避免影響正常運轉與安全。
+
+### 5.3 實務例子
+
+- **情境**：現場感測器尚未接好，但要先驗證「感測器 ON 時馬達啟動」的邏輯。  
+  對感測器對應的變數使用 **Force** 設為 TRUE，觀察馬達是否依邏輯啟動；測試完取消強制。
+
+---
+
+## 6. Watch List 監看清單
+
+### 6.1 概念
+
+- **Watch List** 用來集中顯示你關心的變數，在 **Online** 模式下會即時顯示其目前值。
+- 可新增多個 Watch List，並將常用變數（例如速度回授、狀態字、安全條件）加入，方便同時觀察。
+
+### 6.2 使用方式（概念）
+
+- 在 Online 模式下，透過 **Add Watch** 或右鍵選單將變數加入 Watch List。
+- 可從 POU 編輯器中選取變數名稱後加入，或直接輸入變數路徑。
+- 支援顯示結構與陣列成員，可依需要展開檢視。
+
+### 6.3 實務例子
+
+- **情境**：除錯一段 PID 或速度控制時，需要同時看設定值、回授值與輸出。  
+  將這三個變數加入同一個 Watch List，在單步或連續執行時一起觀察，方便判斷計算是否正確。
+
+---
+
+## 7. Trace 追蹤取樣
+
+### 7.1 概念
+
+- **Trace** 會對選定的變數依時間或事件進行**取樣**，並記錄歷程；適合分析變數隨時間的變化（例如馬達速度、電流、狀態切換）。
+
+### 7.2 與 Watch List 的差異
+
+- Watch List：即時顯示「當下」的值。  
+- Trace：記錄一段時間內的數值歷程，可事後檢視曲線或匯出分析。
+
+### 7.3 實務例子
+
+- **情境**：馬達速度回授在加減速時有抖動，想確認是程式還是機械問題。  
+  對速度回授變數與指令速度變數做 Trace，錄製一段加減速過程，檢視曲線可判斷回授是否跟隨指令、抖動發生時點，以區分邏輯與實體問題。
+
+---
+
+## 8. Monitoring Tasks 監看 Task
+
+### 8.1 概念
+
+- **Monitoring Tasks** 可檢視各 **Task** 的執行狀態、週期、逾時等資訊。
+- 有助於確認週期性 Task 是否依設定執行、是否有過載或錯過週期（jitter / overrun）。
+
+### 8.2 實務例子
+
+- **情境**：程式偶發延遲，懷疑某 Task 執行過久。  
+  在 Task 監看畫面中觀察該 Task 的執行時間與週期，若執行時間接近或超過週期，需優化程式或調整 Task 設定。
+
+---
+
+## 9. PLC Log 控制器日誌
+
+### 9.1 概念
+
+- **PLC Log** 記錄控制器執行過程中的事件與訊息（例如啟動、停止、錯誤、警告）。
+- 在開發系統中可透過 **Reading the PLC Log** 相關功能讀取並檢視日誌內容。
+
+### 9.2 實務例子
+
+- **情境**：現場 PLC 曾當機或重啟，要釐清原因。  
+  連線後讀取 PLC Log，查看重啟前後的錯誤或警告訊息，可協助判斷是否為電源、通訊或程式異常。
+
+---
+
+## 10. Reset 相關指令（簡述）
+
+- CODESYS 提供多種 **Reset** 選項，範圍從「僅重設非持久變數」到「完整重設控制器至出廠設定」。
+- 使用前請確認範圍，避免誤將重要資料或設定清除；詳細步驟與差異請參閱 Offline Help「Testing and Debugging」下的 Reset 相關章節。
+
+---
+
+以上內容對應 Offline Help：`_cds_struct_test_application.html`、`_cds_testing_in_simulation_mode.html`、`_cds_using_breakpoints.html`、`_cds_stepping.html`、`_cds_forcing_values.html`、`_cds_using_watchlists.html`、`_cds_f_data_acquiring_with_trace.html`、`_cds_monitoring_running_tasks.html`、`_cds_reading_plc_log.html`。  
+完整操作步驟與畫面請以實際 CODESYS 版本與 Offline Help 為準。

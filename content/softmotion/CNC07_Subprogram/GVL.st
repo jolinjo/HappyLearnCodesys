@@ -1,0 +1,8 @@
+VAR_GLOBAL
+	g_x: REAL:=400;
+	g_y: REAL:=200;
+END_VAR
+
+VAR_GLOBAL CONSTANT
+	gc_dwCycle : DWORD := 4000;
+END_VAR

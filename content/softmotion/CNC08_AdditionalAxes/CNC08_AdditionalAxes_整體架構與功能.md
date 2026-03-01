@@ -1,0 +1,221 @@
+<style>
+html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
+[id^="preview"], [class*="markdown-preview"] {
+  background-color: #FDF5E6 !important;
+  font-size: 14px;
+}
+
+/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
+.cfg-func,
+.cfg-global,
+.cfg-local,
+.cfg-custom,
+.cfg-const,
+.cfg-keyword,
+.cfg-type,
+.cfg-arg,
+.cfg-name,
+code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+}
+
+/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
+.markdown-preview-section :not(pre) > code,
+.markdown-preview :not(pre) > code,
+.markdown-body :not(pre) > code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.cfg-func   { color: #6f42c1 !important; background: none !important; }
+.cfg-global { color: #953800 !important; background: none !important; }
+.cfg-local  { color: #0a6c0a !important; background: none !important; }
+.cfg-custom { color: #8250df !important; background: none !important; }
+.cfg-const  { color: #0d9488 !important; background: none !important; }
+.cfg-keyword{ color: #0550ae !important; background: none !important; }
+.cfg-type   { color: #cf222e !important; background: none !important; }
+.cfg-arg    { color: #c2410c !important; background: none !important; }
+.cfg-name   { color: #b45309 !important; background: none !important; }
+</style>
+
+**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
+
+# CNC08_AdditionalAxes — 整體架構與功能說明
+
+---
+
+## 一、這個專案在做什麼？
+
+本範例示範在原本的二軸 CNC 結構中加入 **附加軸（Additional Axis）**：除了 X/Y 兩軸外，再加入一支 A 軸（例如旋轉軸或刀頭軸），並透過 <span class="cfg-func">SMC_ControlAxisByPos</span> 對第三軸進行同步控制。路徑仍來自 CODESYS CNC 物件，由 Decoder / SmoothPath / CheckVel / Interpolator 產生 X/Y 的 SetPosition，同時 Path 或 CNC 還會決定 A 軸的 SetPosition，`Ipo` 則負責把三軸一起驅動。
+
+---
+
+## 二、使用情境與硬體／通訊架構
+
+### 2.1 任務與程式
+
+`TaskConfiguration.md` 對本專案未成功解析任務；官方 CNC08 範例典型配置為：
+
+- **PathTask**：解碼與前處理（與 CNC03/04 類似，這裡匯出檔只剩下 `Path` 的宣告在其他專案中）。  
+- **IpoTask**：執行 `Ipo`，進行插補與三軸驅動。  
+
+本目錄內僅有：
+
+- `Ipo.st`：插補 + 二軸龍門 + 三軸位置控制。  
+- 軸與庫資訊由 `DeviceTree_Axes.md`、`Libraries.md` 補充。
+
+### 2.2 軸與裝置
+
+`DeviceTree_Axes.md`：
+
+| 軸名稱 | 類型 | 綁定任務 |
+|--------|------|----------|
+| X_Drive | SM_Drive_Virtual | - |
+| Y_Drive | SM_Drive_Virtual | - |
+| A_Drive | SM_Drive_Virtual | - |
+
+X/Y 為主 CNC 平面軸，A 軸作為 **附加軸**，可能代表：
+
+- 旋轉台角度。  
+- 刀頭旋轉或其他聯動軸。  
+
+在本範例中，三軸都為虛擬軸，方便在純軟體環境下觀察行為。
+
+### 2.3 函式庫
+
+`Libraries.md`：
+
+| 庫名稱 | 解析版本／備註 |
+|--------|----------------|
+| <span class="cfg-name">#SM3_Basic</span> | SoftMotion 基礎運動控制。 |
+| <span class="cfg-name">#SM3_CamBuilder</span> | 凸輪相關。 |
+| <span class="cfg-name">#System_VisuElem3DPath</span> | 3D Path 視覺化。 |
+| <span class="cfg-name">#System_VisuElemCamDisplayer</span> | 凸輪視覺化。 |
+
+---
+
+## 三、控制流程：由淺入深
+
+雖然本目錄只保留 `Ipo.st` 程式，但整體架構可對比 CNC05～CNC07：
+
+1. PathTask 產生路徑佇列（含 X/Y 位置與 A 軸目標）。  
+2. IpoTask 透過插補器取得 SetPosition，並分別給三支軸。  
+
+`Ipo.st`：
+
+```pascal
+PROGRAM Ipo
+VAR
+	trafo: SMC_TRAFO_Gantry2;
+	p1,p2,p3: SMC_ControlAxisByPos;
+	trafof: SMC_TRAFOF_Gantry2;
+	smci: SMC_Interpolator;
+	mcp1,mcp2,mcp3: MC_Power;
+END_VAR
+```
+
+### 3.1 上電與插補（概念）
+
+1. `mcp1/mcp2/mcp3` 分別對 `X_Drive` / `Y_Drive` / `A_Drive` 上電，使三軸就緒。  
+2. `smci`（<span class="cfg-func">SMC_Interpolator</span>）從 PathTask 輸出的路徑佇列讀取 SetPosition。  
+3. `trafo/trafof` 將插補結果（機械座標）轉換成兩軸驅動座標：  
+   - X/Y 的部分經二軸龍門轉換對應到 `X_Drive` / `Y_Drive`。  
+   - A 軸通常會直接由路徑中的附加軸座標（例如 `dA`）控制，不經 Gantry 轉換。  
+4. `p1/p2/p3`（三個 <span class="cfg-func">SMC_ControlAxisByPos</span>）把對應座標寫入三軸，實現「主路徑 + 附加軸」的同步運動。
+
+實際上，插補結果中的 `SMC_PosInfo` 通常包含 X/Y/Z 以及 A/B/C 等附加軸，`Ipo` 程式體會將這些欄位拆開：X/Y 透過 `trafo`，A 軸則直接餵給 `p3`。
+
+---
+
+## 四、各支程式負責哪些功能？
+
+本目錄只有 `Ipo.st` 一支程式：
+
+### 4.1 `Ipo.st`
+
+- **類型**：PROGRAM。  
+- **職責**：  
+  - 對 `X_Drive` / `Y_Drive` / `A_Drive` 三軸上電。  
+  - 從 PathTask 準備好的路徑佇列插補 SetPosition。  
+  - 將 X/Y 經二軸龍門座標轉換後寫入 X/Y 軸；將 A 軸 SetPosition 寫入 `A_Drive`。  
+- **在整體中的角色**：  
+  - 延續 CNC05～CNC07 的插補與三軸控制結構，強調「第三軸的加入」不會破壞原有架構，只是多一支 `MC_Power` + `SMC_ControlAxisByPos`。
+
+---
+
+## 五、函式庫與函式／功能塊一覽
+
+| 名稱 | 類別 | 用途 |
+|------|------|------|
+| <span class="cfg-func">SMC_Interpolator</span> | FB | 從路徑佇列插補整體 SetPosition（含附加軸）。 |
+| <span class="cfg-func">SMC_TRAFO_Gantry2</span> / <span class="cfg-func">SMC_TRAFOF_Gantry2</span> | FB | 二軸龍門座標轉換（主平面 X/Y）。 |
+| <span class="cfg-func">SMC_ControlAxisByPos</span> | FB | 控制單軸位置（X/Y/A 三軸）。 |
+| <span class="cfg-func">MC_Power</span> | FB | 軸上電與驅動啟動。 |
+
+---
+
+## 六、變數與常數一覽
+
+本範例在匯出內容中沒有 GVL；所有重要變數皆在 `Ipo.st` 中宣告。
+
+### 6.1 `Ipo` 主要變數
+
+| 名稱 | 型態 | 說明 |
+|------|------|------|
+| <span class="cfg-local">trafo</span>, <span class="cfg-local">trafof</span> | <span class="cfg-type">SMC_TRAFO_Gantry2</span> / <span class="cfg-type">SMC_TRAFOF_Gantry2</span> | 將插補結果轉成二軸龍門驅動座標。 |
+| <span class="cfg-local">p1/p2/p3</span> | <span class="cfg-type">SMC_ControlAxisByPos</span> | 控制 `X_Drive` / `Y_Drive` / `A_Drive` 位置。 |
+| <span class="cfg-local">smci</span> | <span class="cfg-type">SMC_Interpolator</span> | 插補器。 |
+| <span class="cfg-local">mcp1/mcp2/mcp3</span> | <span class="cfg-type">MC_Power</span> | 三軸上電。 |
+
+---
+
+## 七、特別的演算法與觀念
+
+### 7.1 附加軸的「加入」而非「改寫」
+
+本範例要傳達的觀念是：在既有 CNC 架構中加入附加軸，只需要：
+
+- 在 DeviceTree 中新增一支軸（例如 `A_Drive`）。  
+- 在 `Ipo` 中新增一個 <span class="cfg-func">MC_Power</span> 與 <span class="cfg-func">SMC_ControlAxisByPos</span>。  
+- 在 PathTask 準備路徑時，將 A 軸的 SetPosition 一併寫入。  
+
+主幹架構（Decoder / CheckVel / Interpolator / Gantry2 / ControlAxis）不需大幅改寫。
+
+### 7.2 Path 與 Ipo 的職責邊界
+
+- **Path**：定義「A 軸該在何時、到哪裡」，以 G-code 或 Table 指定並生成 SetPosition。  
+- **Ipo**：只負責執行這些 SetPosition，不關心 A 軸代表的是旋轉還是線性。  
+
+這種職責分離讓附加軸的加入不會污染插補器與座標轉換的邏輯。
+
+---
+
+## 八、重要參數與設定位置
+
+| 參數 | 檔案 / 位置 | 說明 |
+|------|-------------|------|
+| 軸名稱 `X_Drive` / `Y_Drive` / `A_Drive` | `DeviceTree_Axes.md` | 三軸對應之驅動軸，實機專案中會綁定到真實伺服。 |
+| Path 中的 A 軸命令 | 原始 CODESYS 專案的 CNC 程式 | 決定附加軸的運動行為（例如 A 軸角度）。 |
+
+---
+
+## 九、建議閱讀與修改順序
+
+1. 在 CODESYS 原始專案中打開 `CNC08_AdditionalAxes`，確認 CNC 程式如何對 A 軸下命令。  
+2. 閱讀 `DeviceTree_Axes.md`，理解 X/Y/A 三軸的結構。  
+3. 看 `Ipo.st`，對照 CNC01～CNC03 的 `Ipo`，理解多出來的第三軸是如何插入原有架構。  
+4. 若要擴充，可在 PathTask 中加入針對 A 軸的特別處理（例如使用 SmoothPath 或自訂前處理 FB 處理 A 軸）。  
+
+---
+
+## 十、名詞對照
+
+| 英文 / 符號 | 說明 |
+|-------------|------|
+| <span class="cfg-name">Additional Axis</span> | 附加軸，除了主 CNC 軸以外的額外軸（旋轉台、刀頭軸等）。 |
+| <span class="cfg-name">Gantry2</span> | 二軸龍門座標轉換，處理主平面 X/Y。 |
+| <span class="cfg-name">A_Drive</span> | 本範例中的附加軸，通常作為旋轉或輔助軸。 |
+

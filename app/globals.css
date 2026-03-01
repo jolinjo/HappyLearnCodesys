@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* 明亮模式（固定，不提供切換） */
+:root {
+  --t-bg: #f8fafc;
+  --t-bg-card: rgba(255, 255, 255, 0.9);
+  --t-bg-code: rgba(241, 245, 249, 0.95);
+  --t-text: #0f172a;
+  --t-text-muted: #475569;
+  --t-border: #cbd5e1;
+  --t-accent: #0284c7;
+  --t-accent-hover: #0369a1;
+  --t-input-bg: #ffffff;
+  --t-input-border: #94a3b8;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--t-bg);
+  color: var(--t-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--t-accent);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--t-accent-hover);
+  text-decoration: underline;
+}
+
+/* 搜尋輸入框 focus 時使用主題色 */
+input:focus {
+  border-color: var(--t-accent);
+  box-shadow: 0 0 0 1px var(--t-accent);
+}
+
+/* 範例說明 MD 內：程式／術語統一使用同一字體與字級，僅顏色區分類型 */
+.md-content .cfg-func,
+.md-content .cfg-global,
+.md-content .cfg-local,
+.md-content .cfg-custom,
+.md-content .cfg-const,
+.md-content .cfg-keyword,
+.md-content .cfg-type,
+.md-content .cfg-arg,
+.md-content .cfg-name,
+.md-content code:not([class*="language-"]) {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+.md-content .cfg-func {
+  color: #6f42c1;
+  background: none !important;
+}
+.md-content .cfg-global {
+  color: #953800;
+  background: none !important;
+}
+.md-content .cfg-local {
+  color: #0a6c0a;
+  background: none !important;
+}
+.md-content .cfg-custom {
+  color: #8250df;
+  background: none !important;
+}
+.md-content .cfg-const {
+  color: #0d9488;
+  background: none !important;
+}
+.md-content .cfg-keyword {
+  color: #0550ae;
+  background: none !important;
+}
+.md-content .cfg-type {
+  color: #cf222e;
+  background: none !important;
+}
+.md-content .cfg-arg {
+  color: #c2410c;
+  background: none !important;
+}
+.md-content .cfg-name {
+  color: #b45309;
+  background: none !important;
+}
+/* 反引號產生的 inline code 與 .cfg-* 視覺一致，僅保留背景由組件控制 */
+.md-content code:not([class*="language-"]) {
+  color: var(--t-text);
+}
+
+/* Shiki 高亮的 ST 程式碼：把預設灰色註解改成深綠色，提升閱讀性 */
+.shiki code span[style*="color:#6A737D"] {
+  color: #166534 !important; /* 深綠色註解 */
+}
+
+/* Markdown 內容區可調整文字大小（小 / 中 / 大），以 em 繼承基準縮放 */
+.md-content--size-small {
+  font-size: 0.875rem;
+}
+.md-content--size-small h1 {
+  font-size: 1.5em !important;
+}
+.md-content--size-small h2 {
+  font-size: 1.25em !important;
+}
+.md-content--size-small h3 {
+  font-size: 1.125em !important;
+}
+.md-content--size-small pre {
+  font-size: 0.9em !important;
+}
+.md-content--size-small table {
+  font-size: 0.875em;
+}
+.md-content--size-small th,
+.md-content--size-small td {
+  font-size: 1em !important;
+}
+
+.md-content--size-large {
+  font-size: 1.125rem;
+}
+.md-content--size-large h1 {
+  font-size: 1.5em !important;
+}
+.md-content--size-large h2 {
+  font-size: 1.25em !important;
+}
+.md-content--size-large h3 {
+  font-size: 1.125em !important;
+}
+.md-content--size-large pre {
+  font-size: 0.9em !important;
+}
+.md-content--size-large table {
+  font-size: 0.875em;
+}
+.md-content--size-large th,
+.md-content--size-large td {
+  font-size: 1em !important;
+}
+

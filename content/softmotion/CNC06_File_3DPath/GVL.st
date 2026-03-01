@@ -1,0 +1,3 @@
+VAR_GLOBAL CONSTANT
+	gc_dwCycle : DWORD := 4000;
+END_VAR
