@@ -76,7 +76,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
               color: "var(--t-text-muted)",
             }}
           >
-            內容來源整理自 CODESYS 官方文件與你的教學筆記，僅供學習使用。
+            <p>內容來源整理自 CODESYS 官方文件與教學筆記，僅供學習使用。</p>
+            <p className="mt-1">© {new Date().getFullYear()} jolinjo</p>
           </footer>
         </div>
       </body>
