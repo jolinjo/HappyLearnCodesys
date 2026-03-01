@@ -38,12 +38,12 @@
 - 遵守 `HelpConversion_規則說明.md` 中的通用規則。
 - `IO_Configuration_教學文件.md`：
   - 用圖像化描述（文字）說明 Device Tree 的層級結構（PLC → Bus → Modules → Channels）。
-  - 對應 Device Tree、Device Editor 與 I/O Mapping 的實務流程示例：
+  - 實務流程示例：
     - 新增裝置 → 掃描硬體 → 設定 I/O → 做 I/O Mapping 到變數。
 - `Application_Programming_Overview_教學文件.md`：
   - 聚焦在「專案邏輯如何分拆」：
-    - `PROGRAM` / `FUNCTION_BLOCK` / `FUNCTION` 的角色。
-    - 命名規範與變數生命週期（僅高層級概念）。
+    - `PROGRAM`/`FUNCTION_BLOCK`/`FUNCTION` 的角色。
+    - 命名規範與變數生命週期。
     - Task 的存在意義與何時需要調整週期時間、優先權。
   - 不在此檔中詳細展開各種變數型別或運算子，只做導覽並連結到對應教學檔案（如運算子、變數型別批次）。 
 

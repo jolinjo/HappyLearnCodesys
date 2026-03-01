@@ -75,6 +75,43 @@ code {
 - 每個專案都記錄了 **建立時所用的 CODESYS 版本**：
   - 當你用另一版本開啟時，IDE 會提示是否需要更新檔案格式、Library 版本等。
 
+簡單來說：**Device** 代表的是「實體機器」（如 PLC、HMI），**Application** 代表的是跑在該機器上的「程式」；一個專案可同時包含多台裝置與多個應用程式實例。
+
+#### 1.1 什麼時候會有多個 Application？
+
+多數情況下，一個 PLC 裡只會有一個 Application；但在以下專業自動化場景中，會需要多個：
+
+- **安全 PLC 邏輯（Safety Logic）**  
+  許多現代控制器具備「標準核心」與「安全核心」。可建立一個 **Standard Application** 處理一般動作，以及一個獨立的 **Safety Application** 專門處理急停（E-Stop）、安全門等符合 SIL 等級的安全邏輯。
+- **多核心 CPU 利用**  
+  若 PLC 為多核心（Multi-core）處理器，可建立多個 Application，並在 Task 設定中將它們分配給不同 CPU 核心執行。例如：一個 Application 專門跑 1 ms 週期的高速運動控制，另一個跑一般感測器與順控邏輯。
+- **模組化開發**  
+  當團隊分工明確、不同工程師負責獨立單元時，可將模組切分成不同 Application，減少程式互相干擾的風險，也方便獨立下載與更新。
+- **多裝置管理**  
+  專案若包含一台主要 PLC 與多台分散式 I/O 或 HMI，每個 **Device** 底下都會有自己對應的 Application；同一專案內即可管理多台實體機器與其程式。
+
+#### 1.2 不同 Application 之間的資料可以共享嗎？
+
+可以共享，但**不是自動的**。同一 Application 內可直接用全域變數（GVL）溝通；跨 Application 時，資料如同在不同「房子」裡，必須透過特定的機制傳遞：
+
+- **網路變數列表（Network Variable List, NVL）**  
+  可設定「發送端」與「接收端」，常用於不同 PLC 之間，或同一台 PLC 內不同 Application 之間的資料廣播。適合需要週期性交換大量變數的場合。
+- **符號配置（Symbol Configuration）**  
+  透過匯出符號，讓其他應用（例如 HMI 或另一個 Application）可經由 **資料來源管理員（Data Source Manager）** 讀寫這些變數。
+- **邏輯交換 GVL（Logic Exchange GVL）**  
+  用於**同一台設備內**、不同 Application 之間的高速資料交換。
+
+若你的系統需要與其他設備或同機內多個 Application 進行大量資料交換，可依需求選用上述機制並在專案中設定。
+
+#### 1.3 重要提醒：多應用環境下 Force 變數的侷限
+
+當你啟用了「產生隱含 Force 變數」（見 I/O 組態教學文件）時，這些 Force 變數是**跟隨單一 Application** 的：
+
+- **局部強制**：在 App_A 中對某個 I/O 點做 Force，只會影響 **App_A 內部的邏輯判斷**，不會改變實體 I/O 的真實狀態對其他程式的可見性。
+- **資料不一致**：若 App_B 也讀取同一個實體 I/O，App_B 讀到的仍是**真實硬體狀態**，而非 App_A 強制後的值。在多應用環境下除錯時，若未注意這點，很容易造成誤判。
+
+因此，在多 Application 專案中使用 Force 做測試時，務必留意「強制僅對該 Application 有效」；必要時需在每個會讀取該 I/O 的 Application 中分別評估或改用其他除錯方式。
+
 實務建議：
 
 - 對於正式專案，建議在 `Project Information` 中清楚填寫：
