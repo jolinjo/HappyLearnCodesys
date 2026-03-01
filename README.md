@@ -36,7 +36,41 @@
 
 - **框架**：Next.js（App Router）、TypeScript、React  
 - **樣式**：Tailwind CSS  
-- **部署**：靜態匯出，可部署於 GitHub Pages（如 `https://jolinjo.github.io/HappyLearnCodesys/`）
+- **部署**：GitHub Pages（靜態匯出），推送後由 GitHub Actions 自動建置與部署。
+
+### 「同步網站」= 使用本 repo（tutorial-site）的 Git
+
+本資料夾 **tutorial-site** 是獨立的 Git 儲存庫（HappyLearnCodesys），與上層專案目錄分開。  
+**同步網站** 指：在本資料夾內進行 `git add`、`git commit`、`git push`；推送到 `main` 後會自動觸發 GitHub Actions 建置並更新 GitHub Pages，無需手動上傳。
+
+```bash
+cd tutorial-site
+git add .
+git commit -m "更新內容"
+git push origin main
+```
+
+### 若更新了開發規範（來自上層 ExampleFile）
+
+開發規範的**原始檔**在上層專案的 `ExampleFile/CODESYS_開發規範_CFC_SFC_ST.md`。要讓網站顯示最新內容：
+
+1. **在上層專案根目錄**執行同步腳本，把規範複製進 tutorial-site 的 content：
+   ```bash
+   node tutorial-site/scripts/sync-guidelines.mjs
+   ```
+2. **在 tutorial-site 目錄**提交並推送（即完成同步網站）：
+   ```bash
+   cd tutorial-site
+   git add content/guidelines/
+   git commit -m "sync: 更新開發規範"
+   git push origin main
+   ```
+   推送後 GitHub Actions 會自動建置並部署，數分鐘內線上站即更新。
+
+### GitHub Pages 設定
+
+- 本 repo 已設定 `.github/workflows/deploy-pages.yml`，推送到 `main` 即觸發部署。
+- 請在 GitHub 此 repo 的 **Settings → Pages** 中，將 **Source** 設為 **GitHub Actions**（若尚未設定）。
 
 ---
 
