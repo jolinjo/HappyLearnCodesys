@@ -3,52 +3,7 @@
 3:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
 8:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
 9:"$Sreact.suspense"
-4:T2fe1,<style>
-html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
-[id^="preview"], [class*="markdown-preview"] {
-  background-color: #FDF5E6 !important;
-  font-size: 14px;
-}
-
-/* 程式／術語：只用同一套等寬字體；用顏色區分型別 */
-.cfg-func,
-.cfg-global,
-.cfg-local,
-.cfg-custom,
-.cfg-const,
-.cfg-keyword,
-.cfg-type,
-.cfg-arg,
-.cfg-name,
-code {
-  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, Monaco, "Courier New", monospace;
-}
-
-/* 移除反引號 inline code 的灰底樣式（只靠顏色規則） */
-.markdown-preview-section :not(pre) > code,
-.markdown-preview :not(pre) > code,
-.markdown-body :not(pre) > code {
-  background: transparent !important;
-  padding: 0 !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-.cfg-func   { color: #6f42c1 !important; background: none !important; }
-.cfg-global { color: #953800 !important; background: none !important; }
-.cfg-local  { color: #0a6c0a !important; background: none !important; }
-.cfg-custom { color: #8250df !important; background: none !important; }
-.cfg-const  { color: #0d9488 !important; background: none !important; }
-.cfg-keyword{ color: #0550ae !important; background: none !important; }
-.cfg-type   { color: #cf222e !important; background: none !important; }
-.cfg-arg    { color: #c2410c !important; background: none !important; }
-.cfg-name   { color: #b45309 !important; background: none !important; }
-</style>
-
-**顏色對應**：<span class="cfg-func">內建函數</span> <span class="cfg-global">全域變數</span> <span class="cfg-local">區域變數</span> <span class="cfg-custom">自訂函數</span> <span class="cfg-const">常數</span> <span class="cfg-keyword">保留字</span> <span class="cfg-type">型態</span> <span class="cfg-arg">引數</span> <span class="cfg-name">專有名詞</span>
-
-# CODESYS Development System 概觀 Overview 教學整理
+4:T2877,# CODESYS Development System 概觀 Overview 教學整理
 
 > 本文件基於 CODESYS Offline Help 中 `CODESYS Development System`、`Overview`、`Whitepaper: Modularization from the User Perspective` 與 `Compatibility` 相關章節，整理成易讀、實務導向的繁體中文說明。
 
@@ -275,7 +230,7 @@ code {
 4. **相容性觀念** 很重要：專案／程式碼／Runtime／函式庫都有各自的相容性規則。
 5. 透過這些概念，後續看到 SoftMotion、CNC、Robotics 等教學文件時，可以更清楚它們如何嵌在整體 CODESYS 架構之中。
 
-0:{"buildId":"hE9wNZamtqMjFK5Z04D0M","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/offline-help","style":{"color":"var(--t-accent)"},"children":"Offline Help 首頁"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"children":"CODESYS 概觀與入門"}]]}],["$","header",null,{"className":"space-y-2","children":[["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"CODESYS Development System 概觀 Overview 教學整理"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"說明 CODESYS Development System 在整體平台中的角色、模組化架構、相容性觀念與 Offline/Online Help 使用方式。"}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],"$L5"]}],["$L6"],"$L7"]}],"loading":null,"isPartial":false}
+0:{"buildId":"VM_Cnc7MnEb5ts_hLiMxH","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/offline-help","style":{"color":"var(--t-accent)"},"children":"Offline Help 首頁"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"children":"CODESYS 概觀與入門"}]]}],["$","header",null,{"className":"space-y-2","children":[["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"CODESYS Development System 概觀 Overview 教學整理"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"說明 CODESYS Development System 在整體平台中的角色、模組化架構、相容性觀念與 Offline/Online Help 使用方式。"}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],"$L5"]}],["$L6"],"$L7"]}],"loading":null,"isPartial":false}
 5:["$","section",null,{"className":"space-y-2","children":[["$","h2",null,{"className":"text-sm font-semibold","style":{"color":"var(--t-text)"},"children":"相關批次學習路線"}],["$","ul",null,{"className":"space-y-1.5 text-xs","children":[["$","li","batch-01-codesys-overview",{"children":["$","$L2",null,{"href":"/offline-help/batch/batch-01-codesys-overview","className":"hover:underline","style":{"color":"var(--t-accent)"},"children":"Batch 01：CODESYS 概觀與入門教學"}]}]]}]]}]
 6:["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true}]
 7:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]

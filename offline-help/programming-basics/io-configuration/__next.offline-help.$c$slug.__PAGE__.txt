@@ -3,7 +3,7 @@
 3:I[35977,["/HappyLearnCodesys/_next/static/chunks/135aa1e47e43b074.js","/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js"],"MarkdownWithToc"]
 7:I[97367,["/HappyLearnCodesys/_next/static/chunks/ff1a16fafef87110.js","/HappyLearnCodesys/_next/static/chunks/0bd6498bda341889.js"],"OutletBoundary"]
 8:"$Sreact.suspense"
-4:T433b,<style>
+4:T5fa3,<style>
 html, body, #preview, .markdown-preview, .markdown-body, .markdown-preview-section,
 [id^="preview"], [class*="markdown-preview"] {
   background-color: #FDF5E6 !important;
@@ -200,9 +200,9 @@ code {
 
 根據 `Configuring Devices and I/O Mapping` → `General information about I/O mapping`：
 
-- **I/O Mapping** 就是把「裝置的 Input / Output 通道」映射到「專案中的變數」：
-  - 可以是既有變數（如 `Application.PLC_PRG.xStartButton`）。
-  - 也可以在 I/O Mapping 內 **直接建立新的全域變數**。
+- **I/O Mapping** 就是把「裝置的 Input / Output 通道」映射到「專案中的變數」。在 Device Editor 的 I/O Mapping 頁面中，建議的兩種操作邏輯是：
+  - **直接連結現有變數**：若你已在程式（例如 `PLC_PRG`）裡宣告好變數（如 `xStartButton`），就在 Mapping 表格中對應到該通道（例如 `%IX0.0`）那一列，透過 Variable 欄位的 Input Assistant 選擇這個變數。
+  - **在此建立新變數**：也可以直接在 Mapping 表格的 **Variable** 欄位輸入一個名字（例如 `Input_Start_Button`），CODESYS 會自動將此名稱連結到該硬體位址，並視為**全域變數**，之後即可在程式中使用。
 - 幾個重要原則：
   - 映射到 **Input** 的變數 **在程式中不可寫入**（只讀）。
   - 一個變數 **只能映射到一個 Input 通道**。
@@ -211,6 +211,12 @@ code {
     - 映射至結構（STRUCT）。
     - 映射至 Function Block 實例。
   - 可修改或固定 I/O 位址（如 `QB0` → `QB1`），以符合實際接線配置。
+
+**為什麼建議用 I/O Mapping、而不是在程式裡寫 AT 位址？**
+
+- **程式碼更易讀**：程式裡會出現 `IF Input_Start_Button THEN ...`，而不是 `IF %IX0.0 THEN ...`，別人一看就懂這個接點的用途。
+- **抽離硬體依賴**：若日後因維修或改線，原本接在 `%IX0.0` 的線改接到 `%IX0.5`，只需在 Device Editor 重新拉一次對應即可，已寫好的程式碼**不必**對位址做搜尋取代（Find & Replace）。
+- **官方建議**：位址配置（Address Assignment）交由裝置描述（Device Description）與編輯器管理最安全，也能避免手動輸入位址時產生的錯誤；且只有透過 I/O Mapping 的通道才能使用隱含 Force 變數等進階功能（見 7.3 節）。
 
 ### 4.3 AT 宣告與 I/O Mapping 的取捨
 
@@ -225,19 +231,20 @@ END_VAR
 但官方明確提醒：
 
 - Device Configuration 經常會變動（例如插拔模組、改位址）。
-- 建議 **優先使用 Device Editor 中的 I/O Mapping**，讓位址配置由裝置描述與編輯器負責管理。
+- 建議 **優先使用 Device Editor 中的 I/O Mapping**，讓位址配置由裝置描述與編輯器負責管理；且只有透過 I/O Mapping 映射的通道，才能使用「產生隱含 Force 變數」功能做除錯與模擬（見 7.3 節）。
 - 使用 AT 宣告時，需注意：
   - 只適用於 Local / Global 變數，不可用於 Function Block 的 I/O 參數。
-  - 無法產生「隱含的 Force 變數」。
+  - **無法產生隱含的 Force 變數**，若需要從程式或 HMI 強制覆寫輸入做測試，應改用 I/O Mapping。
+
+**總結：** 不要在程式碼裡寫 `AT %IX0.0`。請在 Device Editor 的 I/O Mapping 中，把「變數名稱」與「硬體通道」連起來。
 
 ---
 
 ## 5. I/O Mapping 實務流程範例
 
-以下示範一個常見場景：  
-**將實體輸入點（例如 `%IX0.0`）對應到 ST 程式中的變數，並在程式中使用。**
+以下依「直接連結現有變數」與「在 Mapping 中建立新變數」兩種方式，示範如何將實體輸入點（例如 `%IX0.0`）對應到程式中的變數並在 ST 中使用。
 
-### 5.1 宣告目標變數（既有變數映射）
+### 5.1 方式一：先宣告變數，再在 I/O Mapping 連結（既有變數映射）
 
 在 `PLC_PRG` 或其他 POU 中宣告變數：
 
@@ -261,9 +268,9 @@ END_VAR
 
 這樣一來，控制程式就可以透過 `xStartButton` 直接讀取實體輸入狀態。
 
-### 5.3 在 I/O Mapping 直接建立新變數
+### 5.3 方式二：在 I/O Mapping 直接建立新變數
 
-若尚未宣告變數，也可以在 I/O Mapping 直接建立：
+若尚未宣告變數，也可以直接在 Mapping 表格的 Variable 欄位輸入名稱來建立：
 
 1. 在 `Variable` 欄中雙擊某個輸入或輸出通道。
 2. 直接輸入一個簡單變數名稱，例如 `xEmergencyStop`。
@@ -293,6 +300,47 @@ END_VAR
 (* 將第 0、1 bit 設為 1，其餘保留 *)
 byOutputs := byOutputs OR 16#03;
 ```
+
+### 5.5 使用結構體組織 I/O 變數（好管理與維護）
+
+除了單一變數對應單一 I/O 點，實務上更建議用 **自訂結構體（STRUCT）** 把同一元件或同一站別的相關 I/O、狀態打包在一起，再在 **GVL（全域變數列表）** 中宣告，程式碼會更易讀、易維護，也方便在 Device Editor 的 I/O Mapping 中對應到結構成員（需裝置支援映射至 STRUCT）。
+
+**建議做法：**
+
+1. **在 DUTs（Data Unit Types）中定義結構體**  
+   依設備元件類型在專案中建立對應的 STRUCT，例如：
+   - `ST_Cylinder`：氣缸的 I/O 與狀態
+   - `ST_Axis_IO`：軸控制的 I/O
+   - `ST_Safety`：安全相關 I/O
+   - `ST_TowerLight`：三色塔燈 I/O
+   - `ST_Vacuum`：真空裝置 I/O
+   - `ST_Motor`：馬達 I/O 與狀態
+
+2. **在 GVL 中用結構體宣告全域變數，並採用一致命名**  
+   命名可依「站別 _ 元件類型縮寫 _ 功能描述」來區分，例如：
+   - **範例**：`St1_Cyl_Loader`  
+     - `St1`：Station 1（站別 1）  
+     - `Cyl`：Cylinder（元件類型：氣缸）  
+     - `Loader`：具體描述（功能：上料）  
+   - **常用類型縮寫**：`Cyl` 氣缸、`Axis` 軸、`Snr` 感測器、`Btn` 按鈕、`Vac` 真空、`Lmp` 燈號
+
+3. **在 VAR_GLOBAL 區塊中宣告**  
+   將相關 I/O 與狀態集中到同一個結構變數，便於在程式中以 `GVL_IO.St1_Cyl_Loader.xxx` 方式存取，並在 I/O Mapping 中將硬體通道對應到這些結構成員：
+
+```iecst
+VAR_GLOBAL
+    (* 站位 1 *)
+    St1_Cyl_Loader : ST_Cylinder;   (* 站位1 - 上料氣缸 *)
+    St1_Axis_X     : ST_Axis_IO;   (* 站位1 - 水平移動 X 軸 *)
+    St1_Vac_Arm    : ST_Vacuum;    (* 站位1 - 手臂取料吸盤 *)
+
+    (* 全機共用 *)
+    Main_Safety    : ST_Safety;    (* 全機安全迴路 *)
+    Panel_Lmp_Tower: ST_TowerLight;(* 控制箱三色燈 *)
+END_VAR
+```
+
+這樣做的好處是：相關點位集中在一處、命名與實體元件對應清楚、後續擴充或修改時只需改結構定義或 Mapping，程式邏輯更容易維護；若裝置支援，可在 I/O Mapping 中直接將通道映射到上述結構的成員變數。
 
 ---
 
@@ -355,44 +403,68 @@ byOutputs := byOutputs OR 16#03;
 - 再次編輯位址欄位，清空內容並按 Enter，  
 位址會回到裝置描述預設的配置。
 
-### 7.3 產生隱含 Force 變數
+### 7.3 產生隱含 Force 變數（Generate force variables for IO mapping）
 
-在 `PLC Settings` 中啟用：
+#### 解決什麼問題？
 
-- `Generate force variables for IO mapping`
+PLC 的 **Input（輸入）** 通常由外部感測器控制，且在程式中為**唯讀**。若要在不實際觸動感測器的情況下「模擬」輸入狀態（例如測試邏輯、HMI 手動測試模式），一般變數無法改寫 Input。  
+啟用「為 I/O 映射產生強制變數」後，系統會為**有做 I/O Mapping 的每個通道**自動產生兩個隱含變數，讓你可以透過程式或 HMI 強制覆寫該點位的值，常用於**除錯與模擬**。
 
-編譯後，系統會為每一個有 I/O Mapping 的通道建立兩個隱含變數：
+#### 如何開啟功能？
 
-- `<device>_<channel>_<IECaddress>_force : BOOL`
-  - 控制是否啟用強制。
-- `<device>_<channel>_<IECaddress>_value : <channel type>`
-  - 指定要強制的值。
+1. 在 **Device Tree** 中雙擊你的 PLC 裝置（Device）。
+2. 切換到 **PLC 設定（PLC Settings）** 頁籤。
+3. 在 **I/O 處理** 區塊中，勾選 **「為 I/O 映射產生強制變數」（Generate force variables for IO mapping）**。
+4. **編譯（Build）** 專案後，隱含變數才會生效。
 
-實務應用（簡化範例）：
+#### Force 變數在哪裡？如何找到？
+
+這些變數**不會出現在你的變數宣告區**，而是由系統依 I/O Mapping 自動產生。  
+若你在 Device Editor 的 I/O Mapping 中將某個輸入（例如 `%IX0.0`）命名為 `GVL_IO.i_Sensor1`，編譯後會自動產生：
+
+- **`GVL_IO.i_Sensor1.Force`**（部分版本為 `_force`）  
+  - 型別：`BOOL`。設為 `TRUE` 時，系統**忽略真實硬體訊號**，改採用你設定的強制值。
+- **`GVL_IO.i_Sensor1.Value`**（部分版本為 `_value`）  
+  - 型別與該通道相同（例如 `BOOL`）。即你要強制寫入的目標值。
+
+**怎麼找：** 在程式編輯器輸入已映射的變數名稱並加上小數點（例如 `GVL_IO.i_Sensor1.`），若功能已正確啟用並編譯，自動完成下拉選單會出現 `Force` 與 `Value`。
+
+#### 程式碼範例：測試模式
+
+以下示範當 HMI 按下「啟動測試」時，強制某輸入為 TRUE；放開後關閉強制、回歸真實感測器狀態：
 
 ```iecst
 VAR
-    xForceStart       : BOOL;  (* 來自 HMI 的啟動測試按鈕 *)
+    xForceStart : BOOL;  (* 來自 HMI 的啟動測試按鈕 *)
 END_VAR
 
-(* 假設系統產生的隱含變數名稱如下，只為示意 *)
-VAR_EXTERNAL
-    Dev1_DI0_%IX0_0_force : BOOL;
-    Dev1_DI0_%IX0_0_value : BOOL;
-END_VAR
-
+(* 假設 %IX0.0 已在 I/O Mapping 中命名為 GVL_IO.i_Sensor1 *)
 IF xForceStart THEN
-    Dev1_DI0_%IX0_0_value := TRUE;
-    Dev1_DI0_%IX0_0_force := TRUE;
+    GVL_IO.i_Sensor1.Value := TRUE;   (* 設定要強制的值 *)
+    GVL_IO.i_Sensor1.Force := TRUE;   (* 啟用強制，PLC 會採用 Value 而非真實硬體 *)
 ELSE
-    Dev1_DI0_%IX0_0_force := FALSE;
-END_IF;
+    GVL_IO.i_Sensor1.Force := FALSE; (* 關閉強制，恢復讀取真實感測器 *)
+END_IF
 ```
 
-注意限制：
+#### 從 HMI 控制 Force 變數
 
-- 只有在 I/O Mapping 中「有變數映射」的通道，才會產生 Force 變數。
-- 透過 AT 宣告映射的 I/O 位址，不會自動產生這些 Force 變數。
+可以從 HMI 新增按鈕或開關來操作這些隱含變數，例如：
+
+- **測試模式按鈕**：按下時將 `GVL_IO.i_Sensor1.Force` 設為 `TRUE`。
+- **模擬狀態開關**：將開關綁定到 `GVL_IO.i_Sensor1.Value`；當 `Force` 為 `TRUE` 時，PLC 會採用此開關的值當作該輸入的狀態。
+
+實務上建議不要讓 HMI 到處直接綁定各通道的 Force/Value，而是**在程式中寫一個「模擬功能塊」或集中邏輯**，由一個除錯開關（例如 `xDebugMode`）與少數 HMI 元件控制，再統一寫入對應的 `*.Value` 與 `*.Force`，較易維護與關閉。
+
+#### 使用限制（與 AT 宣告的關係）
+
+- **僅對「有 I/O Mapping」的通道有效**：只有在 Device Editor 的 I/O Mapping 中有設定變數名稱的 I/O 通道，系統才會為其產生 Force/Value。  
+  這也是建議**優先使用 I/O Mapping 而非 AT 宣告**的其中一個理由。
+- **AT 宣告不支援**：若使用舊式 `AT %IX0.0` 等方式直接綁定位址，**不會**產生這些隱含 Force 變數。
+
+#### 安全提醒
+
+在**實機運作（Production）**時，務必確保所有 Force 皆為 `FALSE`。若未關閉強制，實體感測器故障或急停被按下時，PLC 可能仍採用你強制設定的值而繼續動作，存在安全風險。調機結束或上線前，應養成「解除所有 Force」的檢查習慣，或在程式中提供一鍵清除機制。
 
 ### 7.4 監看 I/O Mapping 與跨裝置編輯
 
@@ -418,10 +490,12 @@ END_IF;
   - 除非是非常固定的特殊位址，否則交由 Device Editor 管理位置較易維護。
 - **清楚命名變數與裝置**
   - 例如：`xStart_Machine1`、`xDoorClosed_Safety`，利於後續搜尋與維護。
+- **用結構體組織 I/O 變數，好管理與維護**
+  - 在 DUTs 定義 `ST_Cylinder`、`ST_Axis_IO`、`ST_Safety` 等結構體，在 GVL 中以「站別_元件類型_功能」命名（如 `St1_Cyl_Loader`），將相關 I/O 與狀態打包在一起；程式碼更易讀、易維護，且可在 I/O Mapping 中對應到結構成員（見 5.5 節）。
 - **善用 Online Config Mode 測試接線**
   - 尤其在程式尚未完成前，先確認硬體接線與通訊是否正常。
-- **為重要 I/O 建立 Force 變數視覺化頁面**
-  - 在調機與維護階段，可以直接透過 HMI 驗證輸出動作。
+- **善用 Force 變數做除錯與模擬**
+  - 在調機與維護階段，可透過 HMI 按鈕或開關控制 Force/Value，模擬輸入狀態；建議用集中式「模擬功能塊」或除錯開關統一管理，避免散落綁定，並在實機上線前確保全部 Force 已關閉（見 7.3 節）。
 
 ### 8.2 常見錯誤與陷阱
 
@@ -443,7 +517,7 @@ END_IF;
 3. 善用 **Scan for Devices**、**Online Config Mode** 與 **Force 變數**，可以大幅簡化現場導入與除錯時間。
 4. 往後在學習 Task、變數型別與除錯工具時，都會頻繁回到這個主題；可把本文件視為「Device Tree 與 I/O Mapping 的總覽入口」，並搭配其他教學（例如 Application Programming、Variables & Types、Debug and Monitoring）一起閱讀。
 
-0:{"buildId":"hE9wNZamtqMjFK5Z04D0M","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/offline-help","style":{"color":"var(--t-accent)"},"children":"Offline Help 首頁"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"children":"程式設計基礎與語言核心"}]]}],["$","header",null,{"className":"space-y-2","children":[["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"IO Configuration I/O 組態與 Device Tree 教學整理"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"介紹 Device Tree、Device Editor 與 I/O Mapping 的概念與實務流程，說明程式如何與真實 I/O 銜接。"}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],false]}],["$L5"],"$L6"]}],"loading":null,"isPartial":false}
+0:{"buildId":"VM_Cnc7MnEb5ts_hLiMxH","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"space-y-5","children":[["$","nav",null,{"className":"text-xs","style":{"color":"var(--t-text-muted)"},"children":[["$","$L2",null,{"href":"/offline-help","style":{"color":"var(--t-accent)"},"children":"Offline Help 首頁"}],["$","span",null,{"className":"mx-1","children":"/"}],["$","span",null,{"children":"程式設計基礎與語言核心"}]]}],["$","header",null,{"className":"space-y-2","children":[["$","h1",null,{"className":"text-xl font-semibold","style":{"color":"var(--t-text)"},"children":"IO Configuration I/O 組態與 Device Tree 教學整理"}],["$","p",null,{"className":"text-sm","style":{"color":"var(--t-text-muted)"},"children":"介紹 Device Tree、Device Editor 與 I/O Mapping 的概念與實務流程，說明程式如何與真實 I/O 銜接。"}]]}],["$","section",null,{"className":"rounded-lg border p-4","style":{"borderColor":"var(--t-border)","backgroundColor":"var(--t-bg-card)"},"children":["$","$L3",null,{"content":"$4"}]}],false]}],["$L5"],"$L6"]}],"loading":null,"isPartial":false}
 5:["$","script","script-0",{"src":"/HappyLearnCodesys/_next/static/chunks/014f4330b2e14031.js","async":true}]
 6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
 9:null
